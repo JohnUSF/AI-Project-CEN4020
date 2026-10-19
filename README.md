@@ -7,4 +7,6 @@
 - `docs/traceability.md`, `docs/open-items.md`.
 - `docs/original-genai/`: the original container and component diagrams from before Call 3.
 
+The provided eligibility checker scripts are included in `grading/`.
+
 Check before committing: `python3 grading/check_part3.py .`
