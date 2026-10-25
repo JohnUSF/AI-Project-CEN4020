@@ -1,0 +1,843 @@
+check_sdd_features_layout — /mnt/data/eventhub_part4_build/EventHub-Part4-Team5
+
+   🟢 features/ exists
+   🟢 features/ holds 8 feature folder(s)
+   🟢 features/system/ exists
+   🟢 folder name lowercase-hyphen: features/admin/
+   🟢 features/admin/requirements.md exists
+   🟢 features/admin/requirements.md:5: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:6: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:7: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:8: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:9: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:13: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:14: ID prefix 'admin' is the folder name
+   🟢 features/admin/requirements.md:15: ID prefix 'admin' is the folder name
+   🟢 folder name lowercase-hyphen: features/audit/
+   🟢 features/audit/requirements.md exists
+   🟢 features/audit/requirements.md:5: ID prefix 'audit' is the folder name
+   🟢 features/audit/requirements.md:6: ID prefix 'audit' is the folder name
+   🟢 features/audit/requirements.md:7: ID prefix 'audit' is the folder name
+   🟢 features/audit/requirements.md:8: ID prefix 'audit' is the folder name
+   🟢 folder name lowercase-hyphen: features/catalog/
+   🟢 features/catalog/requirements.md exists
+   🟢 features/catalog/requirements.md:5: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:6: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:7: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:8: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:9: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:10: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:14: ID prefix 'catalog' is the folder name
+   🟢 features/catalog/requirements.md:15: ID prefix 'catalog' is the folder name
+   🟢 folder name lowercase-hyphen: features/identity/
+   🟢 features/identity/requirements.md exists
+   🟢 features/identity/requirements.md:5: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:6: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:7: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:8: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:9: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:10: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:11: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:12: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:13: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:17: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:18: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:19: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:20: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:21: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:25: ID prefix 'identity' is the folder name
+   🟢 features/identity/requirements.md:26: ID prefix 'identity' is the folder name
+   🟢 folder name lowercase-hyphen: features/inventory/
+   🟢 features/inventory/requirements.md exists
+   🟢 features/inventory/requirements.md:5: ID prefix 'inventory' is the folder name
+   🟢 features/inventory/requirements.md:6: ID prefix 'inventory' is the folder name
+   🟢 features/inventory/requirements.md:7: ID prefix 'inventory' is the folder name
+   🟢 features/inventory/requirements.md:8: ID prefix 'inventory' is the folder name
+   🟢 features/inventory/requirements.md:9: ID prefix 'inventory' is the folder name
+   🟢 folder name lowercase-hyphen: features/pricing/
+   🟢 features/pricing/requirements.md exists
+   🟢 features/pricing/requirements.md:5: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:6: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:8: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:10: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:11: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:12: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:16: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:17: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:21: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:23: ID prefix 'pricing' is the folder name
+   🟢 folder name lowercase-hyphen: features/purchase/
+   🟢 features/purchase/requirements.md exists
+   🟢 features/purchase/requirements.md:5: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:6: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:7: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:8: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:9: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:13: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:14: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:15: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:16: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:17: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:18: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:19: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:23: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:24: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:25: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:26: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:27: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:28: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:29: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:33: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:34: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:35: ID prefix 'purchase' is the folder name
+   🟢 features/purchase/requirements.md:36: ID prefix 'purchase' is the folder name
+   🟢 folder name lowercase-hyphen: features/system/
+   🟢 features/system/requirements.md exists
+   🟢 features/system/requirements.md:5: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:6: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:7: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:11: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:12: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:16: ID prefix 'system' is the folder name
+
+8 feature folder(s), 0 failure(s)
+
+check_req_form — features/admin/requirements.md
+
+   🟢 admin-001: line form
+   🟢 admin-002: line form
+   🟢 admin-003: line form
+   🟢 admin-004: line form
+   🟢 admin-005: line form
+   🟢 admin-006: line form
+   🟢 admin-007: line form
+   🟢 admin-008: line form
+   🟢 features/admin/requirements.md holds 8 requirement(s)
+
+8 requirement(s), 8 active, 0 failure(s)
+
+check_ears — features/admin/requirements.md
+
+   🟢 admin-001: pattern ubiquitous
+   🟢 admin-001: contains 'shall'
+   🟢 admin-001: exactly one system name in braces, found 1
+   🟢 admin-001: 'shall' directly after the {system name}
+   🟢 admin-001: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 admin-002: pattern unwanted
+   🟢 admin-002: contains 'shall'
+   🟢 admin-002: exactly one system name in braces, found 1
+   🟢 admin-002: 'shall' directly after the {system name}
+   🟢 admin-002: unwanted opens with 'If'
+   🟢 admin-002: unwanted, no keyword other than 'if' before 'shall'
+   🟢 admin-002: 'then' after 'If' and before 'shall'
+   🟢 admin-002: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 admin-003: pattern unwanted
+   🟢 admin-003: contains 'shall'
+   🟢 admin-003: exactly one system name in braces, found 1
+   🟢 admin-003: 'shall' directly after the {system name}
+   🟢 admin-003: unwanted opens with 'If'
+   🟢 admin-003: unwanted, no keyword other than 'if' before 'shall'
+   🟢 admin-003: 'then' after 'If' and before 'shall'
+   🟢 admin-003: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 admin-004: pattern ubiquitous
+   🟢 admin-004: contains 'shall'
+   🟢 admin-004: exactly one system name in braces, found 1
+   🟢 admin-004: 'shall' directly after the {system name}
+   🟢 admin-004: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 admin-005: pattern ubiquitous
+   🟢 admin-005: contains 'shall'
+   🟢 admin-005: exactly one system name in braces, found 1
+   🟢 admin-005: 'shall' directly after the {system name}
+   🟢 admin-005: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 admin-006: pattern complex
+   🟢 admin-006: contains 'shall'
+   🟢 admin-006: exactly one system name in braces, found 1
+   🟢 admin-006: 'shall' directly after the {system name}
+   🟢 admin-006: complex opens with a keyword
+   🟢 admin-006: complex, 2 different keyword(s) before 'shall' (needs 2)
+   🟢 admin-006: complex, clauses in EARS order (Where, While, When/If)
+   🟢 admin-006: complex, comma before 'shall'
+   🟢 admin-006: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 admin-007: pattern unwanted
+   🟢 admin-007: contains 'shall'
+   🟢 admin-007: exactly one system name in braces, found 1
+   🟢 admin-007: 'shall' directly after the {system name}
+   🟢 admin-007: unwanted opens with 'If'
+   🟢 admin-007: unwanted, no keyword other than 'if' before 'shall'
+   🟢 admin-007: 'then' after 'If' and before 'shall'
+   🟢 admin-007: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 admin-008: pattern event-driven
+   🟢 admin-008: contains 'shall'
+   🟢 admin-008: exactly one system name in braces, found 1
+   🟢 admin-008: 'shall' directly after the {system name}
+   🟢 admin-008: event-driven opens with 'When'
+   🟢 admin-008: event-driven, no keyword other than 'when' before 'shall'
+   🟢 admin-008: event-driven, comma before 'shall'
+   🟢 admin-008: the {system name} directly after the last clause (after the comma or 'then')
+
+8 requirement(s), 0 failure(s)
+
+check_req_form — features/audit/requirements.md
+
+   🟢 audit-001: line form
+   🟢 audit-002: line form
+   🟢 audit-003: line form
+   🟢 audit-004: line form
+   🟢 features/audit/requirements.md holds 4 requirement(s)
+
+4 requirement(s), 4 active, 0 failure(s)
+
+check_ears — features/audit/requirements.md
+
+   🟢 audit-001: pattern event-driven
+   🟢 audit-001: contains 'shall'
+   🟢 audit-001: exactly one system name in braces, found 1
+   🟢 audit-001: 'shall' directly after the {system name}
+   🟢 audit-001: event-driven opens with 'When'
+   🟢 audit-001: event-driven, no keyword other than 'when' before 'shall'
+   🟢 audit-001: event-driven, comma before 'shall'
+   🟢 audit-001: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 audit-002: pattern ubiquitous
+   🟢 audit-002: contains 'shall'
+   🟢 audit-002: exactly one system name in braces, found 1
+   🟢 audit-002: 'shall' directly after the {system name}
+   🟢 audit-002: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 audit-003: pattern ubiquitous
+   🟢 audit-003: contains 'shall'
+   🟢 audit-003: exactly one system name in braces, found 1
+   🟢 audit-003: 'shall' directly after the {system name}
+   🟢 audit-003: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 audit-004: pattern event-driven
+   🟢 audit-004: contains 'shall'
+   🟢 audit-004: exactly one system name in braces, found 1
+   🟢 audit-004: 'shall' directly after the {system name}
+   🟢 audit-004: event-driven opens with 'When'
+   🟢 audit-004: event-driven, no keyword other than 'when' before 'shall'
+   🟢 audit-004: event-driven, comma before 'shall'
+   🟢 audit-004: the {system name} directly after the last clause (after the comma or 'then')
+
+4 requirement(s), 0 failure(s)
+
+check_req_form — features/catalog/requirements.md
+
+   🟢 catalog-001: line form
+   🟢 catalog-002: line form
+   🟢 catalog-003: line form
+   🟢 catalog-004: line form
+   🟢 catalog-005: line form
+   🟢 catalog-006: line form
+   🟢 catalog-007: line form
+   🟢 catalog-008: line form
+   🟢 features/catalog/requirements.md holds 8 requirement(s)
+
+8 requirement(s), 8 active, 0 failure(s)
+
+check_ears — features/catalog/requirements.md
+
+   🟢 catalog-001: pattern ubiquitous
+   🟢 catalog-001: contains 'shall'
+   🟢 catalog-001: exactly one system name in braces, found 1
+   🟢 catalog-001: 'shall' directly after the {system name}
+   🟢 catalog-001: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 catalog-002: pattern event-driven
+   🟢 catalog-002: contains 'shall'
+   🟢 catalog-002: exactly one system name in braces, found 1
+   🟢 catalog-002: 'shall' directly after the {system name}
+   🟢 catalog-002: event-driven opens with 'When'
+   🟢 catalog-002: event-driven, no keyword other than 'when' before 'shall'
+   🟢 catalog-002: event-driven, comma before 'shall'
+   🟢 catalog-002: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 catalog-003: pattern event-driven
+   🟢 catalog-003: contains 'shall'
+   🟢 catalog-003: exactly one system name in braces, found 1
+   🟢 catalog-003: 'shall' directly after the {system name}
+   🟢 catalog-003: event-driven opens with 'When'
+   🟢 catalog-003: event-driven, no keyword other than 'when' before 'shall'
+   🟢 catalog-003: event-driven, comma before 'shall'
+   🟢 catalog-003: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 catalog-004: pattern event-driven
+   🟢 catalog-004: contains 'shall'
+   🟢 catalog-004: exactly one system name in braces, found 1
+   🟢 catalog-004: 'shall' directly after the {system name}
+   🟢 catalog-004: event-driven opens with 'When'
+   🟢 catalog-004: event-driven, no keyword other than 'when' before 'shall'
+   🟢 catalog-004: event-driven, comma before 'shall'
+   🟢 catalog-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 catalog-005: pattern ubiquitous
+   🟢 catalog-005: contains 'shall'
+   🟢 catalog-005: exactly one system name in braces, found 1
+   🟢 catalog-005: 'shall' directly after the {system name}
+   🟢 catalog-005: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 catalog-006: pattern ubiquitous
+   🟢 catalog-006: contains 'shall'
+   🟢 catalog-006: exactly one system name in braces, found 1
+   🟢 catalog-006: 'shall' directly after the {system name}
+   🟢 catalog-006: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 catalog-007: pattern unwanted
+   🟢 catalog-007: contains 'shall'
+   🟢 catalog-007: exactly one system name in braces, found 1
+   🟢 catalog-007: 'shall' directly after the {system name}
+   🟢 catalog-007: unwanted opens with 'If'
+   🟢 catalog-007: unwanted, no keyword other than 'if' before 'shall'
+   🟢 catalog-007: 'then' after 'If' and before 'shall'
+   🟢 catalog-007: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 catalog-008: pattern ubiquitous
+   🟢 catalog-008: contains 'shall'
+   🟢 catalog-008: exactly one system name in braces, found 1
+   🟢 catalog-008: 'shall' directly after the {system name}
+   🟢 catalog-008: ubiquitous, the {system name} comes first (only 'The' may precede it)
+
+8 requirement(s), 0 failure(s)
+
+check_req_form — features/identity/requirements.md
+
+   🟢 identity-001: line form
+   🟢 identity-002: line form
+   🟢 identity-003: line form
+   🟢 identity-004: line form
+   🟢 identity-005: line form
+   🟢 identity-006: line form
+   🟢 identity-007: line form
+   🟢 identity-008: line form
+   🟢 identity-009: line form
+   🟢 identity-010: line form
+   🟢 identity-011: line form
+   🟢 identity-012: line form
+   🟢 identity-013: line form
+   🟢 identity-014: line form
+   🟢 identity-015: line form
+   🟢 identity-016: line form
+   🟢 features/identity/requirements.md holds 16 requirement(s)
+
+16 requirement(s), 14 active, 0 failure(s)
+
+check_ears — features/identity/requirements.md
+
+   🟢 identity-001: pattern ubiquitous
+   🟢 identity-001: contains 'shall'
+   🟢 identity-001: exactly one system name in braces, found 1
+   🟢 identity-001: 'shall' directly after the {system name}
+   🟢 identity-001: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 identity-002: pattern ubiquitous
+   🟢 identity-002: contains 'shall'
+   🟢 identity-002: exactly one system name in braces, found 1
+   🟢 identity-002: 'shall' directly after the {system name}
+   🟢 identity-002: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 identity-003: pattern event-driven
+   🟢 identity-003: contains 'shall'
+   🟢 identity-003: exactly one system name in braces, found 1
+   🟢 identity-003: 'shall' directly after the {system name}
+   🟢 identity-003: event-driven opens with 'When'
+   🟢 identity-003: event-driven, no keyword other than 'when' before 'shall'
+   🟢 identity-003: event-driven, comma before 'shall'
+   🟢 identity-003: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-004: pattern event-driven
+   🟢 identity-004: contains 'shall'
+   🟢 identity-004: exactly one system name in braces, found 1
+   🟢 identity-004: 'shall' directly after the {system name}
+   🟢 identity-004: event-driven opens with 'When'
+   🟢 identity-004: event-driven, no keyword other than 'when' before 'shall'
+   🟢 identity-004: event-driven, comma before 'shall'
+   🟢 identity-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-005: pattern unwanted
+   🟢 identity-005: contains 'shall'
+   🟢 identity-005: exactly one system name in braces, found 1
+   🟢 identity-005: 'shall' directly after the {system name}
+   🟢 identity-005: unwanted opens with 'If'
+   🟢 identity-005: unwanted, no keyword other than 'if' before 'shall'
+   🟢 identity-005: 'then' after 'If' and before 'shall'
+   🟢 identity-005: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-006: pattern state-driven
+   🟢 identity-006: contains 'shall'
+   🟢 identity-006: exactly one system name in braces, found 1
+   🟢 identity-006: 'shall' directly after the {system name}
+   🟢 identity-006: state-driven opens with 'While'
+   🟢 identity-006: state-driven, no keyword other than 'while' before 'shall'
+   🟢 identity-006: state-driven, comma before 'shall'
+   🟢 identity-006: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-007: pattern ubiquitous
+   🟢 identity-007: contains 'shall'
+   🟢 identity-007: exactly one system name in braces, found 1
+   🟢 identity-007: 'shall' directly after the {system name}
+   🟢 identity-007: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 identity-008: pattern event-driven
+   🟢 identity-008: contains 'shall'
+   🟢 identity-008: exactly one system name in braces, found 1
+   🟢 identity-008: 'shall' directly after the {system name}
+   🟢 identity-008: event-driven opens with 'When'
+   🟢 identity-008: event-driven, no keyword other than 'when' before 'shall'
+   🟢 identity-008: event-driven, comma before 'shall'
+   🟢 identity-008: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-009: pattern event-driven
+   🟢 identity-009: contains 'shall'
+   🟢 identity-009: exactly one system name in braces, found 1
+   🟢 identity-009: 'shall' directly after the {system name}
+   🟢 identity-009: event-driven opens with 'When'
+   🟢 identity-009: event-driven, no keyword other than 'when' before 'shall'
+   🟢 identity-009: event-driven, comma before 'shall'
+   🟢 identity-009: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-010: pattern unwanted
+   🟢 identity-010: contains 'shall'
+   🟢 identity-010: exactly one system name in braces, found 1
+   🟢 identity-010: 'shall' directly after the {system name}
+   🟢 identity-010: unwanted opens with 'If'
+   🟢 identity-010: unwanted, no keyword other than 'if' before 'shall'
+   🟢 identity-010: 'then' after 'If' and before 'shall'
+   🟢 identity-010: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-011: pattern unwanted
+   🟢 identity-011: contains 'shall'
+   🟢 identity-011: exactly one system name in braces, found 1
+   🟢 identity-011: 'shall' directly after the {system name}
+   🟢 identity-011: unwanted opens with 'If'
+   🟢 identity-011: unwanted, no keyword other than 'if' before 'shall'
+   🟢 identity-011: 'then' after 'If' and before 'shall'
+   🟢 identity-011: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-012: pattern unwanted
+   🟢 identity-012: contains 'shall'
+   🟢 identity-012: exactly one system name in braces, found 1
+   🟢 identity-012: 'shall' directly after the {system name}
+   🟢 identity-012: unwanted opens with 'If'
+   🟢 identity-012: unwanted, no keyword other than 'if' before 'shall'
+   🟢 identity-012: 'then' after 'If' and before 'shall'
+   🟢 identity-012: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-013: pattern event-driven
+   🟢 identity-013: contains 'shall'
+   🟢 identity-013: exactly one system name in braces, found 1
+   🟢 identity-013: 'shall' directly after the {system name}
+   🟢 identity-013: event-driven opens with 'When'
+   🟢 identity-013: event-driven, no keyword other than 'when' before 'shall'
+   🟢 identity-013: event-driven, comma before 'shall'
+   🟢 identity-013: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 identity-014: pattern ubiquitous
+   🟢 identity-014: contains 'shall'
+   🟢 identity-014: exactly one system name in braces, found 1
+   🟢 identity-014: 'shall' directly after the {system name}
+   🟢 identity-014: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 identity-015: pattern ubiquitous
+   🟢 identity-015: contains 'shall'
+   🟢 identity-015: exactly one system name in braces, found 1
+   🟢 identity-015: 'shall' directly after the {system name}
+   🟢 identity-015: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 identity-016: pattern ubiquitous
+   🟢 identity-016: contains 'shall'
+   🟢 identity-016: exactly one system name in braces, found 1
+   🟢 identity-016: 'shall' directly after the {system name}
+   🟢 identity-016: ubiquitous, the {system name} comes first (only 'The' may precede it)
+
+16 requirement(s), 0 failure(s)
+
+check_req_form — features/inventory/requirements.md
+
+   🟢 inventory-001: line form
+   🟢 inventory-002: line form
+   🟢 inventory-003: line form
+   🟢 inventory-004: line form
+   🟢 inventory-005: line form
+   🟢 features/inventory/requirements.md holds 5 requirement(s)
+
+5 requirement(s), 5 active, 0 failure(s)
+
+check_ears — features/inventory/requirements.md
+
+   🟢 inventory-001: pattern ubiquitous
+   🟢 inventory-001: contains 'shall'
+   🟢 inventory-001: exactly one system name in braces, found 1
+   🟢 inventory-001: 'shall' directly after the {system name}
+   🟢 inventory-001: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 inventory-002: pattern ubiquitous
+   🟢 inventory-002: contains 'shall'
+   🟢 inventory-002: exactly one system name in braces, found 1
+   🟢 inventory-002: 'shall' directly after the {system name}
+   🟢 inventory-002: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 inventory-003: pattern event-driven
+   🟢 inventory-003: contains 'shall'
+   🟢 inventory-003: exactly one system name in braces, found 1
+   🟢 inventory-003: 'shall' directly after the {system name}
+   🟢 inventory-003: event-driven opens with 'When'
+   🟢 inventory-003: event-driven, no keyword other than 'when' before 'shall'
+   🟢 inventory-003: event-driven, comma before 'shall'
+   🟢 inventory-003: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 inventory-004: pattern unwanted
+   🟢 inventory-004: contains 'shall'
+   🟢 inventory-004: exactly one system name in braces, found 1
+   🟢 inventory-004: 'shall' directly after the {system name}
+   🟢 inventory-004: unwanted opens with 'If'
+   🟢 inventory-004: unwanted, no keyword other than 'if' before 'shall'
+   🟢 inventory-004: 'then' after 'If' and before 'shall'
+   🟢 inventory-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 inventory-005: pattern state-driven
+   🟢 inventory-005: contains 'shall'
+   🟢 inventory-005: exactly one system name in braces, found 1
+   🟢 inventory-005: 'shall' directly after the {system name}
+   🟢 inventory-005: state-driven opens with 'While'
+   🟢 inventory-005: state-driven, no keyword other than 'while' before 'shall'
+   🟢 inventory-005: state-driven, comma before 'shall'
+   🟢 inventory-005: the {system name} directly after the last clause (after the comma or 'then')
+
+5 requirement(s), 0 failure(s)
+
+check_req_form — features/pricing/requirements.md
+
+   🟢 pricing-001: line form
+   🟢 pricing-002: line form
+   🟢 features/pricing/requirements.md:7: supersedes identity-003 under pricing-002
+   🟢 pricing-003: line form
+   🟢 features/pricing/requirements.md:9: supersedes identity-004 under pricing-003
+   🟢 pricing-004: line form
+   🟢 pricing-005: line form
+   🟢 pricing-006: line form
+   🟢 pricing-007: line form
+   🟢 pricing-008: line form
+   🟢 pricing-009: line form
+   🟢 features/pricing/requirements.md:22: supersedes pricing-005 under pricing-009
+   🟢 pricing-010: line form
+   🟢 features/pricing/requirements.md holds 10 requirement(s)
+
+10 requirement(s), 9 active, 0 failure(s)
+
+check_ears — features/pricing/requirements.md
+
+   🟢 pricing-001: pattern ubiquitous
+   🟢 pricing-001: contains 'shall'
+   🟢 pricing-001: exactly one system name in braces, found 1
+   🟢 pricing-001: 'shall' directly after the {system name}
+   🟢 pricing-001: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 pricing-002: pattern state-driven
+   🟢 pricing-002: contains 'shall'
+   🟢 pricing-002: exactly one system name in braces, found 1
+   🟢 pricing-002: 'shall' directly after the {system name}
+   🟢 pricing-002: state-driven opens with 'While'
+   🟢 pricing-002: state-driven, no keyword other than 'while' before 'shall'
+   🟢 pricing-002: state-driven, comma before 'shall'
+   🟢 pricing-002: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-003: pattern state-driven
+   🟢 pricing-003: contains 'shall'
+   🟢 pricing-003: exactly one system name in braces, found 1
+   🟢 pricing-003: 'shall' directly after the {system name}
+   🟢 pricing-003: state-driven opens with 'While'
+   🟢 pricing-003: state-driven, no keyword other than 'while' before 'shall'
+   🟢 pricing-003: state-driven, comma before 'shall'
+   🟢 pricing-003: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-004: pattern event-driven
+   🟢 pricing-004: contains 'shall'
+   🟢 pricing-004: exactly one system name in braces, found 1
+   🟢 pricing-004: 'shall' directly after the {system name}
+   🟢 pricing-004: event-driven opens with 'When'
+   🟢 pricing-004: event-driven, no keyword other than 'when' before 'shall'
+   🟢 pricing-004: event-driven, comma before 'shall'
+   🟢 pricing-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-005: pattern ubiquitous
+   🟢 pricing-005: contains 'shall'
+   🟢 pricing-005: exactly one system name in braces, found 1
+   🟢 pricing-005: 'shall' directly after the {system name}
+   🟢 pricing-005: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 pricing-006: pattern event-driven
+   🟢 pricing-006: contains 'shall'
+   🟢 pricing-006: exactly one system name in braces, found 1
+   🟢 pricing-006: 'shall' directly after the {system name}
+   🟢 pricing-006: event-driven opens with 'When'
+   🟢 pricing-006: event-driven, no keyword other than 'when' before 'shall'
+   🟢 pricing-006: event-driven, comma before 'shall'
+   🟢 pricing-006: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-007: pattern ubiquitous
+   🟢 pricing-007: contains 'shall'
+   🟢 pricing-007: exactly one system name in braces, found 1
+   🟢 pricing-007: 'shall' directly after the {system name}
+   🟢 pricing-007: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 pricing-008: pattern ubiquitous
+   🟢 pricing-008: contains 'shall'
+   🟢 pricing-008: exactly one system name in braces, found 1
+   🟢 pricing-008: 'shall' directly after the {system name}
+   🟢 pricing-008: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 pricing-009: pattern ubiquitous
+   🟢 pricing-009: contains 'shall'
+   🟢 pricing-009: exactly one system name in braces, found 1
+   🟢 pricing-009: 'shall' directly after the {system name}
+   🟢 pricing-009: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 pricing-010: pattern event-driven
+   🟢 pricing-010: contains 'shall'
+   🟢 pricing-010: exactly one system name in braces, found 1
+   🟢 pricing-010: 'shall' directly after the {system name}
+   🟢 pricing-010: event-driven opens with 'When'
+   🟢 pricing-010: event-driven, no keyword other than 'when' before 'shall'
+   🟢 pricing-010: event-driven, comma before 'shall'
+   🟢 pricing-010: the {system name} directly after the last clause (after the comma or 'then')
+
+10 requirement(s), 0 failure(s)
+
+check_req_form — features/purchase/requirements.md
+
+   🟢 purchase-001: line form
+   🟢 purchase-002: line form
+   🟢 purchase-003: line form
+   🟢 purchase-004: line form
+   🟢 purchase-005: line form
+   🟢 purchase-006: line form
+   🟢 purchase-007: line form
+   🟢 purchase-008: line form
+   🟢 purchase-009: line form
+   🟢 purchase-010: line form
+   🟢 purchase-011: line form
+   🟢 purchase-012: line form
+   🟢 purchase-013: line form
+   🟢 purchase-014: line form
+   🟢 purchase-015: line form
+   🟢 purchase-016: line form
+   🟢 purchase-017: line form
+   🟢 purchase-018: line form
+   🟢 purchase-019: line form
+   🟢 purchase-020: line form
+   🟢 purchase-021: line form
+   🟢 purchase-022: line form
+   🟢 purchase-023: line form
+   🟢 features/purchase/requirements.md holds 23 requirement(s)
+
+23 requirement(s), 23 active, 0 failure(s)
+
+check_ears — features/purchase/requirements.md
+
+   🟢 purchase-001: pattern complex
+   🟢 purchase-001: contains 'shall'
+   🟢 purchase-001: exactly one system name in braces, found 1
+   🟢 purchase-001: 'shall' directly after the {system name}
+   🟢 purchase-001: complex opens with a keyword
+   🟢 purchase-001: complex, 2 different keyword(s) before 'shall' (needs 2)
+   🟢 purchase-001: complex, clauses in EARS order (Where, While, When/If)
+   🟢 purchase-001: complex, comma before 'shall'
+   🟢 purchase-001: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-002: pattern unwanted
+   🟢 purchase-002: contains 'shall'
+   🟢 purchase-002: exactly one system name in braces, found 1
+   🟢 purchase-002: 'shall' directly after the {system name}
+   🟢 purchase-002: unwanted opens with 'If'
+   🟢 purchase-002: unwanted, no keyword other than 'if' before 'shall'
+   🟢 purchase-002: 'then' after 'If' and before 'shall'
+   🟢 purchase-002: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-003: pattern event-driven
+   🟢 purchase-003: contains 'shall'
+   🟢 purchase-003: exactly one system name in braces, found 1
+   🟢 purchase-003: 'shall' directly after the {system name}
+   🟢 purchase-003: event-driven opens with 'When'
+   🟢 purchase-003: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-003: event-driven, comma before 'shall'
+   🟢 purchase-003: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-004: pattern event-driven
+   🟢 purchase-004: contains 'shall'
+   🟢 purchase-004: exactly one system name in braces, found 1
+   🟢 purchase-004: 'shall' directly after the {system name}
+   🟢 purchase-004: event-driven opens with 'When'
+   🟢 purchase-004: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-004: event-driven, comma before 'shall'
+   🟢 purchase-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-005: pattern event-driven
+   🟢 purchase-005: contains 'shall'
+   🟢 purchase-005: exactly one system name in braces, found 1
+   🟢 purchase-005: 'shall' directly after the {system name}
+   🟢 purchase-005: event-driven opens with 'When'
+   🟢 purchase-005: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-005: event-driven, comma before 'shall'
+   🟢 purchase-005: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-006: pattern unwanted
+   🟢 purchase-006: contains 'shall'
+   🟢 purchase-006: exactly one system name in braces, found 1
+   🟢 purchase-006: 'shall' directly after the {system name}
+   🟢 purchase-006: unwanted opens with 'If'
+   🟢 purchase-006: unwanted, no keyword other than 'if' before 'shall'
+   🟢 purchase-006: 'then' after 'If' and before 'shall'
+   🟢 purchase-006: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-007: pattern unwanted
+   🟢 purchase-007: contains 'shall'
+   🟢 purchase-007: exactly one system name in braces, found 1
+   🟢 purchase-007: 'shall' directly after the {system name}
+   🟢 purchase-007: unwanted opens with 'If'
+   🟢 purchase-007: unwanted, no keyword other than 'if' before 'shall'
+   🟢 purchase-007: 'then' after 'If' and before 'shall'
+   🟢 purchase-007: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-008: pattern ubiquitous
+   🟢 purchase-008: contains 'shall'
+   🟢 purchase-008: exactly one system name in braces, found 1
+   🟢 purchase-008: 'shall' directly after the {system name}
+   🟢 purchase-008: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-009: pattern optional
+   🟢 purchase-009: contains 'shall'
+   🟢 purchase-009: exactly one system name in braces, found 1
+   🟢 purchase-009: 'shall' directly after the {system name}
+   🟢 purchase-009: optional opens with 'Where'
+   🟢 purchase-009: optional, no keyword other than 'where' before 'shall'
+   🟢 purchase-009: optional, comma before 'shall'
+   🟢 purchase-009: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-010: pattern ubiquitous
+   🟢 purchase-010: contains 'shall'
+   🟢 purchase-010: exactly one system name in braces, found 1
+   🟢 purchase-010: 'shall' directly after the {system name}
+   🟢 purchase-010: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-011: pattern unwanted
+   🟢 purchase-011: contains 'shall'
+   🟢 purchase-011: exactly one system name in braces, found 1
+   🟢 purchase-011: 'shall' directly after the {system name}
+   🟢 purchase-011: unwanted opens with 'If'
+   🟢 purchase-011: unwanted, no keyword other than 'if' before 'shall'
+   🟢 purchase-011: 'then' after 'If' and before 'shall'
+   🟢 purchase-011: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-012: pattern ubiquitous
+   🟢 purchase-012: contains 'shall'
+   🟢 purchase-012: exactly one system name in braces, found 1
+   🟢 purchase-012: 'shall' directly after the {system name}
+   🟢 purchase-012: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-013: pattern event-driven
+   🟢 purchase-013: contains 'shall'
+   🟢 purchase-013: exactly one system name in braces, found 1
+   🟢 purchase-013: 'shall' directly after the {system name}
+   🟢 purchase-013: event-driven opens with 'When'
+   🟢 purchase-013: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-013: event-driven, comma before 'shall'
+   🟢 purchase-013: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-014: pattern ubiquitous
+   🟢 purchase-014: contains 'shall'
+   🟢 purchase-014: exactly one system name in braces, found 1
+   🟢 purchase-014: 'shall' directly after the {system name}
+   🟢 purchase-014: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-015: pattern ubiquitous
+   🟢 purchase-015: contains 'shall'
+   🟢 purchase-015: exactly one system name in braces, found 1
+   🟢 purchase-015: 'shall' directly after the {system name}
+   🟢 purchase-015: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-016: pattern ubiquitous
+   🟢 purchase-016: contains 'shall'
+   🟢 purchase-016: exactly one system name in braces, found 1
+   🟢 purchase-016: 'shall' directly after the {system name}
+   🟢 purchase-016: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-017: pattern event-driven
+   🟢 purchase-017: contains 'shall'
+   🟢 purchase-017: exactly one system name in braces, found 1
+   🟢 purchase-017: 'shall' directly after the {system name}
+   🟢 purchase-017: event-driven opens with 'When'
+   🟢 purchase-017: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-017: event-driven, comma before 'shall'
+   🟢 purchase-017: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-018: pattern ubiquitous
+   🟢 purchase-018: contains 'shall'
+   🟢 purchase-018: exactly one system name in braces, found 1
+   🟢 purchase-018: 'shall' directly after the {system name}
+   🟢 purchase-018: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-019: pattern ubiquitous
+   🟢 purchase-019: contains 'shall'
+   🟢 purchase-019: exactly one system name in braces, found 1
+   🟢 purchase-019: 'shall' directly after the {system name}
+   🟢 purchase-019: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 purchase-020: pattern event-driven
+   🟢 purchase-020: contains 'shall'
+   🟢 purchase-020: exactly one system name in braces, found 1
+   🟢 purchase-020: 'shall' directly after the {system name}
+   🟢 purchase-020: event-driven opens with 'When'
+   🟢 purchase-020: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-020: event-driven, comma before 'shall'
+   🟢 purchase-020: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-021: pattern event-driven
+   🟢 purchase-021: contains 'shall'
+   🟢 purchase-021: exactly one system name in braces, found 1
+   🟢 purchase-021: 'shall' directly after the {system name}
+   🟢 purchase-021: event-driven opens with 'When'
+   🟢 purchase-021: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-021: event-driven, comma before 'shall'
+   🟢 purchase-021: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-022: pattern event-driven
+   🟢 purchase-022: contains 'shall'
+   🟢 purchase-022: exactly one system name in braces, found 1
+   🟢 purchase-022: 'shall' directly after the {system name}
+   🟢 purchase-022: event-driven opens with 'When'
+   🟢 purchase-022: event-driven, no keyword other than 'when' before 'shall'
+   🟢 purchase-022: event-driven, comma before 'shall'
+   🟢 purchase-022: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 purchase-023: pattern ubiquitous
+   🟢 purchase-023: contains 'shall'
+   🟢 purchase-023: exactly one system name in braces, found 1
+   🟢 purchase-023: 'shall' directly after the {system name}
+   🟢 purchase-023: ubiquitous, the {system name} comes first (only 'The' may precede it)
+
+23 requirement(s), 0 failure(s)
+
+check_req_form — features/system/requirements.md
+
+   🟢 system-001: line form
+   🟢 system-002: line form
+   🟢 system-003: line form
+   🟢 system-004: line form
+   🟢 system-005: line form
+   🟢 system-006: line form
+   🟢 features/system/requirements.md holds 6 requirement(s)
+
+6 requirement(s), 6 active, 0 failure(s)
+
+check_ears — features/system/requirements.md
+
+   🟢 system-001: pattern ubiquitous
+   🟢 system-001: contains 'shall'
+   🟢 system-001: exactly one system name in braces, found 1
+   🟢 system-001: 'shall' directly after the {system name}
+   🟢 system-001: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 system-002: pattern ubiquitous
+   🟢 system-002: contains 'shall'
+   🟢 system-002: exactly one system name in braces, found 1
+   🟢 system-002: 'shall' directly after the {system name}
+   🟢 system-002: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 system-003: pattern ubiquitous
+   🟢 system-003: contains 'shall'
+   🟢 system-003: exactly one system name in braces, found 1
+   🟢 system-003: 'shall' directly after the {system name}
+   🟢 system-003: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 system-004: pattern state-driven
+   🟢 system-004: contains 'shall'
+   🟢 system-004: exactly one system name in braces, found 1
+   🟢 system-004: 'shall' directly after the {system name}
+   🟢 system-004: state-driven opens with 'While'
+   🟢 system-004: state-driven, no keyword other than 'while' before 'shall'
+   🟢 system-004: state-driven, comma before 'shall'
+   🟢 system-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 system-005: pattern ubiquitous
+   🟢 system-005: contains 'shall'
+   🟢 system-005: exactly one system name in braces, found 1
+   🟢 system-005: 'shall' directly after the {system name}
+   🟢 system-005: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 system-006: pattern state-driven
+   🟢 system-006: contains 'shall'
+   🟢 system-006: exactly one system name in braces, found 1
+   🟢 system-006: 'shall' directly after the {system name}
+   🟢 system-006: state-driven opens with 'While'
+   🟢 system-006: state-driven, no keyword other than 'while' before 'shall'
+   🟢 system-006: state-driven, comma before 'shall'
+   🟢 system-006: the {system name} directly after the last clause (after the comma or 'then')
+
+6 requirement(s), 0 failure(s)
+
+check_supersedes
+
+   🟢 identity-003 superseded by pricing-002; pricing-002 has 'supersedes: identity-003'
+   🟢 identity-004 superseded by pricing-003; pricing-003 has 'supersedes: identity-004'
+   🟢 pricing-002 supersedes identity-003; identity-003 ends with 'superseded by pricing-002'
+   🟢 pricing-003 supersedes identity-004; identity-004 ends with 'superseded by pricing-003'
+   🟢 pricing-005 superseded by pricing-009; pricing-009 has 'supersedes: pricing-005'
+   🟢 pricing-009 supersedes pricing-005; pricing-005 ends with 'superseded by pricing-009'
+
+80 requirement(s), 6 link end(s) checked, 0 failure(s)
+
+check_structurizr — /mnt/data/eventhub_part4_build/EventHub-Part4-Team5
+
+   🟢 workspace.dsl at the repository root
+   🟢 braces balance (17 open, 17 close)
+   🟢 workspace block present
+   🟢 model block present
+   🟢 views block present
+   ⚪ structurizr CLI not on PATH; cannot prove the file opens in Structurizr Lite
+   🟢 1 systemContext view(s) declared
+   🟢 1 container view(s) declared
+   🟢 1 component view(s) declared
+   🟢 diagrams/ exists
+   🟢 diagrams/ holds 8 PNG/SVG file(s) for 3 declared view(s)
+   🟢 export for systemContext view 'SystemContext' in diagrams/
+   🟢 export for container view 'Containers' in diagrams/
+   🟢 export for component view 'Components' in diagrams/
+
+0 failure(s)
+
+🟢 Part 3 gate: ELIGIBLE for grading

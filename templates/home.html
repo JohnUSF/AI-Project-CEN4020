@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% block title %}Discover events{% endblock %}
+{% block content %}
+<section class="hero"><div class="eyebrow">THE CAMPUS IS CALLING <span class="dash">—</span> FALL 2026</div><h1>Great moments.<br><em>Right here.</em></h1><p>Find live shows, performances and local events, all in one place.</p><form class="search" action="{{ url_for('home') }}" method="get"><label for="q" class="visually-hidden">Search artists or venues</label><input id="q" name="q" value="{{ query }}" maxlength="150" placeholder="Search artists or venues..."><button type="submit">Search events <span aria-hidden="true">↗</span></button></form></section>
+<section class="section-heading"><div><div class="eyebrow">THE LINEUP</div><h2>{% if query and not unmatched %}Search results{% else %}Upcoming events{% endif %}</h2></div><span class="muted">{{ events|length }} events</span></section>
+{% if unmatched %}<div class="notice">No events match <strong>{{ query }}</strong>. Here's the complete event list instead.</div>{% endif %}
+<div class="event-grid">
+{% for event in events %}
+<article class="event-card" data-event-url="{{ url_for('event_page', event_id=event['id']) }}" tabindex="0" aria-label="View {{ event['artist'] }} event" data-card>
+<div class="event-art palette-{{ loop.index0 % 4 }}"><span class="art-orbit"></span><span class="art-number">0{{ loop.index }}</span><div class="art-glyph" aria-hidden="true">{% if loop.index0 % 4 == 0 %}✳{% elif loop.index0 % 4 == 1 %}♫{% elif loop.index0 % 4 == 2 %}✦{% else %}◉{% endif %}</div></div>
+<div class="event-body"><p class="event-date">{{ event['starts_at'] }}</p><h3><a href="{{ url_for('event_page', event_id=event['id']) }}">{{ event['artist'] }}</a></h3><p class="muted">{{ event['venue'] }}</p><div class="event-bottom"><span class="inventory">{{ event['available'] }} left</span><span class="view-arrow" aria-hidden="true">↗</span></div></div>
+<form method="post" class="quick-buy-form" action="{{ url_for('quick_buy', event_id=event['id']) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"></form>
+</article>
+{% endfor %}</div>
+<p class="hint">Click a card to view details. Double-click a card to instantly buy one ticket using your saved currency. This demo does not charge real money.</p>
+{% endblock %}

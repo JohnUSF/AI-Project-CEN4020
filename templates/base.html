@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>{% block title %}EventHub{% endblock %} · EventHub</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="EventHub homepage"><span class="brand-mark">E<span class="dot">•</span></span> EventHub<span class="brand-sub"> / USF</span></a>
+      <nav aria-label="Main navigation">
+        <a href="{{ url_for('home') }}">Discover</a>
+        {% if current_user %}
+          <a href="{{ url_for('orders') }}">My tickets</a>
+          {% if current_user['role'] == 'administrator' %}<a href="{{ url_for('admin_home') }}">Admin</a>{% endif %}
+          <form class="nav-form" action="{{ url_for('logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-button" type="submit">Sign out</button></form>
+        {% else %}
+          <a href="{{ url_for('login') }}">Sign in</a><a class="nav-cta" href="{{ url_for('register') }}">Join EventHub</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}<div class="alerts" role="status">{% for category, message in messages %}<p class="alert alert-{{ category }}">{{ message }}</p>{% endfor %}</div>{% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer"><span>EventHub <strong>Classroom prototype</strong></span><span>Simulated payment only · No real ticket sales</span></footer>
+</body>
+</html>
