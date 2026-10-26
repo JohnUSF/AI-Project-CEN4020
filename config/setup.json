@@ -1,0 +1,10 @@
+{
+  "currency_note": "Demo-supported currencies; final customer list remains unconfirmed (Q7)",
+  "rates": {"USD": "1", "EUR": "0.92", "GBP": "0.78", "JPY": "150"},
+  "events": [
+    {"id": 1, "artist": "Campus Jazz Collective", "venue": "USF Music Hall", "starts_at": "2026-11-07 19:00", "description": "An evening of live jazz from student musicians and local performers.", "base_price_minor": 1800, "available": 120},
+    {"id": 2, "artist": "Indie Nights", "venue": "Marshall Student Center", "starts_at": "2026-11-13 20:00", "description": "A relaxed live showcase featuring emerging bands and acoustic sets.", "base_price_minor": 2500, "available": 80},
+    {"id": 3, "artist": "Tampa Dance Lab", "venue": "Bulls Arena", "starts_at": "2026-11-21 18:30", "description": "An energetic night of dance performances and creative collaborations.", "base_price_minor": 3200, "available": 150},
+    {"id": 4, "artist": "Acoustic Afternoon", "venue": "MLK Plaza", "starts_at": "2026-11-29 16:00", "description": "An outdoor afternoon concert with singer-songwriters and friends.", "base_price_minor": 1200, "available": 60}
+  ]
+}

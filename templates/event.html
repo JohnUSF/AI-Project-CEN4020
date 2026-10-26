@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block title %}{{ event['artist'] }}{% endblock %}
+{% block content %}
+<a href="{{ url_for('home') }}" class="back">← Back to events</a>
+<div class="event-layout"><div class="detail-art"><span>EVENT / {{ '%03d'|format(event['id']) }}</span><strong>LIVE<br>ON CAMPUS<span class="dot">.</span></strong></div>
+<div class="detail-info"><div class="eyebrow">COMING UP · {{ event['starts_at'] }}</div><h1>{{ event['artist'] }}</h1><p class="detail-venue">⌁ {{ event['venue'] }}</p><p class="detail-description">{{ event['description'] }}</p><div class="stat-row"><div><small>STARTING AT</small><strong>{{ price_text }}</strong></div><div><small>AVAILABLE</small><strong>{{ event['available'] }} tickets</strong></div></div><p class="muted tiny">Pricing and student discounts are finalized at checkout based on configured rules.</p><div class="actions"><a class="btn btn-primary" href="{{ url_for('checkout', event_id=event['id']) }}">Get tickets <span>↗</span></a><form action="{{ url_for('quick_buy', event_id=event['id']) }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="btn btn-secondary" type="submit">Quick buy 1</button></form></div></div></div>
+{% endblock %}

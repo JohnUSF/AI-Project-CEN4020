@@ -14,3 +14,8 @@
 ## Performance
 
 - **system-006** (state-driven): While [TBD: Q13 peak number of simultaneous buyers] buyers are active, the {EventHub} shall respond to a purchase request within [TBD: Q13 response-time target].
+
+## Call 4: testability and implementation agreement
+
+- **system-007** (ubiquitous): The {EventHub} shall keep identity, catalog, discount eligibility, pricing, inventory, purchase, audit and administration logic independently importable and testable.
+- **system-008** (ubiquitous): The {EventHub} shall run automated tests on the shared source branch before an implementation change is considered complete.

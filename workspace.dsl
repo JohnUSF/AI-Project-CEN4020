@@ -1,4 +1,4 @@
-workspace "EventHub Ticketing" "Final C4 model of EventHub version one after Call 3: one modular Flask application, one SQLite database, and two roles (buyer and administrator)." {
+workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 4: one modular Flask application, one SQLite database, and two roles (buyer and administrator)." {
 
     !impliedRelationships false
 
@@ -18,6 +18,8 @@ workspace "EventHub Ticketing" "Final C4 model of EventHub version one after Cal
                 catalog = component "Catalog" "Browsing, search by artist or venue, event pages, the no-match message followed by the full event list, and loading the event setup data." "Python / Flask"
 
                 pricing = component "Pricing" "The only place that computes a price: base price, quantity, USF discount eligibility, currency conversion and rounding, with money held as whole minor units. Also owns the exchange-rate table." "Python"
+
+                eligibility = component "USF Discount Eligibility" "Independent, unit-tested case-normalization and exact-domain classification function; plus-tags allowed, subdomains excluded provisionally pending customer confirmation." "Python (eventhub/eligibility.py)"
 
                 inventory = component "Inventory" "Owns the ticket counts. Checks availability and reduces the count in one indivisible step." "Python / SQL"
 
@@ -57,6 +59,7 @@ workspace "EventHub Ticketing" "Final C4 model of EventHub version one after Cal
         purchase -> identity "1. Checks the buyer is signed in"
         purchase -> catalog "2. Loads the event and its base price"
         purchase -> pricing "3. Computes the price in the chosen currency"
+        pricing -> eligibility "Checks normalized student email eligibility; returns only a boolean"
         purchase -> inventory "4. Checks availability and reduces the count (one atomic step)"
         purchase -> audit "5. Records the outcome (same transaction on success, after rollback on failure)"
 
@@ -93,8 +96,14 @@ workspace "EventHub Ticketing" "Final C4 model of EventHub version one after Cal
             autolayout lr
         }
 
-        component app "Components" "Component view of the Flask application: the purchase path and the administrator-only component." {
+        component app "Components" "Call 4 component view: includes independently testable USF discount eligibility, buyer purchase flow and restricted administration." {
             title "Component View: Flask Web Application"
+            include *
+            autolayout tb 300 220
+        }
+
+        component app "Part4Components" "Call 4 revised component model showing testable eligibility explicitly." {
+            title "Call 4: Component Boundaries and Discount Eligibility"
             include *
             autolayout tb 300 220
         }

@@ -1,0 +1,5 @@
+...........................................                              [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_identity.py:3: could not import 'werkzeug.security': No module named 'werkzeug'
+SKIPPED [1] tests/test_web.py:4: could not import 'flask': No module named 'flask'
+43 passed, 2 skipped in 0.40s

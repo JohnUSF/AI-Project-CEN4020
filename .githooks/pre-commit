@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+python -m compileall -q eventhub tests scripts
+ruff check eventhub tests scripts
+ruff format --check eventhub tests scripts
+python -m pytest -q
+python grading/check_part3.py . >/dev/null
+if git diff --cached --name-only | grep -Eq '^(eventhub/|templates/|static/)'; then
+  if ! git diff --cached --name-only | grep -Eq '^(features/|docs/part4-traceability\.md|docs/implementation-alignment\.md)'; then
+    echo 'WARNING: application code changed without staged requirement/model alignment.' >&2
+  fi
+fi
