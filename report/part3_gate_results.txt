@@ -1,4 +1,4 @@
-check_sdd_features_layout — /mnt/data/eventhub_part4_build/EventHub-Part4-Team5
+check_sdd_features_layout — /mnt/data/part4_revision
 
    🟢 features/ exists
    🟢 features/ holds 8 feature folder(s)
@@ -19,6 +19,8 @@ check_sdd_features_layout — /mnt/data/eventhub_part4_build/EventHub-Part4-Team
    🟢 features/audit/requirements.md:6: ID prefix 'audit' is the folder name
    🟢 features/audit/requirements.md:7: ID prefix 'audit' is the folder name
    🟢 features/audit/requirements.md:8: ID prefix 'audit' is the folder name
+   🟢 features/audit/requirements.md:12: ID prefix 'audit' is the folder name
+   🟢 features/audit/requirements.md:13: ID prefix 'audit' is the folder name
    🟢 folder name lowercase-hyphen: features/catalog/
    🟢 features/catalog/requirements.md exists
    🟢 features/catalog/requirements.md:5: ID prefix 'catalog' is the folder name
@@ -66,6 +68,10 @@ check_sdd_features_layout — /mnt/data/eventhub_part4_build/EventHub-Part4-Team
    🟢 features/pricing/requirements.md:17: ID prefix 'pricing' is the folder name
    🟢 features/pricing/requirements.md:21: ID prefix 'pricing' is the folder name
    🟢 features/pricing/requirements.md:23: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:27: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:29: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:30: ID prefix 'pricing' is the folder name
+   🟢 features/pricing/requirements.md:31: ID prefix 'pricing' is the folder name
    🟢 folder name lowercase-hyphen: features/purchase/
    🟢 features/purchase/requirements.md exists
    🟢 features/purchase/requirements.md:5: ID prefix 'purchase' is the folder name
@@ -99,6 +105,8 @@ check_sdd_features_layout — /mnt/data/eventhub_part4_build/EventHub-Part4-Team
    🟢 features/system/requirements.md:11: ID prefix 'system' is the folder name
    🟢 features/system/requirements.md:12: ID prefix 'system' is the folder name
    🟢 features/system/requirements.md:16: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:20: ID prefix 'system' is the folder name
+   🟢 features/system/requirements.md:21: ID prefix 'system' is the folder name
 
 8 feature folder(s), 0 failure(s)
 
@@ -183,9 +191,11 @@ check_req_form — features/audit/requirements.md
    🟢 audit-002: line form
    🟢 audit-003: line form
    🟢 audit-004: line form
-   🟢 features/audit/requirements.md holds 4 requirement(s)
+   🟢 audit-005: line form
+   🟢 audit-006: line form
+   🟢 features/audit/requirements.md holds 6 requirement(s)
 
-4 requirement(s), 4 active, 0 failure(s)
+6 requirement(s), 6 active, 0 failure(s)
 
 check_ears — features/audit/requirements.md
 
@@ -215,8 +225,18 @@ check_ears — features/audit/requirements.md
    🟢 audit-004: event-driven, no keyword other than 'when' before 'shall'
    🟢 audit-004: event-driven, comma before 'shall'
    🟢 audit-004: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 audit-005: pattern ubiquitous
+   🟢 audit-005: contains 'shall'
+   🟢 audit-005: exactly one system name in braces, found 1
+   🟢 audit-005: 'shall' directly after the {system name}
+   🟢 audit-005: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 audit-006: pattern ubiquitous
+   🟢 audit-006: contains 'shall'
+   🟢 audit-006: exactly one system name in braces, found 1
+   🟢 audit-006: 'shall' directly after the {system name}
+   🟢 audit-006: ubiquitous, the {system name} comes first (only 'The' may precede it)
 
-4 requirement(s), 0 failure(s)
+6 requirement(s), 0 failure(s)
 
 check_req_form — features/catalog/requirements.md
 
@@ -491,9 +511,14 @@ check_req_form — features/pricing/requirements.md
    🟢 pricing-009: line form
    🟢 features/pricing/requirements.md:22: supersedes pricing-005 under pricing-009
    🟢 pricing-010: line form
-   🟢 features/pricing/requirements.md holds 10 requirement(s)
+   🟢 pricing-011: line form
+   🟢 features/pricing/requirements.md:28: supersedes pricing-002 under pricing-011
+   🟢 pricing-012: line form
+   🟢 pricing-013: line form
+   🟢 pricing-014: line form
+   🟢 features/pricing/requirements.md holds 14 requirement(s)
 
-10 requirement(s), 9 active, 0 failure(s)
+14 requirement(s), 12 active, 0 failure(s)
 
 check_ears — features/pricing/requirements.md
 
@@ -562,8 +587,37 @@ check_ears — features/pricing/requirements.md
    🟢 pricing-010: event-driven, no keyword other than 'when' before 'shall'
    🟢 pricing-010: event-driven, comma before 'shall'
    🟢 pricing-010: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-011: pattern state-driven
+   🟢 pricing-011: contains 'shall'
+   🟢 pricing-011: exactly one system name in braces, found 1
+   🟢 pricing-011: 'shall' directly after the {system name}
+   🟢 pricing-011: state-driven opens with 'While'
+   🟢 pricing-011: state-driven, no keyword other than 'while' before 'shall'
+   🟢 pricing-011: state-driven, comma before 'shall'
+   🟢 pricing-011: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-012: pattern ubiquitous
+   🟢 pricing-012: contains 'shall'
+   🟢 pricing-012: exactly one system name in braces, found 1
+   🟢 pricing-012: 'shall' directly after the {system name}
+   🟢 pricing-012: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 pricing-013: pattern event-driven
+   🟢 pricing-013: contains 'shall'
+   🟢 pricing-013: exactly one system name in braces, found 1
+   🟢 pricing-013: 'shall' directly after the {system name}
+   🟢 pricing-013: event-driven opens with 'When'
+   🟢 pricing-013: event-driven, no keyword other than 'when' before 'shall'
+   🟢 pricing-013: event-driven, comma before 'shall'
+   🟢 pricing-013: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 pricing-014: pattern event-driven
+   🟢 pricing-014: contains 'shall'
+   🟢 pricing-014: exactly one system name in braces, found 1
+   🟢 pricing-014: 'shall' directly after the {system name}
+   🟢 pricing-014: event-driven opens with 'When'
+   🟢 pricing-014: event-driven, no keyword other than 'when' before 'shall'
+   🟢 pricing-014: event-driven, comma before 'shall'
+   🟢 pricing-014: the {system name} directly after the last clause (after the comma or 'then')
 
-10 requirement(s), 0 failure(s)
+14 requirement(s), 0 failure(s)
 
 check_req_form — features/purchase/requirements.md
 
@@ -765,9 +819,11 @@ check_req_form — features/system/requirements.md
    🟢 system-004: line form
    🟢 system-005: line form
    🟢 system-006: line form
-   🟢 features/system/requirements.md holds 6 requirement(s)
+   🟢 system-007: line form
+   🟢 system-008: line form
+   🟢 features/system/requirements.md holds 8 requirement(s)
 
-6 requirement(s), 6 active, 0 failure(s)
+8 requirement(s), 8 active, 0 failure(s)
 
 check_ears — features/system/requirements.md
 
@@ -807,36 +863,49 @@ check_ears — features/system/requirements.md
    🟢 system-006: state-driven, no keyword other than 'while' before 'shall'
    🟢 system-006: state-driven, comma before 'shall'
    🟢 system-006: the {system name} directly after the last clause (after the comma or 'then')
+   🟢 system-007: pattern ubiquitous
+   🟢 system-007: contains 'shall'
+   🟢 system-007: exactly one system name in braces, found 1
+   🟢 system-007: 'shall' directly after the {system name}
+   🟢 system-007: ubiquitous, the {system name} comes first (only 'The' may precede it)
+   🟢 system-008: pattern ubiquitous
+   🟢 system-008: contains 'shall'
+   🟢 system-008: exactly one system name in braces, found 1
+   🟢 system-008: 'shall' directly after the {system name}
+   🟢 system-008: ubiquitous, the {system name} comes first (only 'The' may precede it)
 
-6 requirement(s), 0 failure(s)
+8 requirement(s), 0 failure(s)
 
 check_supersedes
 
    🟢 identity-003 superseded by pricing-002; pricing-002 has 'supersedes: identity-003'
    🟢 identity-004 superseded by pricing-003; pricing-003 has 'supersedes: identity-004'
    🟢 pricing-002 supersedes identity-003; identity-003 ends with 'superseded by pricing-002'
+   🟢 pricing-002 superseded by pricing-011; pricing-011 has 'supersedes: pricing-002'
    🟢 pricing-003 supersedes identity-004; identity-004 ends with 'superseded by pricing-003'
    🟢 pricing-005 superseded by pricing-009; pricing-009 has 'supersedes: pricing-005'
    🟢 pricing-009 supersedes pricing-005; pricing-005 ends with 'superseded by pricing-009'
+   🟢 pricing-011 supersedes pricing-002; pricing-002 ends with 'superseded by pricing-011'
 
-80 requirement(s), 6 link end(s) checked, 0 failure(s)
+88 requirement(s), 8 link end(s) checked, 0 failure(s)
 
-check_structurizr — /mnt/data/eventhub_part4_build/EventHub-Part4-Team5
+check_structurizr — /mnt/data/part4_revision
 
    🟢 workspace.dsl at the repository root
-   🟢 braces balance (17 open, 17 close)
+   🟢 braces balance (18 open, 18 close)
    🟢 workspace block present
    🟢 model block present
    🟢 views block present
    ⚪ structurizr CLI not on PATH; cannot prove the file opens in Structurizr Lite
    🟢 1 systemContext view(s) declared
    🟢 1 container view(s) declared
-   🟢 1 component view(s) declared
+   🟢 2 component view(s) declared
    🟢 diagrams/ exists
-   🟢 diagrams/ holds 8 PNG/SVG file(s) for 3 declared view(s)
+   🟢 diagrams/ holds 10 PNG/SVG file(s) for 4 declared view(s)
    🟢 export for systemContext view 'SystemContext' in diagrams/
    🟢 export for container view 'Containers' in diagrams/
    🟢 export for component view 'Components' in diagrams/
+   🟢 export for component view 'Part4Components' in diagrams/
 
 0 failure(s)
 

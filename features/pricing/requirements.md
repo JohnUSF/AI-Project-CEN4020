@@ -3,7 +3,7 @@
 ## Currency and discount
 
 - **pricing-001** (ubiquitous): The {EventHub} shall accept a currency selection only from its server-side list of supported currencies [TBD: Q7 final currency list] and shall reject any other currency value, whatever the client submits.
-- **pricing-002** (state-driven): While an account's email address ends in "@usf.edu", the {EventHub} shall apply the USF student discount [TBD: Q1 discount amount, Q2 discount scope] to every order placed by that account.
+- **pricing-002** (state-driven): While an account's email address ends in "@usf.edu", the {EventHub} shall apply the USF student discount [TBD: Q1 discount amount, Q2 discount scope] to every order placed by that account. superseded by pricing-011
   supersedes: identity-003
 - **pricing-003** (state-driven): While an account's email address does not end in "@usf.edu", the {EventHub} shall charge the standard, non-discounted price for every order placed by that account.
   supersedes: identity-004
@@ -21,3 +21,11 @@
 - **pricing-009** (ubiquitous): The {EventHub} shall convert and display ticket prices using the exchange rates stored in its database and shall use no external live-rate provider.
   supersedes: pricing-005
 - **pricing-010** (event-driven): When an exchange rate is changed, the {EventHub} shall apply the new rate to every price computed after the change.
+
+## Call 4: testable discount eligibility and provisional email rules
+
+- **pricing-011** (state-driven): While an account email has the exact domain "@usf.edu" after case normalization, the {EventHub} shall treat the account as eligible for the USF student discount [TBD: Q1 discount amount and Q2 discount scope].
+  supersedes: pricing-002
+- **pricing-012** (ubiquitous): The {EventHub} shall trim and case-normalize account email addresses before the dedicated discount eligibility function compares their domains.
+- **pricing-013** (event-driven): When an account email has a plus-tagged local part and the exact domain "@usf.edu", the {EventHub} shall treat the account as eligible under the documented provisional email policy [ASSUMPTION: Q17 customer confirmation pending].
+- **pricing-014** (event-driven): When an account email belongs to a subdomain such as "@mail.usf.edu", the {EventHub} shall treat the account as ineligible under the documented provisional email policy [ASSUMPTION: Q17 customer confirmation pending].

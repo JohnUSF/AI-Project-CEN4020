@@ -1,6 +1,6 @@
-# EventHub — AI Project Part 4 (Team 5, Gold-member draft)
+# EventHub — AI Project Part 4 (Team 5, Gold-member reviewed revision)
 
-**A working-code draft for teammate review, separate from the team's existing GitHub work.** This package builds from the provided Part 3 EventHub EARS requirements, DSL diagrams and ADRs. The original Part 3 files under `features/`, `diagrams/`, `workspace.dsl`, and earlier `docs/decisions/` are preserved. Nothing was pushed to the shared repository.
+**A review-ready revision of the Gold-member working branch; not merged into John's `main`.** This package builds from the provided Part 3 EventHub EARS requirements, DSL diagrams and ADRs. The original Call 3 DSL is preserved at `docs/part4-design-baseline/workspace-call3.dsl`. Part 4 **updates** EARS requirements with supersession links and revises the component view; the earlier exported diagrams and decisions are retained for comparison. This package is intended for the existing Part 4 PR review branch, not `main`.
 
 The app is a responsive modular **Python / Flask / SQLite classroom prototype**. Tickets and payment are **simulated**; it does not charge customers or issue real tickets.
 
@@ -12,6 +12,8 @@ Use Python 3.10 or newer. In the extracted project root:
 python3 -m venv .venv
 source .venv/bin/activate                 # Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements-dev.txt
+ruff format eventhub tests scripts  # run once after reviewing formatter changes
+ruff format --check eventhub tests scripts
 python -m pytest -q
 python grading/check_part3.py .
 python run.py
@@ -49,14 +51,14 @@ No website request can grant administrator access. Admin can update rates (audit
 | `tests/` | Domain tests, concurrency tests, and Flask HTTP integration tests |
 | `.github/workflows/quality.yml` | Compile, lint, unit/integration tests, Part 3 eligibility gate on pushes/PRs |
 | `CONTRIBUTING.md` and `.githooks/pre-commit` | Review policy and optional local safety checks |
-| `features/`, `workspace.dsl`, `diagrams/`, `docs/decisions/` | **Unmodified Part 3 originals** |
+| `features/`, `workspace.dsl`, `diagrams/`, `docs/decisions/` | **Call 4 revisions** to EARS and component DSL; prior diagrams and ADRs retained; baseline snapshot in `docs/part4-design-baseline/` |
 | `docs/implementation-alignment.md` | Requirement-to-code traceability, Call 4 changes and outstanding decisions |
-| `docs/ai-process-log.md` | Actual AI drafting, corrections, verification outcomes, limitations |
+| `docs/ai-process-log.md` | Component contract cards, before/after correction evidence, actual review findings and proof limits |
 | `report/EventHub_Part4_Assignment_Report.pdf` | Assignment narrative for teammate review and submission |
 
 ## Testing notes
 
-Run `python -m pytest -q`; the same command runs automatically in GitHub Actions. Tests cover rate validation, JPY and USD integer amounts, case-insensitive USF email eligibility, error cases, search fallback, atomic inventory protection, the race for one remaining ticket, per-attempt audit, immutable order-rate snapshots, admin rate edits and one-use check-in. Tests under `test_identity.py` and `test_web.py` require the dependencies in `requirements-dev.txt`.
+Run `python -m pytest -q`, `ruff format --check eventhub tests scripts` and `python grading/check_part3.py .`; the same test command runs automatically in GitHub Actions. Tests cover rate validation, JPY and USD integer amounts, case-insensitive USF email eligibility, error cases, search fallback, atomic inventory protection, the race for one remaining ticket, per-attempt audit, immutable order-rate snapshots, admin rate edits and one-use check-in. Tests under `test_identity.py` and `test_web.py` require the dependencies in `requirements-dev.txt`.
 
 To enable optional local hook: `git config core.hooksPath .githooks`. For **hard** merge blocking, a repo maintainer must also require `EventHub quality` via GitHub branch protection/rulesets. The app itself is not deployed or connected to a live payment processor.
 
@@ -68,6 +70,6 @@ To enable optional local hook: `git config core.hooksPath .githooks`. For **hard
 - **Browsers cannot prevent screenshots**; `purchase-015` cannot be satisfied reliably by an ordinary website.
 - **Checkout abandonment on browser close is best-effort**, as accepted in ADR-005; no guarantee of one abandonment event for an abrupt disconnect.
 - **Peak load, retention and login abuse policies are not confirmed**; the application is a course prototype, not a production deployment.
-- **This build environment lacked Flask/Werkzeug**, so local HTTP tests were skipped while domain tests passed. GitHub CI is configured to install dependencies and run all tests. A reviewer should confirm the full CI job is green before claiming all integration tests passed.
+- **This review environment lacks Flask/Werkzeug**, so its HTTP and authentication test files are skipped. GitHub Actions installs dependencies and must be checked on the latest revision commit; prior green checks do not certify this later revision.
 
 © Team 5 educational prototype. Design contributions from prior team work remain credited in the original files.

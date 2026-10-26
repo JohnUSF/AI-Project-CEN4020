@@ -1,0 +1,30 @@
+digraph C4 {
+ graph [rankdir=LR, bgcolor="white", pad="0.30", nodesep="0.36", ranksep="0.65", fontname="DejaVu Sans", label="CALL 4  •  EVENTHUB FLASK APPLICATION\nUpdated C4 component relationships", labelloc=t, fontsize=20, fontcolor="#12395C", splines=polyline];
+ node [shape=box, style="rounded,filled", color="#3876A8", penwidth=1, fillcolor="#E7F2FB", fontname="DejaVu Sans", fontsize=12, margin="0.17,0.12"];
+ edge [fontname="DejaVu Sans", fontsize=9, color="#51738D", arrowsize=.65];
+ buyer [label="Buyer",shape=ellipse,fillcolor="#E7F2FB"];
+ adminUser [label="Administrator",shape=ellipse,fillcolor="#FCE7D6",color="#CE7E47"];
+ boundary [label="Boundary Validation\nFlask request checks"];
+ identity [label="Identity & Sessions\nRoles · login · expiry"];
+ catalog [label="Catalog\nBrowse · search"];
+ purchase [label="Purchase & Orders\nTransactional checkout"];
+ pricing [label="Pricing\nONE compute_quote()"];
+ eligibility [label="USF Discount Eligibility\nnormalize_email()\neligible_for_usf_discount()",fillcolor="#CFF0DC",color="#3A9272",penwidth=2];
+ inventory [label="Inventory\nAtomic decrement"];
+ audit [label="Audit Log\nAccount activity · retention TBD"];
+ admin [label="Administration\nRates · audit viewer",fillcolor="#FCE0BD",color="#D68A40"];
+ db [label="SQLite\nWAL · transaction",shape=cylinder,fillcolor="#EDF0F5",color="#8795A5"];
+ buyer -> boundary [label="buyer requests"];
+ adminUser -> boundary [label="admin-only requests"];
+ boundary -> identity; boundary -> catalog; boundary -> purchase; boundary -> admin;
+ purchase -> identity [label="1. authorize", color="#2573B7"];
+ purchase -> catalog [label="2. event",color="#2573B7"];
+ purchase -> pricing [label="3. compute",color="#2573B7"];
+ pricing -> eligibility [label="normalize + classify",color="#258A63",penwidth=2];
+ purchase -> inventory [label="4. check & decrement",color="#2573B7"];
+ purchase -> audit [label="5. audit",color="#2573B7"];
+ admin -> identity [label="role"];
+ admin -> pricing [label="rates"];
+ admin -> audit [label="read"];
+ inventory -> db [style=dotted]; audit -> db [style=dotted]; pricing -> db [style=dotted];
+}

@@ -1,13 +1,29 @@
-# Contributing to EventHub
+# Contributing to EventHub — Call 4 implementation protocol
 
-1. Branch from the shared branch; use descriptive commit messages and small pull requests.
-2. Review AI-generated code yourself before committing. Explain the intended behavior and test it.
-3. Update EARS specifications or `docs/implementation-alignment.md` when behavior changes.
-4. Run `python -m pytest -q` and `python grading/check_part3.py .` locally.
-5. Run `python -m compileall -q eventhub tests scripts` and a small `ruff check` before pushing.
-6. Optionally enable local checks with `git config core.hooksPath .githooks`.
-7. The `EventHub quality` GitHub Action re-runs tests on every push and pull request; enable branch protection to require it before merge. A workflow alone cannot block merges without protection.
-8. Pair-programming credit: include `Co-authored-by: Name <email>` only for actual shared work.
-9. Never commit credentials, database files, tickets, private emails, or API keys.
+## Definition of done (four mandatory boxes adopted in Call 4)
 
-**The Part 3 requirements and decision records are preserved unchanged in this review package.** The implementation departures and unresolved questions are listed in `docs/implementation-alignment.md`.
+A feature is **done only when all four conditions are true**:
+
+- [ ] **Human code review:** a teammate other than the author has reviewed the actual code and resolved feedback.
+- [ ] **Tests:** standalone unit tests and related HTTP/integration tests pass, with no unexpected skipped files.
+- [ ] **Specification:** update `features/<name>/requirements.md` with new EARS IDs and valid supersedes links if the requirement changed; update `docs/part4-traceability.md` and `workspace.dsl`/diagram when component relationships change.
+- [ ] **Automated gates:** compile, `ruff check`, `ruff format --check`, pytest and Part 3 structural/EARS gate all pass on the PR's **latest commit**.
+
+## Work process
+
+1. Branch from the latest `main`; make small related commits and preserve the Gold/Silver review split.
+2. Use the component contracts in `docs/implementation-alignment.md` when requesting AI code; review every generated line before merge.
+3. Test locally with `python -m pip install -r requirements-dev.txt` and `python -m pytest -q`.
+4. Run `ruff format eventhub tests scripts` **to apply formatting**, then `ruff format --check eventhub tests scripts` and `ruff check eventhub tests scripts`.
+5. Run `python -m compileall -q eventhub tests scripts` and `python grading/check_part3.py .`.
+6. Opt into the pre-commit hook via `git config core.hooksPath .githooks` (not installed automatically).
+7. Never commit credentials, user database files, discount numbers invented for production, or actual customer emails containing private data.
+8. Co-author trailers are only for work actually performed together.
+
+## Enforced checks vs repository settings
+
+The GitHub Actions workflow runs automatically on push/PR. **It does not block merging without a repository rule:** John (repository maintainer) must configure **Settings → Rules → Rulesets** (or Branch protection) to require the named quality checks on `main` and one approving review. This setting has not been verified from within this package.
+
+## Open product decisions
+
+The Call 4 transcript says decisions Q2/Q4/Q5/Q6 were recorded in customer emails, but these emails are not in the shared files. Request them; do not guess. Q1 discount percentage and Q16 retention remain [TBD]; Q17 alias/subdomain behavior is a documented **provisional assumption**.
