@@ -1,0 +1,18 @@
+EVENTHUB PART 4 — VERIFIED AUTOMATED CHECKS
+Repository: https://github.com/JohnUSF/AI-Project-CEN4020
+Pull request: https://github.com/JohnUSF/AI-Project-CEN4020/pull/1
+Branch: part4-jaideep-gold
+Commit: 81c44f1df67a08994d0e2079706fce5a9e7e8322
+Run: https://github.com/JohnUSF/AI-Project-CEN4020/actions/runs/40391292815
+Conclusion: success
+Executed checks and statuses:
+- Installed development dependencies: successful (Flask 3.1.3, Werkzeug 3.1.9 among them)
+- Python compilation: successful
+- Ruff lint: successful
+- Ruff format check: successful
+- Pytest: 59 passed in 3.01s; 0 failed; 0 skipped
+- Part 3/Part 4 EARS and C4 eligibility: ELIGIBLE for grading
+
+Status based on GitHub Actions job 121812644413 logs retrieved October 26, 2026.
+The course eligibility script does not guarantee semantic quality or final grade.
+Approving teammate review, undisclosed policy decisions and Canvas upload were not verified.
