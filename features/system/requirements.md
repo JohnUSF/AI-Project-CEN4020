@@ -19,3 +19,7 @@
 
 - **system-007** (ubiquitous): The {EventHub} shall keep identity, catalog, discount eligibility, pricing, inventory, purchase, audit and administration logic independently importable and testable.
 - **system-008** (ubiquitous): The {EventHub} shall run automated tests on the shared source branch before an implementation change is considered complete.
+
+## Call 5: tests that trace to the specification
+
+- **system-009** (ubiquitous): The {EventHub} shall carry a requirement identifier on every automated test, so that a failing test names the requirement it protects.

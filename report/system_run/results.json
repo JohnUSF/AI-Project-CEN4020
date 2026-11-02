@@ -1,0 +1,2478 @@
+{
+ "finished_at": "2026-11-01 15:47:15",
+ "suite": "system",
+ "tests": [
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[0]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[0]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.02,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[-1]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[-1]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.83,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[-100]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[-100]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.76,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[abc]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[abc]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.1,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[1.5]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[1.5]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.13,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[1e2]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[1e2]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.9,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[ 3]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[ 3]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.88,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.43,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[\\uff12]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[\\uff12]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.99,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[10001]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[10001]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.84,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[999999999]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[999999999]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.2,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[00000000001]",
+   "name": "test_invalid_quantities_are_rejected_on_the_server_with_a_quantity_message[00000000001]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.85,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_asking_for_more_than_remain_says_sold_out_not_invalid_quantity",
+   "name": "test_asking_for_more_than_remain_says_sold_out_not_invalid_quantity",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.94,
+   "reqs": [
+    "purchase-006",
+    "purchase-011",
+    "inventory-004"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_buying_exactly_the_remaining_tickets_works_and_the_next_buyer_is_told_sold_out",
+   "name": "test_buying_exactly_the_remaining_tickets_works_and_the_next_buyer_is_told_sold_out",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.18,
+   "reqs": [
+    "purchase-004",
+    "inventory-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_buying_one_ticket_is_the_smallest_valid_order",
+   "name": "test_buying_one_ticket_is_the_smallest_valid_order",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.88,
+   "reqs": [
+    "purchase-004"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[XYZ]",
+   "name": "test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[XYZ]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.12,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[usd]",
+   "name": "test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[usd]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.34,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[USD ]",
+   "name": "test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[USD ]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.79,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[BTC]",
+   "name": "test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[BTC]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.97,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[USD'; DROP TABLE orders;--]",
+   "name": "test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[USD'; DROP TABLE orders;--]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.96,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[]",
+   "name": "test_unsupported_currency_values_are_rejected_whatever_the_browser_sends[]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.14,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_every_supported_currency_can_be_bought_in[USD]",
+   "name": "test_every_supported_currency_can_be_bought_in[USD]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.93,
+   "reqs": [
+    "pricing-006",
+    "pricing-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_every_supported_currency_can_be_bought_in[EUR]",
+   "name": "test_every_supported_currency_can_be_bought_in[EUR]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.95,
+   "reqs": [
+    "pricing-006",
+    "pricing-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_every_supported_currency_can_be_bought_in[GBP]",
+   "name": "test_every_supported_currency_can_be_bought_in[GBP]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.96,
+   "reqs": [
+    "pricing-006",
+    "pricing-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_every_supported_currency_can_be_bought_in[JPY]",
+   "name": "test_every_supported_currency_can_be_bought_in[JPY]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.92,
+   "reqs": [
+    "pricing-006",
+    "pricing-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_protected_pages_redirect_signed_out_visitors_to_login[/checkout/1]",
+   "name": "test_protected_pages_redirect_signed_out_visitors_to_login[/checkout/1]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.15,
+   "reqs": [
+    "identity-010",
+    "identity-011",
+    "identity-012"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_protected_pages_redirect_signed_out_visitors_to_login[/orders]",
+   "name": "test_protected_pages_redirect_signed_out_visitors_to_login[/orders]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.15,
+   "reqs": [
+    "identity-010",
+    "identity-011",
+    "identity-012"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_protected_pages_redirect_signed_out_visitors_to_login[/orders/1]",
+   "name": "test_protected_pages_redirect_signed_out_visitors_to_login[/orders/1]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.14,
+   "reqs": [
+    "identity-010",
+    "identity-011",
+    "identity-012"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_protected_pages_redirect_signed_out_visitors_to_login[/quote/1?quantity=1]",
+   "name": "test_protected_pages_redirect_signed_out_visitors_to_login[/quote/1?quantity=1]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.15,
+   "reqs": [
+    "identity-010",
+    "identity-011",
+    "identity-012"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_forged_purchase_post_from_a_signed_out_browser_buys_nothing",
+   "name": "test_a_forged_purchase_post_from_a_signed_out_browser_buys_nothing",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "identity-007",
+    "identity-012",
+    "purchase-005"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_matches_artist_or_venue_ignoring_case_and_padding[JAZZ-Campus Jazz Collective]",
+   "name": "test_search_matches_artist_or_venue_ignoring_case_and_padding[JAZZ-Campus Jazz Collective]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.12,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_matches_artist_or_venue_ignoring_case_and_padding[jazz-Campus Jazz Collective]",
+   "name": "test_search_matches_artist_or_venue_ignoring_case_and_padding[jazz-Campus Jazz Collective]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.1,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_matches_artist_or_venue_ignoring_case_and_padding[  jazz  -Campus Jazz Collective]",
+   "name": "test_search_matches_artist_or_venue_ignoring_case_and_padding[  jazz  -Campus Jazz Collective]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_matches_artist_or_venue_ignoring_case_and_padding[marshall-Indie Nights]",
+   "name": "test_search_matches_artist_or_venue_ignoring_case_and_padding[marshall-Indie Nights]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_matches_artist_or_venue_ignoring_case_and_padding[Bulls Arena-Tampa Dance Lab]",
+   "name": "test_search_matches_artist_or_venue_ignoring_case_and_padding[Bulls Arena-Tampa Dance Lab]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.16,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_matches_artist_or_venue_ignoring_case_and_padding[acou-Acoustic Afternoon]",
+   "name": "test_search_matches_artist_or_venue_ignoring_case_and_padding[acou-Acoustic Afternoon]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[zzzz-no-such-band]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[zzzz-no-such-band]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.36,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[%]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[%]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.41,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[_]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[_]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.44,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[%%]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[%%]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.41,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[' OR '1'='1]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[' OR '1'='1]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.97,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[Caf\\xe9 \\u2615]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[Caf\\xe9 \\u2615]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.48,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_search_with_no_match_says_so_and_then_lists_everything[\\\\]",
+   "name": "test_a_search_with_no_match_says_so_and_then_lists_everything[\\\\]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.35,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_an_empty_search_shows_the_full_list_without_a_complaint[]",
+   "name": "test_an_empty_search_shows_the_full_list_without_a_complaint[]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.2,
+   "reqs": [
+    "catalog-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_an_empty_search_shows_the_full_list_without_a_complaint[   ]",
+   "name": "test_an_empty_search_shows_the_full_list_without_a_complaint[   ]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.23,
+   "reqs": [
+    "catalog-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_text_is_echoed_as_plain_text_never_as_markup[<script>window.__xss=1</script>]",
+   "name": "test_search_text_is_echoed_as_plain_text_never_as_markup[<script>window.__xss=1</script>]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.83,
+   "reqs": [
+    "catalog-008",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_text_is_echoed_as_plain_text_never_as_markup[\"><img src=x onerror=window.__xss=1>]",
+   "name": "test_search_text_is_echoed_as_plain_text_never_as_markup[\"><img src=x onerror=window.__xss=1>]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.81,
+   "reqs": [
+    "catalog-008",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_search_text_is_echoed_as_plain_text_never_as_markup['><svg onload=window.__xss=1>]",
+   "name": "test_search_text_is_echoed_as_plain_text_never_as_markup['><svg onload=window.__xss=1>]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.8,
+   "reqs": [
+    "catalog-008",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_very_long_search_term_does_not_break_the_page",
+   "name": "test_a_very_long_search_term_does_not_break_the_page",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.23,
+   "reqs": [
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_registration_rejects_bad_names_and_passwords[Short Pass-shortpass@example.com-abc123-Password must be between]",
+   "name": "test_registration_rejects_bad_names_and_passwords[Short Pass-shortpass@example.com-abc123-Password must be between]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.75,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_registration_rejects_bad_names_and_passwords[Nine Chars-nine@example.com-123456789-Password must be between]",
+   "name": "test_registration_rejects_bad_names_and_passwords[Nine Chars-nine@example.com-123456789-Password must be between]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_registration_rejects_bad_names_and_passwords[-noname@example.com-correct-horse-battery-valid name]",
+   "name": "test_registration_rejects_bad_names_and_passwords[-noname@example.com-correct-horse-battery-valid name]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.75,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_registration_rejects_bad_names_and_passwords[   -blankname@example.com-correct-horse-battery-valid name]",
+   "name": "test_registration_rejects_bad_names_and_passwords[   -blankname@example.com-correct-horse-battery-valid name]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.29,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_registration_rejects_bad_names_and_passwords[NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-longname@example.com-correct-horse-battery-valid name]",
+   "name": "test_registration_rejects_bad_names_and_passwords[NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-longname@example.com-correct-horse-battery-valid name]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.23,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_registration_rejects_bad_names_and_passwords[Long Pass-longpass@example.com-ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp-Password must be between]",
+   "name": "test_registration_rejects_bad_names_and_passwords[Long Pass-longpass@example.com-ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp-Password must be between]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.81,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_the_same_email_cannot_register_twice_whatever_its_case",
+   "name": "test_the_same_email_cannot_register_twice_whatever_its_case",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.46,
+   "reqs": [
+    "identity-001"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_name_with_html_in_it_is_stored_and_shown_as_text",
+   "name": "test_a_name_with_html_in_it_is_stored_and_shown_as_text",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.37,
+   "reqs": [
+    "identity-001",
+    "identity-015"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_wrong_password_and_unknown_email_get_the_same_message",
+   "name": "test_wrong_password_and_unknown_email_get_the_same_message",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.56,
+   "reqs": [
+    "identity-005"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_email_case_and_padding_do_not_stop_a_valid_login",
+   "name": "test_email_case_and_padding_do_not_stop_a_valid_login",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.94,
+   "reqs": [
+    "identity-008"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_sign_in_never_sends_the_visitor_to_another_site[//evil.example/x]",
+   "name": "test_sign_in_never_sends_the_visitor_to_another_site[//evil.example/x]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.96,
+   "reqs": [
+    "identity-014"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_sign_in_never_sends_the_visitor_to_another_site[https://evil.example]",
+   "name": "test_sign_in_never_sends_the_visitor_to_another_site[https://evil.example]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.94,
+   "reqs": [
+    "identity-014"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_sign_in_never_sends_the_visitor_to_another_site[/\\\\evil.example]",
+   "name": "test_sign_in_never_sends_the_visitor_to_another_site[/\\\\evil.example]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.68,
+   "reqs": [
+    "identity-014"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_sign_in_never_sends_the_visitor_to_another_site[javascript:alert(1)]",
+   "name": "test_sign_in_never_sends_the_visitor_to_another_site[javascript:alert(1)]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.68,
+   "reqs": [
+    "identity-014"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_tampered_security_token_is_refused",
+   "name": "test_a_tampered_security_token_is_refused",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.07,
+   "reqs": [
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_signed_out_visitors_cannot_reach_the_admin_area",
+   "name": "test_signed_out_visitors_cannot_reach_the_admin_area",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.09,
+   "reqs": [
+    "admin-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_buyer_is_refused_the_admin_pages_and_actions",
+   "name": "test_a_buyer_is_refused_the_admin_pages_and_actions",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.13,
+   "reqs": [
+    "admin-003",
+    "admin-004",
+    "admin-005"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_one_buyer_cannot_open_another_buyers_order",
+   "name": "test_one_buyer_cannot_open_another_buyers_order",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.9,
+   "reqs": [
+    "purchase-016",
+    "identity-007"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_a_new_buyer_sees_an_empty_order_history",
+   "name": "test_a_new_buyer_sees_an_empty_order_history",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.82,
+   "reqs": [
+    "purchase-016"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unknown_pages_show_a_clean_error_not_a_crash[/events/99999]",
+   "name": "test_unknown_pages_show_a_clean_error_not_a_crash[/events/99999]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.1,
+   "reqs": [
+    "catalog-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unknown_pages_show_a_clean_error_not_a_crash[/events/0]",
+   "name": "test_unknown_pages_show_a_clean_error_not_a_crash[/events/0]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.08,
+   "reqs": [
+    "catalog-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unknown_pages_show_a_clean_error_not_a_crash[/events/-1]",
+   "name": "test_unknown_pages_show_a_clean_error_not_a_crash[/events/-1]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.08,
+   "reqs": [
+    "catalog-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unknown_pages_show_a_clean_error_not_a_crash[/events/abc]",
+   "name": "test_unknown_pages_show_a_clean_error_not_a_crash[/events/abc]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.08,
+   "reqs": [
+    "catalog-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_blackbox_edges.py::test_unknown_pages_show_a_clean_error_not_a_crash[/nonexistent]",
+   "name": "test_unknown_pages_show_a_clean_error_not_a_crash[/nonexistent]",
+   "file": "test_blackbox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.07,
+   "reqs": [
+    "catalog-001",
+    "system-002"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_double_clicking_the_checkout_button_makes_one_order",
+   "name": "test_double_clicking_the_checkout_button_makes_one_order",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.12,
+   "reqs": [
+    "purchase-024",
+    "purchase-027"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_three_instant_clicks_from_a_script_still_make_one_order",
+   "name": "test_three_instant_clicks_from_a_script_still_make_one_order",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.76,
+   "reqs": [
+    "purchase-024",
+    "purchase-027"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_triple_clicking_an_event_card_makes_one_quick_buy",
+   "name": "test_triple_clicking_an_event_card_makes_one_quick_buy",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.26,
+   "reqs": [
+    "purchase-024",
+    "purchase-027",
+    "purchase-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_double_clicking_quick_buy_on_the_event_page_makes_one_order",
+   "name": "test_double_clicking_quick_buy_on_the_event_page_makes_one_order",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.6,
+   "reqs": [
+    "purchase-024",
+    "purchase-027"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_even_with_the_page_script_bypassed_the_server_refuses_to_buy_twice",
+   "name": "test_even_with_the_page_script_bypassed_the_server_refuses_to_buy_twice",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 0.9,
+   "reqs": [
+    "purchase-024",
+    "purchase-025"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "The browser guard is a convenience. This sends the same form twice from outside the page's own code.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_a_purchase_token_cannot_be_reused_for_a_different_purchase",
+   "name": "test_a_purchase_token_cannot_be_reused_for_a_different_purchase",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.25,
+   "reqs": [
+    "purchase-026"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_a_purchase_form_without_its_token_is_refused_with_a_reload_message",
+   "name": "test_a_purchase_form_without_its_token_is_refused_with_a_reload_message",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.4,
+   "reqs": [
+    "purchase-028"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_each_page_view_gets_a_new_purchase_token",
+   "name": "test_each_page_view_gets_a_new_purchase_token",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.22,
+   "reqs": [
+    "purchase-025"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_a_script_hammering_the_purchase_endpoint_is_stopped_and_logged_once",
+   "name": "test_a_script_hammering_the_purchase_endpoint_is_stopped_and_logged_once",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 2.25,
+   "reqs": [
+    "purchase-032",
+    "audit-007",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_a_limited_account_does_not_stop_other_buyers",
+   "name": "test_a_limited_account_does_not_stop_other_buyers",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 2.35,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_the_confirmation_makes_the_charged_amount_the_biggest_thing_on_the_page",
+   "name": "test_the_confirmation_makes_the_charged_amount_the_biggest_thing_on_the_page",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.58,
+   "reqs": [
+    "purchase-029",
+    "purchase-030"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_a_dollar_order_does_not_show_a_second_confusing_amount",
+   "name": "test_a_dollar_order_does_not_show_a_second_confusing_amount",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.22,
+   "reqs": [
+    "purchase-029"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_the_order_history_page_repeats_the_same_amounts",
+   "name": "test_the_order_history_page_repeats_the_same_amounts",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.39,
+   "reqs": [
+    "purchase-030",
+    "purchase-019"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_the_currency_chosen_at_registration_is_visible_explained_and_used",
+   "name": "test_the_currency_chosen_at_registration_is_visible_explained_and_used",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 2.88,
+   "reqs": [
+    "identity-018",
+    "pricing-016",
+    "pricing-017",
+    "identity-019",
+    "purchase-031",
+    "purchase-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_changing_the_currency_in_the_header_sticks_on_the_next_pages",
+   "name": "test_changing_the_currency_in_the_header_sticks_on_the_next_pages",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.46,
+   "reqs": [
+    "identity-019",
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_signed_out_visitors_have_no_currency_control",
+   "name": "test_signed_out_visitors_have_no_currency_control",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 0.21,
+   "reqs": [
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_there_is_no_way_to_change_an_email_address_from_the_website",
+   "name": "test_there_is_no_way_to_change_an_email_address_from_the_website",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.88,
+   "reqs": [
+    "identity-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_when_the_qualifying_email_goes_away_the_next_purchase_is_full_price",
+   "name": "test_when_the_qualifying_email_goes_away_the_next_purchase_is_full_price",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 1.91,
+   "reqs": [
+    "pricing-015",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "No screen changes emails yet, so an operator's database edit stands in for the future feature.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_call5_findings.py::test_known_risk_registering_with_any_usf_address_earns_the_discount",
+   "name": "test_known_risk_registering_with_any_usf_address_earns_the_discount",
+   "file": "test_call5_findings.py",
+   "outcome": "passed",
+   "seconds": 2.13,
+   "reqs": [
+    "pricing-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "RISK-001 / open item Q3: nobody checks that the registrant owns the mailbox. Documented, not fixed.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_full_journey_register_login_search_buy_in_euros_and_find_it_in_history",
+   "name": "test_full_journey_register_login_search_buy_in_euros_and_find_it_in_history",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 4.51,
+   "reqs": [
+    "identity-001",
+    "identity-008",
+    "catalog-002",
+    "catalog-004",
+    "pricing-006",
+    "purchase-004",
+    "purchase-013",
+    "purchase-016",
+    "purchase-017",
+    "purchase-029",
+    "purchase-030"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "Register, sign in, search, open an event, buy in EUR, read the confirmation, find it in order history.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_signed_out_checkout_goes_to_login_and_returns_after_sign_in",
+   "name": "test_signed_out_checkout_goes_to_login_and_returns_after_sign_in",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.84,
+   "reqs": [
+    "identity-010",
+    "identity-011",
+    "identity-013",
+    "identity-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_signing_out_ends_the_session",
+   "name": "test_signing_out_ends_the_session",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 1.53,
+   "reqs": [
+    "identity-009",
+    "identity-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_double_clicking_a_card_buys_one_ticket_in_the_preferred_currency",
+   "name": "test_double_clicking_a_card_buys_one_ticket_in_the_preferred_currency",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 1.8,
+   "reqs": [
+    "purchase-001",
+    "catalog-004"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_home_page_lists_every_event_with_its_ticket_count",
+   "name": "test_home_page_lists_every_event_with_its_ticket_count",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "catalog-001",
+    "catalog-005"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_double_clicking_while_signed_out_goes_to_login_and_buys_nothing",
+   "name": "test_double_clicking_while_signed_out_goes_to_login_and_buys_nothing",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.46,
+   "reqs": [
+    "purchase-003",
+    "identity-012"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_sold_out_quick_buy_names_the_cause_and_returns_to_the_event",
+   "name": "test_sold_out_quick_buy_names_the_cause_and_returns_to_the_event",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 1.0,
+   "reqs": [
+    "purchase-002",
+    "purchase-006",
+    "purchase-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_cancelling_checkout_records_an_abandoned_checkout_and_takes_no_tickets",
+   "name": "test_cancelling_checkout_records_an_abandoned_checkout_and_takes_no_tickets",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 1.46,
+   "reqs": [
+    "purchase-021",
+    "purchase-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_leaving_the_checkout_page_records_an_abandoned_checkout",
+   "name": "test_leaving_the_checkout_page_records_an_abandoned_checkout",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.81,
+   "reqs": [
+    "purchase-022"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_the_back_button_still_works_during_checkout",
+   "name": "test_the_back_button_still_works_during_checkout",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 1.01,
+   "reqs": [
+    "purchase-023"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_phone_sized_screen_has_no_sideways_scrolling[/]",
+   "name": "test_phone_sized_screen_has_no_sideways_scrolling[/]",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.17,
+   "reqs": [
+    "system-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_phone_sized_screen_has_no_sideways_scrolling[/events/1]",
+   "name": "test_phone_sized_screen_has_no_sideways_scrolling[/events/1]",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.12,
+   "reqs": [
+    "system-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_phone_sized_screen_has_no_sideways_scrolling[/login]",
+   "name": "test_phone_sized_screen_has_no_sideways_scrolling[/login]",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.15,
+   "reqs": [
+    "system-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_e2e_journey.py::test_phone_sized_screen_has_no_sideways_scrolling[/register]",
+   "name": "test_phone_sized_screen_has_no_sideways_scrolling[/register]",
+   "file": "test_e2e_journey.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "system-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_oversell_browsers.py::test_two_browsers_one_ticket_exactly_one_wins_every_round",
+   "name": "test_two_browsers_one_ticket_exactly_one_wins_every_round",
+   "file": "test_oversell_browsers.py",
+   "outcome": "passed",
+   "seconds": 4.64,
+   "reqs": [
+    "inventory-001",
+    "inventory-003",
+    "inventory-004",
+    "purchase-006",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_performance.py::test_purchase_latency_with_concurrent_buyers_against_the_placeholder_budget",
+   "name": "test_purchase_latency_with_concurrent_buyers_against_the_placeholder_budget",
+   "file": "test_performance.py",
+   "outcome": "passed",
+   "seconds": 6.25,
+   "reqs": [
+    "system-006"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": true,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_yen_has_no_decimals_and_rounds_once",
+   "name": "test_yen_has_no_decimals_and_rounds_once",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.58,
+   "reqs": [
+    "pricing-008",
+    "pricing-004",
+    "pricing-006"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_the_live_estimate_and_the_final_charge_use_the_same_price",
+   "name": "test_the_live_estimate_and_the_final_charge_use_the_same_price",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.86,
+   "reqs": [
+    "pricing-008",
+    "pricing-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_usf_addresses_get_the_discount_whatever_their_case_or_plus_tag[grad@usf.edu]",
+   "name": "test_usf_addresses_get_the_discount_whatever_their_case_or_plus_tag[grad@usf.edu]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.47,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_usf_addresses_get_the_discount_whatever_their_case_or_plus_tag[GRAD@USF.EDU]",
+   "name": "test_usf_addresses_get_the_discount_whatever_their_case_or_plus_tag[GRAD@USF.EDU]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.74,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_usf_addresses_get_the_discount_whatever_their_case_or_plus_tag[nick+club@usf.edu]",
+   "name": "test_usf_addresses_get_the_discount_whatever_their_case_or_plus_tag[nick+club@usf.edu]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.36,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_lookalike_and_subdomain_addresses_pay_the_standard_price[kid@mail.usf.edu]",
+   "name": "test_lookalike_and_subdomain_addresses_pay_the_standard_price[kid@mail.usf.edu]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.8,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_lookalike_and_subdomain_addresses_pay_the_standard_price[kid@usf.edu.evil.org]",
+   "name": "test_lookalike_and_subdomain_addresses_pay_the_standard_price[kid@usf.edu.evil.org]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.11,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_lookalike_and_subdomain_addresses_pay_the_standard_price[kid@notusf.edu]",
+   "name": "test_lookalike_and_subdomain_addresses_pay_the_standard_price[kid@notusf.edu]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.99,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_lookalike_and_subdomain_addresses_pay_the_standard_price[usf.edu@gmail.com]",
+   "name": "test_lookalike_and_subdomain_addresses_pay_the_standard_price[usf.edu@gmail.com]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.2,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_with_no_discount_configured_a_student_checkout_stops_before_taking_tickets",
+   "name": "test_with_no_discount_configured_a_student_checkout_stops_before_taking_tickets",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 2.4,
+   "reqs": [
+    "pricing-011",
+    "purchase-005",
+    "inventory-004"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_a_rate_change_applies_to_new_orders_and_never_rewrites_old_ones",
+   "name": "test_a_rate_change_applies_to_new_orders_and_never_rewrites_old_ones",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 4.34,
+   "reqs": [
+    "admin-006",
+    "pricing-010",
+    "purchase-019",
+    "audit-004"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[-1]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[-1]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.62,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[0]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[0]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.25,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[abc]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[abc]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.52,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1e2]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1e2]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.89,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1.123456789]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1.123456789]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.66,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.63,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1000000]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1000000]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.44,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1;DROP]",
+   "name": "test_bad_exchange_rates_are_refused_and_the_old_rate_stays[1;DROP]",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.23,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_the_dollar_reference_rate_cannot_be_changed",
+   "name": "test_the_dollar_reference_rate_cannot_be_changed",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.3,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_every_purchase_attempt_leaves_exactly_one_audit_row_and_the_admin_sees_newest_first",
+   "name": "test_every_purchase_attempt_leaves_exactly_one_audit_row_and_the_admin_sees_newest_first",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 2.26,
+   "reqs": [
+    "audit-001",
+    "audit-008",
+    "admin-008"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_a_confirmation_code_checks_in_once_and_only_once",
+   "name": "test_a_confirmation_code_checks_in_once_and_only_once",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 4.43,
+   "reqs": [
+    "purchase-018"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_an_unknown_confirmation_code_is_refused",
+   "name": "test_an_unknown_confirmation_code_is_refused",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.98,
+   "reqs": [
+    "admin-005",
+    "purchase-018"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_the_tickets_left_count_on_the_pages_drops_after_a_purchase",
+   "name": "test_the_tickets_left_count_on_the_pages_drops_after_a_purchase",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.62,
+   "reqs": [
+    "catalog-005",
+    "inventory-002"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_the_per_account_ticket_cap_counts_earlier_orders",
+   "name": "test_the_per_account_ticket_cap_counts_earlier_orders",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.7,
+   "reqs": [
+    "purchase-008"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_an_idle_session_expires_and_asks_for_sign_in",
+   "name": "test_an_idle_session_expires_and_asks_for_sign_in",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 5.65,
+   "reqs": [
+    "identity-006",
+    "system-004",
+    "system-005"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_security_headers_and_no_caching_of_signed_in_pages",
+   "name": "test_security_headers_and_no_caching_of_signed_in_pages",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.7,
+   "reqs": [
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_an_oversized_request_body_is_refused",
+   "name": "test_an_oversized_request_body_is_refused",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 0.09,
+   "reqs": [
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests_system/test_whitebox_edges.py::test_the_event_page_shows_the_price_in_the_buyers_currency",
+   "name": "test_the_event_page_shows_the_price_in_the_buyers_currency",
+   "file": "test_whitebox_edges.py",
+   "outcome": "passed",
+   "seconds": 1.14,
+   "reqs": [
+    "pricing-006",
+    "pricing-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  }
+ ]
+}

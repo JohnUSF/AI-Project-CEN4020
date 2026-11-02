@@ -1,4 +1,4 @@
-workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 4: one modular Flask application, one SQLite database, and two roles (buyer and administrator)." {
+workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 5: one modular Flask application, one SQLite database, and two roles (buyer and administrator)." {
 
     !impliedRelationships false
 
@@ -13,7 +13,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 4: one m
 
                 boundary = component "Boundary Validation" "Checks every value that enters the system (form fields, query strings, quantities, currency codes, search text, return addresses, exchange-rate values) before any other component sees it. Rejects bad input with a specific message." "Python / Flask request hooks"
 
-                identity = component "Identity & Sessions" "Registration, sign-in, sign-out, salted password hashes, sessions with an idle timeout, and the buyer or administrator role. Redirects signed-out visitors to the login page and returns them to the page they asked for." "Python / Flask"
+                identity = component "Identity & Sessions" "Registration (including the preferred currency), sign-in, sign-out, salted password hashes, sessions with an idle timeout, and the buyer or administrator role. Offers no way to change an email address in version one (Q18). Redirects signed-out visitors to the login page and returns them to the page they asked for." "Python / Flask"
 
                 catalog = component "Catalog" "Browsing, search by artist or venue, event pages, the no-match message followed by the full event list, and loading the event setup data." "Python / Flask"
 
@@ -23,7 +23,9 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 4: one m
 
                 inventory = component "Inventory" "Owns the ticket counts. Checks availability and reduces the count in one indivisible step." "Python / SQL"
 
-                purchase = component "Purchase & Orders" "Runs the purchase path: quick-buy, checkout, simulated payment, order creation, on-screen confirmation, order history and abandoned-checkout handling." "Python / Flask"
+                purchase = component "Purchase & Orders" "Runs the purchase path: quick-buy, checkout, simulated payment, order creation, on-screen confirmation, order history and abandoned-checkout handling. Every form carries a one-time purchase token, so a repeated submit returns the original order instead of making a second one." "Python / Flask"
+
+                ratelimit = component "Request Rate Limiter" "Counts each account's purchase requests in a sliding window (numbers still open, Q19) and rejects the excess with a wait time before it reaches the purchase path. Writes one audit entry per blocked period." "Python (eventhub/ratelimit.py)"
 
                 audit = component "Audit Log" "Records every purchase attempt from inside the purchase path, so a route cannot skip it. Also records rate changes and abandoned checkouts." "Python"
 
@@ -52,7 +54,10 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 4: one m
         administrator -> boundary "Sends administrator requests" "HTTPS"
         boundary -> identity "Validated sign-in, registration and session requests"
         boundary -> catalog "Validated browse and search requests"
-        boundary -> purchase "Validated quick-buy, checkout and order-history requests"
+        boundary -> ratelimit "Validated quick-buy and checkout requests, counted per account"
+        ratelimit -> purchase "Forwards only requests inside the limit"
+        ratelimit -> audit "Records the first rejection of each blocked period"
+        boundary -> purchase "Validated order-history requests"
         boundary -> admin "Validated administrator requests"
 
         # Component level: the purchase path, in order
@@ -96,27 +101,22 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 4: one m
             autolayout lr
         }
 
-        component app "Components" "Call 4 component view: includes independently testable USF discount eligibility, buyer purchase flow and restricted administration." {
-            title "Component View: Flask Web Application"
-            include *
-            autolayout tb 300 220
-        }
-
-        component app "Part4Components" "Call 4 revised component model showing testable eligibility explicitly." {
-            title "Call 4: Component Boundaries and Discount Eligibility"
+        component app "Part5Components" "Call 5 component view: adds the request rate limiter in front of the purchase path and the purchase token that makes a repeated submit harmless." {
+            title "Call 5: Component Boundaries, Rate Limiter and Idempotent Purchase"
             include *
             autolayout tb 300 220
         }
 
         dynamic app "PurchasePath" "The purchase path in order. The availability check and the count decrement are one indivisible step." {
             title "Dynamic View: Purchase Path"
-            buyer -> boundary "Submits a purchase"
-            boundary -> purchase "Passes the validated request"
+            buyer -> boundary "Submits a purchase (form carries a one-time purchase token)"
+            boundary -> ratelimit "Passes the validated request"
+            ratelimit -> purchase "Forwards it if the account is inside its limit"
             purchase -> identity "Checks the buyer is signed in"
             purchase -> catalog "Loads the event and base price"
             purchase -> pricing "Computes the price"
             purchase -> inventory "Checks availability and reduces the count (atomic)"
-            purchase -> audit "Records the outcome"
+            purchase -> audit "Records the outcome (a repeated token is recorded as a duplicate and returns the original order)"
             autolayout lr
         }
 

@@ -1,0 +1,22 @@
+{
+ "double_click_checkout_button_orders": 1,
+ "stock_event2_after (80 at start, 1 ticket each)": 79,
+ "triple_click_card_orders": 1,
+ "200_requests_accepted_vs_refused": [
+  200,
+  0
+ ],
+ "orders_created_by_the_200": 150,
+ "confirmation_has_sentence_saying_what_was_charged": false,
+ "confirmation_labels": [
+  "Currency / locked exchange rate",
+  "EUR / 0.92",
+  "Applied student discount",
+  "Total",
+  "EUR 22.08"
+ ],
+ "register_page_has_currency_field": false,
+ "header_has_currency_control": false,
+ "accounts_currency_after_registration": "USD",
+ "email_columns_ever_updated_in_source": "0"
+}

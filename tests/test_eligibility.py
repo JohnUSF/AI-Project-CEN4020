@@ -15,11 +15,13 @@ from eventhub.eligibility import eligible_for_usf_discount, normalize_email
         ("student@example.org", "student@example.org", False),
     ],
 )
+@pytest.mark.req("pricing-011", "pricing-012", "pricing-013", "pricing-014")
 def test_email_normalization_and_provisional_domain_rule(address, normalized, expected):
     assert normalize_email(address) == normalized
     assert eligible_for_usf_discount(address) is expected
 
 
+@pytest.mark.req("pricing-012")
 def test_empty_address_is_not_eligible():
     assert normalize_email(None) == ""
     assert not eligible_for_usf_discount(None)

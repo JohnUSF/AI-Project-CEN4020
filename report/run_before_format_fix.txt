@@ -1,0 +1,38 @@
+EventHub full test run, 2026-11-01 15:31:29
+
+🟢 Python compiles                                  0.0s   
+🟢 Ruff lint                                        0.0s   All checks passed!
+🔴 Ruff format check                                0.0s   1 file would be reformatted, 43 files already formatted
+      140 +         "M19",
+      141 +         "purchase-019",
+      142 +         "eventhub/purchase.py",
+      143 +         "quote.total_minor,\n                code",
+      144 +         "quote.total_minor + 1,\n                code",
+      145 +     ),
+      146 +     (
+      147 +         "M20",
+      148 +         "purchase-029",
+      149 +         "templates/order.html",
+      150 +         '{{ b.charged }}</strong><span id="charged-note">',
+      151 +         "{{ order['total_minor'] }}</strong><span id=\"charged-note\">",
+      152 +     ),
+      153 | ]
+      --------------------------------------------------------------------------------
+      255 |     if unapplied:
+          -         print(f"\n🔴 {len(unapplied)} mutant(s) could not be applied: " + ", ".join(r["id"] for r in unapplied))
+      256 +         print(
+      257 +             f"\n🔴 {len(unapplied)} mutant(s) could not be applied: "
+      258 +             + ", ".join(r["id"] for r in unapplied)
+      259 +         )
+      260 |     applied = [r for r in results if r["status"] != "NOT APPLIED"]
+          |
+      
+      1 file would be reformatted, 43 files already formatted
+🟢 Unit + integration tests (pytest tests)         16.5s   144 passed in 16.10s
+🟢 Course EARS / C4 gate                            0.8s   🟢 Part 3 gate: ELIGIBLE for grading
+🟢 Requirement-to-test traceability                 0.1s   🟢 test traceability: 0 failure(s)
+🟢 Selenium system tests + load measurement       167.6s   137 passed in 167.06s (0:02:47)
+🟢 Mutation check (20 deliberate bugs)            240.0s   20/20 mutants killed by the fast suite; 20/20 killed by a test that names the gu
+dashboard written: report/test_dashboard.html (731 KB)
+
+🔴 1 STEP(S) FAILED: open report/test_dashboard.html

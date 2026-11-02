@@ -1,26 +1,40 @@
 """Account registration, credentials, user roles and session helpers."""
 
+import re
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
-from .errors import EventHubError
+from .errors import EventHubError, UnsupportedCurrency
 from .pricing import normalize_email, CURRENCY_DIGITS
 
+# One '@', no spaces, and a dotted domain with no empty label (identity-017).
+EMAIL_SHAPE = re.compile(r"^[^@\s]+@[^@\s.]+(?:\.[^@\s.]+)+$")
+# Explicit, portable hash method. Werkzeug's default (scrypt) is missing from some
+# Python builds, which broke the Mac test run in Part 4.
+PASSWORD_HASH_METHOD = "pbkdf2:sha256:600000"
 
-def register(conn, name, email, password):
+
+def register(conn, name, email, password, currency="USD"):
     name = (name or "").strip()
     email = normalize_email(email)
-    if not 1 <= len(name) <= 100 or not (3 <= len(email) <= 254) or "@" not in email:
+    if (
+        not 1 <= len(name) <= 100
+        or not (3 <= len(email) <= 254)
+        or not EMAIL_SHAPE.fullmatch(email)
+    ):
         raise EventHubError("Enter a valid name and email address")
+    if currency not in CURRENCY_DIGITS:
+        raise UnsupportedCurrency("Unsupported currency")
     if not isinstance(password, str) or len(password) < 10 or len(password) > 256:
         raise EventHubError("Password must be between 10 and 256 characters")
     try:
         cursor = conn.execute(
-            "INSERT INTO accounts(name,email,password_hash,role) VALUES (?,?,?,?)",
+            "INSERT INTO accounts(name,email,password_hash,role,currency) VALUES (?,?,?,?,?)",
             (
                 name,
                 email,
-                generate_password_hash(password, method="pbkdf2:sha256:600000"),
+                generate_password_hash(password, method=PASSWORD_HASH_METHOD),
                 "buyer",
+                currency,
             ),
         )
     except sqlite3.IntegrityError as exc:

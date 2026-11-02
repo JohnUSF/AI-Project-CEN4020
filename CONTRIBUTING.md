@@ -1,29 +1,37 @@
-# Contributing to EventHub — Call 4 implementation protocol
+# Contributing to EventHub (Part 5 rules)
 
-## Definition of done (four mandatory boxes adopted in Call 4)
+## Definition of done (the four boxes from Call 4, plus two from Call 5)
 
-A feature is **done only when all four conditions are true**:
+A feature is **done only when all of these are true**:
 
-- [ ] **Human code review:** a teammate other than the author has reviewed the actual code and resolved feedback.
-- [ ] **Tests:** standalone unit tests and related HTTP/integration tests pass, with no unexpected skipped files.
-- [ ] **Specification:** update `features/<name>/requirements.md` with new EARS IDs and valid supersedes links if the requirement changed; update `docs/part4-traceability.md` and `workspace.dsl`/diagram when component relationships change.
-- [ ] **Automated gates:** compile, `ruff check`, `ruff format --check`, pytest and Part 3 structural/EARS gate all pass on the PR's **latest commit**.
+- [ ] **Human code review:** a teammate other than the author has read the actual code and resolved feedback.
+- [ ] **Tests:** unit, HTTP and browser tests pass, with no unexpected skips.
+- [ ] **Specification:** `features/<name>/requirements.md` has new EARS IDs and valid `supersedes:` links if the requirement changed; `workspace.dsl`, `diagrams/` and `docs/part5-traceability.md` follow when components or relationships change.
+- [ ] **Automated gates:** compile, `ruff check`, `ruff format --check`, pytest, the Part 3 EARS/C4 gate, and `python grading/check_test_traceability.py .` all pass on the latest commit.
+- [ ] **Every test names its requirement** (`@pytest.mark.req("purchase-024")`). The suite refuses to collect a test without one (system-009).
+- [ ] **A new rule has a test that would fail without it.** `python scripts/mutation_check.py` shows how: add a mutant for the new rule and confirm a test that names the requirement kills it.
+
+## One button
+
+```sh
+python -m pip install -r requirements-dev.txt -r requirements-system.txt
+python run_all_tests.py                   # everything except the slow mutation check
+python run_all_tests.py --with-mutation   # also break the code on purpose
+python run_all_tests.py --skip-system     # no browser
+```
+
+Open `report/test_dashboard.html`. The browser tests need Google Chrome. Selenium 4 finds a matching driver itself; on a machine with no internet, set `CHROMEDRIVER=/path/to/driver` or `pip install chromedriver-py==<your Chrome major>.*`.
 
 ## Work process
 
-1. Branch from the latest `main`; make small related commits and preserve the Gold/Silver review split.
-2. Use the component contracts in `docs/implementation-alignment.md` when requesting AI code; review every generated line before merge.
-3. Test locally with `python -m pip install -r requirements-dev.txt` and `python -m pytest -q`.
-4. Run `ruff format eventhub tests scripts` **to apply formatting**, then `ruff format --check eventhub tests scripts` and `ruff check eventhub tests scripts`.
-5. Run `python -m compileall -q eventhub tests scripts` and `python grading/check_part3.py .`.
-6. Opt into the pre-commit hook via `git config core.hooksPath .githooks` (not installed automatically).
-7. Never commit credentials, user database files, discount numbers invented for production, or actual customer emails containing private data.
-8. Co-author trailers are only for work actually performed together.
+1. Branch from the latest `main`; small related commits.
+2. When asking AI for code or tests, give it the requirement text, the component contract, and the failing output. Review every generated line.
+3. Do not weaken a test to make it pass. Decide first whether the test or the code is wrong, and write that decision in the commit message.
+4. A test that cannot fail is a defect (no `or True`, no assertion-free tests).
+5. Never commit credentials, database files, discount numbers invented for production, or real customer emails.
 
 ## Enforced checks vs repository settings
-
-The GitHub Actions workflow runs automatically on push/PR. **It does not block merging without a repository rule:** John (repository maintainer) must configure **Settings → Rules → Rulesets** (or Branch protection) to require the named quality checks on `main` and one approving review. This setting has not been verified from within this package.
+The workflow in `.github/workflows/quality.yml` runs on every push and pull request. It cannot block a merge by itself. A repository maintainer must require the `EventHub quality` checks and one approving review in the branch rules. This setting has not been verified from within this package, and the workflow file was **re-created** for Part 5 and has **not been run on GitHub**.
 
 ## Open product decisions
-
-The Call 4 transcript says decisions Q2/Q4/Q5/Q6 were recorded in customer emails, but these emails are not in the shared files. Request them; do not guess. Q1 discount percentage and Q16 retention remain [TBD]; Q17 alias/subdomain behavior is a documented **provisional assumption**.
+Q1 discount percentage, Q3 address verification, Q13 performance sentence, Q16 retention, and Q18 to Q21 from Call 5 are open. Do not guess them. See `docs/open-items.md` and `docs/risk-register.md`.

@@ -1,0 +1,182 @@
+[
+ {
+  "id": "M01",
+  "req": "inventory-004",
+  "file": "eventhub/inventory.py",
+  "change": "'AND available>=?' -> 'AND (available>=? OR 1=1)'",
+  "status": "KILLED",
+  "failing_tests": 4,
+  "named_by": "tests/test_inventory.py::test_inventory_rejects_oversell_without_negative_count"
+ },
+ {
+  "id": "M02",
+  "req": "purchase-024",
+  "file": "eventhub/purchase.py",
+  "change": "'if token:\\n            prior =' -> 'if False:\\n            prior ='",
+  "status": "KILLED",
+  "failing_tests": 9,
+  "named_by": "tests/test_idempotent_purchase.py::test_same_token_twice_gives_one_order_one_stock_change_and_two_audit_rows"
+ },
+ {
+  "id": "M03",
+  "req": "purchase-026",
+  "file": "eventhub/purchase.py",
+  "change": "'prior[\"currency\"]) != (' -> 'prior[\"currency\"]) == ('",
+  "status": "KILLED",
+  "failing_tests": 9,
+  "named_by": "tests/test_idempotent_purchase.py::test_replaying_a_token_for_a_different_purchase_is_refused[3-1-USD]"
+ },
+ {
+  "id": "M04",
+  "req": "purchase-028",
+  "file": "eventhub/web.py",
+  "change": "'require_token=True' -> 'require_token=False'",
+  "status": "KILLED",
+  "failing_tests": 1,
+  "named_by": "tests/test_web_call5.py::test_checkout_without_a_token_is_refused_and_logged"
+ },
+ {
+  "id": "M05",
+  "req": "pricing-014",
+  "file": "eventhub/eligibility.py",
+  "change": "'.partition(\"@\")[2] == \"usf.edu\"' -> '.endswith(\"usf.edu\")'",
+  "status": "KILLED",
+  "failing_tests": 5,
+  "named_by": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule[member@mail.usf.edu-member@mail.usf.edu-False]"
+ },
+ {
+  "id": "M06",
+  "req": "pricing-012",
+  "file": "eventhub/eligibility.py",
+  "change": "'return (email or \"\").strip().casefold()' -> 'return (email or \"\").strip()'",
+  "status": "KILLED",
+  "failing_tests": 6,
+  "named_by": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule["
+ },
+ {
+  "id": "M07",
+  "req": "pricing-008",
+  "file": "eventhub/pricing.py",
+  "change": "'rounding=ROUND_HALF_UP' -> \"rounding='ROUND_DOWN'\"",
+  "status": "KILLED",
+  "failing_tests": 2,
+  "named_by": "tests/test_pricing.py::test_jpy_rounds_to_zero_decimal_places"
+ },
+ {
+  "id": "M08",
+  "req": "pricing-014",
+  "file": "eventhub/purchase.py",
+  "change": "'eligible_for_usf_discount(buyer[\"email\"])' -> 'buyer[\"email\"].endswith(\"usf.edu\")'",
+  "status": "KILLED",
+  "failing_tests": 3,
+  "named_by": "tests/test_eligibility_timing.py::test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@mail.usf.edu]"
+ },
+ {
+  "id": "M09",
+  "req": "pricing-015",
+  "file": "eventhub/purchase.py",
+  "change": "'eligible_for_usf_discount(buyer[\"email\"])' -> \"__import__('builtins').__dict__.setdefault(('elig', conn.exe\"",
+  "status": "KILLED",
+  "failing_tests": 1,
+  "named_by": "tests/test_eligibility_timing.py::test_discount_disappears_when_the_qualifying_email_goes_away"
+ },
+ {
+  "id": "M10",
+  "req": "purchase-032",
+  "file": "eventhub/web.py",
+  "change": "'if not allowed:\\n            if first_block:' -> 'if False:\\n            if first_block:'",
+  "status": "KILLED",
+  "failing_tests": 2,
+  "named_by": "tests/test_web_call5.py::test_two_hundred_requests_a_minute_are_stopped_and_logged_once"
+ },
+ {
+  "id": "M11",
+  "req": "purchase-032",
+  "file": "eventhub/ratelimit.py",
+  "change": "'len(hits) >= self.max_requests' -> 'len(hits) > self.max_requests'",
+  "status": "KILLED",
+  "failing_tests": 6,
+  "named_by": "tests/test_ratelimit.py::test_requests_up_to_the_limit_pass_and_the_next_is_refused"
+ },
+ {
+  "id": "M12",
+  "req": "audit-007",
+  "file": "eventhub/ratelimit.py",
+  "change": "'first_block = key not in self._blocked' -> 'first_block = True'",
+  "status": "KILLED",
+  "failing_tests": 2,
+  "named_by": "tests/test_ratelimit.py::test_only_the_first_rejection_of_a_blocked_period_is_flagged_for_the_audit_log"
+ },
+ {
+  "id": "M13",
+  "req": "purchase-008",
+  "file": "eventhub/purchase.py",
+  "change": "'already + parsed_quantity > purchase_cap' -> 'already + parsed_quantity >= purchase_cap'",
+  "status": "KILLED",
+  "failing_tests": 2,
+  "named_by": "tests/test_purchase.py::test_purchase_limit_combines_previous_orders"
+ },
+ {
+  "id": "M14",
+  "req": "identity-014",
+  "file": "eventhub/web.py",
+  "change": "'\"\\\\\\\\\" in target or' -> ''",
+  "status": "KILLED",
+  "failing_tests": 1,
+  "named_by": "tests/test_web.py::test_no_open_redirects"
+ },
+ {
+  "id": "M15",
+  "req": "admin-003",
+  "file": "eventhub/web.py",
+  "change": "'g.user[\"role\"] != \"administrator\"' -> 'g.user[\"role\"] == \"nobody\"'",
+  "status": "KILLED",
+  "failing_tests": 1,
+  "named_by": "tests/test_web.py::test_buyer_cannot_manage_rates_or_view_admin"
+ },
+ {
+  "id": "M16",
+  "req": "system-002",
+  "file": "eventhub/web.py",
+  "change": "'if not token or not secrets.compare_digest(\\n                ' -> 'if False:'",
+  "status": "KILLED",
+  "failing_tests": 1,
+  "named_by": "tests/test_web.py::test_csrf_missing_rejected"
+ },
+ {
+  "id": "M17",
+  "req": "identity-017",
+  "file": "eventhub/identity.py",
+  "change": "'not EMAIL_SHAPE.fullmatch(email)' -> \"'@' not in email\"",
+  "status": "KILLED",
+  "failing_tests": 8,
+  "named_by": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[a@b@usf.edu]"
+ },
+ {
+  "id": "M18",
+  "req": "audit-008",
+  "file": "eventhub/purchase.py",
+  "change": "'outcome=\"success\"' -> 'outcome=\"ok\"'",
+  "status": "KILLED",
+  "failing_tests": 3,
+  "named_by": "tests/test_idempotent_purchase.py::test_same_token_twice_gives_one_order_one_stock_change_and_two_audit_rows"
+ },
+ {
+  "id": "M19",
+  "req": "purchase-019",
+  "file": "eventhub/purchase.py",
+  "change": "'quote.total_minor,\\n                code' -> 'quote.total_minor + 1,\\n                code'",
+  "status": "KILLED",
+  "failing_tests": 14,
+  "named_by": "tests/test_purchase.py::test_rate_snapshot_not_rewritten_for_past_order"
+ },
+ {
+  "id": "M20",
+  "req": "purchase-029",
+  "file": "templates/order.html",
+  "change": "'{{ b.charged }}</strong><span id=\"charged-note\">' -> '{{ order[\\'total_minor\\'] }}</strong><span id=\"charged-note\">'",
+  "status": "KILLED",
+  "failing_tests": 4,
+  "named_by": "tests/test_web_call5.py::test_foreign_currency_confirmation_says_what_was_charged"
+ }
+]

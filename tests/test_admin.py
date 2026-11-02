@@ -4,6 +4,7 @@ from eventhub.admin import change_rate
 from eventhub.errors import UnsupportedCurrency
 
 
+@pytest.mark.req("admin-006", "audit-004")
 def test_rate_change_is_audited(connection):
     uid = add_account(connection, "manager@example.com", "administrator")
     change_rate(connection, uid, "EUR", "0.98")
@@ -17,6 +18,7 @@ def test_rate_change_is_audited(connection):
     assert record["kind"] == "rate_change" and record["detail"] == "0.92 -> 0.98"
 
 
+@pytest.mark.req("admin-007")
 def test_invalid_rate_does_not_change_database(connection):
     uid = add_account(connection, "manager@example.com", "administrator")
     with pytest.raises(ValueError):
@@ -30,12 +32,14 @@ def test_invalid_rate_does_not_change_database(connection):
     assert connection.execute("SELECT COUNT(*) FROM audit").fetchone()[0] == 0
 
 
+@pytest.mark.req("admin-007")
 def test_unknown_currency_rejected(connection):
     uid = add_account(connection, "manager@example.com", "administrator")
     with pytest.raises(UnsupportedCurrency):
         change_rate(connection, uid, "XYZ", "1.2")
 
 
+@pytest.mark.req("admin-007")
 def test_usd_reference_rate_must_remain_one(connection):
     uid = add_account(connection, "manager@example.com", "administrator")
     with pytest.raises(ValueError):

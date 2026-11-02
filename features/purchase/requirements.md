@@ -20,11 +20,11 @@
 
 ## Confirmation and order history
 
-- **purchase-013** (event-driven): When a purchase completes successfully, the {EventHub} shall display an on-screen order confirmation showing the event, quantity, currency, exchange rate applied, and total.
+- **purchase-013** (event-driven): When a purchase completes successfully, the {EventHub} shall display an on-screen order confirmation showing the event, quantity, currency, exchange rate applied, and total. superseded by purchase-029
 - **purchase-014** (ubiquitous): The {EventHub} shall use on-screen order confirmation only in version one and shall not require an order-confirmation email service.
 - **purchase-015** (ubiquitous): The {EventHub} shall prevent screenshots of the order confirmation page.
 - **purchase-016** (ubiquitous): The {EventHub} shall allow a signed-in buyer to view a list of all of that buyer's past orders.
-- **purchase-017** (event-driven): When a buyer opens a past order from order history, the {EventHub} shall display that order's event, quantity, currency paid, exchange rate applied, and total.
+- **purchase-017** (event-driven): When a buyer opens a past order from order history, the {EventHub} shall display that order's event, quantity, currency paid, exchange rate applied, and total. superseded by purchase-030
 - **purchase-018** (ubiquitous): The {EventHub} shall provide door staff a way to verify that a ticket confirmation has not already been used for entry [TBD: Q10 check-in mechanism undefined].
 - **purchase-019** (ubiquitous): The {EventHub} shall keep the currency, exchange rate applied, and total of each order unchanged after the order is created.
 
@@ -34,3 +34,17 @@
 - **purchase-021** (event-driven): When a buyer cancels checkout, the {EventHub} shall record the checkout as abandoned in the audit log.
 - **purchase-022** (event-driven): When a buyer leaves the checkout page without completing the purchase, the {EventHub} shall record the checkout as abandoned in the audit log.
 - **purchase-023** (ubiquitous): The {EventHub} shall not disable the browser's Back button and shall not prevent a buyer from closing the tab during checkout.
+
+## Call 5: one purchase per click, confirmation wording and request speed
+
+- **purchase-024** (event-driven): When a purchase request repeats the purchase token of an order that the same account already holds, the {EventHub} shall create no second order, shall change no ticket count and shall show the buyer the original order's confirmation.
+- **purchase-025** (ubiquitous): The {EventHub} shall print a new, unique purchase token into every checkout form and every quick-buy form each time the page is displayed.
+- **purchase-026** (unwanted): If a purchase request reuses a purchase token for a different event, quantity or currency than the order that holds the token, then the {EventHub} shall reject the request, create no order and change no ticket count.
+- **purchase-027** (event-driven): When a buyer submits a checkout form or a quick-buy form, the {EventHub} shall disable that form's submit button until the page changes, so that a second click sends no second request.
+- **purchase-028** (unwanted): If a purchase request carries no valid purchase token, then the {EventHub} shall reject the request, create no order and tell the buyer to reload the page.
+- **purchase-029** (event-driven): When a purchase completes successfully, the {EventHub} shall display an on-screen order confirmation that shows the amount charged and its currency as the most prominent figure, labels every other amount as reference only, and shows the exchange rate and any discount applied.
+  supersedes: purchase-013
+- **purchase-030** (event-driven): When a buyer opens a past order from order history, the {EventHub} shall display that order's event, quantity, the amount charged and its currency, the exchange rate and any discount, worded as on its original confirmation.
+  supersedes: purchase-017
+- **purchase-031** (ubiquitous): The {EventHub} shall state on the event list that a double-click buys one ticket in the signed-in buyer's preferred currency and shall name that currency.
+- **purchase-032** (unwanted): If one account sends more than [TBD: Q19 request count] purchase requests within [TBD: Q19 time window], then the {EventHub} shall reject the excess requests with a message that says how long to wait and shall create no order for them.

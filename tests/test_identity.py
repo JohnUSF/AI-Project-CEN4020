@@ -7,6 +7,7 @@ from eventhub.identity import register, authenticate, promote_from_cli, user_by_
 from eventhub.errors import EventHubError
 
 
+@pytest.mark.req("identity-001", "identity-002", "identity-008", "identity-015")
 def test_registration_stores_hash_and_buyer_only(connection):
     uid = register(
         connection, "Student One", "STUDENT@USF.EDU", "correct-horse-battery"
@@ -21,6 +22,7 @@ def test_registration_stores_hash_and_buyer_only(connection):
     )
 
 
+@pytest.mark.req("identity-005")
 def test_wrong_password_does_not_reveal_account(connection):
     register(connection, "Student One", "student@usf.edu", "correct-horse-battery")
     with pytest.raises(EventHubError, match="Invalid credentials"):
@@ -29,6 +31,7 @@ def test_wrong_password_does_not_reveal_account(connection):
         authenticate(connection, "missing@usf.edu", "wrong")
 
 
+@pytest.mark.req("identity-001", "system-002")
 def test_duplicate_email_and_short_password_rejected(connection):
     register(connection, "Student One", "student@usf.edu", "correct-horse-battery")
     with pytest.raises(EventHubError):
@@ -37,6 +40,7 @@ def test_duplicate_email_and_short_password_rejected(connection):
         register(connection, "Third Student", "third@usf.edu", "short")
 
 
+@pytest.mark.req("identity-016")
 def test_admin_only_promoted_via_server_method(connection):
     uid = register(
         connection, "Student One", "student@usf.edu", "correct-horse-battery"

@@ -24,3 +24,10 @@
 
 - **identity-015** (ubiquitous): The {EventHub} shall give every account created through registration the buyer role and no other role.
 - **identity-016** (ubiquitous): The {EventHub} shall grant the administrator role only through a command run on the server by an operator and shall provide no registration, sign-in, or website action that grants it.
+
+## Call 5: email shape, preferred currency and email changes
+
+- **identity-017** (unwanted): If a registration request carries an email address that is not a single address with one "@" and a dotted domain, then the {EventHub} shall reject the registration and create no account.
+- **identity-018** (ubiquitous): The {EventHub} shall let a person choose a preferred currency from the supported currency list when registering, with US dollars preselected, and shall store the choice as the account's preferred currency.
+- **identity-019** (event-driven): When a signed-in buyer chooses another supported currency as the preferred currency, the {EventHub} shall save the choice for the account and use it for later price displays and quick-buy purchases.
+- **identity-020** (ubiquitous): The {EventHub} shall provide no website action that changes an account's email address in version one [TBD: Q18 whether buyers may change their email and how a changed address is verified].

@@ -44,6 +44,7 @@ def sign_in(client, database, email="buyer@example.com"):
     )
 
 
+@pytest.mark.req("catalog-008", "system-003", "system-002")
 def test_home_responsive_and_xss_escaped(client):
     html = client.get("/?q=%3Cscript%3Ealert(1)%3C/script%3E").get_data(as_text=True)
     assert "No events match" in html
@@ -52,6 +53,7 @@ def test_home_responsive_and_xss_escaped(client):
     assert "viewport" in html
 
 
+@pytest.mark.req("identity-007", "identity-010", "identity-012")
 def test_anonymous_checkout_redirect_and_no_records(client, database):
     response = client.get("/checkout/1")
     assert response.status_code == 302 and "/login?next=" in response.location
@@ -62,6 +64,7 @@ def test_anonymous_checkout_redirect_and_no_records(client, database):
         assert c.execute("SELECT COUNT(*) FROM audit").fetchone()[0] == 0
 
 
+@pytest.mark.req("identity-014")
 def test_no_open_redirects():
     for url in [
         "//evil.example",
@@ -73,10 +76,12 @@ def test_no_open_redirects():
     assert safe_next("/checkout/1") == "/checkout/1"
 
 
+@pytest.mark.req("admin-002")
 def test_logged_out_admin_denied(client):
     assert client.get("/admin").status_code == 302
 
 
+@pytest.mark.req("admin-003", "admin-004", "admin-005")
 def test_buyer_cannot_manage_rates_or_view_admin(client, database):
     sign_in(client, database)
     assert client.get("/admin").status_code == 403
@@ -94,11 +99,19 @@ def test_buyer_cannot_manage_rates_or_view_admin(client, database):
         )
 
 
+@pytest.mark.req("purchase-004", "purchase-013", "audit-001")
 def test_checkout_to_order_with_correct_locking(client, database):
     sign_in(client, database)
     token = csrf(client)
+    # Call 5: every purchase form carries a one-time purchase token (purchase-025/028).
     response = client.post(
-        "/checkout/1", data={"csrf_token": token, "quantity": "2", "currency": "USD"}
+        "/checkout/1",
+        data={
+            "csrf_token": token,
+            "quantity": "2",
+            "currency": "USD",
+            "purchase_token": "tok-checkout-0000001",
+        },
     )
     assert response.status_code == 302 and "/orders/" in response.location
     result = client.get(response.location)
@@ -113,12 +126,14 @@ def test_checkout_to_order_with_correct_locking(client, database):
         )
 
 
+@pytest.mark.req("system-002")
 def test_csrf_missing_rejected(client, database):
     sign_in(client, database)
     result = client.post("/checkout/1", data={"quantity": "1", "currency": "USD"})
     assert result.status_code == 400
 
 
+@pytest.mark.req("identity-006", "system-005")
 def test_login_return_and_session_expiry(client, database, app):
     sign_in(client, database)
     assert client.get("/orders").status_code == 200
@@ -127,6 +142,7 @@ def test_login_return_and_session_expiry(client, database, app):
     assert client.get("/orders").status_code == 302
 
 
+@pytest.mark.req("admin-006")
 def test_admin_can_change_rate(client, database):
     sign_in(client, database)
     with connect(database) as c:
@@ -150,6 +166,7 @@ def test_admin_can_change_rate(client, database):
         )
 
 
+@pytest.mark.req("purchase-003", "identity-012")
 def test_anonymous_quick_buy_returns_to_event_not_post_only_route(client, database):
     token = csrf(client)
     res = client.post("/quick-buy/1", data={"csrf_token": token})
@@ -160,6 +177,7 @@ def test_anonymous_quick_buy_returns_to_event_not_post_only_route(client, databa
         assert c.execute("SELECT COUNT(*) FROM orders").fetchone()[0] == 0
 
 
+@pytest.mark.req("pricing-006", "pricing-007")
 def test_quote_uses_single_price_service(client, database):
     sign_in(client, database)
     response = client.get("/quote/1?quantity=2&currency=EUR")
@@ -167,6 +185,7 @@ def test_quote_uses_single_price_service(client, database):
     assert response.get_json()["total"] == "EUR 33.12"
 
 
+@pytest.mark.req("pricing-001")
 def test_quote_blocks_invalid_currency(client, database):
     sign_in(client, database)
     assert client.get("/quote/1?quantity=1&currency=XYZ").status_code == 400

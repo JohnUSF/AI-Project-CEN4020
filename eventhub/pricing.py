@@ -94,3 +94,26 @@ def compute_quote(
     return Quote(
         currency, rate_text, base_usd_minor, quantity, str(discount), final_minor
     )
+
+
+def order_breakdown(order):
+    """Facts the confirmation page prints, taken from the stored order.
+
+    The amount charged is the stored total. The only USD figure is the exact
+    unit price times the quantity, so no intermediate rounded amount can disagree
+    with the charge (Call 5: students could not tell which amount hit the card).
+    """
+    unit = order["unit_usd_minor"]
+    discount = Decimal(order["discount_percent"])
+    return {
+        "charged": display_amount(order["total_minor"], order["currency"]),
+        "currency": order["currency"],
+        "converted": order["currency"] != "USD",
+        "rate": order["rate"],
+        "discount_percent": order["discount_percent"],
+        "has_discount": discount > 0,
+        "usd_unit": display_amount(unit, "USD") if unit is not None else None,
+        "usd_subtotal": display_amount(unit * order["quantity"], "USD")
+        if unit is not None
+        else None,
+    }

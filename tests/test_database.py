@@ -1,7 +1,9 @@
+import pytest
 from eventhub.db import initialize, connect
 from pathlib import Path
 
 
+@pytest.mark.req("catalog-006", "inventory-002")
 def test_seed_is_idempotent(database):
     root = Path(__file__).resolve().parents[1]
     initialize(database, root / "config" / "setup.json")
@@ -11,6 +13,7 @@ def test_seed_is_idempotent(database):
         assert c.execute("PRAGMA journal_mode").fetchone()[0].lower() == "wal"
 
 
+@pytest.mark.req("inventory-004")
 def test_atomic_inventory_constraint_blocks_negative_counts(connection):
     from sqlite3 import IntegrityError
 
@@ -25,6 +28,7 @@ def test_atomic_inventory_constraint_blocks_negative_counts(connection):
     )
 
 
+@pytest.mark.req("admin-008")
 def test_audit_records_newest_first(connection):
     from eventhub.audit import record, recent
 

@@ -30,3 +30,11 @@ If one purchase transaction holds the write lock for about 10 ms (an assumption 
 - The database is one file on one machine. That is fine for version one and rules out running several copies of the application.
 - Reads during a write are not blocked in WAL mode, so browsing stays fast while purchases happen.
 - We must test the concurrent-purchase case (two buyers, one ticket) as an automated test.
+
+## Update (Part 5): what we measured
+`tests_system/test_performance.py` has 20 signed-in buyers each make 5 purchases at the same moment against the real app (Flask development server, one process, SQLite in WAL mode) on a developer sandbox, not a production machine.
+- 100 purchases, 0 failures, no oversell, every ticket accounted for.
+- Latency of the purchase request: median 22 to 41 ms; **95th percentile 381 to 496 ms** over six repeat runs; slowest single request 570 to 776 ms.
+- With 50 buyers (250 purchases) the 95th percentile rose to **about 1,150 ms** and the slowest to 1.9 s.
+- This matches the shape the back-of-envelope predicted: writes queue up behind the one writer. It does **not** tell us whether that is good enough, because nobody has said how fast is fast enough (open item Q13, RISK-003). The test judges against a team placeholder of 500 ms at the 95th percentile, which one of the six repeat runs missed by only 4 ms.
+- The "200 buyers in one second" scenario from Call 3 has not been run.

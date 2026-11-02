@@ -1,0 +1,13 @@
+EventHub full test run, 2026-11-01 15:44:05
+
+🟢 Python compiles                                  0.1s   
+🟢 Ruff lint                                        0.0s   All checks passed!
+🟢 Ruff format check                                0.0s   44 files already formatted
+🟢 Unit + integration tests (pytest tests)         15.0s   144 passed in 14.50s
+🟢 Course EARS / C4 gate                            0.6s   🟢 Part 3 gate: ELIGIBLE for grading
+🟢 Requirement-to-test traceability                 0.1s   🟢 test traceability: 0 failure(s)
+🟢 Selenium system tests + load measurement       173.6s   137 passed in 173.23s (0:02:53)
+🟢 Mutation check (20 deliberate bugs)            260.8s   20/20 mutants killed by the fast suite; 20/20 killed by a test that names the gu
+dashboard written: report/test_dashboard.html (731 KB)
+
+🟢 ALL PASSED: open report/test_dashboard.html

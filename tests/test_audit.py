@@ -1,8 +1,11 @@
 """Audit writes and newest-first read ordering tested as a standalone component."""
 
+import pytest
+
 from eventhub import audit
 
 
+@pytest.mark.req("admin-008")
 def test_audit_recent_returns_newest_first(connection):
     audit.record(
         connection,
@@ -28,6 +31,7 @@ def test_audit_recent_returns_newest_first(connection):
     ]
 
 
+@pytest.mark.req("audit-001")
 def test_audit_limits_untrusted_detail_length(connection):
     audit.record(
         connection,
