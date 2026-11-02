@@ -8,6 +8,7 @@ from selenium.common.exceptions import (
     WebDriverException,
     NoSuchElementException,
     StaleElementReferenceException,
+    TimeoutException,
 )
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -74,7 +75,13 @@ def alerts(driver):
 
 
 def wait_for_text(driver, text, timeout=TIMEOUT):
-    wait(driver, timeout).until(lambda d: text in body_text(d))
+    try:
+        wait(driver, timeout).until(lambda d: text in body_text(d))
+    except TimeoutException:
+        # Say what the browser actually showed, so a rare failure on a CI runner explains itself.
+        raise AssertionError(
+            f"{text!r} never appeared at {driver.current_url}. The page said: {body_text(driver)[:400]!r}"
+        ) from None
 
 
 def wait_for_url(driver, fragment, timeout=TIMEOUT):
