@@ -37,7 +37,7 @@ To use the app: `python run.py`, then open http://127.0.0.1:5000. To try the stu
 `PART4_README.md`, `docs/ai-process-log.md`, `docs/implementation-alignment.md`, `docs/review-*.md`, `docs/original-genai/`, `SUBMISSION_CHECKLIST.md` and the Part 4 report describe Part 4 and are unchanged. They are in the `EventHub_Team5_Part4` package.
 
 ## Things to know before trusting this
-- `.github/workflows/quality.yml` is the Part 4 workflow with two additions (the traceability step and a Selenium job). It ran on GitHub: 2 of 2 attempts on the final commit passed. Earlier commits had 5 failures in 9 attempts (timing races in my tests, then the load-test placeholder). One empty-name registration case timed out once and is unexplained. See report Section 2.9.
+- `.github/workflows/quality.yml` is the Part 4 workflow with two additions (the traceability step and a Selenium job). It ran on GitHub: 13 attempts on the branch, 7 passed and 6 failed (five different causes, all in tests or a placeholder number, none in the app). The final commit passed the one attempt I waited for. See report Section 2.9.
 - The Selenium run, mutation check and load numbers come from one Linux sandbox with headless Chrome 153. Not run on macOS or Windows, and not on Firefox or Safari.
 - The performance budget (500 ms at the 95th percentile) is a **team placeholder**, not a customer requirement (Q13). It sits inside run-to-run noise on the 20-buyer test. If it fails on your machine, that is the placeholder, not necessarily a bug: set `EVENTHUB_PERF_P95_MS`.
 - RISK-001 to RISK-005 in `docs/risk-register.md` are **open**. Kenji's findings block release until a named person signs.
