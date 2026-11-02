@@ -48,11 +48,20 @@ def test_the_live_estimate_and_the_final_charge_use_the_same_price(browser, serv
     signed_in(browser, server.url, server.new_user())
     browser.get(f"{server.url}/checkout/{event}")
     Select(css(browser, "#currency")).select_by_value("GBP")
+    # The estimate for 1 ticket is already on screen. Remember it, so that below we wait for the
+    # estimate for 3 tickets and not for the old one (a race GitHub's slower runner exposed).
+    wait(browser).until(
+        lambda d: "Estimated total: GBP" in css(d, "#price-preview").text
+    )
+    before = css(browser, "#price-preview").text
     q = browser.find_element(By.ID, "quantity")
     q.clear()
     q.send_keys("3")
     wait(browser).until(
-        lambda d: "Estimated total: GBP" in css(d, "#price-preview").text
+        lambda d: (
+            "Estimated total: GBP" in css(d, "#price-preview").text
+            and css(d, "#price-preview").text != before
+        )
     )
     estimate = (
         css(browser, "#price-preview").text.split("Estimated total: ")[1].split(" (")[0]
