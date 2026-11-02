@@ -144,9 +144,15 @@ def register_ui(driver, base, name, email, password=PASSWORD, currency=None, raw
             )
         else:
             Select(sel).select_by_value(currency)
-    click(
-        driver, driver.find_element(By.CSS_SELECTOR, "form.panel button[type=submit]")
-    )
+    if raw:
+        # Raw mode already bypasses the page's own validation, so submit the form directly. A mouse click
+        # at coordinates was seen to miss on GitHub's slower runner (the form was never submitted).
+        driver.execute_script("document.querySelector('form.panel').requestSubmit();")
+    else:
+        click(
+            driver,
+            driver.find_element(By.CSS_SELECTOR, "form.panel button[type=submit]"),
+        )
 
 
 def submit_checkout_raw(driver, quantity, currency=None):
