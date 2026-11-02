@@ -1,0 +1,41 @@
+NOTE: this baseline is the Part 4 copy in the project upload, NOT the merged `main` on GitHub.
+After `ruff format`, that copy differs from GitHub main in one place only: the PBKDF2 pin in identity.py.
+So the 'ruff format fails on 20 files' and 'no PBKDF2 pin' lines below describe the upload, not main.
+
+=== pytest (Part 4 as delivered) ===
+...........................................................              [100%]
+59 passed in 2.81s
+=== ruff format --check ===
+    -     sign_in(client,database)
+    -     response = client.get('/quote/1?quantity=2&currency=EUR')
+    -     assert response.status_code==200
+    -     assert response.get_json()['total'] == 'EUR 33.12'
+163 + def test_quote_uses_single_price_service(client, database):
+164 +     sign_in(client, database)
+165 +     response = client.get("/quote/1?quantity=2&currency=EUR")
+166 +     assert response.status_code == 200
+167 +     assert response.get_json()["total"] == "EUR 33.12"
+168 |
+169 |
+    - def test_quote_blocks_invalid_currency(client,database):
+    -     sign_in(client,database)
+    -     assert client.get('/quote/1?quantity=1&currency=XYZ').status_code == 400
+170 + def test_quote_blocks_invalid_currency(client, database):
+171 +     sign_in(client, database)
+172 +     assert client.get("/quote/1?quantity=1&currency=XYZ").status_code == 400
+    |
+
+20 files would be reformatted, 5 files already formatted
+=== ruff check (CI selection) ===
+All checks passed!
+=== Part 3 gate ===
+14 requirement(s), 0 failure(s)
+23 requirement(s), 23 active, 0 failure(s)
+23 requirement(s), 0 failure(s)
+8 requirement(s), 8 active, 0 failure(s)
+8 requirement(s), 0 failure(s)
+88 requirement(s), 8 link end(s) checked, 0 failure(s)
+0 failure(s)
+🟢 Part 3 gate: ELIGIBLE for grading
+17:                              (name, email, generate_password_hash(password), 'buyer'))
+(grep for any email-update code: exit 0)

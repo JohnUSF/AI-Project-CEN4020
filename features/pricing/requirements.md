@@ -29,3 +29,9 @@
 - **pricing-012** (ubiquitous): The {EventHub} shall trim and case-normalize account email addresses before the dedicated discount eligibility function compares their domains.
 - **pricing-013** (event-driven): When an account email has a plus-tagged local part and the exact domain "@usf.edu", the {EventHub} shall treat the account as eligible under the documented provisional email policy [ASSUMPTION: Q17 customer confirmation pending].
 - **pricing-014** (event-driven): When an account email belongs to a subdomain such as "@mail.usf.edu", the {EventHub} shall treat the account as ineligible under the documented provisional email policy [ASSUMPTION: Q17 customer confirmation pending].
+
+## Call 5: eligibility is judged at pricing time, and the currency is always visible
+
+- **pricing-015** (state-driven): While an order is being priced, the {EventHub} shall judge discount eligibility from the account's current email address and shall reuse no eligibility result from an earlier moment.
+- **pricing-016** (ubiquitous): The {EventHub} shall display the signed-in buyer's preferred currency, with a control to change it, in the header of every page.
+- **pricing-017** (ubiquitous): The {EventHub} shall state on the checkout page the currency in which the buyer will be charged and that it starts as the buyer's preferred currency.

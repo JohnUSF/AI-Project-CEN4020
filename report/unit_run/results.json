@@ -1,0 +1,23 @@
+{
+ "finished_at": "2026-11-02 14:54:59",
+ "suite": "unit",
+ "tests": [
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_the_shared_workflow_runs_the_tests_and_the_system_suite",
+   "name": "test_the_shared_workflow_runs_the_tests_and_the_system_suite",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  }
+ ]
+}

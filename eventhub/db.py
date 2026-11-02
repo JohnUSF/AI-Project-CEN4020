@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS orders (
   quantity INTEGER NOT NULL CHECK(quantity > 0), currency TEXT NOT NULL,
   rate TEXT NOT NULL, discount_percent TEXT NOT NULL, total_minor INTEGER NOT NULL,
   confirmation_code TEXT NOT NULL UNIQUE, checked_in_at TEXT,
-  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  unit_usd_minor INTEGER, request_token TEXT
 );
 CREATE TABLE IF NOT EXISTS audit (
   id INTEGER PRIMARY KEY, kind TEXT NOT NULL, account_id INTEGER, event_id INTEGER,
@@ -50,10 +51,26 @@ def connect(db_path):
     return conn
 
 
+def migrate(c):
+    """Bring a Part 3/4 database up to the Part 5 schema. Safe to run every start.
+
+    unit_usd_minor: the USD unit price at purchase time, so a confirmation can show it.
+    request_token: the one-time purchase token that makes a repeated submit harmless.
+    """
+    columns = {row[1] for row in c.execute("PRAGMA table_info(orders)")}
+    if "unit_usd_minor" not in columns:
+        c.execute("ALTER TABLE orders ADD COLUMN unit_usd_minor INTEGER")
+    if "request_token" not in columns:
+        c.execute("ALTER TABLE orders ADD COLUMN request_token TEXT")
+    c.execute("""CREATE UNIQUE INDEX IF NOT EXISTS idx_orders_token
+        ON orders(account_id, request_token) WHERE request_token IS NOT NULL""")
+
+
 def initialize(db_path, setup_path):
     Path(db_path).parent.mkdir(parents=True, exist_ok=True)
     with connect(db_path) as c:
         c.executescript(SCHEMA)
+        migrate(c)
         setup = json.loads(Path(setup_path).read_text(encoding="utf-8"))
         for event in setup["events"]:
             c.execute(

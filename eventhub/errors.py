@@ -43,3 +43,29 @@ class ConfigurationPending(EventHubError):
 class Forbidden(EventHubError):
     code = "forbidden"
     status = 403
+
+
+class RateLimited(EventHubError):
+    """Call 5 (Kenji finding 2): too many purchase requests from one account."""
+
+    code = "rate_limited"
+    status = 429
+
+    def __init__(self, retry_after=1):
+        self.retry_after = max(1, int(retry_after))
+        super().__init__(
+            f"Too many purchase requests. Please wait {self.retry_after} seconds and try again."
+        )
+
+
+class InvalidRequestToken(EventHubError):
+    """Call 5 (Thuy, double purchase): the form's one-time purchase token is missing or malformed."""
+
+    code = "invalid_request_token"
+
+
+class DuplicateConflict(EventHubError):
+    """The same purchase token was replayed for a different purchase."""
+
+    code = "duplicate_conflict"
+    status = 409

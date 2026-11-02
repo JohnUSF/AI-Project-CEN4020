@@ -25,3 +25,21 @@ def add_account(c, email="buyer@example.com", role="buyer"):
         ("Sample Buyer", email, "demo-test-hash", role),
     )
     return c.execute("SELECT id FROM accounts WHERE email=?", (email,)).fetchone()[0]
+
+
+@pytest.fixture
+def app_factory(database):
+    """Build a Flask app on the temporary database with chosen settings."""
+    pytest.importorskip("flask")
+    from eventhub.web import create_app
+
+    def make(**settings):
+        config = {
+            "TESTING": True,
+            "SECRET_KEY": "testing-123456789",
+            "DATABASE": str(database),
+        }
+        config.update(settings)
+        return create_app(config), database
+
+    return make

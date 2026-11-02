@@ -1,0 +1,20 @@
+digraph P {
+ graph [rankdir=LR, bgcolor="white", pad="0.30", nodesep="0.45", ranksep="0.55", fontname="DejaVu Sans", label="CALL 5  •  PURCHASE PATH IN ORDER\nGreen steps are new in Part 5", labelloc=t, fontsize=20, fontcolor="#12395C", splines=true];
+ node [shape=box, style="rounded,filled", color="#3876A8", fillcolor="#E7F2FB", fontname="DejaVu Sans", fontsize=12, margin="0.17,0.12"];
+ edge [fontname="DejaVu Sans", fontsize=10, color="#2573B7", arrowsize=.7];
+ buyer [label="Buyer\n(form carries a one-time\npurchase token)",shape=ellipse];
+ boundary [label="Boundary\nValidation"];
+ ratelimit [label="Request Rate\nLimiter",fillcolor="#CFF0DC",color="#3A9272",penwidth=2];
+ purchase [label="Purchase &\nOrders"];
+ identity [label="Identity"]; catalog [label="Catalog"]; pricing [label="Pricing\n(+ eligibility from the\nCURRENT email)",fillcolor="#CFF0DC",color="#3A9272",penwidth=2];
+ inventory [label="Inventory\n(atomic)"]; audit [label="Audit Log"];
+ buyer -> boundary [label="1. submits a purchase"];
+ boundary -> ratelimit [label="2. validated request",color="#258A63",penwidth=2];
+ ratelimit -> purchase [label="3. within limit",color="#258A63",penwidth=2];
+ purchase -> identity [label="4. signed in?"];
+ purchase -> purchase [label="5. token already\nused? return original",color="#258A63",penwidth=2];
+ purchase -> catalog [label="6. event + base price"];
+ purchase -> pricing [label="7. compute price"];
+ purchase -> inventory [label="8. check + decrement"];
+ purchase -> audit [label="9. one record"];
+}

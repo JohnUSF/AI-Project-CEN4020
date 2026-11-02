@@ -1,10 +1,27 @@
 """Complete simulated purchase transaction and per-attempt audit guarantee."""
 
+import re
 import secrets
+from typing import NamedTuple
 
 from . import audit, catalog, inventory
-from .errors import EventHubError, InvalidQuantity, PurchaseLimit, UnsupportedCurrency
+from .errors import (
+    DuplicateConflict,
+    EventHubError,
+    InvalidQuantity,
+    InvalidRequestToken,
+    PurchaseLimit,
+    UnsupportedCurrency,
+)
 from .pricing import CURRENCY_DIGITS, compute_quote, eligible_for_usf_discount
+
+TOKEN_PATTERN = re.compile(r"^[A-Za-z0-9_-]{16,64}$")
+STALE_PAGE = "This page is out of date. Please reload the event page and try again."
+
+
+class PurchaseResult(NamedTuple):
+    order_id: int
+    duplicate: bool
 
 
 def parse_quantity(raw):
@@ -19,7 +36,23 @@ def parse_quantity(raw):
     return value
 
 
-def purchase(
+def parse_token(raw, *, required=False):
+    """The one-time purchase token printed into every checkout and quick-buy form."""
+    if raw is None or raw == "":
+        if required:
+            raise InvalidRequestToken(STALE_PAGE)
+        return None
+    if not isinstance(raw, str) or not TOKEN_PATTERN.fullmatch(raw):
+        raise InvalidRequestToken(STALE_PAGE)
+    return raw
+
+
+def purchase(conn, **kwargs):
+    """Compatibility wrapper for callers that only need the order id."""
+    return place_order(conn, **kwargs).order_id
+
+
+def place_order(
     conn,
     *,
     account_id,
@@ -29,11 +62,18 @@ def purchase(
     discount_percent=None,
     purchase_cap=None,
     simulated_payment="success",
+    request_token=None,
+    require_token=False,
 ):
     """Guarantees one audit per authenticated attempt, even on rollback.
 
     BEGIN IMMEDIATE serializes SQLite writers. Inventory check and order/audit
     inserts commit as one unit; errors rollback, then log the failure separately.
+
+    Call 5 (double purchase): a request that repeats the purchase token of an order
+    this account already holds creates no second order and takes no more tickets.
+    It returns the original order with duplicate=True. The check runs inside the
+    write lock, so two simultaneous submits of one token also produce one order.
     """
     try:
         parsed_event = int(event_id)
@@ -42,6 +82,7 @@ def purchase(
     parsed_quantity = None
     try:
         parsed_quantity = parse_quantity(quantity)
+        token = parse_token(request_token, required=require_token)
         if currency not in CURRENCY_DIGITS:
             raise UnsupportedCurrency("Unsupported currency")
         if simulated_payment != "success":
@@ -52,6 +93,34 @@ def purchase(
         ).fetchone()
         if buyer is None:
             raise EventHubError("Unknown account")
+        if token:
+            prior = conn.execute(
+                """SELECT id, event_id, quantity, currency FROM orders
+                WHERE account_id=? AND request_token=?""",
+                (account_id, token),
+            ).fetchone()
+            if prior is not None:
+                if (prior["event_id"], prior["quantity"], prior["currency"]) != (
+                    parsed_event,
+                    parsed_quantity,
+                    currency,
+                ):
+                    raise DuplicateConflict(
+                        "This purchase token was already used for a different purchase. "
+                        "Please reload the page."
+                    )
+                audit.record(
+                    conn,
+                    kind="purchase",
+                    account_id=account_id,
+                    event_id=parsed_event,
+                    quantity=parsed_quantity,
+                    currency=currency,
+                    outcome="duplicate_suppressed",
+                    detail=f"order={prior['id']}",
+                )
+                conn.commit()
+                return PurchaseResult(prior["id"], True)
         event = catalog.get_event(conn, parsed_event)
         if purchase_cap is not None:
             already = conn.execute(
@@ -66,6 +135,8 @@ def purchase(
         ).fetchone()
         if rate is None:
             raise UnsupportedCurrency("Unsupported currency")
+        # Eligibility is judged from the buyer's email as it is right now, inside this
+        # transaction, never from a result remembered earlier (pricing-015).
         quote = compute_quote(
             event["base_price_minor"],
             parsed_quantity,
@@ -78,7 +149,8 @@ def purchase(
         code = secrets.token_urlsafe(20)
         cursor = conn.execute(
             """INSERT INTO orders(account_id,event_id,quantity,currency,rate,
-            discount_percent,total_minor,confirmation_code) VALUES(?,?,?,?,?,?,?,?)""",
+            discount_percent,total_minor,confirmation_code,unit_usd_minor,request_token)
+            VALUES(?,?,?,?,?,?,?,?,?,?)""",
             (
                 account_id,
                 parsed_event,
@@ -88,6 +160,8 @@ def purchase(
                 quote.discount_percent,
                 quote.total_minor,
                 code,
+                event["base_price_minor"],
+                token,
             ),
         )
         audit.record(
@@ -101,7 +175,7 @@ def purchase(
             detail=f"order={cursor.lastrowid}",
         )
         conn.commit()
-        return cursor.lastrowid
+        return PurchaseResult(cursor.lastrowid, False)
     except Exception as exc:
         if conn.in_transaction:
             conn.rollback()

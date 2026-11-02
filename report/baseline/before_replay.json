@@ -1,0 +1,9 @@
+{
+ "same_form_sent_twice_urls": [
+  "http://127.0.0.1:35245/orders/1",
+  "http://127.0.0.1:35245/orders/2"
+ ],
+ "orders_for_event_2": 2,
+ "tickets_left_of_80": 76,
+ "tickets_taken_should_be_2_if_one_order": 4
+}

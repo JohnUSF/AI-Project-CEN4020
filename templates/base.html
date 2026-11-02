@@ -15,6 +15,7 @@
       <nav aria-label="Main navigation">
         <a href="{{ url_for('home') }}">Discover</a>
         {% if current_user %}
+          <form class="currency-form" id="currency-form" action="{{ url_for('currency') }}" method="post" aria-label="Preferred currency"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if request.method == 'GET' %}<input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}">{% endif %}<label for="nav-currency">Currency</label><select id="nav-currency" name="currency">{% for c in currencies %}<option value="{{ c }}" {% if current_user['currency'] == c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select><button class="nav-button" type="submit">Set</button></form>
           <a href="{{ url_for('orders') }}">My tickets</a>
           {% if current_user['role'] == 'administrator' %}<a href="{{ url_for('admin_home') }}">Admin</a>{% endif %}
           <form class="nav-form" action="{{ url_for('logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-button" type="submit">Sign out</button></form>

@@ -12,6 +12,7 @@ from eventhub.errors import (
 from .conftest import add_account
 
 
+@pytest.mark.req("purchase-004", "inventory-003", "audit-001", "audit-002")
 def test_success_decrements_stock_and_records_order_and_audit(connection):
     uid = add_account(connection)
     before = connection.execute("SELECT available FROM events WHERE id=1").fetchone()[0]
@@ -32,6 +33,7 @@ def test_success_decrements_stock_and_records_order_and_audit(connection):
     )
 
 
+@pytest.mark.req("purchase-020", "purchase-021", "inventory-005")
 def test_no_hold_until_purchase_success(connection):
     uid = add_account(connection)
     before = connection.execute("SELECT available FROM events WHERE id=1").fetchone()[0]
@@ -44,6 +46,7 @@ def test_no_hold_until_purchase_success(connection):
     assert connection.execute("SELECT outcome FROM audit").fetchone()[0] == "abandoned"
 
 
+@pytest.mark.req("purchase-007", "purchase-010", "purchase-011", "audit-008")
 def test_invalid_quantity_fails_without_stock_change_and_audited(connection):
     uid = add_account(connection)
     for invalid in ["0", "-3", "2.5", "1e2", " 3", "999999999"]:
@@ -58,6 +61,7 @@ def test_invalid_quantity_fails_without_stock_change_and_audited(connection):
     assert connection.execute("SELECT COUNT(*) FROM audit").fetchone()[0] == 6
 
 
+@pytest.mark.req("purchase-006", "inventory-004", "audit-008")
 def test_sold_out_still_has_exactly_one_failure_audit(connection):
     uid = add_account(connection)
     connection.execute("UPDATE events SET available=1 WHERE id=1")
@@ -72,6 +76,7 @@ def test_sold_out_still_has_exactly_one_failure_audit(connection):
     assert connection.execute("SELECT COUNT(*) FROM orders").fetchone()[0] == 0
 
 
+@pytest.mark.req("pricing-001", "purchase-005", "purchase-011")
 def test_invalid_currency_is_rejected_and_audited(connection):
     uid = add_account(connection)
     with pytest.raises(UnsupportedCurrency):
@@ -84,6 +89,7 @@ def test_invalid_currency_is_rejected_and_audited(connection):
     )
 
 
+@pytest.mark.req("purchase-008")
 def test_purchase_limit_combines_previous_orders(connection):
     uid = add_account(connection)
     purchase.purchase(
@@ -105,6 +111,7 @@ def test_purchase_limit_combines_previous_orders(connection):
         )
 
 
+@pytest.mark.req("pricing-011")
 def test_missing_discount_blocks_usf_order_and_records_failure(connection):
     uid = add_account(connection, "PERSON@USF.EDU")
     with pytest.raises(ConfigurationPending):
@@ -121,6 +128,7 @@ def test_missing_discount_blocks_usf_order_and_records_failure(connection):
     )
 
 
+@pytest.mark.req("purchase-019", "pricing-010")
 def test_rate_snapshot_not_rewritten_for_past_order(connection):
     uid = add_account(connection)
     order_id = purchase.purchase(
@@ -133,6 +141,7 @@ def test_rate_snapshot_not_rewritten_for_past_order(connection):
     assert order["rate"] == "0.92" and order["total_minor"] == 1656
 
 
+@pytest.mark.req("inventory-001", "inventory-002", "audit-008")
 def test_concurrent_buys_do_not_oversell(database):
     with connect(database) as c:
         c.execute("UPDATE events SET available=1 WHERE id=1")
@@ -161,6 +170,7 @@ def test_concurrent_buys_do_not_oversell(database):
         )
 
 
+@pytest.mark.req("purchase-018")
 def test_redeem_code_once_only(connection):
     uid = add_account(connection)
     order_id = purchase.purchase(

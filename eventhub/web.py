@@ -23,13 +23,15 @@ from flask import (
 from werkzeug.exceptions import HTTPException
 
 from . import admin, audit, catalog, db, identity, purchase
-from .errors import EventHubError
+from .errors import EventHubError, RateLimited
 from .pricing import (
     CURRENCY_DIGITS,
     compute_quote,
     display_amount,
     eligible_for_usf_discount,
+    order_breakdown,
 )
+from .ratelimit import RateLimiter
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -73,12 +75,18 @@ def create_app(test_config=None):
         SESSION_COOKIE_SECURE=os.environ.get("EVENTHUB_HTTPS", "") == "1",
         PERMANENT_SESSION_LIFETIME=timedelta(hours=12),
         MAX_CONTENT_LENGTH=32 * 1024,
+        # Provisional (Q19): purchase requests allowed per account per window. 0 turns it off.
+        PURCHASE_RATE_LIMIT=int(os.environ.get("EVENTHUB_PURCHASE_RATE_LIMIT", "20")),
+        PURCHASE_RATE_WINDOW=int(os.environ.get("EVENTHUB_PURCHASE_RATE_WINDOW", "60")),
     )
     if test_config:
         app.config.update(test_config)
     if app.config.get("TESTING"):
         app.config["SECRET_KEY"] = app.config.get("SECRET_KEY", "test-key")
     db.initialize(app.config["DATABASE"], app.config["SETUP_PATH"])
+    app.extensions["purchase_limiter"] = RateLimiter(
+        app.config["PURCHASE_RATE_LIMIT"], app.config["PURCHASE_RATE_WINDOW"]
+    )
 
     def connection():
         if "db" not in g:
@@ -124,6 +132,7 @@ def create_app(test_config=None):
             "csrf_token": session["_csrf"],
             "currencies": list(CURRENCY_DIGITS),
             "money": display_amount,
+            "new_purchase_token": lambda: secrets.token_urlsafe(18),
             "discount_pending": app.config["DISCOUNT_PERCENT"] is None,
         }
 
@@ -199,7 +208,12 @@ def create_app(test_config=None):
             price_text = quote.displayed_total
         except EventHubError:
             price_text = "Price pending configuration"
-        return render_template("event.html", event=event, price_text=price_text)
+        return render_template(
+            "event.html",
+            event=event,
+            price_text=price_text,
+            price_currency=preview_currency,
+        )
 
     @app.get("/quote/<int:event_id>")
     @require_user
@@ -245,6 +259,7 @@ def create_app(test_config=None):
                     request.form.get("name"),
                     request.form.get("email"),
                     request.form.get("password"),
+                    request.form.get("currency") or "USD",
                 )
                 flash("Account created. Please sign in.", "success")
                 return redirect(url_for("login"))
@@ -283,11 +298,30 @@ def create_app(test_config=None):
     @require_user
     def checkout(event_id):
         event = catalog.get_event(connection(), event_id)
-        return render_template("checkout.html", event=event)
+        return render_template(
+            "checkout.html",
+            event=event,
+            usf_eligible=eligible_for_usf_discount(g.user["email"]),
+        )
 
     def perform_purchase(event_id, *, quick=False):
+        limiter = app.extensions["purchase_limiter"]
+        allowed, retry_after, first_block = limiter.check(g.user["id"])
+        if not allowed:
+            if first_block:
+                audit.record(
+                    connection(),
+                    kind="purchase",
+                    account_id=g.user["id"],
+                    event_id=event_id,
+                    quantity=None,
+                    currency=None,
+                    outcome="rate_limited",
+                    detail=f"more than {limiter.max_requests} requests in {int(limiter.window)}s",
+                )
+            raise RateLimited(retry_after)
         try:
-            order_id = purchase.purchase(
+            result = purchase.place_order(
                 connection(),
                 account_id=g.user["id"],
                 event_id=event_id,
@@ -295,9 +329,18 @@ def create_app(test_config=None):
                 currency=g.user["currency"] if quick else request.form.get("currency"),
                 discount_percent=app.config["DISCOUNT_PERCENT"],
                 purchase_cap=app.config["PURCHASE_CAP"],
+                request_token=request.form.get("purchase_token"),
+                require_token=True,
             )
-            flash("Your simulated purchase was successful.", "success")
-            return redirect(url_for("order_page", order_id=order_id))
+            if result.duplicate:
+                flash(
+                    "This order was already placed, so this is your original confirmation. "
+                    "You were not charged twice.",
+                    "success",
+                )
+            else:
+                flash("Your simulated purchase was successful.", "success")
+            return redirect(url_for("order_page", order_id=result.order_id))
         except EventHubError as exc:
             flash(str(exc), "error")
             return redirect(url_for("event_page", event_id=event_id))
@@ -344,7 +387,7 @@ def create_app(test_config=None):
         order = purchase.order_for(connection(), g.user["id"], order_id)
         if order is None:
             abort(404)
-        return render_template("order.html", order=order)
+        return render_template("order.html", order=order, b=order_breakdown(order))
 
     @app.post("/currency")
     @require_user
@@ -395,7 +438,12 @@ def create_app(test_config=None):
 
     @app.errorhandler(EventHubError)
     def domain_error(exc):
-        return render_template("error.html", message=str(exc)), exc.status
+        response = app.make_response(
+            (render_template("error.html", message=str(exc)), exc.status)
+        )
+        if getattr(exc, "retry_after", None):
+            response.headers["Retry-After"] = str(exc.retry_after)
+        return response
 
     @app.errorhandler(HTTPException)
     def http_error(exc):

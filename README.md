@@ -17,3 +17,12 @@ Check before committing: `python3 grading/check_part3.py .`
 Part 4 builds on the above Part 3 requirements and C4 model. Start with [`PART4_README.md`](PART4_README.md) for installation, sample app/demo limits and tests. Part 4 adds standalone `eventhub/eligibility.py`, dedicated inventory/audit unit tests, and a revised `Part4Components` diagram alongside the original exports. See [`docs/implementation-alignment.md`](docs/implementation-alignment.md) and [`docs/part4-traceability.md`](docs/part4-traceability.md) for requirement changes with preserved ID history; see [`docs/review-response.md`](docs/review-response.md) for John's review resolution. The original Part 3 model snapshot is in `docs/part4-design-baseline/`.
 
 Final checks: `python -m pytest -q`, `ruff format --check eventhub tests scripts`, and `python grading/check_part3.py .`. **The customer-email decisions and discount percentage still require confirmation.**
+
+
+---
+
+## Part 5: integration and system testing
+
+**One command runs everything** (unit, integration, Selenium browser tests, load measurement, mutation check, gates): `python run_all_tests.py` (add `--with-mutation` for the deliberate-bug check). Read [`PART5_README.md`](PART5_README.md) first, then `report/EventHub_Part5_Assignment_Report.pdf` and `report/test_dashboard.html`.
+
+Part 5 adds the Call 5 changes (one-time purchase token so a repeated buy returns the original order, per-account purchase rate limit, reworded confirmation page, preferred currency shown everywhere, email-shape check), 137 Selenium and load tests in `tests_system/`, requirement tags on every test, and `docs/part5-traceability.md`, `docs/risk-register.md`, ADR-006 to ADR-008. The C4 model has a new Request Rate Limiter component (`diagrams/Part5Components.*`; the Part 4 diagrams are kept in `docs/part4-design-baseline/`).

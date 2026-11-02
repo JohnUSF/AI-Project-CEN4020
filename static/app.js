@@ -14,7 +14,7 @@ for (const card of document.querySelectorAll('[data-card]')) {
       clearTimeout(timer);
       lastClickTime = 0;
       const form = card.querySelector('.quick-buy-form');
-      if (form) form.requestSubmit();
+      if (form && !form.dataset.submitted) form.requestSubmit();
     } else { clearTimeout(timer); timer = setTimeout(detail, 320); }
   });
   card.addEventListener('keydown', e => {
@@ -62,3 +62,29 @@ if (checkoutForm) {
   currency.addEventListener('change', updatePreview);
   updatePreview();
 }
+
+// Call 5 (double purchase): a purchase form can be sent once per page view. A second
+// click, a triple-click or an impatient thumb is ignored here, and the server also
+// ignores a repeated purchase token, so this is a convenience, not the only guard.
+for (const form of document.querySelectorAll('[data-single-submit], .quick-buy-form')) {
+  form.addEventListener('submit', e => {
+    if (form.dataset.submitted) { e.preventDefault(); return; }
+    form.dataset.submitted = '1';
+    for (const button of form.querySelectorAll('button[type="submit"]')) {
+      button.disabled = true;
+      button.dataset.originalText = button.textContent;
+      button.textContent = 'Working...';
+    }
+  });
+}
+// If the browser restores this page from its back-forward cache, allow a fresh attempt.
+window.addEventListener('pageshow', e => {
+  if (!e.persisted) return;
+  for (const form of document.querySelectorAll('[data-single-submit], .quick-buy-form')) {
+    delete form.dataset.submitted;
+    for (const button of form.querySelectorAll('button[type="submit"]')) {
+      button.disabled = false;
+      if (button.dataset.originalText) button.textContent = button.dataset.originalText;
+    }
+  }
+});
