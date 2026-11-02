@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 
 from selenium.common.exceptions import (
+    WebDriverException,
     NoSuchElementException,
     StaleElementReferenceException,
 )
@@ -51,12 +52,20 @@ def visible(driver, selector, timeout=TIMEOUT):
 
 
 def body_text(driver):
-    """Page text, retrying if the page is swapped out while we read it (seen on GitHub's slower runner)."""
-    for _ in range(10):
+    """Page text, retrying if the page is swapped out while we read it.
+
+    Slower machines (GitHub's runner, Chrome 156) hit this as either 'stale element reference' or
+    'Node with given id does not belong to the document'. Both mean the navigation is still in progress.
+    """
+    for _ in range(15):
         try:
             return driver.find_element(By.TAG_NAME, "body").text
-        except StaleElementReferenceException:
-            time.sleep(0.2)
+        except WebDriverException as exc:
+            if not isinstance(
+                exc, StaleElementReferenceException
+            ) and "does not belong to the document" not in str(exc):
+                raise
+            time.sleep(0.3)
     return driver.find_element(By.TAG_NAME, "body").text
 
 
