@@ -1,6 +1,7 @@
 """Small page-level helpers shared by the system tests."""
 
 import re
+import time
 from pathlib import Path
 
 from selenium.common.exceptions import (
@@ -50,6 +51,12 @@ def visible(driver, selector, timeout=TIMEOUT):
 
 
 def body_text(driver):
+    """Page text, retrying if the page is swapped out while we read it (seen on GitHub's slower runner)."""
+    for _ in range(10):
+        try:
+            return driver.find_element(By.TAG_NAME, "body").text
+        except StaleElementReferenceException:
+            time.sleep(0.2)
     return driver.find_element(By.TAG_NAME, "body").text
 
 

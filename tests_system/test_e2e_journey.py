@@ -99,7 +99,7 @@ def test_signed_out_checkout_goes_to_login_and_returns_after_sign_in(browser, se
     assert "Almost there" not in body_text(browser)
     login(browser, server.url, user["email"], next_path="/checkout/1")
     wait_for_url(browser, "/checkout/1")
-    assert "Almost there" in body_text(browser)
+    wait_for_text(browser, "Almost there")
 
 
 @pytest.mark.req("identity-009", "identity-007")
