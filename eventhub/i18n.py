@@ -60,7 +60,13 @@ def local_money(minor_units, currency, language="en"):
 
 
 def local_date(value, language="en"):
-    """Display a naive event timestamp as venue-local time; no invented timezone."""
+    """Format venue-local text without changing a timestamp or choosing a timezone.
+
+    English retains the previous ISO-like display, while Spanish uses Babel.
+    This keeps template code independent of language-specific decisions.
+    """
+    if normalize_language(language) == "en":
+        return str(value)
     try:
         dt = datetime.strptime(str(value), "%Y-%m-%d %H:%M")
     except (ValueError, TypeError):

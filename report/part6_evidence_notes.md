@@ -1,3 +1,5 @@
+> **Historical development note (November 8).** This note describes the early offline assembly period, not the later verified Mac/PR state. The pre-review revision subsequently passed 160 unit/integration and 139 Selenium tests locally and four GitHub checks. A new locale-adapter refactor added during final review still requires new full-suite/CI verification. See `SUBMIT_THIS_VERSION.txt` and `docs/part6-ai-simplification-review.md`.
+
 # Part 6 execution evidence and limits — prepared November 8, 2026
 
 Evidence provenance matters in the 20% testing deliverable.

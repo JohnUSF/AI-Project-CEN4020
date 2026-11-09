@@ -17,7 +17,7 @@ Thuy's exit criteria: both of Kenji's findings must be **fixed or formally accep
 | ID | Risk and current mitigation | Outstanding decision / owner | Status |
 |---|---|---|---|
 | RISK-006 | Decimal formatting regression could undercharge JPY. Kept charge calculation separate from Babel/UI and added exact four-currency purchase tests. | Priya and Thuy review regression release evidence | OPEN until reviewed |
-| RISK-007 | Audit data is recorded but previously unmonitored. Added durable flagged-order queue, admin screen and optional SMTP CLI. | Darnell appoints on-call human and confirms thresholds Q22/Q23 | OPEN - no notification rotation |
-| RISK-008 | SQLite file can be lost. Added checksum-verified backup and guarded offline restore utilities. | Kenji appoints backup owner, frequency, offsite copy and recovery drill Q25 | OPEN |
-| RISK-009 | Spanish translations are student-authored; dates use event-local time without an approved timezone rule. | Darnell approves translation / locale / timezone Q24 | OPEN |
+| RISK-007 | Audit data is recorded but previously unmonitored. Added durable flagged-order queue, admin screen and optional SMTP CLI. | Darnell/operations must name an actual alert recipient, configure SMTP or an equivalent page, define a rotation and confirm Q22/Q23 | OPEN - no notification rotation |
+| RISK-008 | SQLite file can be lost. Added checksum-verified backup and guarded offline restore utilities. | Kenji/operations must name the backup owner (Call 6 requested this by Friday), frequency, offsite copy and recovery drill Q25 | OPEN |
+| RISK-009 | Spanish translations are student-authored; dates use event-local time without an approved timezone rule. | Darnell approves translation, native yen symbol display, reader-region/locale policy and timezone Q24 | OPEN |
 | RISK-010 | No actual production release pipeline or rollback infrastructure was supplied. | Priya validates real host and release mechanism Q26 | OPEN |

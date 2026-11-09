@@ -11,3 +11,8 @@ This supplements the earlier `docs/part5-traceability.md`; none of the earlier r
 | Consistent WAL backup, checksum and guarded offline restore | system-012/013 | `eventhub/backups.py`, backup/restore scripts | `test_online_backup_integrity_and_guarded_restore` |
 
 **Operational notes:** Running tests is not proof of a staffed alert rotation, offsite backup policy, real production rollback or customer translation approval. Call 6 deliberately leaves those items unresolved; they are in Q22–Q26 and RISK-006–010.
+
+
+### Final maintainability refactor
+
+The language-specific display branch in `eventhub/web.py` was moved to `eventhub/i18n.py` without changing pricing, dates stored in the database, CSRF handling, or purchase behavior. `tests/test_call6_maintenance.py::test_locale_adapter_keeps_old_english_values_and_spanish_display` protects the previous English values and Spanish output. Full CI verification on the updated review commit remains a separate step.

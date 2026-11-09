@@ -33,3 +33,7 @@
 ## Maintenance decisions intentionally pending
 
 The incident does not define an anomaly threshold, alert channel/rotation, backup ownership, production deployment tool, date timezone, or translated text approver. Those are tracked in `docs/open-items.md` (Q22–Q26) and `docs/risk-register.md` (RISK-006–010), not silently treated as approved.
+
+## Release status after the final assignment review
+
+This classroom submission is documented, but it is **not approved for real operations**: Call 6 required backup ownership by Friday and no named person was recorded. Alert email also has no named recipient or tested schedule. English yen is numerically correct with no decimal places but still reads `JPY 4,500` rather than `¥4,500`; language is a manual cookie preference rather than region detection. These are visible blockers in `docs/part6-release-decisions.md`, not assumed fixes.

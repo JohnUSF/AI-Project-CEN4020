@@ -54,6 +54,8 @@ python scripts/check_order_anomalies.py --database instance/eventhub.sqlite3
 
 The scheduled backup and alert jobs are **not active** until an operator configures and tests them. Customer decisions on alert owner/threshold, backup retention, timezone and localization approval remain open.
 
-## Handoff for John
+## Final team submission notes
 
-Start with `report/EventHub_Part6_Assignment_Report.pdf` and `docs/part6-traceability.md`. Review new code and tests on a branch; do not overwrite Part 5 `main` without approval. Install the dependencies, rerun `run_all_tests.py`, inspect the actual browser behavior, and approve the remaining operational risks in `docs/risk-register.md` only if the customer has supplied the missing decisions.
+This is the completed **classroom Part 6 submission package** for Team 5. Source, requirements, diagrams, the assignment report, and retained test evidence are included. The last fully verified branch state passed 160 unit/integration tests and 139 Selenium tests on macOS, with four green GitHub quality/system checks. The small locale-formatting refactor added during final review is supplied with a new regression test; **rerun `python run_all_tests.py` and the branch GitHub checks after applying it before describing that final code revision as verified**.
+
+The report distinguishes finished coursework from real production readiness. Call 6 did not provide a named backup owner, a staffed alert recipient, a region-detection policy, or a production rollout/rollback platform. They remain explicit open operational decisions, not completed infrastructure. Refer to `docs/part6-ai-simplification-review.md` and `docs/part6-release-decisions.md`.

@@ -91,6 +91,26 @@ def test_display_never_changes_stored_minor_units():
 
 
 @pytest.mark.call6
+@pytest.mark.req("system-010", "system-011", "pricing-019")
+def test_locale_adapter_keeps_old_english_values_and_spanish_display():
+    """A web-template refactor must not change receipt amounts or English dates."""
+    event_start = "2026-11-07 19:00"
+    assert local_date(event_start, "en") == event_start
+    assert local_date(event_start, "unknown") == event_start
+    assert local_date(event_start, "es") != event_start
+    assert local_money(4500, "JPY", "en") == "JPY 4,500"
+    assert local_money(4500, "JPY", "unknown") == "JPY 4,500"
+    shown = local_money(4500, "JPY", "es")
+    cleaned = (
+        shown.replace(".", "")
+        .replace(",", "")
+        .replace("\u00a0", "")
+        .replace("\u202f", "")
+    )
+    assert "4500" in cleaned
+
+
+@pytest.mark.call6
 @pytest.mark.req("system-010", "system-011")
 def test_spanish_strings_and_fallback_without_changing_events():
     assert normalize_language("es") == "es"

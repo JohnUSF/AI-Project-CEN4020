@@ -22,8 +22,16 @@ python -m pip install -r requirements-dev.txt -r requirements-system.txt
 python run_all_tests.py       # full local verification including headless Chrome
 ```
 
-The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. They **have not** all been rerun in the offline environment used to assemble this package; refer to the new report for the actual verification results. The original Part 5 dashboard represents earlier evidence, not Part 6 testing.
+The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. The last verified pre-review revision completed 160 unit/integration and 139 browser tests on a Mac, and all four GitHub quality/system checks passed. The later formatting-helper refactor still needs its full-suite and CI rerun before being described as verified. Historical Part 5 evidence is archived under `report/baseline/`; the dashboard in `report/test_dashboard.html` is the Part 6 run.
 
 ## Important open decisions
 
-All real-world sales are simulated. No approved discount rate, staffed anomaly alert rotation, production release mechanism, offsite backup schedule or localized content review was provided. Read `docs/open-items.md` and `docs/risk-register.md` before claiming readiness for a live release. This work should be reviewed by John on a separate branch rather than overwriting the team's existing repository.
+All real-world sales are simulated. No approved discount rate, staffed anomaly alert rotation, production release mechanism, offsite backup schedule or localized content review was provided. Read `docs/open-items.md` and `docs/risk-register.md` before claiming readiness for a live release. These decisions are tracked explicitly for the next deployment phase. The classroom submission is complete as a report/code handoff; it is not a production-release sign-off.
+
+## What was actually simplified for maintainability
+
+`eventhub/web.py` now delegates both date and currency display to the existing `eventhub/i18n.py` adapter. That module owns the English and Spanish branches and preserves the previous English date and charge strings. A new test protects that behavior; no pricing or order transaction was refactored. See `docs/part6-ai-simplification-review.md` for the AI review and larger refactors intentionally deferred.
+
+## Status of international formatting
+
+The selector stores an explicit English/Spanish **language preference** in a cookie; it does not read the browser's geographic region. English yen remains the legacy `JPY 4,500` display (correct amount and zero decimals, but not the requested `¥4,500` symbol). Spanish formatting uses Babel. This outstanding presentation gap and the customer-approval steps are recorded in `docs/part6-release-decisions.md`.

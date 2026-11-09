@@ -138,16 +138,12 @@ def create_app(test_config=None):
             "t": lambda key, **data: i18n.translate(
                 key, g.get("language", "en"), **data
             ),
-            "local_money": lambda minor, currency: (
-                display_amount(minor, currency)
-                if g.get("language", "en") == "en"
-                else i18n.local_money(minor, currency, g.get("language", "en"))
+            # The formatting adapter owns all language-specific presentation.
+            # Neither helper changes the charged integer or database state.
+            "local_money": lambda minor, currency: i18n.local_money(
+                minor, currency, g.get("language", "en")
             ),
-            "local_date": lambda value: (
-                str(value)
-                if g.get("language", "en") == "en"
-                else i18n.local_date(value, g.get("language", "en"))
-            ),
+            "local_date": lambda value: i18n.local_date(value, g.get("language", "en")),
             "new_purchase_token": lambda: secrets.token_urlsafe(18),
             "discount_pending": app.config["DISCOUNT_PERCENT"] is None,
         }

@@ -1,5 +1,5 @@
 {
- "finished_at": "2026-11-09 01:52:02",
+ "finished_at": "2026-11-09 13:17:44",
  "suite": "unit",
  "tests": [
   {
@@ -307,6 +307,25 @@
    "call5": false,
    "perf": false,
    "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_locale_adapter_keeps_old_english_values_and_spanish_display",
+   "name": "test_locale_adapter_keeps_old_english_values_and_spanish_display",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-010",
+    "system-011",
+    "pricing-019"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A web-template refactor must not change receipt amounts or English dates.",
    "failure": "",
    "screenshot": null
   },
@@ -1066,7 +1085,7 @@
    "name": "test_two_simultaneous_submits_of_one_token_make_one_order",
    "file": "test_idempotent_purchase.py",
    "outcome": "passed",
-   "seconds": 0.04,
+   "seconds": 0.01,
    "reqs": [
     "purchase-024",
     "inventory-001"
@@ -1084,7 +1103,7 @@
    "name": "test_registration_stores_hash_and_buyer_only",
    "file": "test_identity.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.34,
    "reqs": [
     "identity-001",
     "identity-002",
@@ -1104,7 +1123,7 @@
    "name": "test_wrong_password_does_not_reveal_account",
    "file": "test_identity.py",
    "outcome": "passed",
-   "seconds": 0.25,
+   "seconds": 0.29,
    "reqs": [
     "identity-005"
    ],
@@ -1190,7 +1209,7 @@
    "name": "test_two_buyers_one_ticket_two_hundred_times",
    "file": "test_oversell_stress.py",
    "outcome": "passed",
-   "seconds": 0.33,
+   "seconds": 0.34,
    "reqs": [
     "inventory-001",
     "inventory-003",
@@ -1777,7 +1796,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[audit]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "system-007"
    ],
@@ -1794,7 +1813,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[catalog]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "system-007"
    ],
@@ -1811,7 +1830,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[db]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.03,
    "reqs": [
     "system-007"
    ],
@@ -1845,7 +1864,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[errors]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "system-007"
    ],
@@ -1913,7 +1932,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[purchase]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.03,
    "reqs": [
     "system-007"
    ],
@@ -1964,7 +1983,7 @@
    "name": "test_a_test_without_a_requirement_tag_is_refused_at_collection",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.08,
+   "seconds": 0.09,
    "reqs": [
     "system-009"
    ],
@@ -1981,7 +2000,7 @@
    "name": "test_the_admin_area_shows_rates_and_audit_log_to_administrators_only",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.53,
+   "seconds": 0.54,
    "reqs": [
     "admin-001",
     "audit-005"
@@ -1999,7 +2018,7 @@
    "name": "test_prices_follow_the_rate_stored_in_the_database_with_no_outside_provider",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "pricing-009",
     "pricing-010"
@@ -2144,7 +2163,7 @@
    "name": "test_checkout_to_order_with_correct_locking",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.29,
    "reqs": [
     "purchase-004",
     "purchase-013",
@@ -2233,7 +2252,7 @@
    "name": "test_quote_uses_single_price_service",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.26,
    "reqs": [
     "pricing-006",
     "pricing-007"
@@ -2268,7 +2287,7 @@
    "name": "test_checkout_without_a_token_is_refused_and_logged",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.27,
    "reqs": [
     "purchase-028"
    ],
@@ -2302,7 +2321,7 @@
    "name": "test_quick_buy_pressed_three_times_makes_one_order",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.27,
    "reqs": [
     "purchase-024"
    ],
@@ -2336,7 +2355,7 @@
    "name": "test_every_purchase_form_gets_its_own_fresh_token",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.27,
    "reqs": [
     "purchase-025"
    ],
@@ -2371,7 +2390,7 @@
    "name": "test_one_account_being_limited_does_not_block_another",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.58,
+   "seconds": 0.53,
    "reqs": [
     "purchase-032"
    ],
@@ -2388,7 +2407,7 @@
    "name": "test_a_validation_failure_still_counts_toward_the_limit",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "purchase-032"
    ],
@@ -2405,7 +2424,7 @@
    "name": "test_foreign_currency_confirmation_says_what_was_charged",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "purchase-029"
    ],
@@ -2422,7 +2441,7 @@
    "name": "test_dollar_confirmation_has_no_conversion_noise",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "purchase-029"
    ],
@@ -2439,7 +2458,7 @@
    "name": "test_student_confirmation_shows_the_discount_and_the_charge",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "purchase-029",
     "pricing-011"
@@ -2474,7 +2493,7 @@
    "name": "test_a_part4_database_is_upgraded_and_its_old_orders_still_open",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.29,
+   "seconds": 0.27,
    "reqs": [
     "purchase-019",
     "purchase-030"
@@ -2526,7 +2545,7 @@
    "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/checkout/1]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.27,
    "reqs": [
     "pricing-016"
    ],
@@ -2611,7 +2630,7 @@
    "name": "test_a_changed_preferred_currency_is_what_quick_buy_uses",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.27,
    "reqs": [
     "identity-019",
     "purchase-001"
@@ -2629,7 +2648,7 @@
    "name": "test_checkout_says_which_currency_you_will_be_charged_in_and_why",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.3,
+   "seconds": 0.27,
    "reqs": [
     "pricing-017"
    ],
@@ -2663,7 +2682,7 @@
    "name": "test_the_pending_discount_notice_uses_the_same_rule_as_pricing",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.54,
+   "seconds": 0.52,
    "reqs": [
     "pricing-011",
     "pricing-007"

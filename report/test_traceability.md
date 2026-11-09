@@ -71,7 +71,7 @@
 | pricing-016 | 5 | covered |
 | pricing-017 | 2 | covered |
 | pricing-018 | 4 | covered |
-| pricing-019 | 3 | covered |
+| pricing-019 | 4 | covered |
 | pricing-020 | 4 | covered |
 | purchase-001 | 4 | covered |
 | purchase-002 | 1 | covered |
@@ -114,7 +114,7 @@
 | system-007 | 2 | covered |
 | system-008 | 1 | covered |
 | system-009 | 1 | covered |
-| system-010 | 3 | covered |
-| system-011 | 4 | covered |
+| system-010 | 4 | covered |
+| system-011 | 5 | covered |
 | system-012 | 1 | covered |
 | system-013 | 1 | covered |

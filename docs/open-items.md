@@ -40,7 +40,7 @@ Q numbers 1 to 11 come from Part 1. Q12 to Q17 came from Parts 3 and 4. **Q18 to
 | Q | Open item | Current prototype choice | Required owner |
 |---|---|---|---|
 | Q22 | Alert threshold for anomalous purchase totals | Compare current charged total to expected stored-rate total; flag deviation over 25% (configurable) | Marcus / Kenji |
-| Q23 | Who is paged, when, and by which system | Alerts persist in SQLite and appear for admins; SMTP only when an operator supplies a recipient and relay. No staffed rotation exists | Darnell / operations |
-| Q24 | Locale preference, time zone, approved translation review | Explicit en/es switch with cookie; date is formatted as venue-local with no timezone conversion | Darnell / product |
-| Q25 | Backup operator, frequency, retention, secure storage and drill | Verified on-demand SQLite backup command only; schedule, offsite copy and restoration drill need assignment | Operations / Kenji |
+| Q23 | Who is paged, when, and by which system | Alerts persist in SQLite and appear for admins; SMTP requires an explicit recipient, relay and scheduled job. **No named human recipient or staffed rotation is assigned** | Darnell / operations |
+| Q24 | Reader region, locale preference, timezone and translated content approval | Explicit en/es cookie preference only; no browser-region detection, no timezone conversion. English yen uses `JPY 4,500` instead of `¥4,500`; Spanish uses Babel | Darnell / product |
+| Q25 | Backup operator, frequency, retention, secure storage and drill | Call 6 requested an owner **by Friday**; no named person was provided by the assignment or team evidence. On-demand SQLite backup exists, but owner, schedule, offsite copy and drill **are not assigned** | Kenji / operations to name owner (OVERDUE for production) |
 | Q26 | Exact release orchestration and rollback acceptance | Documented rollback-first procedure and release-source snapshot; no actual production switch is claimed | Priya / operations |

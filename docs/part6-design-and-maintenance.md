@@ -24,3 +24,16 @@
 3. Monitoring is testable without a browser or SMTP server. The notifier is a separate optional script; failures leave alert rows intact.
 4. Backups use a standard SQLite API and are testable in temporary directories rather than coupling recovery to hosting.
 5. All new functions have standalone tests and matching EARS IDs, with the original Part 5 requirements and C4 history retained.
+
+
+## Final AI-assisted simplification review (Call 6, 60% deliverable)
+
+The final teammate review supplied an AI-assisted code-maintenance critique. It identified `create_app()` in `eventhub/web.py` (roughly 446 lines) and `place_order()` in `eventhub/purchase.py` (roughly 138 lines) as complex, tightly grouped responsibilities. It also identified repeated English-vs-Spanish formatting branches in `web.py`.
+
+We chose **one contained, behavior-preserving refactor** rather than moving the security and payment code immediately before submission:
+
+- **Before:** `web.py` chose English formatting directly and called `i18n.py` only for Spanish.
+- **After:** both `local_money` and `local_date` template functions delegate to `i18n.py`. The adapter preserves the previous English date string and amount, and Spanish still uses Babel. `tests/test_call6_maintenance.py::test_locale_adapter_keeps_old_english_values_and_spanish_display` checks this contract.
+- **Deferred:** splitting `create_app` into separate route-registration components, and dividing `place_order` into smaller purchase/limit/duplicate helpers. Those larger changes affect CSRF/session control and `BEGIN IMMEDIATE` transaction boundaries; they require separate reviewed branches and fresh concurrency/security regression tests.
+
+The AI suggestions were reviewed rather than copied blindly. The exact original teammate prompt was not archived, so this record summarizes the received review comments and our resulting code decision. See `docs/part6-ai-simplification-review.md`.

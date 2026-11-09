@@ -31,7 +31,7 @@ Open `report/test_dashboard.html`. The browser tests need Google Chrome. Seleniu
 5. Never commit credentials, database files, discount numbers invented for production, or real customer emails.
 
 ## Enforced checks vs repository settings
-The workflow in `.github/workflows/quality.yml` runs on every push and pull request. It cannot block a merge by itself. A repository maintainer must require the `EventHub quality` checks and one approving review in the branch rules. This setting has not been verified from within this package, and the workflow file was **re-created** for Part 5 and has **not been run on GitHub**.
+The workflow in `.github/workflows/quality.yml` runs on every push and pull request. It cannot block a merge by itself. A repository maintainer must require the `EventHub quality` checks and one approving review in the branch rules. The workflow was recreated for Part 5 and all four checks were green on the Part 6 PR revision before final review. GitHub branch protection requiring approval is a separate repository setting; that setting was not independently verified.
 
 ## Open product decisions
 Q1 discount percentage, Q3 address verification, Q13 performance sentence, Q16 retention, and Q18 to Q21 from Call 5 are open. Do not guess them. See `docs/open-items.md` and `docs/risk-register.md`.
