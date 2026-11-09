@@ -6,6 +6,7 @@
 * A small plugin records every test with its requirement IDs and takes a screenshot
   when one fails, so the run produces its own evidence (report/system_run/).
 """
+
 import json
 import os
 import re
@@ -21,41 +22,51 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-REPORT_DIR = Path(os.environ.get('EVENTHUB_REPORT_DIR', ROOT / 'report' / 'system_run'))
-PASSWORD = 'correct-horse-battery'
+REPORT_DIR = Path(os.environ.get("EVENTHUB_REPORT_DIR", ROOT / "report" / "system_run"))
+PASSWORD = "correct-horse-battery"
 
 
 # --------------------------------------------------------------------------- servers
 class Server:
     def __init__(self, tmp_path, **env):
         s = socket.socket()
-        s.bind(('127.0.0.1', 0))
+        s.bind(("127.0.0.1", 0))
         self.port = s.getsockname()[1]
         s.close()
-        self.url = f'http://127.0.0.1:{self.port}'
-        self.db = tmp_path / 'system.sqlite3'
-        self.log = open(tmp_path / 'server.log', 'w')
-        settings = {'EVENTHUB_DB': str(self.db), 'EVENTHUB_SECRET_KEY': 'system-test-secret-key-0123456789'}
+        self.url = f"http://127.0.0.1:{self.port}"
+        self.db = tmp_path / "system.sqlite3"
+        self.log = open(tmp_path / "server.log", "w")
+        settings = {
+            "EVENTHUB_DB": str(self.db),
+            "EVENTHUB_SECRET_KEY": "system-test-secret-key-0123456789",
+        }
         settings.update({k: str(v) for k, v in env.items()})
-        self.proc = subprocess.Popen([sys.executable, str(ROOT / 'tests_system' / 'serve.py'), str(self.port)],
-                                     cwd=ROOT, env={**os.environ, **settings},
-                                     stdout=self.log, stderr=subprocess.STDOUT)
+        self.proc = subprocess.Popen(
+            [sys.executable, str(ROOT / "tests_system" / "serve.py"), str(self.port)],
+            cwd=ROOT,
+            env={**os.environ, **settings},
+            stdout=self.log,
+            stderr=subprocess.STDOUT,
+        )
         deadline = time.time() + 20
         while time.time() < deadline:
             try:
-                urllib.request.urlopen(self.url + '/', timeout=1).read()
+                urllib.request.urlopen(self.url + "/", timeout=1).read()
                 return
             except Exception:
                 if self.proc.poll() is not None:
-                    raise RuntimeError('EventHub server exited: ' + (tmp_path / 'server.log').read_text())
+                    raise RuntimeError(
+                        "EventHub server exited: "
+                        + (tmp_path / "server.log").read_text()
+                    )
                 time.sleep(0.15)
-        raise RuntimeError('EventHub server did not start')
+        raise RuntimeError("EventHub server did not start")
 
     # -- white-box helpers: the tests seed and inspect the database directly
     def conn(self):
         c = sqlite3.connect(self.db, timeout=15)
         c.row_factory = sqlite3.Row
-        c.execute('PRAGMA busy_timeout=15000')
+        c.execute("PRAGMA busy_timeout=15000")
         return c
 
     def sql(self, query, args=()):
@@ -79,28 +90,47 @@ class Server:
 
     _counter = 0
 
-    def new_user(self, email=None, currency='USD', role='buyer'):
+    def new_user(self, email=None, currency="USD", role="buyer"):
         from eventhub.identity import register
+
         Server._counter += 1
-        email = email or f'user{Server._counter}-{int(time.time() * 1000) % 100000}@example.com'
+        email = (
+            email
+            or f"user{Server._counter}-{int(time.time() * 1000) % 100000}@example.com"
+        )
         c = self.conn()
         try:
-            c.execute('BEGIN')
-            uid = register(c, 'System Tester', email, PASSWORD, currency)
-            if role != 'buyer':
-                c.execute('UPDATE accounts SET role=? WHERE id=?', (role, uid))
+            c.execute("BEGIN")
+            uid = register(c, "System Tester", email, PASSWORD, currency)
+            if role != "buyer":
+                c.execute("UPDATE accounts SET role=? WHERE id=?", (role, uid))
             c.commit()
         finally:
             c.close()
-        return {'id': uid, 'email': email.strip().casefold(), 'password': PASSWORD, 'raw_email': email}
+        return {
+            "id": uid,
+            "email": email.strip().casefold(),
+            "password": PASSWORD,
+            "raw_email": email,
+        }
 
     def new_event(self, available=50, price_minor=1500, artist=None):
         Server._counter += 1
-        artist = artist or f'Scratch Act {Server._counter}'
+        artist = artist or f"Scratch Act {Server._counter}"
         c = self.conn()
         try:
-            cur = c.execute('''INSERT INTO events(artist,venue,starts_at,description,base_price_minor,available)
-                VALUES(?,?,?,?,?,?)''', (artist, 'Scratch Hall', '2027-01-15 20:00', 'Seeded by a system test', price_minor, available))
+            cur = c.execute(
+                """INSERT INTO events(artist,venue,starts_at,description,base_price_minor,available)
+                VALUES(?,?,?,?,?,?)""",
+                (
+                    artist,
+                    "Scratch Hall",
+                    "2027-01-15 20:00",
+                    "Seeded by a system test",
+                    price_minor,
+                    available,
+                ),
+            )
             c.commit()
             return cur.lastrowid
         finally:
@@ -117,49 +147,64 @@ class Server:
 
 def _server_fixture(**env):
     def fixture(tmp_path_factory):
-        srv = Server(tmp_path_factory.mktemp('eventhub'), **env)
+        srv = Server(tmp_path_factory.mktemp("eventhub"), **env)
         yield srv
         srv.stop()
+
     return fixture
 
 
 # Default build: discount configured for the demo, request limit at its provisional default.
-server = pytest.fixture(scope='session')(_server_fixture(EVENTHUB_DISCOUNT_PERCENT='10'))
+server = pytest.fixture(scope="session")(
+    _server_fixture(EVENTHUB_DISCOUNT_PERCENT="10")
+)
 # Same build with the customer's discount percentage still unconfigured (fails closed).
-server_no_discount = pytest.fixture(scope='session')(_server_fixture())
-server_capped = pytest.fixture(scope='session')(_server_fixture(EVENTHUB_DISCOUNT_PERCENT='10', EVENTHUB_PURCHASE_CAP='3'))
-server_fast_session = pytest.fixture(scope='session')(_server_fixture(EVENTHUB_DISCOUNT_PERCENT='10', EVENTHUB_SESSION_IDLE='3'))
+server_no_discount = pytest.fixture(scope="session")(_server_fixture())
+server_capped = pytest.fixture(scope="session")(
+    _server_fixture(EVENTHUB_DISCOUNT_PERCENT="10", EVENTHUB_PURCHASE_CAP="3")
+)
+server_fast_session = pytest.fixture(scope="session")(
+    _server_fixture(EVENTHUB_DISCOUNT_PERCENT="10", EVENTHUB_SESSION_IDLE="3")
+)
 
 
 # --------------------------------------------------------------------------- browser
 def _chrome_service():
     from selenium.webdriver.chrome.service import Service
-    explicit = os.environ.get('CHROMEDRIVER')
+
+    explicit = os.environ.get("CHROMEDRIVER")
     if explicit:
         return Service(explicit)
-    try:                                       # offline machines: a driver bundled in a wheel
+    try:  # offline machines: a driver bundled in a wheel
         from chromedriver_py import binary_path
+
         return Service(binary_path)
     except ImportError:
-        return Service()                       # normal machines: Selenium Manager picks the driver
+        return Service()  # normal machines: Selenium Manager picks the driver
 
 
 def make_driver(width=1280, height=900):
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
+
     options = Options()
-    if os.environ.get('EVENTHUB_HEADED') != '1':
-        options.add_argument('--headless=new')
-    for arg in ('--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', f'--window-size={width},{height}'):
+    if os.environ.get("EVENTHUB_HEADED") != "1":
+        options.add_argument("--headless=new")
+    for arg in (
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-gpu",
+        f"--window-size={width},{height}",
+    ):
         options.add_argument(arg)
-    if os.environ.get('CHROME_BIN'):
-        options.binary_location = os.environ['CHROME_BIN']
+    if os.environ.get("CHROME_BIN"):
+        options.binary_location = os.environ["CHROME_BIN"]
     driver = webdriver.Chrome(service=_chrome_service(), options=options)
     driver.implicitly_wait(0)
     return driver
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def _driver():
     driver = make_driver()
     yield driver
@@ -170,7 +215,7 @@ def _driver():
 def browser(_driver, request):
     _driver.delete_all_cookies()
     _driver.set_window_size(1280, 900)
-    _driver.get('about:blank')
+    _driver.get("about:blank")
     request.node._driver = _driver
     return _driver
 
@@ -184,9 +229,11 @@ def second_browser(request):
 
 # --------------------------------------------------------------------------- reporting
 def pytest_collection_modifyitems(config, items):
-    missing = [i.nodeid for i in items if i.get_closest_marker('req') is None]
+    missing = [i.nodeid for i in items if i.get_closest_marker("req") is None]
     if missing:
-        raise pytest.UsageError('Tests without a @pytest.mark.req(...) marker:\n  ' + '\n  '.join(missing))
+        raise pytest.UsageError(
+            "Tests without a @pytest.mark.req(...) marker:\n  " + "\n  ".join(missing)
+        )
 
 
 RESULTS = []
@@ -196,34 +243,44 @@ RESULTS = []
 def pytest_runtest_makereport(item, call):
     outcome = yield
     report = outcome.get_result()
-    if report.when == 'call' or (report.when == 'setup' and report.outcome != 'passed'):
-        reqs = [a for m in item.iter_markers('req') for a in m.args]
+    if report.when == "call" or (report.when == "setup" and report.outcome != "passed"):
+        reqs = [a for m in item.iter_markers("req") for a in m.args]
         shot = None
-        driver = getattr(item, '_driver', None)
+        driver = getattr(item, "_driver", None)
         if report.failed and driver is not None:
             try:
-                (REPORT_DIR / 'screenshots').mkdir(parents=True, exist_ok=True)
-                name = re.sub(r'[^A-Za-z0-9_.-]+', '_', item.nodeid)[:120] + '.png'
-                driver.save_screenshot(str(REPORT_DIR / 'screenshots' / name))
-                shot = 'screenshots/' + name
+                (REPORT_DIR / "screenshots").mkdir(parents=True, exist_ok=True)
+                name = re.sub(r"[^A-Za-z0-9_.-]+", "_", item.nodeid)[:120] + ".png"
+                driver.save_screenshot(str(REPORT_DIR / "screenshots" / name))
+                shot = "screenshots/" + name
             except Exception:
                 shot = None
-        RESULTS.append({
-            'nodeid': item.nodeid, 'name': item.name, 'file': item.fspath.basename,
-            'outcome': report.outcome, 'seconds': round(report.duration, 2), 'reqs': reqs,
-            'blackbox': item.get_closest_marker('blackbox') is not None,
-            'whitebox': item.get_closest_marker('whitebox') is not None,
-            'call5': item.get_closest_marker('call5') is not None,
-            'perf': item.get_closest_marker('perf') is not None,
-            'doc': (item.function.__doc__ or '').strip().split('\n')[0],
-            'failure': (str(report.longrepr)[-1500:] if report.failed else ''),
-            'screenshot': shot,
-        })
+        RESULTS.append(
+            {
+                "nodeid": item.nodeid,
+                "name": item.name,
+                "file": item.fspath.basename,
+                "outcome": report.outcome,
+                "seconds": round(report.duration, 2),
+                "reqs": reqs,
+                "blackbox": item.get_closest_marker("blackbox") is not None,
+                "whitebox": item.get_closest_marker("whitebox") is not None,
+                "call5": item.get_closest_marker("call5") is not None,
+                "perf": item.get_closest_marker("perf") is not None,
+                "doc": (item.function.__doc__ or "").strip().split("\n")[0],
+                "failure": (str(report.longrepr)[-1500:] if report.failed else ""),
+                "screenshot": shot,
+            }
+        )
 
 
 def pytest_sessionfinish(session, exitstatus):
     if not RESULTS:
         return
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    (REPORT_DIR / 'results.json').write_text(json.dumps(
-        {'finished_at': time.strftime('%Y-%m-%d %H:%M:%S'), 'tests': RESULTS}, indent=1))
+    (REPORT_DIR / "results.json").write_text(
+        json.dumps(
+            {"finished_at": time.strftime("%Y-%m-%d %H:%M:%S"), "tests": RESULTS},
+            indent=1,
+        )
+    )

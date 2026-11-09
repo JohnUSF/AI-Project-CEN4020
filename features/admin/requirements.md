@@ -13,3 +13,7 @@
 - **admin-006** (complex): While an administrator is signed in, when the administrator submits a new exchange rate for a supported currency, the {EventHub} shall store the rate in the database.
 - **admin-007** (unwanted): If a submitted exchange rate is not a positive decimal number or names a currency that is not supported, then the {EventHub} shall reject the change and keep the current rate.
 - **admin-008** (event-driven): When an administrator opens the audit log, the {EventHub} shall list the audit records newest first, so that a dispute can be investigated without opening the database files by hand [TBD: Q12 how administrators search or filter records].
+
+## Call 6: exchange-rate deployment regression
+
+- **admin-009** (event-driven): When an administrator changes a supported exchange rate through the admin area, the {EventHub} shall apply the new rate to subsequent simulated purchases and retain the original rate on prior orders.

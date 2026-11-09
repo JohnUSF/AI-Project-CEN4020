@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,16 +13,16 @@
     <div class="header-inner">
       <a class="brand" href="{{ url_for('home') }}" aria-label="EventHub homepage"><span class="brand-mark">E<span class="dot">•</span></span> EventHub<span class="brand-sub"> / USF</span></a>
       <nav aria-label="Main navigation">
-        <a href="{{ url_for('home') }}">Discover</a>
+        <a href="{{ url_for('home') }}">{{ t("nav.discover") }}</a>
         {% if current_user %}
-          <form class="currency-form" id="currency-form" action="{{ url_for('currency') }}" method="post" aria-label="Preferred currency"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if request.method == 'GET' %}<input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}">{% endif %}<label for="nav-currency">Currency</label><select id="nav-currency" name="currency">{% for c in currencies %}<option value="{{ c }}" {% if current_user['currency'] == c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select><button class="nav-button" type="submit">Set</button></form>
-          <a href="{{ url_for('orders') }}">My tickets</a>
-          {% if current_user['role'] == 'administrator' %}<a href="{{ url_for('admin_home') }}">Admin</a>{% endif %}
-          <form class="nav-form" action="{{ url_for('logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-button" type="submit">Sign out</button></form>
+          <form class="currency-form" id="currency-form" action="{{ url_for('currency') }}" method="post" aria-label="Preferred currency"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if request.method == 'GET' %}<input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}">{% endif %}<label for="nav-currency">{{ t("nav.currency") }}</label><select id="nav-currency" name="currency">{% for c in currencies %}<option value="{{ c }}" {% if current_user['currency'] == c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select><button class="nav-button" type="submit">{{ t("nav.set") }}</button></form>
+          <a href="{{ url_for('orders') }}">{{ t("nav.orders") }}</a>
+          {% if current_user['role'] == 'administrator' %}<a href="{{ url_for('admin_home') }}">{{ t("nav.admin") }}</a>{% endif %}
+          <form class="nav-form" action="{{ url_for('logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-button" type="submit">{{ t("nav.logout") }}</button></form>
         {% else %}
-          <a href="{{ url_for('login') }}">Sign in</a><a class="nav-cta" href="{{ url_for('register') }}">Join EventHub</a>
+          <a href="{{ url_for('login') }}">{{ t("nav.login") }}</a><a class="nav-cta" href="{{ url_for('register') }}">{{ t("nav.register") }}</a>
         {% endif %}
-      </nav>
+      <form class="language-form" action="{{ url_for('set_language') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}"><label for="site-language">{{ t('nav.language') }}</label><select name="language" id="site-language"><option value="en" {% if lang == 'en' %}selected{% endif %}>English</option><option value="es" {% if lang == 'es' %}selected{% endif %}>Español</option></select><button class="nav-button" type="submit">{{ t('nav.set') }}</button></form></nav>
     </div>
   </header>
   <main class="main">
@@ -31,6 +31,6 @@
     {% endwith %}
     {% block content %}{% endblock %}
   </main>
-  <footer class="footer"><span>EventHub <strong>Classroom prototype</strong></span><span>Simulated payment only · No real ticket sales</span></footer>
+  <footer class="footer"><span>EventHub <strong>{{ t("footer.protype") }}</strong></span><span>{{ t("footer.simulated") }}</span></footer>
 </body>
 </html>

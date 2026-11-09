@@ -1,0 +1,13 @@
+......ss................................................................ [ 72%]
+...........s............ss.s                                             [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_identity.py:5: could not import 'werkzeug.security': No module named 'werkzeug'
+SKIPPED [1] tests/test_web.py:6: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_web_call5.py:8: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_call6_http.py:20: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_call6_http.py:35: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_requirement_gaps.py:26: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_requirement_gaps.py:78: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_requirement_gaps.py:105: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_requirement_gaps.py:179: could not import 'flask': No module named 'flask'
+94 passed, 9 skipped, 1 deselected in 10.03s

@@ -1,14 +1,12 @@
 """Small page-level helpers shared by the system tests."""
 
 import re
-import time
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from selenium.common.exceptions import (
-    WebDriverException,
     NoSuchElementException,
     StaleElementReferenceException,
-    TimeoutException,
 )
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -53,20 +51,6 @@ def visible(driver, selector, timeout=TIMEOUT):
 
 
 def body_text(driver):
-    """Page text, retrying if the page is swapped out while we read it.
-
-    Slower machines (GitHub's runner, Chrome 156) hit this as either 'stale element reference' or
-    'Node with given id does not belong to the document'. Both mean the navigation is still in progress.
-    """
-    for _ in range(15):
-        try:
-            return driver.find_element(By.TAG_NAME, "body").text
-        except WebDriverException as exc:
-            if not isinstance(
-                exc, StaleElementReferenceException
-            ) and "does not belong to the document" not in str(exc):
-                raise
-            time.sleep(0.3)
     return driver.find_element(By.TAG_NAME, "body").text
 
 
@@ -75,17 +59,17 @@ def alerts(driver):
 
 
 def wait_for_text(driver, text, timeout=TIMEOUT):
-    try:
-        wait(driver, timeout).until(lambda d: text in body_text(d))
-    except TimeoutException:
-        # Say what the browser actually showed, so a rare failure on a CI runner explains itself.
-        raise AssertionError(
-            f"{text!r} never appeared at {driver.current_url}. The page said: {body_text(driver)[:400]!r}"
-        ) from None
+    wait(driver, timeout).until(lambda d: text in body_text(d))
 
 
 def wait_for_url(driver, fragment, timeout=TIMEOUT):
-    wait(driver, timeout).until(lambda d: fragment in d.current_url)
+    # A login URL such as /login?next=/checkout/1 is NOT the checkout page.
+    # Query-specific checks (e.g. /login?next=) still inspect the full URL.
+    def reached(d):
+        address = d.current_url
+        return fragment in (address if "?" in fragment else urlsplit(address).path)
+
+    wait(driver, timeout).until(reached)
 
 
 def wait_for_url_not(driver, fragment, timeout=TIMEOUT):
@@ -144,15 +128,9 @@ def register_ui(driver, base, name, email, password=PASSWORD, currency=None, raw
             )
         else:
             Select(sel).select_by_value(currency)
-    if raw:
-        # Raw mode already bypasses the page's own validation, so submit the form directly. A mouse click
-        # at coordinates was seen to miss on GitHub's slower runner (the form was never submitted).
-        driver.execute_script("document.querySelector('form.panel').requestSubmit();")
-    else:
-        click(
-            driver,
-            driver.find_element(By.CSS_SELECTOR, "form.panel button[type=submit]"),
-        )
+    click(
+        driver, driver.find_element(By.CSS_SELECTOR, "form.panel button[type=submit]")
+    )
 
 
 def submit_checkout_raw(driver, quantity, currency=None):

@@ -357,15 +357,20 @@ def test_sign_in_never_sends_the_visitor_to_another_site(browser, server, target
 def test_a_tampered_security_token_is_refused(browser, server):
     user = server.new_user()
     browser.get(server.url + "/login")
-    css(browser, "#email").send_keys(user["email"])
-    browser.find_element(By.ID, "password").send_keys(user["password"])
-    browser.execute_script(
-        "document.querySelector('[name=csrf_token]').value='tampered';"
+    # Send an actual same-origin forged POST and check the response status.
+    # This does not depend on a browser click or page-navigation race.
+    response = fetch_post(
+        browser,
+        "/login",
+        {
+            "csrf_token": "tampered",
+            "email": user["email"],
+            "password": user["password"],
+        },
     )
-    click(
-        browser, browser.find_element(By.CSS_SELECTOR, "form.panel button[type=submit]")
-    )
-    wait_for_text(browser, "security token")
+    assert response["status"] == 400
+    assert "security token" in response["text"].lower()
+    browser.get(server.url + "/")
     assert "Sign out" not in body_text(browser)
 
 

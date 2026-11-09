@@ -1,2 +1,47 @@
-{% extends 'base.html' %}{% block title %}Administration{% endblock %}
-{% block content %}<div class="eyebrow">RESTRICTED ACCESS</div><h1>Administration.</h1><p class="muted">Manage demo exchange rates and inspect the audit trail.</p><div class="admin-grid"><section class="panel form"><h2>Exchange rates</h2><p class="muted tiny">Units of target currency per one USD. Rate changes are audited.</p>{% for rate in rates %}<div class="summary-row"><span>{{ rate['currency'] }}</span><strong>{{ rate['units_per_usd'] }}</strong></div>{% endfor %}<form action="{{ url_for('admin_rate') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label for="currency">Currency</label><select id="currency" name="currency">{% for currency in currencies %}<option>{{ currency }}</option>{% endfor %}</select><label for="rate">Updated exchange rate</label><input type="text" name="rate" id="rate" required placeholder="0.92000000"><button class="btn btn-primary" type="submit">Save rate ↗</button></form></section><section class="panel form"><h2>Door verification</h2><p class="muted tiny">Redeem each confirmation code only once.</p><form action="{{ url_for('admin_checkin') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label for="confirmation_code">Confirmation code</label><input id="confirmation_code" name="confirmation_code" required><button class="btn btn-secondary" type="submit">Check in</button></form></section></div><section class="panel audit-table"><div class="section-heading"><h2>Audit log</h2><span class="muted">Most recent 100</span></div><div class="table-scroll"><table><thead><tr><th>Time</th><th>Kind</th><th>Account</th><th>Event</th><th>Quantity</th><th>Currency</th><th>Outcome</th><th>Details</th></tr></thead><tbody>{% for record in audits %}<tr><td>{{ record['created_at'] }}</td><td>{{ record['kind'] }}</td><td>{{ record['account_id'] if record['account_id'] is not none else '—' }}</td><td>{{ record['event_id'] if record['event_id'] is not none else '—' }}</td><td>{{ record['quantity'] if record['quantity'] is not none else '—' }}</td><td>{{ record['currency'] or '—' }}</td><td>{{ record['outcome'] }}</td><td>{{ record['detail'] }}</td></tr>{% else %}<tr><td colspan="8">No audit records yet.</td></tr>{% endfor %}</tbody></table></div></section>{% endblock %}
+{% extends 'base.html' %}
+{% block title %}{{ t('admin.title') }}{% endblock %}
+{% block content %}
+<div class="eyebrow">{{ t('admin.restricted') }}</div>
+<h1>{{ t('admin.title') }}</h1>
+<p class="muted">{{ t('admin.desc') }}</p>
+<div class="admin-grid">
+  <section class="panel form">
+    <h2>{{ t('admin.rates') }}</h2>
+    <p class="muted tiny">{{ t('admin.rate_note') }}</p>
+    {% for rate in rates %}<div class="summary-row"><span>{{ rate['currency'] }}</span><strong>{{ rate['units_per_usd'] }}</strong></div>{% endfor %}
+    <form action="{{ url_for('admin_rate') }}" method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+      <label for="currency">{{ t('nav.currency') }}</label>
+      <select id="currency" name="currency">{% for currency in currencies %}<option>{{ currency }}</option>{% endfor %}</select>
+      <label for="rate">{{ t('admin.rate_input') }}</label>
+      <input type="text" name="rate" id="rate" required placeholder="0.92000000">
+      <button class="btn btn-primary" type="submit">{{ t('admin.save') }}</button>
+    </form>
+  </section>
+  <section class="panel form">
+    <h2>{{ t('admin.door') }}</h2>
+    <p class="muted tiny">{{ t('admin.door_note') }}</p>
+    <form action="{{ url_for('admin_checkin') }}" method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+      <label for="confirmation_code">{{ t('admin.code') }}</label>
+      <input id="confirmation_code" name="confirmation_code" required>
+      <button class="btn btn-secondary" type="submit">{{ t('admin.checkin') }}</button>
+    </form>
+  </section>
+</div>
+<section class="panel audit-table">
+  <div class="section-heading"><h2>{{ t('admin.audit') }}</h2><span class="muted">{{ t('admin.recent') }}</span></div>
+  <div class="table-scroll"><table>
+    <thead><tr><th>{{ t('admin.time') }}</th><th>Kind</th><th>{{ t('admin.account') }}</th><th>{{ t('admin.event') }}</th><th>{{ t('admin.quantity') }}</th><th>{{ t('nav.currency') }}</th><th>{{ t('admin.outcome') }}</th><th>{{ t('admin.details') }}</th></tr></thead>
+    <tbody>{% for record in audits %}<tr><td>{{ record['created_at'] }}</td><td>{{ record['kind'] }}</td><td>{{ record['account_id'] if record['account_id'] is not none else '—' }}</td><td>{{ record['event_id'] if record['event_id'] is not none else '—' }}</td><td>{{ record['quantity'] if record['quantity'] is not none else '—' }}</td><td>{{ record['currency'] or '—' }}</td><td>{{ record['outcome'] }}</td><td>{{ record['detail'] }}</td></tr>{% else %}<tr><td colspan="8">{{ t('admin.none') }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+<section class="panel audit-table" id="maintenance-alerts">
+  <div class="section-heading"><h2>{{ t('admin.alerts') }}</h2></div>
+  <p class="muted">{{ t('admin.alert_desc') }}</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>ID</th><th>{{ t('admin.event') }}</th><th>{{ t('admin.alert_reason') }}</th><th>{{ t('admin.alert_status') }}</th><th>{{ t('admin.time') }}</th><th></th></tr></thead>
+    <tbody>{% for item in maintenance_alerts %}<tr><td>{{ item['order_id'] }}</td><td>{{ item['category'] }}</td><td>{{ item['description'] }}</td><td>{{ item['status'] }}</td><td>{{ item['created_at'] }}</td><td>{% if item['status']=='open' %}<form action="{{ url_for('acknowledge_alert', alert_id=item['id']) }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-button">{{ t('admin.ack') }}</button></form>{% endif %}</td></tr>{% else %}<tr><td colspan="6">{{ t('admin.alert_none') }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+{% endblock %}

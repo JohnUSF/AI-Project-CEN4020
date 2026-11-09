@@ -1,28 +1,29 @@
-# EventHub (CEN 4020, Part 3)
+# EventHub (CEN 4020, Team 5) — Part 6 Maintenance
 
-- `features/<component>/requirements.md`: EARS requirements by feature (`system` holds the cross-cutting ones).
-- `workspace.dsl`: Structurizr DSL for the context, container, component and purchase-path views.
-- `diagrams/`: PNG exports of each view, exported from Structurizr Lite (file names are Lite's own).
-- `docs/decisions/`: decision records (database, money, rates storage, administrator role, abandoned checkout).
-- `docs/traceability.md`, `docs/open-items.md`.
-- `docs/original-genai/`: the original container and component diagrams from before Call 3.
+This is a Python/Flask/SQLite **classroom prototype** with simulated ticket purchases. It extends John's Part 5 implementation; the Part 5 baseline report, test dashboard and original README remain available under `report/` and `docs/part5-readme-baseline.md`.
 
-Check before committing: `python3 grading/check_part3.py .`
+**Read first:** `PART6_README.md`, `report/EventHub_Part6_Assignment_Report.pdf`, and `docs/part6-traceability.md`.
 
+## What changed in Call 6
 
----
+- Yen-safe currency regression tests and a separate Spanish-language display layer (`eventhub/i18n.py`, `locales/`). Pricing still uses integer minor units.
+- Administrator exchange-rate updates covered by a persisted-order regression test.
+- Order-anomaly monitoring with durable administrator-visible alerts and optional configured SMTP notification.
+- Verified SQLite online backup and guarded offline restore tools.
+- Revised EARS requirements and C4 view (`workspace.dsl`, `diagrams/Part6Components.*`) plus rollback and recovery documentation.
+- Original unit, integration, Selenium and mutation tests preserved, with new Call 6 test files added.
 
-## Part 4 implementation (Call 4, Gold-member review branch)
+## Quick start
 
-Part 4 builds on the above Part 3 requirements and C4 model. Start with [`PART4_README.md`](PART4_README.md) for installation, sample app/demo limits and tests. Part 4 adds standalone `eventhub/eligibility.py`, dedicated inventory/audit unit tests, and a revised `Part4Components` diagram alongside the original exports. See [`docs/implementation-alignment.md`](docs/implementation-alignment.md) and [`docs/part4-traceability.md`](docs/part4-traceability.md) for requirement changes with preserved ID history; see [`docs/review-response.md`](docs/review-response.md) for John's review resolution. The original Part 3 model snapshot is in `docs/part4-design-baseline/`.
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt -r requirements-system.txt
+python run_all_tests.py       # full local verification including headless Chrome
+```
 
-Final checks: `python -m pytest -q`, `ruff format --check eventhub tests scripts`, and `python grading/check_part3.py .`. **The customer-email decisions and discount percentage still require confirmation.**
+The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. They **have not** all been rerun in the offline environment used to assemble this package; refer to the new report for the actual verification results. The original Part 5 dashboard represents earlier evidence, not Part 6 testing.
 
+## Important open decisions
 
----
-
-## Part 5: integration and system testing
-
-**One command runs everything** (unit, integration, Selenium browser tests, load measurement, mutation check, gates): `python run_all_tests.py` (add `--with-mutation` for the deliberate-bug check). Read [`PART5_README.md`](PART5_README.md) first, then `report/EventHub_Part5_Assignment_Report.pdf` and `report/test_dashboard.html`.
-
-Part 5 adds the Call 5 changes (one-time purchase token so a repeated buy returns the original order, per-account purchase rate limit, reworded confirmation page, preferred currency shown everywhere, email-shape check), 137 Selenium and load tests in `tests_system/`, requirement tags on every test, and `docs/part5-traceability.md`, `docs/risk-register.md`, ADR-006 to ADR-008. The C4 model has a new Request Rate Limiter component (`diagrams/Part5Components.*`; the Part 4 diagrams are kept in `docs/part4-design-baseline/`).
+All real-world sales are simulated. No approved discount rate, staffed anomaly alert rotation, production release mechanism, offsite backup schedule or localized content review was provided. Read `docs/open-items.md` and `docs/risk-register.md` before claiming readiness for a live release. This work should be reviewed by John on a separate branch rather than overwriting the team's existing repository.

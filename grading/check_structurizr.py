@@ -28,7 +28,9 @@ def emit(ok, text):
 
 def strip_comments_and_strings(text):
     # Return the DSL with strings blanked and comments removed, for brace counting.
-    text = re.sub(r"/\*.*?\*/", lambda m: "\n" * m.group(0).count("\n"), text, flags=re.S)
+    text = re.sub(
+        r"/\*.*?\*/", lambda m: "\n" * m.group(0).count("\n"), text, flags=re.DOTALL
+    )
     out = []
     for line in text.splitlines():
         line = re.sub(r'"[^"]*"', '""', line)
@@ -57,16 +59,25 @@ def find_views(dsl_text):
 def run_cli(dsl: Path):
     cli = shutil.which("structurizr") or shutil.which("structurizr.sh")
     if not cli:
-        print(f"   ⚪ structurizr CLI not on PATH; cannot prove the file opens in Structurizr Lite")
+        print(
+            "   ⚪ structurizr CLI not on PATH; cannot prove the file opens in Structurizr Lite"
+        )
         return
     try:
-        r = subprocess.run([cli, "validate", "-workspace", str(dsl)],
-                           capture_output=True, text=True, timeout=120)
+        r = subprocess.run(
+            [cli, "validate", "-workspace", str(dsl)],
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
     except (OSError, subprocess.TimeoutExpired) as e:
         emit(False, f"structurizr validate failed to run: {e}")
         return
-    emit(r.returncode == 0, "structurizr validate passes"
-         + ("" if r.returncode == 0 else f": {(r.stdout + r.stderr).strip()[:300]}"))
+    emit(
+        r.returncode == 0,
+        "structurizr validate passes"
+        + ("" if r.returncode == 0 else f": {(r.stdout + r.stderr).strip()[:300]}"),
+    )
 
 
 def finish():
@@ -92,10 +103,15 @@ def main(argv):
 
     text = dsl.read_text(encoding="utf-8", errors="replace")
     bare = strip_comments_and_strings(text)
-    emit(bare.count("{") == bare.count("}"),
-         f"braces balance ({bare.count('{')} open, {bare.count('}')} close)")
+    emit(
+        bare.count("{") == bare.count("}"),
+        f"braces balance ({bare.count('{')} open, {bare.count('}')} close)",
+    )
     for name in ("workspace", "model", "views"):
-        emit(re.search(rf"^\s*{name}\b[^\n]*\{{", bare, re.M) is not None, f"{name} block present")
+        emit(
+            re.search(rf"^\s*{name}\b[^\n]*\{{", bare, re.MULTILINE) is not None,
+            f"{name} block present",
+        )
     run_cli(dsl)
 
     views = list(find_views(text))
@@ -107,14 +123,21 @@ def main(argv):
     emit(diagrams.is_dir(), "diagrams/ exists")
     if not diagrams.is_dir():
         return finish()
-    files = sorted(p for p in diagrams.iterdir() if p.suffix.lower() in (".png", ".svg"))
-    emit(len(files) >= len(views),
-         f"diagrams/ holds {len(files)} PNG/SVG file(s) for {len(views)} declared view(s)")
+    files = sorted(
+        p for p in diagrams.iterdir() if p.suffix.lower() in (".png", ".svg")
+    )
+    emit(
+        len(files) >= len(views),
+        f"diagrams/ holds {len(files)} PNG/SVG file(s) for {len(views)} declared view(s)",
+    )
     names = [p.stem.lower() for p in files]
     for kind, key in views:
         if key is None:
             continue
-        emit(any(key.lower() in s for s in names), f"export for {kind} view '{key}' in diagrams/")
+        emit(
+            any(key.lower() in s for s in names),
+            f"export for {kind} view '{key}' in diagrams/",
+        )
 
     return finish()
 

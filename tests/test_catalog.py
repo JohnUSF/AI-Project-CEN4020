@@ -1,6 +1,7 @@
-from eventhub.catalog import list_events, get_event
-from eventhub.errors import NotFound
 import pytest
+
+from eventhub.catalog import get_event, list_events
+from eventhub.errors import NotFound
 
 
 @pytest.mark.req("catalog-001")

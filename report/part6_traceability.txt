@@ -1,0 +1,6 @@
+requirements: 118 total, 111 active, 7 superseded
+covered by at least one tagged test: 108  |  exempt (written reason): 3
+tests carrying a requirement tag: 191
+   ⚪ purchase-013: tests still point at a superseded requirement (fine for history)
+   ⚪ purchase-017: tests still point at a superseded requirement (fine for history)
+🟢 test traceability: 0 failure(s)

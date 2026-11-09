@@ -1,13 +1,13 @@
-from decimal import Decimal
 import pytest
+
+from eventhub.errors import ConfigurationPending, InvalidQuantity, UnsupportedCurrency
 from eventhub.pricing import (
     compute_quote,
+    display_amount,
     eligible_for_usf_discount,
     normalize_email,
     validate_rate,
-    display_amount,
 )
-from eventhub.errors import ConfigurationPending, InvalidQuantity, UnsupportedCurrency
 
 
 @pytest.mark.req("pricing-012", "pricing-013", "pricing-014")

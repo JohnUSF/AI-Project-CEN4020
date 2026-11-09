@@ -9,6 +9,7 @@ pytest.importorskip("flask")
 from eventhub import db as db_module
 from eventhub.db import connect
 from eventhub.identity import register
+
 from .test_web import csrf, sign_in
 
 TOKEN = "tok-web-0123456789ab"

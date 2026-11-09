@@ -11,6 +11,7 @@ import pytest
 from eventhub import purchase
 from eventhub.db import connect
 from eventhub.errors import SoldOut
+
 from .conftest import add_account
 
 ROUNDS = 200

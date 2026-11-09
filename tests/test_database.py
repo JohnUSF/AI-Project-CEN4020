@@ -1,6 +1,8 @@
-import pytest
-from eventhub.db import initialize, connect
 from pathlib import Path
+
+import pytest
+
+from eventhub.db import connect, initialize
 
 
 @pytest.mark.req("catalog-006", "inventory-002")
@@ -30,7 +32,7 @@ def test_atomic_inventory_constraint_blocks_negative_counts(connection):
 
 @pytest.mark.req("admin-008")
 def test_audit_records_newest_first(connection):
-    from eventhub.audit import record, recent
+    from eventhub.audit import recent, record
 
     record(
         connection,

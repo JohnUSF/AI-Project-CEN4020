@@ -1,6 +1,8 @@
-import pytest
-from eventhub.db import initialize, connect
 from pathlib import Path
+
+import pytest
+
+from eventhub.db import connect, initialize
 
 ROOT = Path(__file__).resolve().parents[1]
 

@@ -41,6 +41,7 @@ if (checkoutForm) {
   const currency = checkoutForm.querySelector('[name="currency"]');
   const preview = document.getElementById('price-preview');
   let requestCounter = 0;
+  const spanish = document.documentElement.lang === 'es';
   async function updatePreview() {
     if (!preview) return;
     const current = ++requestCounter;
@@ -52,8 +53,8 @@ if (checkoutForm) {
       const data = await response.json();
       if (current !== requestCounter) return;
       preview.textContent = response.ok
-        ? `Estimated total: ${data.total} (rate ${data.rate}, discount ${data.discount_percent}%)`
-        : `Price not available: ${data.error || 'Please check the selection'}`;
+        ? (spanish ? `Total estimado: ${data.localized_total} (cambio ${data.rate}, descuento ${data.discount_percent}%)` : `Estimated total: ${data.total} (rate ${data.rate}, discount ${data.discount_percent}%)`)
+        : (spanish ? `Precio no disponible: ${data.error || 'Revisa la selección'}` : `Price not available: ${data.error || 'Please check the selection'}`);
     } catch (_error) {
       if (current === requestCounter) preview.textContent = 'Price preview is unavailable; retry checkout.';
     }
@@ -73,7 +74,7 @@ for (const form of document.querySelectorAll('[data-single-submit], .quick-buy-f
     for (const button of form.querySelectorAll('button[type="submit"]')) {
       button.disabled = true;
       button.dataset.originalText = button.textContent;
-      button.textContent = 'Working...';
+      button.textContent = document.documentElement.lang === 'es' ? 'Procesando...' : 'Working...';
     }
   });
 }

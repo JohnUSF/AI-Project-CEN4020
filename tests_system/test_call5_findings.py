@@ -9,14 +9,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 from .helpers import (
-    click,
-    alerts,
     body_text,
     buy_via_checkout,
-    css,
+    click,
     csrf_and_token,
+    css,
     fetch_post,
-    order_id_from_url,
     register_ui,
     shot,
     signed_in,
@@ -362,7 +360,9 @@ def test_there_is_no_way_to_change_an_email_address_from_the_website(browser, se
             for a in browser.find_elements(By.TAG_NAME, "a")
         ]
         assert not [
-            h for h in links if re.search(r"account|profile|settings|email", h, re.I)
+            h
+            for h in links
+            if re.search(r"account|profile|settings|email", h, re.IGNORECASE)
         ]
     for path in (
         "/account",

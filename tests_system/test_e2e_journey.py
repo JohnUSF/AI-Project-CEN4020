@@ -8,9 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 from .helpers import (
-    alerts,
     body_text,
-    buy_via_checkout,
     click,
     css,
     login,
@@ -18,7 +16,6 @@ from .helpers import (
     register_ui,
     shot,
     signed_in,
-    visible,
     wait,
     wait_for_text,
     wait_for_url,
@@ -99,7 +96,7 @@ def test_signed_out_checkout_goes_to_login_and_returns_after_sign_in(browser, se
     assert "Almost there" not in body_text(browser)
     login(browser, server.url, user["email"], next_path="/checkout/1")
     wait_for_url(browser, "/checkout/1")
-    wait_for_text(browser, "Almost there")
+    assert "Almost there" in body_text(browser)
 
 
 @pytest.mark.req("identity-009", "identity-007")

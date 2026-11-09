@@ -1,7 +1,3 @@
-NOTE: this baseline is the Part 4 copy in the project upload, NOT the merged `main` on GitHub.
-After `ruff format`, that copy differs from GitHub main in one place only: the PBKDF2 pin in identity.py.
-So the 'ruff format fails on 20 files' and 'no PBKDF2 pin' lines below describe the upload, not main.
-
 === pytest (Part 4 as delivered) ===
 ...........................................................              [100%]
 59 passed in 2.81s

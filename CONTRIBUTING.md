@@ -31,7 +31,11 @@ Open `report/test_dashboard.html`. The browser tests need Google Chrome. Seleniu
 5. Never commit credentials, database files, discount numbers invented for production, or real customer emails.
 
 ## Enforced checks vs repository settings
-The workflow in `.github/workflows/quality.yml` runs on every push and pull request. It cannot block a merge by itself. A repository maintainer must require the `EventHub quality` checks and one approving review in the branch rules. This setting has not been verified from within this package. The workflow has run on GitHub (see report Section 2.9); the load-test budget is set to a placeholder 1000 ms there (open item Q13).
+The workflow in `.github/workflows/quality.yml` runs on every push and pull request. It cannot block a merge by itself. A repository maintainer must require the `EventHub quality` checks and one approving review in the branch rules. This setting has not been verified from within this package, and the workflow file was **re-created** for Part 5 and has **not been run on GitHub**.
 
 ## Open product decisions
 Q1 discount percentage, Q3 address verification, Q13 performance sentence, Q16 retention, and Q18 to Q21 from Call 5 are open. Do not guess them. See `docs/open-items.md` and `docs/risk-register.md`.
+
+## Call 6 maintenance completion
+
+Before calling a maintenance feature finished: update the EARS requirement and C4 view when boundaries change; keep the price computation separate from display text; run the exact-currency purchase and administrator-rate-change regression tests; execute the full previous system suite; and record which risks still need a real owner. Do not report a live rollback, staffed alert, backup schedule, or customer approval without evidence.

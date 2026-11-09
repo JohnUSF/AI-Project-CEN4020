@@ -1,0 +1,21 @@
+Standalone Jinja template smoke renders, using synthetic fixtures (NOT Flask integration):
+en admin.html: rendered 4328 chars
+en home.html: rendered 3684 chars
+en register.html: rendered 3097 chars
+en login.html: rendered 2759 chars
+en checkout.html: rendered 4117 chars
+en order.html: rendered 3658 chars
+en event.html: rendered 3123 chars
+en orders.html: rendered 2336 chars
+en error.html: rendered 2267 chars
+en base.html: rendered 2077 chars
+es admin.html: rendered 4409 chars
+es home.html: rendered 3662 chars
+es register.html: rendered 3137 chars
+es login.html: rendered 2808 chars
+es checkout.html: rendered 4086 chars
+es order.html: rendered 3670 chars
+es event.html: rendered 3100 chars
+es orders.html: rendered 2376 chars
+es error.html: rendered 2289 chars
+es base.html: rendered 2095 chars

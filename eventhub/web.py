@@ -14,6 +14,7 @@ from flask import (
     flash,
     g,
     jsonify,
+    make_response,
     redirect,
     render_template,
     request,
@@ -22,7 +23,7 @@ from flask import (
 )
 from werkzeug.exceptions import HTTPException
 
-from . import admin, audit, catalog, db, identity, purchase
+from . import admin, audit, catalog, db, i18n, identity, monitor, purchase
 from .errors import EventHubError, RateLimited
 from .pricing import (
     CURRENCY_DIGITS,
@@ -101,12 +102,13 @@ def create_app(test_config=None):
 
     @app.before_request
     def check_session_and_csrf():
+        g.language = i18n.normalize_language(request.cookies.get("eventhub_lang"))
         now = int(time.time())
         if session.get("uid"):
             last = session.get("last_active", now)
             if now - last > app.config["SESSION_IDLE_SECONDS"]:
                 session.clear()
-                flash("Your session expired. Please sign in again.", "warning")
+                flash(i18n.translate("flash.session", g.language), "warning")
             else:
                 session["last_active"] = now
         g.user = (
@@ -132,12 +134,27 @@ def create_app(test_config=None):
             "csrf_token": session["_csrf"],
             "currencies": list(CURRENCY_DIGITS),
             "money": display_amount,
+            "lang": g.get("language", "en"),
+            "t": lambda key, **data: i18n.translate(
+                key, g.get("language", "en"), **data
+            ),
+            "local_money": lambda minor, currency: (
+                display_amount(minor, currency)
+                if g.get("language", "en") == "en"
+                else i18n.local_money(minor, currency, g.get("language", "en"))
+            ),
+            "local_date": lambda value: (
+                str(value)
+                if g.get("language", "en") == "en"
+                else i18n.local_date(value, g.get("language", "en"))
+            ),
             "new_purchase_token": lambda: secrets.token_urlsafe(18),
             "discount_pending": app.config["DISCOUNT_PERCENT"] is None,
         }
 
     @app.after_request
     def secure_headers(response):
+        response.headers["Content-Language"] = g.get("language", "en")
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         response.headers["X-Frame-Options"] = "DENY"
@@ -177,6 +194,23 @@ def create_app(test_config=None):
 
         return wrapper
 
+    @app.post("/language")
+    def set_language():
+        language = request.form.get("language")
+        if language not in i18n.SUPPORTED_LANGUAGES:
+            abort(400, description="Unsupported language")
+        target = safe_next(request.form.get("next")) or url_for("home")
+        response = make_response(redirect(target))
+        response.set_cookie(
+            "eventhub_lang",
+            language,
+            max_age=60 * 60 * 24 * 365,
+            samesite="Lax",
+            httponly=True,
+            secure=bool(app.config.get("SESSION_COOKIE_SECURE")),
+        )
+        return response
+
     @app.get("/")
     def home():
         term = request.args.get("q", "")[:150]
@@ -206,12 +240,17 @@ def create_app(test_config=None):
                 app.config["DISCOUNT_PERCENT"],
             )
             price_text = quote.displayed_total
+            localized_price_text = i18n.local_money(
+                quote.total_minor, quote.currency, g.language
+            )
         except EventHubError:
             price_text = "Price pending configuration"
+            localized_price_text = price_text
         return render_template(
             "event.html",
             event=event,
             price_text=price_text,
+            localized_price_text=localized_price_text,
             price_currency=preview_currency,
         )
 
@@ -242,6 +281,9 @@ def create_app(test_config=None):
             return jsonify(
                 {
                     "total": q.displayed_total,
+                    "localized_total": i18n.local_money(
+                        q.total_minor, target, g.language
+                    ),
                     "rate": q.rate,
                     "discount_percent": q.discount_percent,
                     "currency": target,
@@ -261,7 +303,7 @@ def create_app(test_config=None):
                     request.form.get("password"),
                     request.form.get("currency") or "USD",
                 )
-                flash("Account created. Please sign in.", "success")
+                flash(i18n.translate("flash.account", g.language), "success")
                 return redirect(url_for("login"))
             except EventHubError as exc:
                 flash(str(exc), "error")
@@ -334,12 +376,11 @@ def create_app(test_config=None):
             )
             if result.duplicate:
                 flash(
-                    "This order was already placed, so this is your original confirmation. "
-                    "You were not charged twice.",
+                    i18n.translate("flash.duplicate", g.language),
                     "success",
                 )
             else:
-                flash("Your simulated purchase was successful.", "success")
+                flash(i18n.translate("flash.order", g.language), "success")
             return redirect(url_for("order_page", order_id=result.order_id))
         except EventHubError as exc:
             flash(str(exc), "error")
@@ -362,7 +403,7 @@ def create_app(test_config=None):
         purchase.cancel_checkout(
             connection(), account_id=g.user["id"], event_id=event_id
         )
-        flash("Checkout cancelled. No tickets were reserved.", "warning")
+        flash(i18n.translate("flash.cancel", g.language), "warning")
         return redirect(url_for("event_page", event_id=event_id))
 
     @app.post("/checkout/<int:event_id>/leave")
@@ -396,7 +437,7 @@ def create_app(test_config=None):
             identity.set_currency(
                 connection(), g.user["id"], request.form.get("currency")
             )
-            flash("Preferred currency updated.", "success")
+            flash(i18n.translate("flash.currency", g.language), "success")
         except EventHubError as exc:
             flash(str(exc), "error")
         return redirect(safe_next(request.form.get("next")) or url_for("home"))
@@ -409,7 +450,16 @@ def create_app(test_config=None):
             "admin.html",
             rates=c.execute("SELECT * FROM rates ORDER BY currency").fetchall(),
             audits=audit.recent(c),
+            maintenance_alerts=monitor.alerts(c),
         )
+
+    @app.post("/admin/alerts/<int:alert_id>/acknowledge")
+    @require_admin
+    def acknowledge_alert(alert_id):
+        if not monitor.acknowledge(connection(), alert_id, g.user["id"]):
+            abort(404)
+        flash(i18n.translate("flash.alert_ack", g.language), "success")
+        return redirect(url_for("admin_home") + "#maintenance-alerts")
 
     @app.post("/admin/rates")
     @require_admin
@@ -421,7 +471,7 @@ def create_app(test_config=None):
                 request.form.get("currency"),
                 request.form.get("rate"),
             )
-            flash("Exchange rate saved and audited.", "success")
+            flash(i18n.translate("flash.rate", g.language), "success")
         except (ValueError, EventHubError) as exc:
             flash(str(exc), "error")
         return redirect(url_for("admin_home"))
@@ -431,7 +481,7 @@ def create_app(test_config=None):
     def admin_checkin():
         try:
             purchase.redeem(connection(), request.form.get("confirmation_code", ""))
-            flash("Confirmation accepted and marked used.", "success")
+            flash(i18n.translate("flash.checkin", g.language), "success")
         except EventHubError as exc:
             flash(str(exc), "error")
         return redirect(url_for("admin_home"))

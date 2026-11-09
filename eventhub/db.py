@@ -36,6 +36,16 @@ CREATE TABLE IF NOT EXISTS audit (
 );
 CREATE INDEX IF NOT EXISTS idx_events_artist ON events(artist);
 CREATE INDEX IF NOT EXISTS idx_orders_account ON orders(account_id, created_at);
+CREATE TABLE IF NOT EXISTS maintenance_alerts (
+  id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL REFERENCES orders(id),
+  category TEXT NOT NULL, description TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'open' CHECK(status IN ('open','acknowledged')),
+  acknowledged_by INTEGER REFERENCES accounts(id),
+  acknowledged_at TEXT, notified_at TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(order_id, category)
+);
+CREATE INDEX IF NOT EXISTS idx_alert_status ON maintenance_alerts(status, created_at);
 CREATE INDEX IF NOT EXISTS idx_audit_created ON audit(created_at);
 """
 

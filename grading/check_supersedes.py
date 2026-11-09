@@ -44,8 +44,14 @@ def read_file(md: Path, reqs):
             continue
         rid = m.group("id")
         by = SUPERSEDED_BY.search(m.group("text"))
-        reqs.setdefault(rid, {"line": f"{md}:{n}", "superseded_by": by.group("id") if by else None,
-                              "supersedes": []})
+        reqs.setdefault(
+            rid,
+            {
+                "line": f"{md}:{n}",
+                "superseded_by": by.group("id") if by else None,
+                "supersedes": [],
+            },
+        )
         last_id = rid
 
 
@@ -55,17 +61,28 @@ def check_links(reqs):
         for old in r["supersedes"]:
             links += 1
             if old not in reqs:
-                emit(False, f"{rid} supersedes {old}, which is in none of the files given")
+                emit(
+                    False,
+                    f"{rid} supersedes {old}, which is in none of the files given",
+                )
                 continue
-            emit(reqs[old]["superseded_by"] == rid,
-                 f"{rid} supersedes {old}; {old} ends with 'superseded by {rid}'")
+            emit(
+                reqs[old]["superseded_by"] == rid,
+                f"{rid} supersedes {old}; {old} ends with 'superseded by {rid}'",
+            )
         if r["superseded_by"]:
             links += 1
             new = r["superseded_by"]
             if new not in reqs:
-                emit(False, f"{rid} superseded by {new}, which is in none of the files given")
+                emit(
+                    False,
+                    f"{rid} superseded by {new}, which is in none of the files given",
+                )
                 continue
-            emit(rid in reqs[new]["supersedes"], f"{rid} superseded by {new}; {new} has 'supersedes: {rid}'")
+            emit(
+                rid in reqs[new]["supersedes"],
+                f"{rid} superseded by {new}; {new} has 'supersedes: {rid}'",
+            )
     return links
 
 
@@ -79,7 +96,9 @@ def main(argv):
     for arg in argv[1:]:
         read_file(Path(arg), reqs)
     links = check_links(reqs)
-    print(f"\n{len(reqs)} requirement(s), {links} link end(s) checked, {failures} failure(s)")
+    print(
+        f"\n{len(reqs)} requirement(s), {links} link end(s) checked, {failures} failure(s)"
+    )
     return min(failures, 255)
 
 

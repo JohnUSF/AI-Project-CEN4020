@@ -71,8 +71,18 @@ def main(argv):
     )
     ruff = shutil.which("ruff")
     if ruff is None:
+        # Call 6: a green dashboard must never hide a missing quality dependency.
         print(
-            "⚪ ruff is not installed, so lint and format checks are skipped (pip install -r requirements-dev.txt)"
+            "🔴 Ruff is required for a complete quality run (install requirements-dev.txt)"
+        )
+        results.append(
+            {
+                "name": "Ruff lint/format dependency",
+                "ok": False,
+                "seconds": 0.0,
+                "summary": "ruff not installed",
+                "returncode": 2,
+            }
         )
     else:
         results.append(

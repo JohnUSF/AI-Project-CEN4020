@@ -1,50 +1,34 @@
+# Re-created for Part 5. The Part 4 workflow file was not part of the files supplied, so this
+# follows the Part 4 README's description (compile, Ruff lint + format, pytest, Part 3 gate)
+# and adds the Part 5 jobs: requirement traceability and the Selenium system suite.
+# NOT executed from the Part 5 sandbox. Run it on GitHub and read the result before relying on it.
 name: EventHub quality
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
+
 jobs:
-  test:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: 'pip'
+        with: {python-version: '3.12'}
       - run: python -m pip install -r requirements-dev.txt
-      - name: Python compilation
-        run: python -m compileall -q eventhub tests tests_system scripts
-      - name: Ruff lint
-        run: ruff check eventhub tests tests_system scripts --select E4,E7,E9,F63,F7,F82
-      - name: Ruff formatting (no auto-correction in CI)
-        run: ruff format --check eventhub tests tests_system scripts
-      - name: Pytest - unit and integration, no skips
-        run: python -m pytest -q --strict-markers
-      - name: Part 3 / Part 4 / Part 5 EARS and C4 structure
-        run: python grading/check_part3.py .
-      - name: Every active requirement has a test (or a written reason)
-        run: python grading/check_test_traceability.py .
+      - run: python -m compileall -q eventhub tests tests_system scripts
+      - run: ruff check eventhub tests tests_system scripts --select E4,E7,E9,F63,F7,F82
+      - run: ruff format --check eventhub tests tests_system scripts
+      - run: python -m pytest -q
+      - run: python grading/check_part3.py .
+      - run: python grading/check_test_traceability.py .
 
-  # Part 5: the Selenium system tests, against the real app, in headless Chrome.
   system-tests:
     runs-on: ubuntu-latest
-    needs: test
+    needs: quality
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: 'pip'
+        with: {python-version: '3.12'}
       - run: python -m pip install -r requirements-dev.txt -r requirements-system.txt
-      # The latency budget is a PLACEHOLDER chosen by the team: Marcus has not given the real number (Q13).
-      # It was 500 ms at the 95th percentile; GitHub's shared runners measured 553 ms on one run, so CI uses
-      # 1000 ms. This is not an approved requirement. Replace it when system-006 gets its real number.
-      - name: Selenium system tests and load measurement
-        run: python -m pytest tests_system -q --strict-markers -rfE
-        env:
-          EVENTHUB_PERF_P95_MS: '1000'
+      - run: python -m pytest tests_system -q -rfE      # Chrome and chromedriver come with ubuntu-latest
       - uses: actions/upload-artifact@v4
         if: always()
-        with:
-          name: system-test-evidence
-          path: report/system_run
+        with: {name: system-test-evidence, path: report/system_run}

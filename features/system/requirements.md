@@ -23,3 +23,10 @@
 ## Call 5: tests that trace to the specification
 
 - **system-009** (ubiquitous): The {EventHub} shall carry a requirement identifier on every automated test, so that a failing test names the requirement it protects.
+
+## Call 6: maintenance and internationalization
+
+- **system-010** (event-driven): When a reader selects Spanish, the {EventHub} shall show its core navigation, registration, event discovery, checkout and order-history interface in Spanish and allow switching back to English.
+- **system-011** (event-driven): When the reader selects a supported language, the {EventHub} shall display event dates using that language's regional date convention without changing the saved event timestamp [ASSUMPTION: Q24 locale and time-zone policy pending].
+- **system-012** (event-driven): When a maintenance operator backs up the SQLite database, the {EventHub} shall create and verify a consistent backup including committed transactions and store a checksum alongside it [TBD: Q25 owner, schedule and offsite retention].
+- **system-013** (event-driven): When an operator restores a backup, the {EventHub} shall require explicit offline confirmation, check the saved checksum and database integrity, and reject tampered copies.

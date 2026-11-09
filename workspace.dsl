@@ -1,4 +1,4 @@
-workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 5: one modular Flask application, one SQLite database, and two roles (buyer and administrator)." {
+workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one modular Flask application, one SQLite database, and two roles (buyer and administrator)." {
 
     !impliedRelationships false
 
@@ -28,6 +28,12 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 5: one m
                 ratelimit = component "Request Rate Limiter" "Counts each account's purchase requests in a sliding window (numbers still open, Q19) and rejects the excess with a wait time before it reaches the purchase path. Writes one audit entry per blocked period." "Python (eventhub/ratelimit.py)"
 
                 audit = component "Audit Log" "Records every purchase attempt from inside the purchase path, so a route cannot skip it. Also records rate changes and abandoned checkouts." "Python"
+
+                localization = component "Localization & Formatting" "Reads language dictionaries and formats display-only dates and money; never alters integer charges or exchange-rate calculations. English and Spanish initially." "Python / Babel / JSON"
+
+                monitoring = component "Order Anomaly Monitor" "Scheduled maintenance scan compares stored charged totals against expected amounts calculated using purchase-time rates; queues administrator alerts and optional SMTP notifications." "Python / SQLite"
+
+                backups = component "Backup & Recovery" "Offline maintenance commands create checksum-verified SQLite online backups and require explicit confirmation before restoration." "Python / SQLite backup API"
 
                 admin = component "Administration" "Administrator-only pages: update exchange rates and read the audit log. Nothing in the buyer-facing flow calls into it." "Python / Flask" "Administrator Only"
 
@@ -73,6 +79,14 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 5: one m
         admin -> identity "Requires the administrator role"
         admin -> pricing "Updates exchange rates"
         admin -> audit "Reads the audit log; records rate changes"
+        boundary -> localization "Chooses language; formats dates and amounts for display only"
+        purchase -> localization "Formats receipts after the charged amount is stored"
+        catalog -> localization "Formats event date labels without modifying timestamps"
+        monitoring -> pricing "Recomputes expected totals from each order's original rate"
+        monitoring -> audit "Sends flagged orders to administrator review queue"
+        admin -> monitoring "Reads and acknowledges alerts"
+        backups -> db "Creates verified SQLite snapshot / restores while stopped" "SQLite backup"
+
 
         # Component level: data and files
         identity -> db "Accounts, roles and sessions" "SQL"
@@ -81,6 +95,9 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 5: one m
         inventory -> db "Ticket counts" "SQL"
         purchase -> db "Orders" "SQL"
         audit -> db "Audit records" "SQL"
+        monitoring -> db "Reads orders and stores alerts" "SQL"
+        localization -> config "Reads English and Spanish language catalogs" "File read"
+
         catalog -> config "Loads event setup data" "File read"
         pricing -> config "Reads supported currencies; seeds first rates" "File read"
         identity -> config "Reads the session idle timeout" "File read"
@@ -118,6 +135,12 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 5: one m
             purchase -> inventory "Checks availability and reduces the count (atomic)"
             purchase -> audit "Records the outcome (a repeated token is recorded as a duplicate and returns the original order)"
             autolayout lr
+        }
+
+        component app "Part6Components" "Call 6 maintenance view: isolates presentation, anomaly monitoring and backup/recovery from the payment path." {
+            title "Call 6: Maintainable Components, Localization and Monitoring"
+            include *
+            autolayout tb 300 220
         }
 
         styles {

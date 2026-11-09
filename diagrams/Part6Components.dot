@@ -1,0 +1,21 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.7", label="EventHub - Call 6 maintained components", labelloc=t, fontname="Helvetica", fontsize=19];
+  node [shape=box, style="rounded,filled", fillcolor="#ECF4F7", color="#55778B", fontname="Helvetica", fontsize=11, margin="0.18,0.14"];
+  buyer [label="Buyer / administrator", shape=ellipse, fillcolor="#F8E2CD"];
+  boundary [label="Flask boundary
+validation + sessions"];
+  pricing [label="Pricing engine
+integer minor units"];
+  l10n [label="Localization adapter
+English / Spanish
+Babel display only",fillcolor="#C7E9DF"];
+  purchase [label="Purchase & orders
+idempotent checkout"];
+  audit [label="Audit trail"];
+  monitor [label="Anomaly monitor
+stored rate + queued alerts",fillcolor="#C7E9DF"];
+  backup [label="Backup / restore
+checksum + integrity",fillcolor="#C7E9DF"];
+  db [label="SQLite WAL",shape=cylinder,fillcolor="#E6E9F7"];
+  buyer -> boundary; boundary -> purchase; boundary -> l10n [label="language"]; purchase -> pricing [label="exact total"]; purchase -> db; pricing -> db [label="rates"]; purchase -> l10n [style=dashed,label="receipt only"]; purchase -> audit; monitor -> db [label="scan"]; monitor -> audit [label="flag for review"]; backup -> db [label="online copy"];
+}

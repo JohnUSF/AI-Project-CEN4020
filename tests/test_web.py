@@ -1,12 +1,11 @@
 """HTTP integration tests run in CI after pip installs Flask/Werkzeug."""
 
-import re
 import pytest
 
 pytest.importorskip("flask")
-from eventhub.web import create_app, safe_next
 from eventhub.db import connect
 from eventhub.identity import register
+from eventhub.web import create_app, safe_next
 
 
 @pytest.fixture

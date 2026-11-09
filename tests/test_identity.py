@@ -3,8 +3,8 @@
 import pytest
 
 pytest.importorskip("werkzeug.security")
-from eventhub.identity import register, authenticate, promote_from_cli, user_by_id
 from eventhub.errors import EventHubError
+from eventhub.identity import authenticate, promote_from_cli, register, user_by_id
 
 
 @pytest.mark.req("identity-001", "identity-002", "identity-008", "identity-015")
