@@ -17,3 +17,9 @@
 - **audit-007** (event-driven): When an account's purchase requests first exceed the request limit, the {EventHub} shall record one audit entry for that account and shall record no further entry until the account's requests are accepted again.
 - **audit-008** (ubiquitous): The {EventHub} shall leave exactly one audit record for every purchase attempt that reaches the purchase path, whether the attempt succeeds, fails or repeats an earlier purchase token.
   supersedes: audit-003
+
+## Call 6: post-incident anomaly monitoring
+
+- **audit-009** (event-driven): When scheduled maintenance checks stored orders, the {EventHub} shall flag a total that differs substantially from its original stored price and exchange rate [ASSUMPTION: Q22 alert threshold pending approval].
+- **audit-010** (event-driven): When a new out-of-range order is found, the {EventHub} shall create a durable administrator-visible alert and provide an optional configured notification route to a human [TBD: Q23 recipient and rotation].
+- **audit-011** (event-driven): When an authenticated administrator acknowledges an order alert, the {EventHub} shall record who acknowledged it while retaining the alert for review.

@@ -1,0 +1,12 @@
+> **Historical development note (November 8), updated with final November 9 verification.** The offline limitations below describe early assembly, not the final verified code. The current reviewed revision, including the locale-adapter refactor, passed **161 unit/integration + 139 Selenium tests (300 total, 0 failures)** in the saved Mac run finished November 9, 2026 at 13:20:04 (`report/last_run.json`). Both quality and system-test jobs also passed on the latest GitHub PR #3 revision. For the implemented/deferred refactor and remaining product decisions, see `docs/part6-ai-simplification-review.md` and `docs/part6-release-decisions.md`.
+
+# Part 6 execution evidence and limits — prepared November 8, 2026
+
+Evidence provenance matters in the 20% testing deliverable.
+
+- The baseline **281/281 passing** tests come from the Part 5 files supplied by John, including `report/test_dashboard.html`, dated November 1, 2026. We did not independently reproduce all of them here.
+- This Part 6 build adds new tests for four currencies, historic and current exchange rates, Spanish text and display, an audit anomaly queue, acknowledgement, SQLite online backup, checksum integrity and restore protection.
+- The Part 6 source was checked by Python compilation and the course Part 3 EARS/C4 structural script. The traceability script also checks that each active requirement has a tagged test or a documented exemption.
+- **Historical limitation (November 8 only):** Flask, Werkzeug, Selenium and Ruff were unavailable in the early offline container, so full verification could not be done there. **Resolved for the classroom revision on November 9:** the saved Mac run records 161 unit/integration and 139 browser tests passing, as well as configured lint/format and structure checks. GitHub Actions also reports successful quality and system tests. This does not establish a live production rollout.
+- The first written Part 6 currency test contained an *incorrect test assertion* applied to non-yen currencies (3 failures). We corrected the test to check JPY display only for the JPY case; no pricing source code change was needed. This is a real example of why generated tests need review.
+- The fictional production incident describes ¥4,500 becoming ¥45 under release 1.3. Our actual Part 5 pricing code already used zero decimal places for JPY. We did not reproduce that bug or run a production rollback. We added regression coverage and isolated formatting to prevent it.

@@ -7,9 +7,7 @@
   when one fails, so the run produces its own evidence (report/system_run/).
 """
 
-import json
 import os
-import re
 import socket
 import sqlite3
 import subprocess

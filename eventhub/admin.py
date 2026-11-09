@@ -1,9 +1,10 @@
 """Administrator-only service methods; routes enforce roles separately."""
 
 from decimal import Decimal
-from .pricing import CURRENCY_DIGITS, validate_rate
-from .errors import UnsupportedCurrency
+
 from . import audit
+from .errors import UnsupportedCurrency
+from .pricing import CURRENCY_DIGITS, validate_rate
 
 
 def change_rate(conn, account_id, currency, rate):

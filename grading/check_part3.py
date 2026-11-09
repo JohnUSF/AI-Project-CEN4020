@@ -31,7 +31,9 @@ def main(argv):
     else:
         print("   ⚪ no features/<folder>/requirements.md to check\n")
     total += run("check_structurizr.py", [str(repo)])
-    verdict = "ELIGIBLE for grading" if total == 0 else f"NOT eligible: {total} failure(s)"
+    verdict = (
+        "ELIGIBLE for grading" if total == 0 else f"NOT eligible: {total} failure(s)"
+    )
     print(f"{GREEN if total == 0 else RED} Part 3 gate: {verdict}")
     return min(total, 255)
 

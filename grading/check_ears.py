@@ -5,24 +5,38 @@ import re
 import sys
 from pathlib import Path
 
-PATTERNS = {"ubiquitous", "event-driven", "state-driven", "unwanted", "optional", "complex"}
-SIMPLE = {"event-driven": "when", "state-driven": "while", "unwanted": "if", "optional": "where"}
+PATTERNS = {
+    "ubiquitous",
+    "event-driven",
+    "state-driven",
+    "unwanted",
+    "optional",
+    "complex",
+}
+SIMPLE = {
+    "event-driven": "when",
+    "state-driven": "while",
+    "unwanted": "if",
+    "optional": "where",
+}
 ORDER = {"where": 0, "while": 1, "when": 2, "if": 2}
 
 FENCE = re.compile(r"^ {0,3}(```|~~~)")
-REQ = re.compile(r"^- \*\*(?P<id>[^*\s]+)\*\* \((?P<pattern>[^)]*)\):\s+(?P<text>.+?)\s*$")
+REQ = re.compile(
+    r"^- \*\*(?P<id>[^*\s]+)\*\* \((?P<pattern>[^)]*)\):\s+(?P<text>.+?)\s*$"
+)
 SUPERSEDED_BY = re.compile(r"\bsuperseded by [A-Za-z0-9_-]+\.?\s*$")
 CODE = re.compile(r"`[^`]*`")
 QUOTED = re.compile(r"\"[^\"]*\"|“[^”]*”")
 EMPHASIS = re.compile(r"(?<!\w)[*_]+|[*_]+(?!\w)")
-SHALL = re.compile(r"\bshall\b", re.I)
+SHALL = re.compile(r"\bshall\b", re.IGNORECASE)
 NAME = re.compile(r"\{[^{}]*\}")
-KEYWORD = re.compile(r"\b(when|while|if)\b|(?:^|,)\s*\b(where)\b", re.I)
-OPENER = re.compile(r"^(when|while|if|where)\b", re.I)
-NAME_FIRST = re.compile(r"^(the\s+)?\{[^{}]*\}", re.I)
+KEYWORD = re.compile(r"\b(when|while|if)\b|(?:^|,)\s*\b(where)\b", re.IGNORECASE)
+OPENER = re.compile(r"^(when|while|if|where)\b", re.IGNORECASE)
+NAME_FIRST = re.compile(r"^(the\s+)?\{[^{}]*\}", re.IGNORECASE)
 NAME_LAST = re.compile(r"\{[^{}]*\}\s*$")
-AFTER_CLAUSE = re.compile(r"(,|\bthen\b)\s*(the\s+)?\{[^{}]*\}\s*$", re.I)
-IF_THEN = re.compile(r"\bif\b.*\bthen\b", re.I)
+AFTER_CLAUSE = re.compile(r"(,|\bthen\b)\s*(the\s+)?\{[^{}]*\}\s*$", re.IGNORECASE)
+IF_THEN = re.compile(r"\bif\b.*\bthen\b", re.IGNORECASE)
 
 GREEN, RED = "\U0001f7e2", "\U0001f534"
 
@@ -44,7 +58,7 @@ def keywords(pre):
 class Checker:
     def __init__(self):
         self.failures = 0
-        self.reqs = {}        # id -> dict(prefix, pattern, text, line)
+        self.reqs = {}  # id -> dict(prefix, pattern, text, line)
 
     def emit(self, ok, text):
         if not ok:
@@ -67,9 +81,17 @@ class Checker:
             rid, pattern = m.group("id"), m.group("pattern")
             prefix = rid.rsplit("-", 1)[0] if "-" in rid else rid
             text = prepare(m.group("text"))
-            self.reqs[rid] = {"prefix": prefix, "pattern": pattern, "text": text, "line": f"{label}:{n}"}
+            self.reqs[rid] = {
+                "prefix": prefix,
+                "pattern": pattern,
+                "text": text,
+                "line": f"{label}:{n}",
+            }
             if pattern not in PATTERNS:
-                self.emit(False, f"{rid}: pattern '{pattern}' is not one of {sorted(PATTERNS)}")
+                self.emit(
+                    False,
+                    f"{rid}: pattern '{pattern}' is not one of {sorted(PATTERNS)}",
+                )
                 continue
             self.emit(True, f"{rid}: pattern {pattern}")
             self.check_wording(rid, pattern, text)
@@ -79,36 +101,63 @@ class Checker:
         self.emit(shall is not None, f"{rid}: contains 'shall'")
         if shall is None:
             return
-        pre = text[:shall.start()]
+        pre = text[: shall.start()]
         names = NAME.findall(text)
-        self.emit(len(names) == 1, f"{rid}: exactly one system name in braces, found {len(names)}")
+        self.emit(
+            len(names) == 1,
+            f"{rid}: exactly one system name in braces, found {len(names)}",
+        )
         if len(names) != 1:
             return
-        self.emit(NAME_LAST.search(pre) is not None, f"{rid}: 'shall' directly after the {{system name}}")
+        self.emit(
+            NAME_LAST.search(pre) is not None,
+            f"{rid}: 'shall' directly after the {{system name}}",
+        )
         found = keywords(pre)
         if pattern == "ubiquitous":
-            self.emit(NAME_FIRST.match(pre) is not None,
-                      f"{rid}: ubiquitous, the {{system name}} comes first (only 'The' may precede it)")
+            self.emit(
+                NAME_FIRST.match(pre) is not None,
+                f"{rid}: ubiquitous, the {{system name}} comes first (only 'The' may precede it)",
+            )
             return
         if pattern in SIMPLE:
             own = SIMPLE[pattern]
-            self.emit(OPENER.match(pre) is not None and OPENER.match(pre).group(1).lower() == own,
-                      f"{rid}: {pattern} opens with '{own.capitalize()}'")
+            self.emit(
+                OPENER.match(pre) is not None
+                and OPENER.match(pre).group(1).lower() == own,
+                f"{rid}: {pattern} opens with '{own.capitalize()}'",
+            )
             others = sorted(set(found) - {own})
-            self.emit(not others, f"{rid}: {pattern}, no keyword other than '{own}' before 'shall'"
-                      + (f" (found {', '.join(others)})" if others else ""))
+            self.emit(
+                not others,
+                f"{rid}: {pattern}, no keyword other than '{own}' before 'shall'"
+                + (f" (found {', '.join(others)})" if others else ""),
+            )
         else:
-            self.emit(OPENER.match(pre) is not None, f"{rid}: complex opens with a keyword")
+            self.emit(
+                OPENER.match(pre) is not None, f"{rid}: complex opens with a keyword"
+            )
             distinct = sorted(set(found))
-            self.emit(len(distinct) >= 2, f"{rid}: complex, {len(distinct)} different keyword(s) before 'shall' (needs 2)")
+            self.emit(
+                len(distinct) >= 2,
+                f"{rid}: complex, {len(distinct)} different keyword(s) before 'shall' (needs 2)",
+            )
             ranks = [ORDER[k] for k in found]
-            self.emit(ranks == sorted(ranks), f"{rid}: complex, clauses in EARS order (Where, While, When/If)")
+            self.emit(
+                ranks == sorted(ranks),
+                f"{rid}: complex, clauses in EARS order (Where, While, When/If)",
+            )
         if "if" in found:
-            self.emit(IF_THEN.search(pre) is not None, f"{rid}: 'then' after 'If' and before 'shall'")
+            self.emit(
+                IF_THEN.search(pre) is not None,
+                f"{rid}: 'then' after 'If' and before 'shall'",
+            )
         if pattern != "unwanted":
             self.emit("," in pre, f"{rid}: {pattern}, comma before 'shall'")
-        self.emit(AFTER_CLAUSE.search(pre) is not None,
-                  f"{rid}: the {{system name}} directly after the last clause (after the comma or 'then')")
+        self.emit(
+            AFTER_CLAUSE.search(pre) is not None,
+            f"{rid}: the {{system name}} directly after the last clause (after the comma or 'then')",
+        )
 
     def summary(self):
         print(f"\n{len(self.reqs)} requirement(s), {self.failures} failure(s)")

@@ -45,11 +45,9 @@ def test_each_component_imports_on_its_own_without_the_web_layer(module):
 
 @pytest.mark.req("system-008")
 def test_the_shared_workflow_runs_the_tests_and_the_system_suite():
-    import re
-
     workflow = (ROOT / ".github" / "workflows" / "quality.yml").read_text()
     assert "python -m pytest -q" in workflow and "pytest tests_system" in workflow
-    assert re.search(r"^on:\s*\n\s+push:\s*\n\s+pull_request:", workflow, re.M)
+    assert "on: [push, pull_request]" in workflow
 
 
 @pytest.mark.req("system-009")
@@ -109,8 +107,9 @@ def test_prices_follow_the_rate_stored_in_the_database_with_no_outside_provider(
     app_factory,
 ):
     pytest.importorskip("flask")
-    from .test_web import sign_in
     from eventhub.db import connect
+
+    from .test_web import sign_in
 
     app, database = app_factory()
     client = app.test_client()
@@ -133,6 +132,7 @@ def test_prices_follow_the_rate_stored_in_the_database_with_no_outside_provider(
 def test_payment_is_simulated_and_no_payment_or_email_service_is_wired_in(connection):
     from eventhub import purchase
     from eventhub.errors import EventHubError
+
     from .conftest import add_account
 
     uid = add_account(connection)

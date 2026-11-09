@@ -17,9 +17,13 @@ ID_OK = re.compile(rf"^{ID}$")
 REST_OK = re.compile(r"^ \([^)]+\): +\S")
 LIST_ITEM = re.compile(r"^[ \t]*(?:[-*+]|\d+[.)])[ \t]")
 SUPERSEDES = re.compile(rf"^[ \t]+supersedes:[ \t]*(?P<id>{ID})[ \t]*$")
-SUPERSEDES_ANY = re.compile(r"^[ \t]*(?:(?:[-*+]|\d+[.)])[ \t]+)?supersedes[ \t]*:", re.I)
+SUPERSEDES_ANY = re.compile(
+    r"^[ \t]*(?:(?:[-*+]|\d+[.)])[ \t]+)?supersedes[ \t]*:", re.IGNORECASE
+)
 SUPERSEDED_BY = re.compile(rf"\bsuperseded by (?P<id>{ID})\.?\s*$")
-SUPERSEDED_ANY = re.compile(r"\bsuperseded by\s+[`*(\[]*[A-Za-z0-9_-]*\d", re.I)
+SUPERSEDED_ANY = re.compile(
+    r"\bsuperseded by\s+[`*(\[]*[A-Za-z0-9_-]*\d", re.IGNORECASE
+)
 
 GREEN, RED = "\U0001f7e2", "\U0001f534"
 
@@ -36,16 +40,20 @@ def broken_rules(m):
     elif m.group("colon"):
         rules.append("nothing but the ID goes inside the bold")
     if not ID_OK.match(m.group("token")):
-        rules.append("the ID must be lowercase letters or digits joined by single hyphens and end in three digits")
+        rules.append(
+            "the ID must be lowercase letters or digits joined by single hyphens and end in three digits"
+        )
     if not REST_OK.match(m.group("rest")):
         rules.append("`(<pattern>): ` and a sentence must follow the ID")
-    return rules or ["the line does not have the form `- **id-nnn** (pattern): sentence`"]
+    return rules or [
+        "the line does not have the form `- **id-nnn** (pattern): sentence`"
+    ]
 
 
 class Checker:
     def __init__(self):
         self.failures = 0
-        self.reqs = {}        # id -> dict(superseded, line)
+        self.reqs = {}  # id -> dict(superseded, line)
 
     def emit(self, ok, text):
         if not ok:
@@ -56,8 +64,8 @@ class Checker:
         label = label or str(md)
         lines = md.read_bytes().decode("utf-8-sig").splitlines()
         in_fence = False
-        last_id = None        # the requirement a supersedes: line may attach to
-        prev = None           # what the previous line was: "req", "cont", or None
+        last_id = None  # the requirement a supersedes: line may attach to
+        prev = None  # what the previous line was: "req", "cont", or None
         for n, line in enumerate(lines, 1):
             where = f"{label}:{n}"
             if FENCE.match(line):
@@ -72,24 +80,44 @@ class Checker:
             if SUPERSEDES_ANY.match(line):
                 s = SUPERSEDES.match(line)
                 if not s:
-                    self.emit(False, f"{where}: malformed supersedes line, must be an indented `supersedes: <id>`")
+                    self.emit(
+                        False,
+                        f"{where}: malformed supersedes line, must be an indented `supersedes: <id>`",
+                    )
                 elif last_id is None:
-                    self.emit(False, f"{where}: supersedes line has no requirement directly above it")
+                    self.emit(
+                        False,
+                        f"{where}: supersedes line has no requirement directly above it",
+                    )
                 else:
-                    self.emit(True, f"{where}: supersedes {s.group('id')} under {last_id}")
+                    self.emit(
+                        True, f"{where}: supersedes {s.group('id')} under {last_id}"
+                    )
                 prev = None
                 continue
             m = PARTS.match(line)
-            candidate = m and (m.group("open") or m.group("rest").lstrip().startswith("("))
+            candidate = m and (
+                m.group("open") or m.group("rest").lstrip().startswith("(")
+            )
             if candidate:
                 if REQ.match(line):
-                    last_id, prev = self.requirement(where, line, REQ.match(line).group("id")), "req"
+                    last_id, prev = (
+                        self.requirement(where, line, REQ.match(line).group("id")),
+                        "req",
+                    )
                 else:
-                    self.emit(False, f"{where}: malformed requirement line: " + "; ".join(broken_rules(m)))
+                    self.emit(
+                        False,
+                        f"{where}: malformed requirement line: "
+                        + "; ".join(broken_rules(m)),
+                    )
                     last_id, prev = None, None
                 continue
             if prev == "req" and not line.startswith("#") and not LIST_ITEM.match(line):
-                self.emit(False, f"{where}: a requirement must be on one line ({last_id} continues here)")
+                self.emit(
+                    False,
+                    f"{where}: a requirement must be on one line ({last_id} continues here)",
+                )
                 prev = "cont"
                 continue
             last_id, prev = None, None
@@ -98,7 +126,9 @@ class Checker:
 
     def requirement(self, where, line, rid):
         if rid in self.reqs:
-            self.emit(False, f"{where}: duplicate ID {rid} (also at {self.reqs[rid]['line']})")
+            self.emit(
+                False, f"{where}: duplicate ID {rid} (also at {self.reqs[rid]['line']})"
+            )
             return rid
         by = SUPERSEDED_BY.search(line)
         self.reqs[rid] = {"superseded": by is not None, "line": where}
@@ -109,7 +139,9 @@ class Checker:
 
     def summary(self):
         active = sum(1 for r in self.reqs.values() if not r["superseded"])
-        print(f"\n{len(self.reqs)} requirement(s), {active} active, {self.failures} failure(s)")
+        print(
+            f"\n{len(self.reqs)} requirement(s), {active} active, {self.failures} failure(s)"
+        )
 
 
 def main(argv):

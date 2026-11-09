@@ -1,0 +1,5 @@
+..............ss                                                         [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_call6_http.py:20: could not import 'flask': No module named 'flask'
+SKIPPED [1] tests/test_call6_http.py:35: could not import 'flask': No module named 'flask'
+14 passed, 2 skipped in 0.23s

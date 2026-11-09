@@ -1,7 +1,1966 @@
 {
- "finished_at": "2026-11-02 14:54:59",
+ "finished_at": "2026-11-09 13:17:44",
  "suite": "unit",
  "tests": [
+  {
+   "nodeid": "tests/test_admin.py::test_rate_change_is_audited",
+   "name": "test_rate_change_is_audited",
+   "file": "test_admin.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-006",
+    "audit-004"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_admin.py::test_invalid_rate_does_not_change_database",
+   "name": "test_invalid_rate_does_not_change_database",
+   "file": "test_admin.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_admin.py::test_unknown_currency_rejected",
+   "name": "test_unknown_currency_rejected",
+   "file": "test_admin.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_admin.py::test_usd_reference_rate_must_remain_one",
+   "name": "test_usd_reference_rate_must_remain_one",
+   "file": "test_admin.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_audit.py::test_audit_recent_returns_newest_first",
+   "name": "test_audit_recent_returns_newest_first",
+   "file": "test_audit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_audit.py::test_audit_limits_untrusted_detail_length",
+   "name": "test_audit_limits_untrusted_detail_length",
+   "file": "test_audit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "audit-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_http.py::test_spanish_switch_changes_text_date_and_receipt_not_amount",
+   "name": "test_spanish_switch_changes_text_date_and_receipt_not_amount",
+   "file": "test_call6_http.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "system-010",
+    "system-011",
+    "pricing-019"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_http.py::test_admin_alert_page_requires_role_and_can_acknowledge",
+   "name": "test_admin_alert_page_requires_role_and_can_acknowledge",
+   "file": "test_call6_http.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "audit-010",
+    "audit-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_exact_price_every_supported_currency[USD-1-3000]",
+   "name": "test_exact_price_every_supported_currency[USD-1-3000]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "In Part 6, a $30 order must never become \u00a545 through display cleanup.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_exact_price_every_supported_currency[EUR-0.92-2760]",
+   "name": "test_exact_price_every_supported_currency[EUR-0.92-2760]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "In Part 6, a $30 order must never become \u00a545 through display cleanup.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_exact_price_every_supported_currency[GBP-0.78-2340]",
+   "name": "test_exact_price_every_supported_currency[GBP-0.78-2340]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "In Part 6, a $30 order must never become \u00a545 through display cleanup.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_exact_price_every_supported_currency[JPY-150-4500]",
+   "name": "test_exact_price_every_supported_currency[JPY-150-4500]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "In Part 6, a $30 order must never become \u00a545 through display cleanup.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_real_purchase_persists_exact_currency_total[USD-1800]",
+   "name": "test_real_purchase_persists_exact_currency_total[USD-1800]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020",
+    "admin-009"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "Place a real order through the domain transaction, not a mocked quote.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_real_purchase_persists_exact_currency_total[EUR-1656]",
+   "name": "test_real_purchase_persists_exact_currency_total[EUR-1656]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020",
+    "admin-009"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "Place a real order through the domain transaction, not a mocked quote.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_real_purchase_persists_exact_currency_total[GBP-1404]",
+   "name": "test_real_purchase_persists_exact_currency_total[GBP-1404]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020",
+    "admin-009"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "Place a real order through the domain transaction, not a mocked quote.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_real_purchase_persists_exact_currency_total[JPY-2700]",
+   "name": "test_real_purchase_persists_exact_currency_total[JPY-2700]",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-020",
+    "admin-009"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "Place a real order through the domain transaction, not a mocked quote.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_display_never_changes_stored_minor_units",
+   "name": "test_display_never_changes_stored_minor_units",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-018",
+    "pricing-019",
+    "pricing-020",
+    "system-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_locale_adapter_keeps_old_english_values_and_spanish_display",
+   "name": "test_locale_adapter_keeps_old_english_values_and_spanish_display",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-010",
+    "system-011",
+    "pricing-019"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A web-template refactor must not change receipt amounts or English dates.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_spanish_strings_and_fallback_without_changing_events",
+   "name": "test_spanish_strings_and_fallback_without_changing_events",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-010",
+    "system-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_admin_rate_change_is_used_by_next_purchase_not_previous",
+   "name": "test_admin_rate_change_is_used_by_next_purchase_not_previous",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-009",
+    "pricing-010",
+    "pricing-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_undercharge_generates_one_durable_alert_without_repeating",
+   "name": "test_undercharge_generates_one_durable_alert_without_repeating",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "audit-009",
+    "audit-010"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_admin_acknowledgement_keeps_alert_history",
+   "name": "test_admin_acknowledgement_keeps_alert_history",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "audit-011",
+    "audit-010"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_call6_maintenance.py::test_online_backup_integrity_and_guarded_restore",
+   "name": "test_online_backup_integrity_and_guarded_restore",
+   "file": "test_call6_maintenance.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-012",
+    "system-013"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_catalog.py::test_catalog_lists_all_events",
+   "name": "test_catalog_lists_all_events",
+   "file": "test_catalog.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "catalog-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_catalog.py::test_search_matches_artist_or_venue_case_insensitive",
+   "name": "test_search_matches_artist_or_venue_case_insensitive",
+   "file": "test_catalog.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "catalog-002",
+    "catalog-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_catalog.py::test_no_match_shows_full_list_and_flag",
+   "name": "test_no_match_shows_full_list_and_flag",
+   "file": "test_catalog.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "catalog-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_catalog.py::test_literal_sql_wildcards_are_not_patterns",
+   "name": "test_literal_sql_wildcards_are_not_patterns",
+   "file": "test_catalog.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "catalog-007",
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_catalog.py::test_nonexistent_event",
+   "name": "test_nonexistent_event",
+   "file": "test_catalog.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_database.py::test_seed_is_idempotent",
+   "name": "test_seed_is_idempotent",
+   "file": "test_database.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "catalog-006",
+    "inventory-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_database.py::test_atomic_inventory_constraint_blocks_negative_counts",
+   "name": "test_atomic_inventory_constraint_blocks_negative_counts",
+   "file": "test_database.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "inventory-004"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_database.py::test_audit_records_newest_first",
+   "name": "test_audit_records_newest_first",
+   "file": "test_database.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule[ STUDENT@USF.EDU -student@usf.edu-True]",
+   "name": "test_email_normalization_and_provisional_domain_rule[ STUDENT@USF.EDU -student@usf.edu-True]",
+   "file": "test_eligibility.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013",
+    "pricing-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule[NAME+ALIAS@USF.EDU-name+alias@usf.edu-True]",
+   "name": "test_email_normalization_and_provisional_domain_rule[NAME+ALIAS@USF.EDU-name+alias@usf.edu-True]",
+   "file": "test_eligibility.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013",
+    "pricing-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule[member@mail.usf.edu-member@mail.usf.edu-False]",
+   "name": "test_email_normalization_and_provisional_domain_rule[member@mail.usf.edu-member@mail.usf.edu-False]",
+   "file": "test_eligibility.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013",
+    "pricing-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule[student@usf.edu.evil.org-student@usf.edu.evil.org-False]",
+   "name": "test_email_normalization_and_provisional_domain_rule[student@usf.edu.evil.org-student@usf.edu.evil.org-False]",
+   "file": "test_eligibility.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013",
+    "pricing-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility.py::test_email_normalization_and_provisional_domain_rule[student@example.org-student@example.org-False]",
+   "name": "test_email_normalization_and_provisional_domain_rule[student@example.org-student@example.org-False]",
+   "file": "test_eligibility.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-011",
+    "pricing-012",
+    "pricing-013",
+    "pricing-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility.py::test_empty_address_is_not_eligible",
+   "name": "test_empty_address_is_not_eligible",
+   "file": "test_eligibility.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-012"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_discount_disappears_when_the_qualifying_email_goes_away",
+   "name": "test_discount_disappears_when_the_qualifying_email_goes_away",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-015",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_discount_follows_the_email_in_the_other_direction_too",
+   "name": "test_discount_follows_the_email_in_the_other_direction_too",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-015"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_the_quote_page_follows_the_current_email_not_a_remembered_result",
+   "name": "test_the_quote_page_follows_the_current_email_not_a_remembered_result",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "pricing-015",
+    "pricing-011"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_no_website_route_changes_an_email_address",
+   "name": "test_no_website_route_changes_an_email_address",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "identity-020"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_posting_an_email_field_to_the_currency_route_does_not_change_it",
+   "name": "test_posting_an_email_field_to_the_currency_route_does_not_change_it",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "identity-020"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_known_risk_an_unverified_usf_address_is_eligible",
+   "name": "test_known_risk_an_unverified_usf_address_is_eligible",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "pricing-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "RISK-001 (open item Q3): nothing proves the registrant owns the @usf.edu mailbox.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@mail.usf.edu]",
+   "name": "test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@mail.usf.edu]",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Found by the mutation check: the rule was only tested on the function, not on the order it prices.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@notusf.edu]",
+   "name": "test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@notusf.edu]",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Found by the mutation check: the rule was only tested on the function, not on the order it prices.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@usf.edu.evil.org]",
+   "name": "test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[kid@usf.edu.evil.org]",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Found by the mutation check: the rule was only tested on the function, not on the order it prices.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_eligibility_timing.py::test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[usf.edu@gmail.com]",
+   "name": "test_lookalike_addresses_pay_full_price_through_the_whole_purchase_path[usf.edu@gmail.com]",
+   "file": "test_eligibility_timing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-014",
+    "pricing-003"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Found by the mutation check: the rule was only tested on the function, not on the order it prices.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_same_token_twice_gives_one_order_one_stock_change_and_two_audit_rows",
+   "name": "test_same_token_twice_gives_one_order_one_stock_change_and_two_audit_rows",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-024",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_replaying_a_token_for_a_different_purchase_is_refused[3-1-USD]",
+   "name": "test_replaying_a_token_for_a_different_purchase_is_refused[3-1-USD]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-026"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_replaying_a_token_for_a_different_purchase_is_refused[2-2-USD]",
+   "name": "test_replaying_a_token_for_a_different_purchase_is_refused[2-2-USD]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-026"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_replaying_a_token_for_a_different_purchase_is_refused[2-1-EUR]",
+   "name": "test_replaying_a_token_for_a_different_purchase_is_refused[2-1-EUR]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-026"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_token_belongs_to_one_account",
+   "name": "test_a_token_belongs_to_one_account",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-024"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_form_without_a_valid_token_is_rejected_when_required[None]",
+   "name": "test_a_form_without_a_valid_token_is_rejected_when_required[None]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-028",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_form_without_a_valid_token_is_rejected_when_required[]",
+   "name": "test_a_form_without_a_valid_token_is_rejected_when_required[]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-028",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_form_without_a_valid_token_is_rejected_when_required[short]",
+   "name": "test_a_form_without_a_valid_token_is_rejected_when_required[short]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-028",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_form_without_a_valid_token_is_rejected_when_required[has spaces in it!!!]",
+   "name": "test_a_form_without_a_valid_token_is_rejected_when_required[has spaces in it!!!]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-028",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_form_without_a_valid_token_is_rejected_when_required[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+   "name": "test_a_form_without_a_valid_token_is_rejected_when_required[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-028",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_form_without_a_valid_token_is_rejected_when_required[semi;colon-0123456789]",
+   "name": "test_a_form_without_a_valid_token_is_rejected_when_required[semi;colon-0123456789]",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-028",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_duplicate_does_not_trip_the_purchase_limit",
+   "name": "test_a_duplicate_does_not_trip_the_purchase_limit",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-024"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_a_failed_attempt_leaves_the_token_reusable",
+   "name": "test_a_failed_attempt_leaves_the_token_reusable",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-024"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Tokens are stored on orders only, so a sold-out try can be retried after a restock.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_idempotent_purchase.py::test_two_simultaneous_submits_of_one_token_make_one_order",
+   "name": "test_two_simultaneous_submits_of_one_token_make_one_order",
+   "file": "test_idempotent_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "purchase-024",
+    "inventory-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_identity.py::test_registration_stores_hash_and_buyer_only",
+   "name": "test_registration_stores_hash_and_buyer_only",
+   "file": "test_identity.py",
+   "outcome": "passed",
+   "seconds": 0.34,
+   "reqs": [
+    "identity-001",
+    "identity-002",
+    "identity-008",
+    "identity-015"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_identity.py::test_wrong_password_does_not_reveal_account",
+   "name": "test_wrong_password_does_not_reveal_account",
+   "file": "test_identity.py",
+   "outcome": "passed",
+   "seconds": 0.29,
+   "reqs": [
+    "identity-005"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_identity.py::test_duplicate_email_and_short_password_rejected",
+   "name": "test_duplicate_email_and_short_password_rejected",
+   "file": "test_identity.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "identity-001",
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_identity.py::test_admin_only_promoted_via_server_method",
+   "name": "test_admin_only_promoted_via_server_method",
+   "file": "test_identity.py",
+   "outcome": "passed",
+   "seconds": 0.13,
+   "reqs": [
+    "identity-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_inventory.py::test_inventory_decrement_succeeds_with_enough_stock",
+   "name": "test_inventory_decrement_succeeds_with_enough_stock",
+   "file": "test_inventory.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "inventory-003"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_inventory.py::test_inventory_rejects_oversell_without_negative_count",
+   "name": "test_inventory_rejects_oversell_without_negative_count",
+   "file": "test_inventory.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "inventory-004"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_oversell_stress.py::test_two_buyers_one_ticket_two_hundred_times",
+   "name": "test_two_buyers_one_ticket_two_hundred_times",
+   "file": "test_oversell_stress.py",
+   "outcome": "passed",
+   "seconds": 0.34,
+   "reqs": [
+    "inventory-001",
+    "inventory-003",
+    "inventory-004",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_oversell_stress.py::test_many_buyers_few_tickets_sells_exactly_the_stock",
+   "name": "test_many_buyers_few_tickets_sells_exactly_the_stock",
+   "file": "test_oversell_stress.py",
+   "outcome": "passed",
+   "seconds": 0.38,
+   "reqs": [
+    "inventory-001",
+    "inventory-004"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_normalize_usf_email_uppercase",
+   "name": "test_normalize_usf_email_uppercase",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-012",
+    "pricing-013",
+    "pricing-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_integer_money_usd",
+   "name": "test_integer_money_usd",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-007",
+    "pricing-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_jpy_rounds_to_zero_decimal_places",
+   "name": "test_jpy_rounds_to_zero_decimal_places",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-004",
+    "pricing-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_eur_discount_single_aggregate_round",
+   "name": "test_eur_discount_single_aggregate_round",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-004"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_rate_validation_and_no_floats",
+   "name": "test_rate_validation_and_no_floats",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-007",
+    "pricing-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_missing_discount_fails_closed_for_eligible_student",
+   "name": "test_missing_discount_fails_closed_for_eligible_student",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-003",
+    "pricing-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_invalid_discount_and_conversion_order",
+   "name": "test_invalid_discount_and_conversion_order",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-004"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_invalid_currency_quantity",
+   "name": "test_invalid_currency_quantity",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-001",
+    "purchase-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_money_format[150-USD-USD 1.50]",
+   "name": "test_money_format[150-USD-USD 1.50]",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_money_format[0-GBP-GBP 0.00]",
+   "name": "test_money_format[0-GBP-GBP 0.00]",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_pricing.py::test_money_format[1000-JPY-JPY 1,000]",
+   "name": "test_money_format[1000-JPY-JPY 1,000]",
+   "file": "test_pricing.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_success_decrements_stock_and_records_order_and_audit",
+   "name": "test_success_decrements_stock_and_records_order_and_audit",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-004",
+    "inventory-003",
+    "audit-001",
+    "audit-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_no_hold_until_purchase_success",
+   "name": "test_no_hold_until_purchase_success",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-020",
+    "purchase-021",
+    "inventory-005"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_invalid_quantity_fails_without_stock_change_and_audited",
+   "name": "test_invalid_quantity_fails_without_stock_change_and_audited",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-007",
+    "purchase-010",
+    "purchase-011",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_sold_out_still_has_exactly_one_failure_audit",
+   "name": "test_sold_out_still_has_exactly_one_failure_audit",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-006",
+    "inventory-004",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_invalid_currency_is_rejected_and_audited",
+   "name": "test_invalid_currency_is_rejected_and_audited",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-001",
+    "purchase-005",
+    "purchase-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_purchase_limit_combines_previous_orders",
+   "name": "test_purchase_limit_combines_previous_orders",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_missing_discount_blocks_usf_order_and_records_failure",
+   "name": "test_missing_discount_blocks_usf_order_and_records_failure",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "pricing-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_rate_snapshot_not_rewritten_for_past_order",
+   "name": "test_rate_snapshot_not_rewritten_for_past_order",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-019",
+    "pricing-010"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_concurrent_buys_do_not_oversell",
+   "name": "test_concurrent_buys_do_not_oversell",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "inventory-001",
+    "inventory-002",
+    "audit-008"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_purchase.py::test_redeem_code_once_only",
+   "name": "test_redeem_code_once_only",
+   "file": "test_purchase.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-018"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_requests_up_to_the_limit_pass_and_the_next_is_refused",
+   "name": "test_requests_up_to_the_limit_pass_and_the_next_is_refused",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_retry_after_counts_down_and_the_window_slides",
+   "name": "test_retry_after_counts_down_and_the_window_slides",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_accounts_are_limited_independently",
+   "name": "test_accounts_are_limited_independently",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_only_the_first_rejection_of_a_blocked_period_is_flagged_for_the_audit_log",
+   "name": "test_only_the_first_rejection_of_a_blocked_period_is_flagged_for_the_audit_log",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "audit-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_hammering_does_not_extend_the_block",
+   "name": "test_hammering_does_not_extend_the_block",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_a_zero_setting_turns_the_limiter_off[0-60]",
+   "name": "test_a_zero_setting_turns_the_limiter_off[0-60]",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_a_zero_setting_turns_the_limiter_off[5-0]",
+   "name": "test_a_zero_setting_turns_the_limiter_off[5-0]",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_ratelimit.py::test_a_zero_setting_turns_the_limiter_off[None-60]",
+   "name": "test_a_zero_setting_turns_the_limiter_off[None-60]",
+   "file": "test_ratelimit.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_the_application_is_a_flask_application",
+   "name": "test_the_application_is_a_flask_application",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "system-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[admin]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[admin]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.04,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[audit]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[audit]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[catalog]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[catalog]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[db]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[db]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.03,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[eligibility]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[eligibility]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[errors]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[errors]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[identity]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[identity]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.05,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[inventory]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[inventory]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[pricing]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[pricing]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[purchase]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[purchase]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.03,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_each_component_imports_on_its_own_without_the_web_layer[ratelimit]",
+   "name": "test_each_component_imports_on_its_own_without_the_web_layer[ratelimit]",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "A fresh interpreter, so one module cannot lean on another having been imported first.",
+   "failure": "",
+   "screenshot": null
+  },
   {
    "nodeid": "tests/test_requirement_gaps.py::test_the_shared_workflow_runs_the_tests_and_the_system_suite",
    "name": "test_the_shared_workflow_runs_the_tests_and_the_system_suite",
@@ -12,6 +1971,876 @@
     "system-008"
    ],
    "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_a_test_without_a_requirement_tag_is_refused_at_collection",
+   "name": "test_a_test_without_a_requirement_tag_is_refused_at_collection",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.09,
+   "reqs": [
+    "system-009"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_the_admin_area_shows_rates_and_audit_log_to_administrators_only",
+   "name": "test_the_admin_area_shows_rates_and_audit_log_to_administrators_only",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.54,
+   "reqs": [
+    "admin-001",
+    "audit-005"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_prices_follow_the_rate_stored_in_the_database_with_no_outside_provider",
+   "name": "test_prices_follow_the_rate_stored_in_the_database_with_no_outside_provider",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "pricing-009",
+    "pricing-010"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_payment_is_simulated_and_no_payment_or_email_service_is_wired_in",
+   "name": "test_payment_is_simulated_and_no_payment_or_email_service_is_wired_in",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "purchase-012",
+    "purchase-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_requirement_gaps.py::test_run_py_builds_the_same_application_the_system_tests_start",
+   "name": "test_run_py_builds_the_same_application_the_system_tests_start",
+   "file": "test_requirement_gaps.py",
+   "outcome": "passed",
+   "seconds": 0.02,
+   "reqs": [
+    "system-001",
+    "system-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "The system tests start eventhub.web.create_app(); run.py must be nothing more than that.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_home_responsive_and_xss_escaped",
+   "name": "test_home_responsive_and_xss_escaped",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "catalog-008",
+    "system-003",
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_anonymous_checkout_redirect_and_no_records",
+   "name": "test_anonymous_checkout_redirect_and_no_records",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "identity-007",
+    "identity-010",
+    "identity-012"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_no_open_redirects",
+   "name": "test_no_open_redirects",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "identity-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_logged_out_admin_denied",
+   "name": "test_logged_out_admin_denied",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "admin-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_buyer_cannot_manage_rates_or_view_admin",
+   "name": "test_buyer_cannot_manage_rates_or_view_admin",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "admin-003",
+    "admin-004",
+    "admin-005"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_checkout_to_order_with_correct_locking",
+   "name": "test_checkout_to_order_with_correct_locking",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.29,
+   "reqs": [
+    "purchase-004",
+    "purchase-013",
+    "audit-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_csrf_missing_rejected",
+   "name": "test_csrf_missing_rejected",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "system-002"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_login_return_and_session_expiry",
+   "name": "test_login_return_and_session_expiry",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "identity-006",
+    "system-005"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_admin_can_change_rate",
+   "name": "test_admin_can_change_rate",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "admin-006"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_anonymous_quick_buy_returns_to_event_not_post_only_route",
+   "name": "test_anonymous_quick_buy_returns_to_event_not_post_only_route",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "purchase-003",
+    "identity-012"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_quote_uses_single_price_service",
+   "name": "test_quote_uses_single_price_service",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "pricing-006",
+    "pricing-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web.py::test_quote_blocks_invalid_currency",
+   "name": "test_quote_blocks_invalid_currency",
+   "file": "test_web.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "pricing-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_checkout_without_a_token_is_refused_and_logged",
+   "name": "test_checkout_without_a_token_is_refused_and_logged",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "purchase-028"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_pressing_buy_twice_with_one_form_makes_one_order",
+   "name": "test_pressing_buy_twice_with_one_form_makes_one_order",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "purchase-024"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_quick_buy_pressed_three_times_makes_one_order",
+   "name": "test_quick_buy_pressed_three_times_makes_one_order",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "purchase-024"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_reusing_a_token_for_another_event_is_refused",
+   "name": "test_reusing_a_token_for_another_event_is_refused",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "purchase-026"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_every_purchase_form_gets_its_own_fresh_token",
+   "name": "test_every_purchase_form_gets_its_own_fresh_token",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "purchase-025"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_two_hundred_requests_a_minute_are_stopped_and_logged_once",
+   "name": "test_two_hundred_requests_a_minute_are_stopped_and_logged_once",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.39,
+   "reqs": [
+    "purchase-032",
+    "audit-007"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_one_account_being_limited_does_not_block_another",
+   "name": "test_one_account_being_limited_does_not_block_another",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.53,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_a_validation_failure_still_counts_toward_the_limit",
+   "name": "test_a_validation_failure_still_counts_toward_the_limit",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "purchase-032"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_foreign_currency_confirmation_says_what_was_charged",
+   "name": "test_foreign_currency_confirmation_says_what_was_charged",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "purchase-029"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_dollar_confirmation_has_no_conversion_noise",
+   "name": "test_dollar_confirmation_has_no_conversion_noise",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "purchase-029"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_student_confirmation_shows_the_discount_and_the_charge",
+   "name": "test_student_confirmation_shows_the_discount_and_the_charge",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "purchase-029",
+    "pricing-011"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_order_history_detail_uses_the_same_wording",
+   "name": "test_order_history_detail_uses_the_same_wording",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.28,
+   "reqs": [
+    "purchase-030"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_a_part4_database_is_upgraded_and_its_old_orders_still_open",
+   "name": "test_a_part4_database_is_upgraded_and_its_old_orders_still_open",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "purchase-019",
+    "purchase-030"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Part 4 orders have no stored unit price. They must still display, without the USD line.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_header_shows_the_preferred_currency_on_every_signed_in_page[/]",
+   "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_header_shows_the_preferred_currency_on_every_signed_in_page[/events/1]",
+   "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/events/1]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_header_shows_the_preferred_currency_on_every_signed_in_page[/checkout/1]",
+   "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/checkout/1]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_header_shows_the_preferred_currency_on_every_signed_in_page[/orders]",
+   "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/orders]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.26,
+   "reqs": [
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_signed_out_visitors_see_no_currency_control",
+   "name": "test_signed_out_visitors_see_no_currency_control",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "pricing-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_registration_stores_the_chosen_currency",
+   "name": "test_registration_stores_the_chosen_currency",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.14,
+   "reqs": [
+    "identity-018"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_registration_rejects_a_currency_that_is_not_supported",
+   "name": "test_registration_rejects_a_currency_that_is_not_supported",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-018"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_a_changed_preferred_currency_is_what_quick_buy_uses",
+   "name": "test_a_changed_preferred_currency_is_what_quick_buy_uses",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "identity-019",
+    "purchase-001"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_checkout_says_which_currency_you_will_be_charged_in_and_why",
+   "name": "test_checkout_says_which_currency_you_will_be_charged_in_and_why",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "pricing-017"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_the_home_page_names_the_currency_a_double_click_will_use",
+   "name": "test_the_home_page_names_the_currency_a_double_click_will_use",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.27,
+   "reqs": [
+    "purchase-031"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": true,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_the_pending_discount_notice_uses_the_same_rule_as_pricing",
+   "name": "test_the_pending_discount_notice_uses_the_same_rule_as_pricing",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.52,
+   "reqs": [
+    "pricing-011",
+    "pricing-007"
+   ],
+   "blackbox": false,
+   "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "Part 4's template used its own endswith('@usf.edu'); it must use the one eligibility rule.",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[a@b@usf.edu]",
+   "name": "test_malformed_email_addresses_create_no_account[a@b@usf.edu]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[no-at-sign.example.com]",
+   "name": "test_malformed_email_addresses_create_no_account[no-at-sign.example.com]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[space in@example.com]",
+   "name": "test_malformed_email_addresses_create_no_account[space in@example.com]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[user@nodot]",
+   "name": "test_malformed_email_addresses_create_no_account[user@nodot]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[user@.example.com]",
+   "name": "test_malformed_email_addresses_create_no_account[user@.example.com]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[user@example..com]",
+   "name": "test_malformed_email_addresses_create_no_account[user@example..com]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[user@example.com.]",
+   "name": "test_malformed_email_addresses_create_no_account[user@example.com.]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[@example.com]",
+   "name": "test_malformed_email_addresses_create_no_account[@example.com]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_web_call5.py::test_malformed_email_addresses_create_no_account[user@]",
+   "name": "test_malformed_email_addresses_create_no_account[user@]",
+   "file": "test_web_call5.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "identity-017"
+   ],
+   "blackbox": true,
    "whitebox": false,
    "call5": false,
    "perf": false,

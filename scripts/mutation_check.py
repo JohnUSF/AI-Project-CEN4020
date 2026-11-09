@@ -172,7 +172,7 @@ def run_suite(workdir):
         text=True,
         timeout=600,
     )
-    failed = re.findall(r"^(?:FAILED|ERROR) (\S+)", proc.stdout, re.M)
+    failed = re.findall(r"^(?:FAILED|ERROR) (\S+)", proc.stdout, re.MULTILINE)
     return proc.returncode != 0, failed
 
 

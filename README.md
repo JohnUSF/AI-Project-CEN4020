@@ -1,28 +1,37 @@
-# EventHub (CEN 4020, Part 3)
+# EventHub (CEN 4020, Team 5) — Part 6 Maintenance
 
-- `features/<component>/requirements.md`: EARS requirements by feature (`system` holds the cross-cutting ones).
-- `workspace.dsl`: Structurizr DSL for the context, container, component and purchase-path views.
-- `diagrams/`: PNG exports of each view, exported from Structurizr Lite (file names are Lite's own).
-- `docs/decisions/`: decision records (database, money, rates storage, administrator role, abandoned checkout).
-- `docs/traceability.md`, `docs/open-items.md`.
-- `docs/original-genai/`: the original container and component diagrams from before Call 3.
+This is a Python/Flask/SQLite **classroom prototype** with simulated ticket purchases. It extends John's Part 5 implementation; the Part 5 baseline report, test dashboard and original README remain available under `report/` and `docs/part5-readme-baseline.md`.
 
-Check before committing: `python3 grading/check_part3.py .`
+**Read first:** `PART6_README.md`, `report/EventHub_Part6_Assignment_Report.pdf`, and `docs/part6-traceability.md`.
 
+## What changed in Call 6
 
----
+- Yen-safe currency regression tests and a separate Spanish-language display layer (`eventhub/i18n.py`, `locales/`). Pricing still uses integer minor units.
+- Administrator exchange-rate updates covered by a persisted-order regression test.
+- Order-anomaly monitoring with durable administrator-visible alerts and optional configured SMTP notification.
+- Verified SQLite online backup and guarded offline restore tools.
+- Revised EARS requirements and C4 view (`workspace.dsl`, `diagrams/Part6Components.*`) plus rollback and recovery documentation.
+- Original unit, integration, Selenium and mutation tests preserved, with new Call 6 test files added.
 
-## Part 4 implementation (Call 4, Gold-member review branch)
+## Quick start
 
-Part 4 builds on the above Part 3 requirements and C4 model. Start with [`PART4_README.md`](PART4_README.md) for installation, sample app/demo limits and tests. Part 4 adds standalone `eventhub/eligibility.py`, dedicated inventory/audit unit tests, and a revised `Part4Components` diagram alongside the original exports. See [`docs/implementation-alignment.md`](docs/implementation-alignment.md) and [`docs/part4-traceability.md`](docs/part4-traceability.md) for requirement changes with preserved ID history; see [`docs/review-response.md`](docs/review-response.md) for John's review resolution. The original Part 3 model snapshot is in `docs/part4-design-baseline/`.
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt -r requirements-system.txt
+python run_all_tests.py       # full local verification including headless Chrome
+```
 
-Final checks: `python -m pytest -q`, `ruff format --check eventhub tests scripts`, and `python grading/check_part3.py .`. **The customer-email decisions and discount percentage still require confirmation.**
+The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. The **final refactored revision** was checked on the Mac on November 9, 2026: **161 unit/integration and 139 Selenium browser/load tests passed (300 total, zero failures)**, including the new locale-adapter regression test. Compilation, project-configured Ruff lint/format, course EARS/C4 gate and requirement traceability also passed. Results are saved in `report/last_run.json` (finished at 13:20:04) and `report/test_dashboard.html`. The latest PR #3 commit also passed both GitHub Actions quality and system-test jobs. Historical Part 5 evidence is archived under `report/baseline/`. This confirms classroom tests, **not** production readiness.
 
+## Important open decisions
 
----
+All real-world sales are simulated. No approved discount rate, staffed anomaly alert rotation, production release mechanism, offsite backup schedule or localized content review was provided. Read `docs/open-items.md` and `docs/risk-register.md` before claiming readiness for a live release. These decisions are tracked explicitly for the next deployment phase. The classroom submission is complete as a report/code handoff; it is not a production-release sign-off.
 
-## Part 5: integration and system testing
+## What was actually simplified for maintainability
 
-**One command runs everything** (unit, integration, Selenium browser tests, load measurement, mutation check, gates): `python run_all_tests.py` (add `--with-mutation` for the deliberate-bug check). Read [`PART5_README.md`](PART5_README.md) first, then `report/EventHub_Part5_Assignment_Report.pdf` and `report/test_dashboard.html`.
+`eventhub/web.py` now delegates both date and currency display to the existing `eventhub/i18n.py` adapter. That module owns the English and Spanish branches and preserves the previous English date and charge strings. A new test protects that behavior; no pricing or order transaction was refactored. See `docs/part6-ai-simplification-review.md` for the AI review and larger refactors intentionally deferred.
 
-Part 5 adds the Call 5 changes (one-time purchase token so a repeated buy returns the original order, per-account purchase rate limit, reworded confirmation page, preferred currency shown everywhere, email-shape check), 137 Selenium and load tests in `tests_system/`, requirement tags on every test, and `docs/part5-traceability.md`, `docs/risk-register.md`, ADR-006 to ADR-008. The C4 model has a new Request Rate Limiter component (`diagrams/Part5Components.*`; the Part 4 diagrams are kept in `docs/part4-design-baseline/`).
+## Status of international formatting
+
+The selector stores an explicit English/Spanish **language preference** in a cookie; it does not read the browser's geographic region. English yen remains the legacy `JPY 4,500` display (correct amount and zero decimals, but not the requested `¥4,500` symbol). Spanish formatting uses Babel. This outstanding presentation gap and the customer-approval steps are recorded in `docs/part6-release-decisions.md`.

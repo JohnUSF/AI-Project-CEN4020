@@ -35,3 +35,9 @@
 - **pricing-015** (state-driven): While an order is being priced, the {EventHub} shall judge discount eligibility from the account's current email address and shall reuse no eligibility result from an earlier moment.
 - **pricing-016** (ubiquitous): The {EventHub} shall display the signed-in buyer's preferred currency, with a control to change it, in the header of every page.
 - **pricing-017** (ubiquitous): The {EventHub} shall state on the checkout page the currency in which the buyer will be charged and that it starts as the buyer's preferred currency.
+
+## Call 6: currency-safe presentation and regional formatting
+
+- **pricing-018** (ubiquitous): The {EventHub} shall format each supported currency using its currency-specific number of minor units so that a whole-yen charge never displays a two-decimal value.
+- **pricing-019** (event-driven): When the reader chooses Spanish, the {EventHub} shall render currency values using Spanish locale conventions while keeping the stored integer charge unchanged.
+- **pricing-020** (ubiquitous): The {EventHub} shall keep price computation independent of translation and presentation formatting, so changing a display template cannot change the amount charged.

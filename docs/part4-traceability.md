@@ -11,8 +11,3 @@ It is kept intact; this supplement records Part 4 changes without hiding history
 | pricing-011 | new | pricing-013 (provisional plus tags), pricing-014 (provisional subdomain exclusions) | Call 4 unresolved variants | `test_eligibility.py`, Q17 |
 | audit-001–004, admin-008 | retained | audit-005 (administrator read-only), audit-006 (retention TBD) | Call 4 QA privacy issue | `eventhub/web.py`, `eventhub/audit.py`, Q16 |
 | system-001–006 | retained | system-007 (testable modules), system-008 (CI) | Call 4 modularity / gates | `tests/`, `.github/workflows/quality.yml` |
-
-## Format, governance and completion criteria
-
-The CI pipeline now checks `ruff format --check` as well as compilation, lint, pytest and EARS/Structurizr structure.
-See `CONTRIBUTING.md` for the four-box feature completion gate. CI is configured but **blocking merge is an admin-level branch protection setting**, not proven by the workflow itself.

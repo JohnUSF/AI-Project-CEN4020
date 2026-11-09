@@ -2,9 +2,11 @@
 
 import re
 import sqlite3
-from werkzeug.security import generate_password_hash, check_password_hash
+
+from werkzeug.security import check_password_hash, generate_password_hash
+
 from .errors import EventHubError, UnsupportedCurrency
-from .pricing import normalize_email, CURRENCY_DIGITS
+from .pricing import CURRENCY_DIGITS, normalize_email
 
 # One '@', no spaces, and a dotted domain with no empty label (identity-017).
 EMAIL_SHAPE = re.compile(r"^[^@\s]+@[^@\s.]+(?:\.[^@\s.]+)+$")

@@ -2,10 +2,10 @@
  "concurrent_buyers": 20,
  "purchases": 100,
  "failures": 0,
- "p50_ms": 32.9,
- "p95_ms": 454.5,
- "max_ms": 758.8,
- "wall_seconds": 0.87,
+ "p50_ms": 5.4,
+ "p95_ms": 129.8,
+ "max_ms": 214.6,
+ "wall_seconds": 0.25,
  "budget_p95_ms": 500.0,
  "budget_status": "PLACEHOLDER - not customer approved (Q13)"
 }

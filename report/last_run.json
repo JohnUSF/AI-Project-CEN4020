@@ -1,10 +1,10 @@
 {
- "finished_at": "2026-11-01 15:51:36",
+ "finished_at": "2026-11-09 13:20:04",
  "steps": [
   {
    "name": "Python compiles",
    "ok": true,
-   "seconds": 0.1,
+   "seconds": 0.0,
    "summary": "",
    "returncode": 0
   },
@@ -19,42 +19,35 @@
    "name": "Ruff format check",
    "ok": true,
    "seconds": 0.0,
-   "summary": "44 files already formatted",
+   "summary": "54 files already formatted",
    "returncode": 0
   },
   {
    "name": "Unit + integration tests (pytest tests)",
    "ok": true,
-   "seconds": 15.0,
-   "summary": "144 passed in 14.50s",
+   "seconds": 13.0,
+   "summary": "161 passed in 12.83s",
    "returncode": 0
   },
   {
    "name": "Course EARS / C4 gate",
    "ok": true,
-   "seconds": 0.6,
+   "seconds": 0.4,
    "summary": "\ud83d\udfe2 Part 3 gate: ELIGIBLE for grading",
    "returncode": 0
   },
   {
    "name": "Requirement-to-test traceability",
    "ok": true,
-   "seconds": 0.1,
+   "seconds": 0.0,
    "summary": "\ud83d\udfe2 test traceability: 0 failure(s)",
    "returncode": 0
   },
   {
    "name": "Selenium system tests + load measurement",
    "ok": true,
-   "seconds": 173.6,
-   "summary": "137 passed in 173.23s (0:02:53)",
-   "returncode": 0
-  },
-  {
-   "name": "Mutation check (20 deliberate bugs)",
-   "ok": true,
-   "seconds": 260.8,
-   "summary": "20/20 mutants killed by the fast suite; 20/20 killed by a test that names the guarded requirement",
+   "seconds": 139.5,
+   "summary": "139 passed, 1 warning in 139.36s (0:02:19)",
    "returncode": 0
   }
  ]

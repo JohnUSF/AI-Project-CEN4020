@@ -1,7 +1,9 @@
 import pytest
-from .conftest import add_account
+
 from eventhub.admin import change_rate
 from eventhub.errors import UnsupportedCurrency
+
+from .conftest import add_account
 
 
 @pytest.mark.req("admin-006", "audit-004")

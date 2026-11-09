@@ -15,6 +15,7 @@ from eventhub.errors import (
     PurchaseLimit,
     SoldOut,
 )
+
 from .conftest import add_account
 
 TOKEN = "token-abcdefghijklmnop"

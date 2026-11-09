@@ -6,3 +6,10 @@
 .charged{margin-top:26px;padding:24px;border:1px solid #438f7c;background:#10302c;border-radius:12px;display:grid;gap:8px}.charged small{font-size:11px;letter-spacing:.15em;color:#a8f5d7}.charged strong{font-size:40px;letter-spacing:-.04em;color:#fff}.charged span{font-size:13px;color:#cfeee4}
 .breakdown-title{font-size:15px;margin:0 0 4px;color:var(--muted);letter-spacing:.04em}.reference{color:var(--muted)}.reference em{font-style:normal;font-size:11px;border:1px solid var(--line);border-radius:20px;padding:2px 8px;margin-left:6px}
 @media(max-width:680px){.currency-form{flex-wrap:wrap}.charged strong{font-size:32px}}
+
+/* Call 6: unobtrusive locale selector and monitoring panel. */
+.language-form{display:inline-flex;align-items:center;gap:7px}
+.language-form label{font-size:11px;font-weight:700;letter-spacing:.07em;color:var(--muted);text-transform:uppercase}
+.language-form select{color:var(--ink);background:#0f1726;border:1px solid #34435a;border-radius:7px;padding:6px;font-size:12px}
+.language-form button{color:var(--cyan);text-decoration:underline}
+#maintenance-alerts{margin-top:30px}#maintenance-alerts .table-scroll{margin-top:12px}

@@ -9,6 +9,7 @@ import pytest
 
 from eventhub import purchase
 from eventhub.identity import register
+
 from .conftest import add_account
 
 
@@ -65,7 +66,7 @@ def test_discount_follows_the_email_in_the_other_direction_too(connection):
 def test_the_quote_page_follows_the_current_email_not_a_remembered_result(app_factory):
     app, database = app_factory(DISCOUNT_PERCENT="10")
     client = app.test_client()
-    from .test_web import sign_in, csrf
+    from .test_web import sign_in
 
     sign_in(client, database, "grad@usf.edu")
     assert (
@@ -100,7 +101,7 @@ def test_no_website_route_changes_an_email_address(app_factory):
 def test_posting_an_email_field_to_the_currency_route_does_not_change_it(app_factory):
     app, database = app_factory()
     client = app.test_client()
-    from .test_web import sign_in, csrf
+    from .test_web import csrf, sign_in
 
     sign_in(client, database, "keep@example.com")
     token = csrf(client)

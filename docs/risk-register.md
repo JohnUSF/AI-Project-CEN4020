@@ -11,3 +11,13 @@ Thuy's exit criteria: both of Kenji's findings must be **fixed or formally accep
 | RISK-003 | No performance target (Thuy) | Load measurement exists (`tests_system/test_performance.py`) and reports p50/p95/max. It judges against a **team placeholder**, not a requirement. | We cannot say pass or fail against a customer number because none exists (Q13). | Marcus supplies the sentence in the form of `system-006`. Until then performance is reported, not approved. | Marcus (product) | OPEN |
 | RISK-004 | Double purchase behaviour was undefined (Thuy) | Defined as ADR-006 and `purchase-024`..`028`; tested at all three layers. | The definition (original order is shown again) was chosen by the team and has not been confirmed by the customer (Q20). | Customer confirms or changes the rule; tests follow the requirement. | Darnell (customer), Thuy (QA) | OPEN, implemented |
 | RISK-005 | Confirmation page confused students (Darnell) | Reworded: amount charged is the largest figure, all other amounts labelled "reference only", rate and discount shown. Automated checks on wording and font size. | Nobody has re-tested with real students. Wording passes our tests, which cannot judge whether it feels "sketchy" to a person. | Repeat Darnell's student-union session with the new page before go-live. | Darnell (customer) | OPEN, implemented |
+
+## Call 6 additional production-maintenance risks (all open)
+
+| ID | Risk and current mitigation | Outstanding decision / owner | Status |
+|---|---|---|---|
+| RISK-006 | Decimal formatting regression could undercharge JPY. Kept charge calculation separate from Babel/UI and added exact four-currency purchase tests. | Priya and Thuy review regression release evidence | OPEN until reviewed |
+| RISK-007 | Audit data is recorded but previously unmonitored. Added durable flagged-order queue, admin screen and optional SMTP CLI. | Darnell/operations must name an actual alert recipient, configure SMTP or an equivalent page, define a rotation and confirm Q22/Q23 | OPEN - no notification rotation |
+| RISK-008 | SQLite file can be lost. Added checksum-verified backup and guarded offline restore utilities. | Kenji/operations must name the backup owner (Call 6 requested this by Friday), frequency, offsite copy and recovery drill Q25 | OPEN |
+| RISK-009 | Spanish translations are student-authored; dates use event-local time without an approved timezone rule. | Darnell approves translation, native yen symbol display, reader-region/locale policy and timezone Q24 | OPEN |
+| RISK-010 | No actual production release pipeline or rollback infrastructure was supplied. | Priya validates real host and release mechanism Q26 | OPEN |

@@ -34,3 +34,13 @@ Q numbers 1 to 11 come from Part 1. Q12 to Q17 came from Parts 3 and 4. **Q18 to
 ## Call 5 status clarifications
 - **Customer sign-off still needed:** Q18 to Q21, plus the Part 4 items above. Nothing in Part 5 was decided on the customer's behalf except where a row says "provisional".
 - **Call 5 exit criteria** (Thuy): requirement-linked tests pass (yes, see report); Kenji's two findings fixed or formally accepted (**not yet signed**, see `docs/risk-register.md`); confirmation page reworded (done, not re-tested with students); double-purchase behaviour defined and tested (done, awaiting Q20); performance sentence exists (**no, Marcus owes it**).
+
+## Call 6 maintenance items (not customer-approved)
+
+| Q | Open item | Current prototype choice | Required owner |
+|---|---|---|---|
+| Q22 | Alert threshold for anomalous purchase totals | Compare current charged total to expected stored-rate total; flag deviation over 25% (configurable) | Marcus / Kenji |
+| Q23 | Who is paged, when, and by which system | Alerts persist in SQLite and appear for admins; SMTP requires an explicit recipient, relay and scheduled job. **No named human recipient or staffed rotation is assigned** | Darnell / operations |
+| Q24 | Reader region, locale preference, timezone and translated content approval | Explicit en/es cookie preference only; no browser-region detection, no timezone conversion. English yen uses `JPY 4,500` instead of `¥4,500`; Spanish uses Babel | Darnell / product |
+| Q25 | Backup operator, frequency, retention, secure storage and drill | Call 6 requested an owner **by Friday**; no named person was provided by the assignment or team evidence. On-demand SQLite backup exists, but owner, schedule, offsite copy and drill **are not assigned** | Kenji / operations to name owner (OVERDUE for production) |
+| Q26 | Exact release orchestration and rollback acceptance | Documented rollback-first procedure and release-source snapshot; no actual production switch is claimed | Priya / operations |

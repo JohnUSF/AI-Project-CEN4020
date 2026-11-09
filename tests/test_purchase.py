@@ -1,14 +1,17 @@
 from concurrent.futures import ThreadPoolExecutor
+
 import pytest
-from eventhub import audit, purchase
+
+from eventhub import purchase
 from eventhub.db import connect
 from eventhub.errors import (
-    SoldOut,
-    InvalidQuantity,
-    UnsupportedCurrency,
-    PurchaseLimit,
     ConfigurationPending,
+    InvalidQuantity,
+    PurchaseLimit,
+    SoldOut,
+    UnsupportedCurrency,
 )
+
 from .conftest import add_account
 
 

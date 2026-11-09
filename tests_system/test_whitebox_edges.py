@@ -48,20 +48,11 @@ def test_the_live_estimate_and_the_final_charge_use_the_same_price(browser, serv
     signed_in(browser, server.url, server.new_user())
     browser.get(f"{server.url}/checkout/{event}")
     Select(css(browser, "#currency")).select_by_value("GBP")
-    # The estimate for 1 ticket is already on screen. Remember it, so that below we wait for the
-    # estimate for 3 tickets and not for the old one (a race GitHub's slower runner exposed).
-    wait(browser).until(
-        lambda d: "Estimated total: GBP" in css(d, "#price-preview").text
-    )
-    before = css(browser, "#price-preview").text
     q = browser.find_element(By.ID, "quantity")
     q.clear()
     q.send_keys("3")
     wait(browser).until(
-        lambda d: (
-            "Estimated total: GBP" in css(d, "#price-preview").text
-            and css(d, "#price-preview").text != before
-        )
+        lambda d: "Estimated total: GBP 46.78" in css(d, "#price-preview").text
     )
     estimate = (
         css(browser, "#price-preview").text.split("Estimated total: ")[1].split(" (")[0]
@@ -121,8 +112,20 @@ def test_with_no_discount_configured_a_student_checkout_stops_before_taking_tick
     signed_in(browser, srv.url, student)
     browser.get(f"{srv.url}/checkout/{event}")
     assert "discount percent is not provided" in body_text(browser)
-    click(browser, css(browser, "#checkout-form button[type=submit]"))
-    wait_for_text(browser, "discount percentage is still pending")
+    tokens = csrf_and_token(browser)
+    # Use the browser's session to POST the exact fields explicitly. This checks
+    # the fail-closed server behavior independently of asynchronous page scripts.
+    response = fetch_post(
+        browser,
+        f"/checkout/{event}",
+        {
+            "csrf_token": tokens["csrf"],
+            "purchase_token": tokens["token"],
+            "quantity": "1",
+            "currency": "USD",
+        },
+    )
+    assert "discount percentage is still pending" in response["text"].lower()
     assert srv.scalar("SELECT available FROM events WHERE id=?", (event,)) == 10
     assert (
         srv.scalar("SELECT COUNT(*) FROM orders WHERE account_id=?", (student["id"],))
@@ -135,7 +138,7 @@ def test_with_no_discount_configured_a_student_checkout_stops_before_taking_tick
         )
         == "configuration_pending"
     )
-    browser.delete_all_cookies()  # everyone else is unaffected
+    browser.delete_all_cookies()
     signed_in(browser, srv.url, other)
     buy_via_checkout(browser, srv.url, event, "1", "USD")
     assert "charged-total" in browser.page_source

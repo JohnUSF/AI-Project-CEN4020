@@ -127,7 +127,7 @@ def main():
             + "</table>"
         )
 
-    page = f"""<!doctype html><html lang="en"><meta charset="utf-8"><title>EventHub Part 5 test dashboard</title>
+    page = f"""<!doctype html><html lang="en"><meta charset="utf-8"><title>EventHub Part 6 test dashboard</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"><style>
 :root{{--bg:#0c101c;--panel:#141c2c;--line:#2c3b50;--ink:#f0f4ff;--dim:#9caac0;--cy:#7fe8e3;--ok:#5be3a6;--bad:#ff7b86;--or:#f6ab74}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,sans-serif}}main{{max-width:1180px;margin:auto;padding:32px 20px 80px}}
@@ -141,7 +141,7 @@ em{{font-style:normal;font-size:11px;border-radius:20px;padding:1px 8px;margin-r
 .bar{{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}}button,input{{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit}}button.on{{border-color:var(--cy);color:var(--cy)}}
 figure{{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px}}figure img{{width:100%;border-radius:6px}}figcaption{{color:var(--dim);margin-top:6px;text-transform:capitalize}}
 .gal{{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}}details{{margin-top:8px}}summary{{cursor:pointer;color:var(--cy)}}
-</style><main><div class="eyebrow">CEN 4020 / TEAM 5 / PART 5</div><h1>EventHub test dashboard</h1>
+</style><main><div class="eyebrow">CEN 4020 / TEAM 5 / PART 6</div><h1>EventHub test dashboard</h1>
 <p class="dim">Generated {html.escape((load("report/last_run.json") or {}).get("finished_at", ""))}. Each test names the requirement it protects. Black-box tests were derived from the specification only, white-box tests from the source.</p>
 <div class="cards">{cards}</div>
 <h2>Checks that ran</h2><table>{gates or "<tr><td>Run <span class=mono>python run_all_tests.py</span> to fill this in.</td></tr>"}</table>

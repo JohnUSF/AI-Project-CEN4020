@@ -20,7 +20,10 @@ def emit(ok, text):
 
 
 def check_folder(folder: Path):
-    emit(bool(FOLDER.match(folder.name)), f"folder name lowercase-hyphen: features/{folder.name}/")
+    emit(
+        bool(FOLDER.match(folder.name)),
+        f"folder name lowercase-hyphen: features/{folder.name}/",
+    )
     md = folder / "requirements.md"
     emit(md.is_file(), f"features/{folder.name}/requirements.md exists")
     if not md.is_file():
@@ -29,8 +32,10 @@ def check_folder(folder: Path):
     for n, line in enumerate(text.splitlines(), 1):
         m = ID_TOKEN.match(line)
         if m:
-            emit(m.group("prefix") == folder.name,
-                 f"features/{folder.name}/requirements.md:{n}: ID prefix '{m.group('prefix')}' is the folder name")
+            emit(
+                m.group("prefix") == folder.name,
+                f"features/{folder.name}/requirements.md:{n}: ID prefix '{m.group('prefix')}' is the folder name",
+            )
 
 
 def main(argv):
@@ -49,7 +54,9 @@ def main(argv):
     if not features.is_dir():
         print(f"\n0 feature folder(s), {failures} failure(s)")
         return failures
-    folders = sorted(p for p in features.iterdir() if p.is_dir() and not p.name.startswith("."))
+    folders = sorted(
+        p for p in features.iterdir() if p.is_dir() and not p.name.startswith(".")
+    )
     emit(bool(folders), f"features/ holds {len(folders)} feature folder(s)")
     emit((features / "system").is_dir(), "features/system/ exists")
     for folder in folders:

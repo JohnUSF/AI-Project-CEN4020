@@ -4,11 +4,13 @@ Money at the boundaries and in the database is in integer minor units.
 Exchange rates are exact decimal strings. No binary floating point is used.
 """
 
-from dataclasses import dataclass
-from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from .eligibility import (
+    normalize_email as normalize_email,
+    eligible_for_usf_discount as eligible_for_usf_discount,
+)
 import re
-
-from .eligibility import normalize_email, eligible_for_usf_discount
+from dataclasses import dataclass
+from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 
 from .errors import ConfigurationPending, InvalidQuantity, UnsupportedCurrency
 
