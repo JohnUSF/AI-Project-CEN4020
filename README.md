@@ -22,7 +22,7 @@ python -m pip install -r requirements-dev.txt -r requirements-system.txt
 python run_all_tests.py       # full local verification including headless Chrome
 ```
 
-The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. The last verified pre-review revision completed 160 unit/integration and 139 browser tests on a Mac, and all four GitHub quality/system checks passed. The later formatting-helper refactor still needs its full-suite and CI rerun before being described as verified. Historical Part 5 evidence is archived under `report/baseline/`; the dashboard in `report/test_dashboard.html` is the Part 6 run.
+The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. The **final refactored revision** was checked on the Mac on November 9, 2026: **161 unit/integration and 139 Selenium browser/load tests passed (300 total, zero failures)**, including the new locale-adapter regression test. Compilation, project-configured Ruff lint/format, course EARS/C4 gate and requirement traceability also passed. Results are saved in `report/last_run.json` (finished at 13:20:04) and `report/test_dashboard.html`. The latest PR #3 commit also passed both GitHub Actions quality and system-test jobs. Historical Part 5 evidence is archived under `report/baseline/`. This confirms classroom tests, **not** production readiness.
 
 ## Important open decisions
 
