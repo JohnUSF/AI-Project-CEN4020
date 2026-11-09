@@ -51,7 +51,8 @@ def visible(driver, selector, timeout=TIMEOUT):
 
 
 def body_text(driver):
-    return driver.find_element(By.TAG_NAME, "body").text
+    """Read the current page text without keeping a stale element reference."""
+    return driver.execute_script("return document.body ? document.body.innerText : '';")
 
 
 def alerts(driver):

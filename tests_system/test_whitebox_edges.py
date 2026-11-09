@@ -52,7 +52,7 @@ def test_the_live_estimate_and_the_final_charge_use_the_same_price(browser, serv
     q.clear()
     q.send_keys("3")
     wait(browser).until(
-        lambda d: "Estimated total: GBP" in css(d, "#price-preview").text
+        lambda d: "Estimated total: GBP 46.78" in css(d, "#price-preview").text
     )
     estimate = (
         css(browser, "#price-preview").text.split("Estimated total: ")[1].split(" (")[0]
