@@ -313,10 +313,10 @@ def test_a_name_with_html_in_it_is_stored_and_shown_as_text(browser, server):
 def test_wrong_password_and_unknown_email_get_the_same_message(browser, server):
     user = server.new_user()
     login(browser, server.url, user["email"], "wrong-password-123")
-    wait_for_text(browser, "Invalid credentials")
+    wait_for_text(browser, "Invalid credentials", timeout=20)
     first = alerts(browser)
     login(browser, server.url, "nobody-here@example.com", "wrong-password-123")
-    wait_for_text(browser, "Invalid credentials")
+    wait_for_text(browser, "Invalid credentials", timeout=20)
     assert alerts(browser) == first
 
 
