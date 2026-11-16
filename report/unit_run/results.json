@@ -1,5 +1,5 @@
 {
- "finished_at": "2026-11-09 13:17:44",
+ "finished_at": "2026-11-15 21:05:48",
  "suite": "unit",
  "tests": [
   {
@@ -110,7 +110,7 @@
    "name": "test_spanish_switch_changes_text_date_and_receipt_not_amount",
    "file": "test_call6_http.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.06,
    "reqs": [
     "system-010",
     "system-011",
@@ -129,7 +129,7 @@
    "name": "test_admin_alert_page_requires_role_and_can_acknowledge",
    "file": "test_call6_http.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.04,
    "reqs": [
     "audit-010",
     "audit-011"
@@ -407,7 +407,7 @@
    "name": "test_online_backup_integrity_and_guarded_restore",
    "file": "test_call6_maintenance.py",
    "outcome": "passed",
-   "seconds": 0.0,
+   "seconds": 0.01,
    "reqs": [
     "system-012",
     "system-013"
@@ -716,7 +716,7 @@
    "name": "test_the_quote_page_follows_the_current_email_not_a_remembered_result",
    "file": "test_eligibility_timing.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.25,
    "reqs": [
     "pricing-015",
     "pricing-011"
@@ -734,7 +734,7 @@
    "name": "test_no_website_route_changes_an_email_address",
    "file": "test_eligibility_timing.py",
    "outcome": "passed",
-   "seconds": 0.0,
+   "seconds": 0.01,
    "reqs": [
     "identity-020"
    ],
@@ -751,7 +751,7 @@
    "name": "test_posting_an_email_field_to_the_currency_route_does_not_change_it",
    "file": "test_eligibility_timing.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.24,
    "reqs": [
     "identity-020"
    ],
@@ -979,7 +979,7 @@
    "name": "test_a_form_without_a_valid_token_is_rejected_when_required[short]",
    "file": "test_idempotent_purchase.py",
    "outcome": "passed",
-   "seconds": 0.0,
+   "seconds": 0.01,
    "reqs": [
     "purchase-028",
     "audit-008"
@@ -1085,7 +1085,7 @@
    "name": "test_two_simultaneous_submits_of_one_token_make_one_order",
    "file": "test_idempotent_purchase.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.04,
    "reqs": [
     "purchase-024",
     "inventory-001"
@@ -1103,7 +1103,7 @@
    "name": "test_registration_stores_hash_and_buyer_only",
    "file": "test_identity.py",
    "outcome": "passed",
-   "seconds": 0.34,
+   "seconds": 0.21,
    "reqs": [
     "identity-001",
     "identity-002",
@@ -1123,7 +1123,7 @@
    "name": "test_wrong_password_does_not_reveal_account",
    "file": "test_identity.py",
    "outcome": "passed",
-   "seconds": 0.29,
+   "seconds": 0.2,
    "reqs": [
     "identity-005"
    ],
@@ -1140,7 +1140,7 @@
    "name": "test_duplicate_email_and_short_password_rejected",
    "file": "test_identity.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.19,
    "reqs": [
     "identity-001",
     "system-002"
@@ -1158,7 +1158,7 @@
    "name": "test_admin_only_promoted_via_server_method",
    "file": "test_identity.py",
    "outcome": "passed",
-   "seconds": 0.13,
+   "seconds": 0.1,
    "reqs": [
     "identity-016"
    ],
@@ -1209,7 +1209,7 @@
    "name": "test_two_buyers_one_ticket_two_hundred_times",
    "file": "test_oversell_stress.py",
    "outcome": "passed",
-   "seconds": 0.34,
+   "seconds": 0.57,
    "reqs": [
     "inventory-001",
     "inventory-003",
@@ -1229,13 +1229,371 @@
    "name": "test_many_buyers_few_tickets_sells_exactly_the_stock",
    "file": "test_oversell_stress.py",
    "outcome": "passed",
-   "seconds": 0.38,
+   "seconds": 0.76,
    "reqs": [
     "inventory-001",
     "inventory-004"
    ],
    "blackbox": false,
    "whitebox": true,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_setup_file_sets_the_default_language",
+   "name": "test_setup_file_sets_the_default_language",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.03,
+   "reqs": [
+    "system-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_environment_variable_overrides_the_setup_file",
+   "name": "test_environment_variable_overrides_the_setup_file",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.04,
+   "reqs": [
+    "system-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_english_is_the_default_when_nothing_is_configured",
+   "name": "test_english_is_the_default_when_nothing_is_configured",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.03,
+   "reqs": [
+    "system-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_a_mistyped_default_language_stops_start_up[fr]",
+   "name": "test_a_mistyped_default_language_stops_start_up[fr]",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_a_mistyped_default_language_stops_start_up[ES-mx]",
+   "name": "test_a_mistyped_default_language_stops_start_up[ES-mx]",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_a_mistyped_default_language_stops_start_up[klingon]",
+   "name": "test_a_mistyped_default_language_stops_start_up[klingon]",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-014"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_the_readers_choice_beats_the_configured_default[es-en]",
+   "name": "test_the_readers_choice_beats_the_configured_default[es-en]",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.05,
+   "reqs": [
+    "system-015"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_the_readers_choice_beats_the_configured_default[en-es]",
+   "name": "test_the_readers_choice_beats_the_configured_default[en-es]",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.04,
+   "reqs": [
+    "system-015"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_no_english_sentence_is_left_on_any_spanish_screen",
+   "name": "test_no_english_sentence_is_left_on_any_spanish_screen",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_spanish_page_titles_and_accessible_labels",
+   "name": "test_spanish_page_titles_and_accessible_labels",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_spanish_error_pages_for_missing_and_forbidden",
+   "name": "test_spanish_error_pages_for_missing_and_forbidden",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_spanish_signed_in_hint_and_event_note_name_the_currency",
+   "name": "test_spanish_signed_in_hint_and_event_note_name_the_currency",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_spanish_order_detail_keeps_the_yen_amount_without_decimals",
+   "name": "test_spanish_order_detail_keeps_the_yen_amount_without_decimals",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_spanish_validation_errors_reach_the_reader_in_spanish",
+   "name": "test_spanish_validation_errors_reach_the_reader_in_spanish",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.03,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_the_price_preview_service_answers_in_the_readers_language",
+   "name": "test_the_price_preview_service_answers_in_the_readers_language",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.01,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_error_text_translates_messages_codes_and_the_wait_time",
+   "name": "test_error_text_translates_messages_codes_and_the_wait_time",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_page_templates_hold_no_reader_facing_text",
+   "name": "test_page_templates_hold_no_reader_facing_text",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-017"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_the_script_holds_no_reader_facing_text",
+   "name": "test_the_script_holds_no_reader_facing_text",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-017"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_language_files_match_and_every_key_is_used_once_defined",
+   "name": "test_language_files_match_and_every_key_is_used_once_defined",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.0,
+   "reqs": [
+    "system-017"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_every_message_the_code_can_raise_has_a_spanish_translation",
+   "name": "test_every_message_the_code_can_raise_has_a_spanish_translation",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.03,
+   "reqs": [
+    "system-016",
+    "system-017"
+   ],
+   "blackbox": false,
+   "whitebox": false,
+   "call5": false,
+   "perf": false,
+   "doc": "",
+   "failure": "",
+   "screenshot": null
+  },
+  {
+   "nodeid": "tests/test_part7_language_config.py::test_english_wording_is_exactly_what_it_was_before_part_7",
+   "name": "test_english_wording_is_exactly_what_it_was_before_part_7",
+   "file": "test_part7_language_config.py",
+   "outcome": "passed",
+   "seconds": 0.04,
+   "reqs": [
+    "system-016"
+   ],
+   "blackbox": false,
+   "whitebox": false,
    "call5": false,
    "perf": false,
    "doc": "",
@@ -1779,7 +2137,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[admin]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.04,
+   "seconds": 0.03,
    "reqs": [
     "system-007"
    ],
@@ -1796,7 +2154,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[audit]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.01,
    "reqs": [
     "system-007"
    ],
@@ -1813,7 +2171,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[catalog]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.01,
    "reqs": [
     "system-007"
    ],
@@ -1830,7 +2188,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[db]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.03,
+   "seconds": 0.02,
    "reqs": [
     "system-007"
    ],
@@ -1864,7 +2222,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[errors]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.01,
    "reqs": [
     "system-007"
    ],
@@ -1881,7 +2239,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[identity]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.05,
+   "seconds": 0.09,
    "reqs": [
     "system-007"
    ],
@@ -1915,7 +2273,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[pricing]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.03,
    "reqs": [
     "system-007"
    ],
@@ -1932,7 +2290,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[purchase]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.03,
+   "seconds": 0.04,
    "reqs": [
     "system-007"
    ],
@@ -1949,7 +2307,7 @@
    "name": "test_each_component_imports_on_its_own_without_the_web_layer[ratelimit]",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "system-007"
    ],
@@ -1983,7 +2341,7 @@
    "name": "test_a_test_without_a_requirement_tag_is_refused_at_collection",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.09,
+   "seconds": 0.17,
    "reqs": [
     "system-009"
    ],
@@ -2000,7 +2358,7 @@
    "name": "test_the_admin_area_shows_rates_and_audit_log_to_administrators_only",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.54,
+   "seconds": 0.52,
    "reqs": [
     "admin-001",
     "audit-005"
@@ -2018,7 +2376,7 @@
    "name": "test_prices_follow_the_rate_stored_in_the_database_with_no_outside_provider",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.25,
    "reqs": [
     "pricing-009",
     "pricing-010"
@@ -2036,7 +2394,7 @@
    "name": "test_payment_is_simulated_and_no_payment_or_email_service_is_wired_in",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "purchase-012",
     "purchase-014"
@@ -2054,7 +2412,7 @@
    "name": "test_run_py_builds_the_same_application_the_system_tests_start",
    "file": "test_requirement_gaps.py",
    "outcome": "passed",
-   "seconds": 0.02,
+   "seconds": 0.05,
    "reqs": [
     "system-001",
     "system-007"
@@ -2072,7 +2430,7 @@
    "name": "test_home_responsive_and_xss_escaped",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "catalog-008",
     "system-003",
@@ -2144,7 +2502,7 @@
    "name": "test_buyer_cannot_manage_rates_or_view_admin",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "admin-003",
     "admin-004",
@@ -2163,7 +2521,7 @@
    "name": "test_checkout_to_order_with_correct_locking",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.29,
+   "seconds": 0.24,
    "reqs": [
     "purchase-004",
     "purchase-013",
@@ -2182,7 +2540,7 @@
    "name": "test_csrf_missing_rejected",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.22,
    "reqs": [
     "system-002"
    ],
@@ -2199,7 +2557,7 @@
    "name": "test_login_return_and_session_expiry",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.23,
    "reqs": [
     "identity-006",
     "system-005"
@@ -2217,7 +2575,7 @@
    "name": "test_admin_can_change_rate",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.28,
    "reqs": [
     "admin-006"
    ],
@@ -2234,7 +2592,7 @@
    "name": "test_anonymous_quick_buy_returns_to_event_not_post_only_route",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "purchase-003",
     "identity-012"
@@ -2252,7 +2610,7 @@
    "name": "test_quote_uses_single_price_service",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.22,
    "reqs": [
     "pricing-006",
     "pricing-007"
@@ -2270,7 +2628,7 @@
    "name": "test_quote_blocks_invalid_currency",
    "file": "test_web.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.21,
    "reqs": [
     "pricing-001"
    ],
@@ -2287,7 +2645,7 @@
    "name": "test_checkout_without_a_token_is_refused_and_logged",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.24,
    "reqs": [
     "purchase-028"
    ],
@@ -2304,7 +2662,7 @@
    "name": "test_pressing_buy_twice_with_one_form_makes_one_order",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.24,
    "reqs": [
     "purchase-024"
    ],
@@ -2321,7 +2679,7 @@
    "name": "test_quick_buy_pressed_three_times_makes_one_order",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.26,
    "reqs": [
     "purchase-024"
    ],
@@ -2338,7 +2696,7 @@
    "name": "test_reusing_a_token_for_another_event_is_refused",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.24,
    "reqs": [
     "purchase-026"
    ],
@@ -2355,7 +2713,7 @@
    "name": "test_every_purchase_form_gets_its_own_fresh_token",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.25,
    "reqs": [
     "purchase-025"
    ],
@@ -2372,7 +2730,7 @@
    "name": "test_two_hundred_requests_a_minute_are_stopped_and_logged_once",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.39,
+   "seconds": 0.52,
    "reqs": [
     "purchase-032",
     "audit-007"
@@ -2390,7 +2748,7 @@
    "name": "test_one_account_being_limited_does_not_block_another",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.53,
+   "seconds": 0.5,
    "reqs": [
     "purchase-032"
    ],
@@ -2407,7 +2765,7 @@
    "name": "test_a_validation_failure_still_counts_toward_the_limit",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.26,
    "reqs": [
     "purchase-032"
    ],
@@ -2424,7 +2782,7 @@
    "name": "test_foreign_currency_confirmation_says_what_was_charged",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.25,
    "reqs": [
     "purchase-029"
    ],
@@ -2441,7 +2799,7 @@
    "name": "test_dollar_confirmation_has_no_conversion_noise",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.33,
    "reqs": [
     "purchase-029"
    ],
@@ -2458,7 +2816,7 @@
    "name": "test_student_confirmation_shows_the_discount_and_the_charge",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.28,
+   "seconds": 0.27,
    "reqs": [
     "purchase-029",
     "pricing-011"
@@ -2493,7 +2851,7 @@
    "name": "test_a_part4_database_is_upgraded_and_its_old_orders_still_open",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.23,
    "reqs": [
     "purchase-019",
     "purchase-030"
@@ -2511,7 +2869,7 @@
    "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.22,
    "reqs": [
     "pricing-016"
    ],
@@ -2528,7 +2886,7 @@
    "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/events/1]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.23,
    "reqs": [
     "pricing-016"
    ],
@@ -2545,7 +2903,7 @@
    "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/checkout/1]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.23,
    "reqs": [
     "pricing-016"
    ],
@@ -2562,7 +2920,7 @@
    "name": "test_header_shows_the_preferred_currency_on_every_signed_in_page[/orders]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.26,
+   "seconds": 0.21,
    "reqs": [
     "pricing-016"
    ],
@@ -2579,7 +2937,7 @@
    "name": "test_signed_out_visitors_see_no_currency_control",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "pricing-016"
    ],
@@ -2596,7 +2954,7 @@
    "name": "test_registration_stores_the_chosen_currency",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.14,
+   "seconds": 0.11,
    "reqs": [
     "identity-018"
    ],
@@ -2613,7 +2971,7 @@
    "name": "test_registration_rejects_a_currency_that_is_not_supported",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-018"
    ],
@@ -2630,7 +2988,7 @@
    "name": "test_a_changed_preferred_currency_is_what_quick_buy_uses",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.22,
    "reqs": [
     "identity-019",
     "purchase-001"
@@ -2648,7 +3006,7 @@
    "name": "test_checkout_says_which_currency_you_will_be_charged_in_and_why",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.26,
    "reqs": [
     "pricing-017"
    ],
@@ -2665,7 +3023,7 @@
    "name": "test_the_home_page_names_the_currency_a_double_click_will_use",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.27,
+   "seconds": 0.24,
    "reqs": [
     "purchase-031"
    ],
@@ -2682,7 +3040,7 @@
    "name": "test_the_pending_discount_notice_uses_the_same_rule_as_pricing",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.52,
+   "seconds": 0.48,
    "reqs": [
     "pricing-011",
     "pricing-007"
@@ -2700,7 +3058,7 @@
    "name": "test_malformed_email_addresses_create_no_account[a@b@usf.edu]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2717,7 +3075,7 @@
    "name": "test_malformed_email_addresses_create_no_account[no-at-sign.example.com]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2734,7 +3092,7 @@
    "name": "test_malformed_email_addresses_create_no_account[space in@example.com]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2751,7 +3109,7 @@
    "name": "test_malformed_email_addresses_create_no_account[user@nodot]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2768,7 +3126,7 @@
    "name": "test_malformed_email_addresses_create_no_account[user@.example.com]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2785,7 +3143,7 @@
    "name": "test_malformed_email_addresses_create_no_account[user@example..com]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2802,7 +3160,7 @@
    "name": "test_malformed_email_addresses_create_no_account[user@example.com.]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2819,7 +3177,7 @@
    "name": "test_malformed_email_addresses_create_no_account[@example.com]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],
@@ -2836,7 +3194,7 @@
    "name": "test_malformed_email_addresses_create_no_account[user@]",
    "file": "test_web_call5.py",
    "outcome": "passed",
-   "seconds": 0.01,
+   "seconds": 0.02,
    "reqs": [
     "identity-017"
    ],

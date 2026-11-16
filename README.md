@@ -1,6 +1,8 @@
-# EventHub (CEN 4020, Team 5) — Part 6 Maintenance
+# EventHub (CEN 4020, Team 5) — Part 7 Configuration Management (builds on Part 6 Maintenance)
 
 This is a Python/Flask/SQLite **classroom prototype** with simulated ticket purchases. It extends John's Part 5 implementation; the Part 5 baseline report, test dashboard and original README remain available under `report/` and `docs/part5-readme-baseline.md`.
+
+**Part 7 (latest):** read `PART7_README.md`, `report/EventHub_Part7_Assignment_Report.pdf` and `docs/part7-traceability.md`. The interface language (English or Spanish) is now a setting, and Spanish covers every reader-facing text.
 
 **Read first:** `PART6_README.md`, `report/EventHub_Part6_Assignment_Report.pdf`, and `docs/part6-traceability.md`.
 
@@ -21,6 +23,8 @@ source .venv/bin/activate
 python -m pip install -r requirements-dev.txt -r requirements-system.txt
 python run_all_tests.py       # full local verification including headless Chrome
 ```
+
+**Part 7 result:** 182 unit/integration and 140 Selenium browser/load tests passed on November 15, 2026 (Linux, Chrome 153 with a matching ChromeDriver). The older Part 6 results below were recorded before the Part 7 change.
 
 The complete tests need Flask, Werkzeug, Selenium, Ruff and ChromeDriver. The **final refactored revision** was checked on the Mac on November 9, 2026: **161 unit/integration and 139 Selenium browser/load tests passed (300 total, zero failures)**, including the new locale-adapter regression test. Compilation, project-configured Ruff lint/format, course EARS/C4 gate and requirement traceability also passed. Results are saved in `report/last_run.json` (finished at 13:20:04) and `report/test_dashboard.html`. The latest PR #3 commit also passed both GitHub Actions quality and system-test jobs. Historical Part 5 evidence is archived under `report/baseline/`. This confirms classroom tests, **not** production readiness.
 
