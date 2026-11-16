@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script src="{{ url_for('static', filename='app.js') }}" defer></script>
 </head>
-<body>
+<body data-msg-estimate="{{ t('js.estimate', total='{total}', rate='{rate}', discount='{discount}') }}" data-msg-unavailable="{{ t('js.unavailable', reason='{reason}') }}" data-msg-check="{{ t('js.check_selection') }}" data-msg-preview-down="{{ t('js.preview_down') }}" data-msg-working="{{ t('js.working') }}">
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="{{ url_for('home') }}" aria-label="EventHub homepage"><span class="brand-mark">E<span class="dot">•</span></span> EventHub<span class="brand-sub"> / USF</span></a>
-      <nav aria-label="Main navigation">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="{{ t('nav.home_label') }}"><span class="brand-mark">E<span class="dot">•</span></span> EventHub<span class="brand-sub"> / USF</span></a>
+      <nav aria-label="{{ t('nav.main_label') }}">
         <a href="{{ url_for('home') }}">{{ t("nav.discover") }}</a>
         {% if current_user %}
-          <form class="currency-form" id="currency-form" action="{{ url_for('currency') }}" method="post" aria-label="Preferred currency"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if request.method == 'GET' %}<input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}">{% endif %}<label for="nav-currency">{{ t("nav.currency") }}</label><select id="nav-currency" name="currency">{% for c in currencies %}<option value="{{ c }}" {% if current_user['currency'] == c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select><button class="nav-button" type="submit">{{ t("nav.set") }}</button></form>
+          <form class="currency-form" id="currency-form" action="{{ url_for('currency') }}" method="post" aria-label="{{ t('nav.currency_label') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if request.method == 'GET' %}<input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}">{% endif %}<label for="nav-currency">{{ t("nav.currency") }}</label><select id="nav-currency" name="currency">{% for c in currencies %}<option value="{{ c }}" {% if current_user['currency'] == c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select><button class="nav-button" type="submit">{{ t("nav.set") }}</button></form>
           <a href="{{ url_for('orders') }}">{{ t("nav.orders") }}</a>
           {% if current_user['role'] == 'administrator' %}<a href="{{ url_for('admin_home') }}">{{ t("nav.admin") }}</a>{% endif %}
           <form class="nav-form" action="{{ url_for('logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="nav-button" type="submit">{{ t("nav.logout") }}</button></form>

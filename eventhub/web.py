@@ -66,6 +66,7 @@ def create_app(test_config=None):
             "EVENTHUB_DB", str(ROOT / "instance" / "eventhub.sqlite3")
         ),
         SETUP_PATH=str(ROOT / "config" / "setup.json"),
+        DEFAULT_LANGUAGE=os.environ.get("EVENTHUB_LANGUAGE") or None,
         SESSION_IDLE_SECONDS=int(os.environ.get("EVENTHUB_SESSION_IDLE", "1800")),
         DISCOUNT_PERCENT=os.environ.get("EVENTHUB_DISCOUNT_PERCENT") or None,
         PURCHASE_CAP=int(os.environ["EVENTHUB_PURCHASE_CAP"])
@@ -84,6 +85,12 @@ def create_app(test_config=None):
         app.config.update(test_config)
     if app.config.get("TESTING"):
         app.config["SECRET_KEY"] = app.config.get("SECRET_KEY", "test-key")
+    # Part 7 (system-014): operators choose English or Spanish in settings, with no code change.
+    app.config["DEFAULT_LANGUAGE"] = (
+        i18n.validate_language_setting(app.config["DEFAULT_LANGUAGE"])
+        if app.config["DEFAULT_LANGUAGE"]
+        else i18n.default_language_from_setup(app.config["SETUP_PATH"])
+    )
     db.initialize(app.config["DATABASE"], app.config["SETUP_PATH"])
     app.extensions["purchase_limiter"] = RateLimiter(
         app.config["PURCHASE_RATE_LIMIT"], app.config["PURCHASE_RATE_WINDOW"]
@@ -102,7 +109,9 @@ def create_app(test_config=None):
 
     @app.before_request
     def check_session_and_csrf():
-        g.language = i18n.normalize_language(request.cookies.get("eventhub_lang"))
+        g.language = i18n.pick_language(
+            request.cookies.get("eventhub_lang"), app.config["DEFAULT_LANGUAGE"]
+        )
         now = int(time.time())
         if session.get("uid"):
             last = session.get("last_active", now)
@@ -235,18 +244,13 @@ def create_app(test_config=None):
                 rate["units_per_usd"],
                 app.config["DISCOUNT_PERCENT"],
             )
-            price_text = quote.displayed_total
-            localized_price_text = i18n.local_money(
-                quote.total_minor, quote.currency, g.language
-            )
+            price_text = i18n.local_money(quote.total_minor, quote.currency, g.language)
         except EventHubError:
-            price_text = "Price pending configuration"
-            localized_price_text = price_text
+            price_text = i18n.translate("event.price_pending", g.language)
         return render_template(
             "event.html",
             event=event,
             price_text=price_text,
-            localized_price_text=localized_price_text,
             price_currency=preview_currency,
         )
 
@@ -286,7 +290,7 @@ def create_app(test_config=None):
                 }
             )
         except EventHubError as exc:
-            return jsonify({"error": str(exc)}), exc.status
+            return jsonify({"error": i18n.error_text(exc, g.language)}), exc.status
 
     @app.route("/register", methods=["GET", "POST"])
     def register():
@@ -302,7 +306,7 @@ def create_app(test_config=None):
                 flash(i18n.translate("flash.account", g.language), "success")
                 return redirect(url_for("login"))
             except EventHubError as exc:
-                flash(str(exc), "error")
+                flash(i18n.error_text(exc, g.language), "error")
         return render_template("register.html")
 
     @app.route("/login", methods=["GET", "POST"])
@@ -321,7 +325,7 @@ def create_app(test_config=None):
                 session["_csrf"] = secrets.token_urlsafe(24)
                 return redirect(target)
             except EventHubError as exc:
-                flash(str(exc), "error")
+                flash(i18n.error_text(exc, g.language), "error")
         return render_template(
             "login.html", next_page=safe_next(request.values.get("next")) or ""
         )
@@ -379,7 +383,7 @@ def create_app(test_config=None):
                 flash(i18n.translate("flash.order", g.language), "success")
             return redirect(url_for("order_page", order_id=result.order_id))
         except EventHubError as exc:
-            flash(str(exc), "error")
+            flash(i18n.error_text(exc, g.language), "error")
             return redirect(url_for("event_page", event_id=event_id))
 
     @app.post("/checkout/<int:event_id>")
@@ -435,7 +439,7 @@ def create_app(test_config=None):
             )
             flash(i18n.translate("flash.currency", g.language), "success")
         except EventHubError as exc:
-            flash(str(exc), "error")
+            flash(i18n.error_text(exc, g.language), "error")
         return redirect(safe_next(request.form.get("next")) or url_for("home"))
 
     @app.get("/admin")
@@ -469,7 +473,7 @@ def create_app(test_config=None):
             )
             flash(i18n.translate("flash.rate", g.language), "success")
         except (ValueError, EventHubError) as exc:
-            flash(str(exc), "error")
+            flash(i18n.error_text(exc, g.language), "error")
         return redirect(url_for("admin_home"))
 
     @app.post("/admin/checkin")
@@ -479,13 +483,19 @@ def create_app(test_config=None):
             purchase.redeem(connection(), request.form.get("confirmation_code", ""))
             flash(i18n.translate("flash.checkin", g.language), "success")
         except EventHubError as exc:
-            flash(str(exc), "error")
+            flash(i18n.error_text(exc, g.language), "error")
         return redirect(url_for("admin_home"))
 
     @app.errorhandler(EventHubError)
     def domain_error(exc):
         response = app.make_response(
-            (render_template("error.html", message=str(exc)), exc.status)
+            (
+                render_template(
+                    "error.html",
+                    message=i18n.error_text(exc, g.get("language", "en")),
+                ),
+                exc.status,
+            )
         )
         if getattr(exc, "retry_after", None):
             response.headers["Retry-After"] = str(exc.retry_after)
@@ -493,6 +503,14 @@ def create_app(test_config=None):
 
     @app.errorhandler(HTTPException)
     def http_error(exc):
-        return render_template("error.html", message=exc.description), exc.code
+        return (
+            render_template(
+                "error.html",
+                message=i18n.http_text(
+                    exc.code, exc.description, g.get("language", "en")
+                ),
+            ),
+            exc.code,
+        )
 
     return app

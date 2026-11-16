@@ -29,7 +29,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
 
                 audit = component "Audit Log" "Records every purchase attempt from inside the purchase path, so a route cannot skip it. Also records rate changes and abandoned checkouts." "Python"
 
-                localization = component "Localization & Formatting" "Reads language dictionaries and formats display-only dates and money; never alters integer charges or exchange-rate calculations. English and Spanish initially." "Python / Babel / JSON"
+                localization = component "Localization & Formatting" "Reads language dictionaries and formats display-only dates, money, page titles, labels and error messages; never alters integer charges or exchange-rate calculations. English and Spanish, with the default language set in application settings (Part 7)." "Python / Babel / JSON"
 
                 monitoring = component "Order Anomaly Monitor" "Scheduled maintenance scan compares stored charged totals against expected amounts calculated using purchase-time rates; queues administrator alerts and optional SMTP notifications." "Python / SQLite"
 
@@ -41,7 +41,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
 
             db = container "EventHub Database" "Accounts with roles, sessions, events, ticket counts, orders, exchange rates and audit records." "SQLite (single file, WAL mode)" "Database"
 
-            config = container "Configuration & Setup Files" "Event setup data, the supported-currency list with each currency's minor-unit digits, the first exchange rates (seed only), and application settings such as the session idle timeout." "Local files"
+            config = container "Configuration & Setup Files" "Event setup data, the supported-currency list with each currency's minor-unit digits, the first exchange rates (seed only), and application settings such as the session idle timeout and the default interface language." "Local files"
 
         }
 
@@ -79,7 +79,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
         admin -> identity "Requires the administrator role"
         admin -> pricing "Updates exchange rates"
         admin -> audit "Reads the audit log; records rate changes"
-        boundary -> localization "Chooses language; formats dates and amounts for display only"
+        boundary -> localization "Chooses the language (reader choice, else the configured default); formats text, dates and amounts for display only"
         purchase -> localization "Formats receipts after the charged amount is stored"
         catalog -> localization "Formats event date labels without modifying timestamps"
         monitoring -> pricing "Recomputes expected totals from each order's original rate"
@@ -96,7 +96,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
         purchase -> db "Orders" "SQL"
         audit -> db "Audit records" "SQL"
         monitoring -> db "Reads orders and stores alerts" "SQL"
-        localization -> config "Reads English and Spanish language catalogs" "File read"
+        localization -> config "Reads English and Spanish language catalogs and the default-language setting" "File read"
 
         catalog -> config "Loads event setup data" "File read"
         pricing -> config "Reads supported currencies; seeds first rates" "File read"

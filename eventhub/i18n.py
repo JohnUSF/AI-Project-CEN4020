@@ -25,6 +25,32 @@ def normalize_language(value):
     return value if value in SUPPORTED_LANGUAGES else "en"
 
 
+def validate_language_setting(value):
+    """Check a configured default language; a typo must stop start-up, not silently show English."""
+    value = str(value or "").strip().lower()
+    if value not in SUPPORTED_LANGUAGES:
+        raise ValueError(
+            f"Unsupported default language {value!r}; choose one of: "
+            + ", ".join(sorted(SUPPORTED_LANGUAGES))
+        )
+    return value
+
+
+def default_language_from_setup(setup_path):
+    """The `default_language` entry of config/setup.json, or English when it has none."""
+    try:
+        data = json.loads(Path(setup_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return "en"
+    return validate_language_setting(data.get("default_language", "en"))
+
+
+def pick_language(cookie_value, default="en"):
+    """The reader's saved choice wins; otherwise the configured default applies."""
+    value = str(cookie_value or "").strip().lower()
+    return value if value in SUPPORTED_LANGUAGES else default
+
+
 @lru_cache(maxsize=4)
 def catalog(language):
     language = normalize_language(language)
@@ -38,6 +64,41 @@ def translate(key, language="en", **variables):
     # For any unfinished translation use clear English instead of a blank string.
     template = catalog(language).get(key, catalog("en").get(key, key))
     return template.format(**variables)
+
+
+@lru_cache(maxsize=1)
+def _english_message_keys():
+    """English text -> catalog key, built from en.json so no sentence is written twice."""
+    return {
+        text: key
+        for key, text in catalog("en").items()
+        if key.startswith("msg.") and not key.startswith("msg.code.")
+    }
+
+
+def error_text(exc, language="en"):
+    """Reader-facing wording of an error. The error itself (and the audit trail) stays English."""
+    message = str(exc)
+    if normalize_language(language) == "en":
+        return message
+    retry_after = getattr(exc, "retry_after", None)
+    if retry_after is not None:
+        return translate("msg.rate_limited", language, seconds=retry_after)
+    key = _english_message_keys().get(message)
+    code = getattr(exc, "code", None)
+    if key is None and code and message == code.replace("_", " "):
+        key = f"msg.code.{code}"
+    return translate(key, language) if key else message
+
+
+def http_text(status, description, language="en"):
+    """Reader-facing wording for a Flask/Werkzeug HTTP error page."""
+    if normalize_language(language) == "en":
+        return description
+    if status in (403, 404):
+        return translate(f"http.{status}", language)
+    key = _english_message_keys().get(str(description))
+    return translate(key, language) if key else translate("http.default", language)
 
 
 def local_money(minor_units, currency, language="en"):

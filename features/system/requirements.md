@@ -30,3 +30,10 @@
 - **system-011** (event-driven): When the reader selects a supported language, the {EventHub} shall display event dates using that language's regional date convention without changing the saved event timestamp [ASSUMPTION: Q24 locale and time-zone policy pending].
 - **system-012** (event-driven): When a maintenance operator backs up the SQLite database, the {EventHub} shall create and verify a consistent backup including committed transactions and store a checksum alongside it [TBD: Q25 owner, schedule and offsite retention].
 - **system-013** (event-driven): When an operator restores a backup, the {EventHub} shall require explicit offline confirmation, check the saved checksum and database integrity, and reject tampered copies.
+
+## Part 7: configuration management of the interface language
+
+- **system-014** (ubiquitous): The {EventHub} shall read its default interface language, English or Spanish, from application settings, so that an operator can switch the whole site between the two languages with no code change.
+- **system-015** (event-driven): When a reader has chosen a language, the {EventHub} shall use that choice instead of the configured default on every later page until the reader chooses again.
+- **system-016** (event-driven): When the interface language is Spanish, the {EventHub} shall show every reader-facing text in Spanish, including page titles, accessibility labels, input hints, validation and error messages, error pages, order details and administration screens, and shall fall back to English only for a text that has no Spanish entry.
+- **system-017** (ubiquitous): The {EventHub} shall keep every reader-facing text in the language files and not in program code or page templates, so that adding a language needs a new language file and no change to pricing, purchase or inventory logic.
