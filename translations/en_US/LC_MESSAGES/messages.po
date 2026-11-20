@@ -1,0 +1,834 @@
+# English (United States) translations for EventHub.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the EventHub project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EventHub 1.5\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 00:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en_US\n"
+"Language-Team: en_US <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Interface key from locales/en.json
+msgid "admin.account"
+msgstr "Account"
+
+#. Interface key from locales/en.json
+msgid "admin.ack"
+msgstr "Acknowledge"
+
+#. Interface key from locales/en.json
+msgid "admin.alert_desc"
+msgstr ""
+"These flagged orders need human review. Monitoring does not replace a staffed "
+"notification rotation."
+
+#. Interface key from locales/en.json
+msgid "admin.alert_none"
+msgstr "No order anomalies detected."
+
+#. Interface key from locales/en.json
+msgid "admin.alert_reason"
+msgstr "Reason"
+
+#. Interface key from locales/en.json
+msgid "admin.alert_status"
+msgstr "Status"
+
+#. Interface key from locales/en.json
+msgid "admin.alerts"
+msgstr "Order anomaly alerts"
+
+#. Interface key from locales/en.json
+msgid "admin.audit"
+msgstr "Audit log"
+
+#. Interface key from locales/en.json
+msgid "admin.checkin"
+msgstr "Check in"
+
+#. Interface key from locales/en.json
+msgid "admin.code"
+msgstr "Confirmation code"
+
+#. Interface key from locales/en.json
+msgid "admin.desc"
+msgstr "Manage demo exchange rates and inspect the audit trail."
+
+#. Interface key from locales/en.json
+msgid "admin.details"
+msgstr "Details"
+
+#. Interface key from locales/en.json
+msgid "admin.door"
+msgstr "Door verification"
+
+#. Interface key from locales/en.json
+msgid "admin.door_note"
+msgstr "Redeem each confirmation code only once."
+
+#. Interface key from locales/en.json
+msgid "admin.event"
+msgstr "Event"
+
+#. Interface key from locales/en.json
+msgid "admin.kind"
+msgstr "Kind"
+
+#. Interface key from locales/en.json
+msgid "admin.none"
+msgstr "No audit records yet."
+
+#. Interface key from locales/en.json
+msgid "admin.outcome"
+msgstr "Outcome"
+
+#. Interface key from locales/en.json
+msgid "admin.quantity"
+msgstr "Quantity"
+
+#. Interface key from locales/en.json
+msgid "admin.rate_input"
+msgstr "Updated exchange rate"
+
+#. Interface key from locales/en.json
+msgid "admin.rate_note"
+msgstr "Units of target currency per US dollar. Changes are audited."
+
+#. Interface key from locales/en.json
+msgid "admin.rates"
+msgstr "Exchange rates"
+
+#. Interface key from locales/en.json
+msgid "admin.recent"
+msgstr "Most recent 100"
+
+#. Interface key from locales/en.json
+msgid "admin.restricted"
+msgstr "RESTRICTED ACCESS"
+
+#. Interface key from locales/en.json
+msgid "admin.save"
+msgstr "Save rate ↗"
+
+#. Interface key from locales/en.json
+msgid "admin.time"
+msgstr "Time"
+
+#. Interface key from locales/en.json
+msgid "admin.title"
+msgstr "Administration."
+
+#. Interface key from locales/en.json
+msgid "auth.create"
+msgstr "Create account ↗"
+
+#. Interface key from locales/en.json
+msgid "auth.create_one"
+msgstr "Create one"
+
+#. Interface key from locales/en.json
+msgid "auth.email"
+msgstr "Email"
+
+#. Interface key from locales/en.json
+msgid "auth.login"
+msgstr "Sign in ↗"
+
+#. Interface key from locales/en.json
+msgid "auth.login_eyebrow"
+msgstr "YOUR EVENTS, YOUR WAY"
+
+#. Interface key from locales/en.json
+msgid "auth.login_intro"
+msgstr "Sign in to check out and manage your tickets."
+
+#. Interface key from locales/en.json
+msgid "auth.login_title"
+msgstr "Welcome back."
+
+#. Interface key from locales/en.json
+msgid "auth.name"
+msgstr "Name"
+
+#. Interface key from locales/en.json
+msgid "auth.noaccount"
+msgstr "Don’t have an account?"
+
+#. Interface key from locales/en.json
+msgid "auth.password"
+msgstr "Password"
+
+#. Interface key from locales/en.json
+msgid "auth.password_min"
+msgstr "Password (at least 10 characters)"
+
+#. Interface key from locales/en.json
+msgid "auth.preferred"
+msgstr "Preferred currency"
+
+#. Interface key from locales/en.json
+msgid "auth.preferred_note"
+msgstr "Prices and quick-buy use this currency. You can change it in the header."
+
+#. Interface key from locales/en.json
+msgid "auth.register_eyebrow"
+msgstr "GET IN ON THE ACTION"
+
+#. Interface key from locales/en.json
+msgid "auth.register_intro"
+msgstr "Discover campus events."
+
+#. Interface key from locales/en.json
+msgid "auth.register_title"
+msgstr "Join EventHub."
+
+#. Interface key from locales/en.json
+msgid "checkout.base"
+msgstr "Base ticket price"
+
+#. Interface key from locales/en.json
+msgid "checkout.cancel"
+msgstr "Cancel checkout"
+
+#. Interface key from locales/en.json
+msgid "checkout.currency"
+msgstr "Currency"
+
+#. Interface key from locales/en.json
+msgid "checkout.currency_note"
+msgstr ""
+"You will be charged in the currency selected above. It begins as your preferred currency "
+"({currency}); changing it here applies to this purchase only."
+
+#. Interface key from locales/en.json
+msgid "checkout.demo"
+msgstr "Classroom prototype; no real payment is processed."
+
+#. Interface key from locales/en.json
+msgid "checkout.detail"
+msgstr "You are buying tickets to {artist} at {venue}."
+
+#. Interface key from locales/en.json
+msgid "checkout.discount_pending"
+msgstr "USF discount rate has not been approved; eligible orders are paused."
+
+#. Interface key from locales/en.json
+msgid "checkout.eyebrow"
+msgstr "CHECKOUT / SIMULATED"
+
+#. Interface key from locales/en.json
+msgid "checkout.left"
+msgstr "Tickets left"
+
+#. Interface key from locales/en.json
+msgid "checkout.preview"
+msgstr "Updating estimate..."
+
+#. Interface key from locales/en.json
+msgid "checkout.quantity"
+msgstr "Quantity"
+
+#. Interface key from locales/en.json
+msgid "checkout.security"
+msgstr ""
+"The server calculates the final amount and student discounts. No card details are "
+"collected."
+
+#. Interface key from locales/en.json
+msgid "checkout.submit"
+msgstr "Complete simulated purchase ↗"
+
+#. Interface key from locales/en.json
+msgid "checkout.summary"
+msgstr "ORDER SUMMARY"
+
+#. Interface key from locales/en.json
+msgid "checkout.title"
+msgstr "Almost there."
+
+#. Interface key from locales/en.json
+msgid "error.back"
+msgstr "Back to events ↗"
+
+#. Interface key from locales/en.json
+msgid "error.eyebrow"
+msgstr "EVENTHUB / NOTICE"
+
+#. Interface key from locales/en.json
+msgid "error.title"
+msgstr "Something went wrong."
+
+#. Interface key from locales/en.json
+msgid "event.art_campus"
+msgstr "ON CAMPUS"
+
+#. Interface key from locales/en.json
+msgid "event.art_label"
+msgstr "EVENT"
+
+#. Interface key from locales/en.json
+msgid "event.art_live"
+msgstr "LIVE"
+
+#. Interface key from locales/en.json
+msgid "event.available"
+msgstr "AVAILABLE"
+
+#. Interface key from locales/en.json
+msgid "event.back"
+msgstr "← Back to events"
+
+#. Interface key from locales/en.json
+msgid "event.get"
+msgstr "Get tickets"
+
+#. Interface key from locales/en.json
+msgid "event.note_anon"
+msgstr ""
+"Price shown in {currency}. Pricing and student discounts are finalized at checkout based "
+"on configured rules."
+
+#. Interface key from locales/en.json
+msgid "event.note_user"
+msgstr ""
+"Price shown in {currency}, your preferred currency. Pricing and student discounts are "
+"finalized at checkout based on configured rules."
+
+#. Interface key from locales/en.json
+msgid "event.price_pending"
+msgstr "Price pending configuration"
+
+#. Interface key from locales/en.json
+msgid "event.quick"
+msgstr "Quick buy 1"
+
+#. Interface key from locales/en.json
+msgid "event.starting"
+msgstr "STARTING AT"
+
+#. Interface key from locales/en.json
+msgid "event.tickets"
+msgstr "tickets"
+
+#. Interface key from locales/en.json
+msgid "event.upcoming"
+msgstr "COMING UP"
+
+#. Interface key from locales/en.json
+msgid "flash.account"
+msgstr "Account created. Please sign in."
+
+#. Interface key from locales/en.json
+msgid "flash.alert_ack"
+msgstr "Alert acknowledged; it remains in the audit history."
+
+#. Interface key from locales/en.json
+msgid "flash.cancel"
+msgstr "Checkout cancelled. No tickets were reserved."
+
+#. Interface key from locales/en.json
+msgid "flash.checkin"
+msgstr "Confirmation accepted and marked used."
+
+#. Interface key from locales/en.json
+msgid "flash.currency"
+msgstr "Preferred currency updated."
+
+#. Interface key from locales/en.json
+msgid "flash.duplicate"
+msgstr ""
+"This order was already placed; the original confirmation is shown. You were not charged "
+"twice."
+
+#. Interface key from locales/en.json
+msgid "flash.order"
+msgstr "Your simulated purchase was successful."
+
+#. Interface key from locales/en.json
+msgid "flash.rate"
+msgstr "Exchange rate saved and audited."
+
+#. Interface key from locales/en.json
+msgid "flash.session"
+msgstr "Your session expired. Please sign in again."
+
+#. Interface key from locales/en.json
+msgid "footer.protype"
+msgstr "Classroom prototype"
+
+#. Interface key from locales/en.json
+msgid "footer.simulated"
+msgstr "Simulated payment only · No real ticket sales"
+
+#. Interface key from locales/en.json
+msgid "home.available"
+msgstr "left"
+
+#. Interface key from locales/en.json
+msgid "home.events"
+msgstr "events"
+
+#. Interface key from locales/en.json
+msgid "home.eyebrow"
+msgstr "THE CAMPUS IS CALLING — FALL 2026"
+
+#. Interface key from locales/en.json
+msgid "home.hint_anon"
+msgstr "Sign in to use double-click quick-buy."
+
+#. Interface key from locales/en.json
+msgid "home.hint_buy_post"
+msgstr ", your preferred currency (change it in the header)."
+
+#. Interface key from locales/en.json
+msgid "home.hint_buy_pre"
+msgstr "Double-click a card to instantly buy"
+
+#. Interface key from locales/en.json
+msgid "home.hint_buy_strong"
+msgstr "one ticket in {currency}"
+
+#. Interface key from locales/en.json
+msgid "home.hint_demo"
+msgstr "This demo does not charge real money."
+
+#. Interface key from locales/en.json
+msgid "home.hint_intro"
+msgstr "Click a card to view details."
+
+#. Interface key from locales/en.json
+msgid "home.lineup"
+msgstr "THE LINEUP"
+
+#. Interface key from locales/en.json
+msgid "home.noresults"
+msgstr "No events match {query}. Here is the complete event list instead."
+
+#. Interface key from locales/en.json
+msgid "home.results"
+msgstr "Search results"
+
+#. Interface key from locales/en.json
+msgid "home.search"
+msgstr "Search events ↗"
+
+#. Interface key from locales/en.json
+msgid "home.search_label"
+msgstr "Search artists or venues"
+
+#. Interface key from locales/en.json
+msgid "home.search_placeholder"
+msgstr "Search artists or venues..."
+
+#. Interface key from locales/en.json
+msgid "home.subtitle"
+msgstr "Find live shows, performances and local events, all in one place."
+
+#. Interface key from locales/en.json
+msgid "home.title"
+msgstr "Great moments. Right here."
+
+#. Interface key from locales/en.json
+msgid "home.upcoming"
+msgstr "Upcoming events"
+
+#. Interface key from locales/en.json
+msgid "home.view_event"
+msgstr "View {artist} event"
+
+#. Interface key from locales/en.json
+msgid "http.403"
+msgstr ""
+"You don't have the permission to access the requested resource. It is either read-"
+"protected or not readable by the server."
+
+#. Interface key from locales/en.json
+msgid "http.404"
+msgstr ""
+"The requested URL was not found on the server. If you entered the URL manually please "
+"check your spelling and try again."
+
+#. Interface key from locales/en.json
+msgid "http.default"
+msgstr "The request could not be completed."
+
+#. Interface key from locales/en.json
+msgid "js.check_selection"
+msgstr "Please check the selection"
+
+#. Interface key from locales/en.json
+msgid "js.estimate"
+msgstr "Estimated total: {total} (rate {rate}, discount {discount}%)"
+
+#. Interface key from locales/en.json
+msgid "js.preview_down"
+msgstr "Price preview is unavailable; retry checkout."
+
+#. Interface key from locales/en.json
+msgid "js.unavailable"
+msgstr "Price not available: {reason}"
+
+#. Interface key from locales/en.json
+msgid "js.working"
+msgstr "Working..."
+
+#. Interface key from locales/en.json
+msgid "msg.code.configuration_pending"
+msgstr "configuration pending"
+
+#. Interface key from locales/en.json
+msgid "msg.code.duplicate_conflict"
+msgstr "duplicate conflict"
+
+#. Interface key from locales/en.json
+msgid "msg.code.event_not_found"
+msgstr "event not found"
+
+#. Interface key from locales/en.json
+msgid "msg.code.forbidden"
+msgstr "forbidden"
+
+#. Interface key from locales/en.json
+msgid "msg.code.invalid_quantity"
+msgstr "invalid quantity"
+
+#. Interface key from locales/en.json
+msgid "msg.code.invalid_request"
+msgstr "invalid request"
+
+#. Interface key from locales/en.json
+msgid "msg.code.invalid_request_token"
+msgstr "invalid request token"
+
+#. Interface key from locales/en.json
+msgid "msg.code.login_required"
+msgstr "login required"
+
+#. Interface key from locales/en.json
+msgid "msg.code.purchase_limit"
+msgstr "purchase limit"
+
+#. Interface key from locales/en.json
+msgid "msg.code.rate_limited"
+msgstr "rate limited"
+
+#. Interface key from locales/en.json
+msgid "msg.code.sold_out"
+msgstr "sold out"
+
+#. Interface key from locales/en.json
+msgid "msg.code.unsupported_currency"
+msgstr "unsupported currency"
+
+#. Interface key from locales/en.json
+msgid "msg.csrf"
+msgstr "Invalid or missing security token"
+
+#. Interface key from locales/en.json
+msgid "msg.discount_invalid"
+msgstr "Discount configuration is invalid"
+
+#. Interface key from locales/en.json
+msgid "msg.discount_pending"
+msgstr "USF discount percentage is still pending; ask an administrator"
+
+#. Interface key from locales/en.json
+msgid "msg.discount_range"
+msgstr "Discount must be between 0 and 100 percent"
+
+#. Interface key from locales/en.json
+msgid "msg.email_taken"
+msgstr "This email is already registered"
+
+#. Interface key from locales/en.json
+msgid "msg.event_not_found"
+msgstr "Event not found"
+
+#. Interface key from locales/en.json
+msgid "msg.invalid_credentials"
+msgstr "Invalid credentials"
+
+#. Interface key from locales/en.json
+msgid "msg.invalid_name_email"
+msgstr "Enter a valid name and email address"
+
+#. Interface key from locales/en.json
+msgid "msg.invalid_price"
+msgstr "Invalid price"
+
+#. Interface key from locales/en.json
+msgid "msg.language"
+msgstr "Unsupported language"
+
+#. Interface key from locales/en.json
+msgid "msg.no_account"
+msgstr "Account does not exist; register first"
+
+#. Interface key from locales/en.json
+msgid "msg.order_not_approved"
+msgstr "Discount and conversion order has not been approved"
+
+#. Interface key from locales/en.json
+msgid "msg.password_length"
+msgstr "Password must be between 10 and 256 characters"
+
+#. Interface key from locales/en.json
+msgid "msg.payment_declined"
+msgstr "Simulated payment was declined"
+
+#. Interface key from locales/en.json
+msgid "msg.purchase_limit"
+msgstr "Purchase limit reached for this event"
+
+#. Interface key from locales/en.json
+msgid "msg.quantity_positive"
+msgstr "Quantity must be a positive whole number"
+
+#. Interface key from locales/en.json
+msgid "msg.quantity_range"
+msgstr "Invalid quantity: must be between 1 and 10,000"
+
+#. Interface key from locales/en.json
+msgid "msg.quantity_whole"
+msgstr "Invalid quantity: enter a positive whole number"
+
+#. Interface key from locales/en.json
+msgid "msg.rate_format"
+msgstr "Rate must be a positive decimal with at most 8 fractional digits"
+
+#. Interface key from locales/en.json
+msgid "msg.rate_limited"
+msgstr "Too many purchase requests. Please wait {seconds} seconds and try again."
+
+#. Interface key from locales/en.json
+msgid "msg.rate_positive"
+msgstr "Rate must be positive"
+
+#. Interface key from locales/en.json
+msgid "msg.sold_out"
+msgstr "Sold out: not enough tickets remain"
+
+#. Interface key from locales/en.json
+msgid "msg.stale_page"
+msgstr "This page is out of date. Please reload the event page and try again."
+
+#. Interface key from locales/en.json
+msgid "msg.ticket_not_found"
+msgstr "Ticket not found or already checked in"
+
+#. Interface key from locales/en.json
+msgid "msg.token_reused"
+msgstr "This purchase token was already used for a different purchase. Please reload the page."
+
+#. Interface key from locales/en.json
+msgid "msg.unknown_account"
+msgstr "Unknown account"
+
+#. Interface key from locales/en.json
+msgid "msg.unsupported_currency"
+msgstr "Unsupported currency"
+
+#. Interface key from locales/en.json
+msgid "msg.usd_rate_fixed"
+msgstr "The USD reference exchange rate must stay at 1"
+
+#. Interface key from locales/en.json
+msgid "nav.admin"
+msgstr "Admin"
+
+#. Interface key from locales/en.json
+msgid "nav.currency"
+msgstr "Currency"
+
+#. Interface key from locales/en.json
+msgid "nav.currency_label"
+msgstr "Preferred currency"
+
+#. Interface key from locales/en.json
+msgid "nav.discover"
+msgstr "Discover"
+
+#. Interface key from locales/en.json
+msgid "nav.home_label"
+msgstr "EventHub homepage"
+
+#. Interface key from locales/en.json
+msgid "nav.language"
+msgstr "Language"
+
+#. Interface key from locales/en.json
+msgid "nav.login"
+msgstr "Sign in"
+
+#. Interface key from locales/en.json
+msgid "nav.logout"
+msgstr "Sign out"
+
+#. Interface key from locales/en.json
+msgid "nav.main_label"
+msgstr "Main navigation"
+
+#. Interface key from locales/en.json
+msgid "nav.orders"
+msgstr "My tickets"
+
+#. Interface key from locales/en.json
+msgid "nav.register"
+msgstr "Join EventHub"
+
+#. Interface key from locales/en.json
+msgid "nav.set"
+msgstr "Set"
+
+#. Interface key from locales/en.json
+msgid "order.amount"
+msgstr "AMOUNT CHARGED"
+
+#. Interface key from locales/en.json
+msgid "order.back"
+msgstr "← My tickets"
+
+#. Interface key from locales/en.json
+msgid "order.breakdown"
+msgstr "How we got there"
+
+#. Interface key from locales/en.json
+msgid "order.code"
+msgstr "CONFIRMATION CODE"
+
+#. Interface key from locales/en.json
+msgid "order.confirmed"
+msgstr "CONFIRMED"
+
+#. Interface key from locales/en.json
+msgid "order.desc"
+msgstr "Save this confirmation for the classroom demo. It is not a real admission ticket."
+
+#. Interface key from locales/en.json
+msgid "order.discount_off"
+msgstr "{percent}% off"
+
+#. Interface key from locales/en.json
+msgid "order.header"
+msgstr "EVENTHUB / SIMULATED ORDER"
+
+#. Interface key from locales/en.json
+msgid "order.note"
+msgstr "This is the simulated charge in {currency}, the currency you selected at checkout."
+
+#. Interface key from locales/en.json
+msgid "order.notused"
+msgstr "Not used"
+
+#. Interface key from locales/en.json
+msgid "order.price_each"
+msgstr "Ticket price {price} each, in US dollars"
+
+#. Interface key from locales/en.json
+msgid "order.rate"
+msgstr "Exchange rate locked at purchase"
+
+#. Interface key from locales/en.json
+msgid "order.rate_line"
+msgstr "1 USD = {rate} {currency}"
+
+#. Interface key from locales/en.json
+msgid "order.reference"
+msgstr "reference only, not charged"
+
+#. Interface key from locales/en.json
+msgid "order.reference_short"
+msgstr "reference only"
+
+#. Interface key from locales/en.json
+msgid "order.simulated"
+msgstr ""
+"Simulated payment: no real money moved. This is the amount that would be charged in a "
+"live system."
+
+#. Interface key from locales/en.json
+msgid "order.status"
+msgstr "Check-in status"
+
+#. Interface key from locales/en.json
+msgid "order.student"
+msgstr "Student discount"
+
+#. Interface key from locales/en.json
+msgid "order.tickets"
+msgstr "Tickets"
+
+#. Interface key from locales/en.json
+msgid "order.title"
+msgstr "You’re on the list."
+
+#. Interface key from locales/en.json
+msgid "order.total"
+msgstr "Total charged"
+
+#. Interface key from locales/en.json
+msgid "order.used"
+msgstr "Used"
+
+#. Interface key from locales/en.json
+msgid "orders.browse"
+msgstr "Browse events"
+
+#. Interface key from locales/en.json
+msgid "orders.desc"
+msgstr "Past simulated orders keep the rate and currency used at purchase."
+
+#. Interface key from locales/en.json
+msgid "orders.empty"
+msgstr "No orders yet."
+
+#. Interface key from locales/en.json
+msgid "orders.eyebrow"
+msgstr "YOUR EVENTHUB"
+
+#. Interface key from locales/en.json
+msgid "orders.order"
+msgstr "ORDER"
+
+#. Interface key from locales/en.json
+msgid "orders.title"
+msgstr "My tickets."
+
+#. Interface key from locales/en.json
+msgid "title.checkout"
+msgstr "Checkout"
+
+#. Interface key from locales/en.json
+msgid "title.error"
+msgstr "Unable to continue"
+
+#. Interface key from locales/en.json
+msgid "title.home"
+msgstr "Discover events"
+
+#. Interface key from locales/en.json
+msgid "title.login"
+msgstr "Sign in"
+
+#. Interface key from locales/en.json
+msgid "title.order"
+msgstr "Order confirmation"
+
+#. Interface key from locales/en.json
+msgid "title.orders"
+msgstr "My tickets"
+
+#. Interface key from locales/en.json
+msgid "title.register"
+msgstr "Join EventHub"
