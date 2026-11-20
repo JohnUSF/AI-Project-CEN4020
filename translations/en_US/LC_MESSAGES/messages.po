@@ -163,7 +163,7 @@ msgstr "Name"
 
 #. Interface key from locales/en.json
 msgid "auth.noaccount"
-msgstr "Don’t have an account?"
+msgstr "Don't have an account?"
 
 #. Interface key from locales/en.json
 msgid "auth.password"
@@ -187,7 +187,7 @@ msgstr "GET IN ON THE ACTION"
 
 #. Interface key from locales/en.json
 msgid "auth.register_intro"
-msgstr "Discover campus events."
+msgstr "Discover the best events on campus."
 
 #. Interface key from locales/en.json
 msgid "auth.register_title"
@@ -207,13 +207,11 @@ msgstr "Currency"
 
 #. Interface key from locales/en.json
 msgid "checkout.currency_note"
-msgstr ""
-"You will be charged in the currency selected above. It begins as your preferred currency "
-"({currency}); changing it here applies to this purchase only."
+msgstr "You will be charged in the currency selected above. It starts as your preferred currency ({currency}); changing it here applies to this purchase only."
 
 #. Interface key from locales/en.json
 msgid "checkout.demo"
-msgstr "Classroom prototype; no real payment is processed."
+msgstr "This is a classroom prototype with simulated payments. No real tickets are issued."
 
 #. Interface key from locales/en.json
 msgid "checkout.detail"
@@ -221,7 +219,7 @@ msgstr "You are buying tickets to {artist} at {venue}."
 
 #. Interface key from locales/en.json
 msgid "checkout.discount_pending"
-msgstr "USF discount rate has not been approved; eligible orders are paused."
+msgstr "USF student discount percent is not provided yet; eligible purchases are paused until configured."
 
 #. Interface key from locales/en.json
 msgid "checkout.eyebrow"
@@ -725,7 +723,7 @@ msgstr "EVENTHUB / SIMULATED ORDER"
 
 #. Interface key from locales/en.json
 msgid "order.note"
-msgstr "This is the simulated charge in {currency}, the currency you selected at checkout."
+msgstr "This is the only amount charged, in {currency}, the currency you picked at checkout."
 
 #. Interface key from locales/en.json
 msgid "order.notused"
@@ -753,9 +751,7 @@ msgstr "reference only"
 
 #. Interface key from locales/en.json
 msgid "order.simulated"
-msgstr ""
-"Simulated payment: no real money moved. This is the amount that would be charged in a "
-"live system."
+msgstr "Simulated payment: no real money moved. In a live system, the amount charged above is what would reach your card."
 
 #. Interface key from locales/en.json
 msgid "order.status"
