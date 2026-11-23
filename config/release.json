@@ -1,0 +1,7 @@
+{
+  "planned_version": "1.5.0",
+  "status": "not tagged or deployed",
+  "intended_product_scope": ["English/Spanish Flask-Babel interface", "locale-specific presentation and catalogs"],
+  "classroom_pr_review_fixes_outside_language_scope": ["SQLite restore safety", "SMTP TLS guard", "legacy gettext copy alignment"],
+  "note": "Part 8 integration PR contains separately committed review corrections; plan a language-only tag as a distinct production release."
+}

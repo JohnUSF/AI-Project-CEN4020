@@ -12,6 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import os
 import smtplib
+import ssl
 from email.message import EmailMessage
 
 from eventhub.db import connect
@@ -41,6 +42,14 @@ with connect(a.database) as db:
             "ALERT DELIVERY UNCONFIGURED. Open the admin dashboard, assign an owner and configure SMTP."
         )
         raise SystemExit(2)
+    smtp_user = os.environ.get("EVENTHUB_SMTP_USER")
+    use_starttls = os.environ.get("EVENTHUB_SMTP_STARTTLS") == "1"
+    if smtp_user and not use_starttls:
+        print("ALERT DELIVERY REFUSED: SMTP authentication requires STARTTLS.")
+        raise SystemExit(2)
+    if smtp_user and not os.environ.get("EVENTHUB_SMTP_PASSWORD"):
+        print("ALERT DELIVERY UNCONFIGURED: SMTP password is missing.")
+        raise SystemExit(2)
     msg = EmailMessage()
     msg["Subject"] = "EventHub needs review: order anomaly alerts"
     msg["From"] = sender
@@ -56,13 +65,10 @@ with connect(a.database) as db:
         with smtplib.SMTP(
             host, int(os.environ.get("EVENTHUB_SMTP_PORT", "25")), timeout=10
         ) as smtp:
-            if os.environ.get("EVENTHUB_SMTP_STARTTLS") == "1":
-                smtp.starttls()
-            if os.environ.get("EVENTHUB_SMTP_USER"):
-                smtp.login(
-                    os.environ["EVENTHUB_SMTP_USER"],
-                    os.environ["EVENTHUB_SMTP_PASSWORD"],
-                )
+            if use_starttls:
+                smtp.starttls(context=ssl.create_default_context())
+            if smtp_user:
+                smtp.login(smtp_user, os.environ["EVENTHUB_SMTP_PASSWORD"])
             smtp.send_message(msg)
         db.executemany(
             "UPDATE maintenance_alerts SET notified_at=CURRENT_TIMESTAMP WHERE id=?",

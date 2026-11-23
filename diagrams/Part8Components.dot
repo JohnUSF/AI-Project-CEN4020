@@ -1,0 +1,21 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad="0.38", nodesep="0.5", ranksep="0.78", label="EventHub - Part 8 (Call 7) localization and quality boundaries", labelloc=t, fontname="Helvetica", fontsize=20];
+  node [shape=box, style="rounded,filled", fillcolor="#E9F2F7", color="#4E7290", fontname="Helvetica", fontsize=12, margin="0.22,0.17"];
+  buyer [label="Buyer / administrator",shape=ellipse,fillcolor="#FFF0D8"];
+  flask [label="Flask HTTP boundary\nSession + CSRF + language cookie",fillcolor="#D3EAF8"];
+  babel [label="Flask-Babel locale selector\ngettext + dates/currency",fillcolor="#C9EBDD"];
+  catalog [label="Versioned .po / .mo catalogs\nEnglish + Spanish",fillcolor="#C9EBDD"];
+  provenance [label="Translation provenance /\nplaceholder validation before release",fillcolor="#C9EBDD"];
+  page [label="Templates and receipt views"];
+  purchase [label="Purchase and pricing\ninteger minor units",fillcolor="#F8E6CF"];
+  database [label="SQLite orders/rates\nunchanged by localization",shape=cylinder,fillcolor="#E3E8F6"];
+  buyer -> flask [label="browse / select language"];
+  flask -> babel [label="supported cookie -> config default"];
+  babel -> catalog [label="translate key"];
+  provenance -> catalog [label="validate reviewed draft",style=dashed];
+  babel -> page [label="translated text and display only"];
+  flask -> purchase [label="checkout request"];
+  purchase -> database [label="stable charged amount"];
+  purchase -> page [label="stored order facts"];
+  babel -> purchase [style=dashed,dir=none,label="no price mutation"];
+}

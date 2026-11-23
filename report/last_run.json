@@ -1,17 +1,17 @@
 {
- "finished_at": "2026-11-15 21:08:19",
+ "finished_at": "2026-11-23 09:30:20",
  "steps": [
   {
    "name": "Python compiles",
    "ok": true,
-   "seconds": 0.1,
+   "seconds": 0.0,
    "summary": "",
    "returncode": 0
   },
   {
    "name": "Ruff lint",
    "ok": true,
-   "seconds": 0.6,
+   "seconds": 0.0,
    "summary": "All checks passed!",
    "returncode": 0
   },
@@ -19,35 +19,35 @@
    "name": "Ruff format check",
    "ok": true,
    "seconds": 0.0,
-   "summary": "56 files already formatted",
+   "summary": "62 files already formatted",
    "returncode": 0
   },
   {
    "name": "Unit + integration tests (pytest tests)",
    "ok": true,
-   "seconds": 14.6,
-   "summary": "182 passed in 14.36s",
+   "seconds": 6.6,
+   "summary": "213 passed in 6.43s",
    "returncode": 0
   },
   {
    "name": "Course EARS / C4 gate",
    "ok": true,
-   "seconds": 0.5,
+   "seconds": 0.4,
    "summary": "\ud83d\udfe2 Part 3 gate: ELIGIBLE for grading",
    "returncode": 0
   },
   {
    "name": "Requirement-to-test traceability",
    "ok": true,
-   "seconds": 0.1,
+   "seconds": 0.0,
    "summary": "\ud83d\udfe2 test traceability: 0 failure(s)",
    "returncode": 0
   },
   {
    "name": "Selenium system tests + load measurement",
    "ok": true,
-   "seconds": 150.8,
-   "summary": "140 passed in 150.57s (0:02:30)",
+   "seconds": 127.0,
+   "summary": "140 passed in 126.89s (0:02:06)",
    "returncode": 0
   }
  ]

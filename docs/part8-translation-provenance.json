@@ -1,0 +1,1998 @@
+{
+  "schema_version": 1,
+  "release": "Part 8 classroom candidate (1.5 language feature)",
+  "release_source_of_truth": "Version-controlled gettext .po/.mo catalogs, not an externally edited spreadsheet",
+  "customer_language_validation": "Not yet confirmed; course prototype",
+  "entries": {
+    "admin.account": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.ack": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.alert_desc": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.alert_none": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.alert_reason": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.alert_status": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.alerts": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.audit": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.checkin": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.code": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.desc": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.details": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.door": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.door_note": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.event": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.kind": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.none": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.outcome": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.quantity": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.rate_input": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.rate_note": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.rates": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.recent": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.restricted": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.save": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.time": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "admin.title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.create": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.create_one": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.email": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.login": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.login_eyebrow": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.login_intro": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.login_title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.name": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.noaccount": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.password": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.password_min": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.preferred": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.preferred_note": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.register_eyebrow": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.register_intro": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "auth.register_title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.base": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.cancel": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.currency": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.currency_note": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.demo": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.detail": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.discount_pending": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.eyebrow": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.left": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.preview": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.quantity": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.security": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.submit": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.summary": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "checkout.title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "error.back": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "error.eyebrow": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "error.title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.art_campus": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.art_label": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.art_live": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.available": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.back": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.get": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.note_anon": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.note_user": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.price_pending": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.quick": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.starting": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.tickets": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "event.upcoming": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.account": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.alert_ack": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.cancel": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.checkin": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.currency": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.duplicate": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.order": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.rate": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "flash.session": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "footer.protype": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "footer.simulated": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.available": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.events": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.eyebrow": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.hint_anon": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.hint_buy_post": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.hint_buy_pre": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.hint_buy_strong": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.hint_demo": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.hint_intro": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.lineup": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.noresults": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.results": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.search": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.search_label": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.search_placeholder": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.subtitle": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.upcoming": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "home.view_event": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "http.403": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "http.404": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "http.default": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "js.check_selection": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "js.estimate": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "js.preview_down": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "js.unavailable": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "js.working": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.configuration_pending": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.duplicate_conflict": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.event_not_found": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.forbidden": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.invalid_quantity": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.invalid_request": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.invalid_request_token": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.login_required": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.purchase_limit": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.rate_limited": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.sold_out": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.code.unsupported_currency": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.csrf": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.discount_invalid": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.discount_pending": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.discount_range": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.email_taken": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.event_not_found": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.invalid_credentials": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.invalid_name_email": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.invalid_price": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.language": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.no_account": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.order_not_approved": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.password_length": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.payment_declined": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.purchase_limit": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.quantity_positive": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.quantity_range": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.quantity_whole": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.rate_format": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.rate_limited": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.rate_positive": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.sold_out": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.stale_page": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.ticket_not_found": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.token_reused": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.unknown_account": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.unsupported_currency": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "msg.usd_rate_fixed": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.admin": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.currency": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.currency_label": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.discover": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.home_label": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.language": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.login": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.logout": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.main_label": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.orders": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.register": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "nav.set": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.amount": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.back": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.breakdown": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.code": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.confirmed": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.desc": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.discount_off": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.header": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.note": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.notused": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.price_each": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.rate": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.rate_line": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.reference": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.reference_short": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.simulated": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.status": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.student": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.tickets": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.total": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "order.used": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "orders.browse": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "orders.desc": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "orders.empty": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "orders.eyebrow": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "orders.order": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "orders.title": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.checkout": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.error": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.home": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.login": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.order": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.orders": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    },
+    "title.register": {
+      "en": {
+        "source": "Existing team-authored EventHub English UI / Part 7 baseline",
+        "review_status": "preserved for regression compatibility"
+      },
+      "es": {
+        "source": "Team-produced AI-assisted Spanish draft carried forward from Part 7",
+        "review_status": "team-tested; native speaker/customer sign-off pending"
+      }
+    }
+  }
+}

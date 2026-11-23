@@ -12,6 +12,13 @@ from pathlib import Path
 
 from babel.dates import format_datetime
 from babel.numbers import format_currency
+from babel.support import Translations
+from flask import g, has_request_context
+from flask_babel import (
+    format_currency as flask_format_currency,
+    format_datetime as flask_format_datetime,
+    gettext as flask_gettext,
+)
 
 from .pricing import CURRENCY_DIGITS, display_amount
 
@@ -59,10 +66,30 @@ def catalog(language):
     )
 
 
+@lru_cache(maxsize=4)
+def _gettext_for_language(language):
+    """Load version-controlled compiled message catalogs for non-request callers."""
+    return Translations.load(
+        str(ROOT / "translations"),
+        locales=[LANGUAGE_LOCALES[language]],
+        domain="messages",
+    )
+
+
 def translate(key, language="en", **variables):
+    """Look up UI text through gettext while preserving the Part 7 key-based API.
+
+    Explicit language arguments still work in plain Python (unit tests, scripts),
+    where a Flask request/locale selector does not exist. Missing entries fall
+    back to the original English catalog, never a blank string.
+    """
     language = normalize_language(language)
-    # For any unfinished translation use clear English instead of a blank string.
-    template = catalog(language).get(key, catalog("en").get(key, key))
+    if has_request_context() and g.get("language") == language:
+        template = flask_gettext(key)
+    else:
+        template = _gettext_for_language(language).gettext(key)
+    if template == key:
+        template = catalog("en").get(key, key)
     return template.format(**variables)
 
 
@@ -106,18 +133,19 @@ def local_money(minor_units, currency, language="en"):
 
     This function must never be used to recalculate the amount stored in orders.
     """
+    language = normalize_language(language)
     if type(minor_units) is not int or currency not in CURRENCY_DIGITS:
         raise ValueError(
             "Money formatting needs integer minor units and a supported currency"
         )
-    if normalize_language(language) == "en":
+    if language == "en":
         # Keep previously tested English receipts stable (for instance JPY 4,500).
         # The legacy English formatter already respects zero-decimal currencies.
         return display_amount(minor_units, currency)
     value = Decimal(minor_units).scaleb(-CURRENCY_DIGITS[currency])
-    return format_currency(
-        value, currency, locale=LANGUAGE_LOCALES[normalize_language(language)]
-    )
+    if has_request_context() and g.get("language") == language:
+        return flask_format_currency(value, currency)
+    return format_currency(value, currency, locale=LANGUAGE_LOCALES[language])
 
 
 def local_date(value, language="en"):
@@ -126,12 +154,13 @@ def local_date(value, language="en"):
     English retains the previous ISO-like display, while Spanish uses Babel.
     This keeps template code independent of language-specific decisions.
     """
-    if normalize_language(language) == "en":
+    language = normalize_language(language)
+    if language == "en":
         return str(value)
     try:
         dt = datetime.strptime(str(value), "%Y-%m-%d %H:%M")
     except (ValueError, TypeError):
         return str(value)
-    return format_datetime(
-        dt, format="medium", locale=LANGUAGE_LOCALES[normalize_language(language)]
-    )
+    if has_request_context() and g.get("language") == language:
+        return flask_format_datetime(dt, format="medium")
+    return format_datetime(dt, format="medium", locale=LANGUAGE_LOCALES[language])

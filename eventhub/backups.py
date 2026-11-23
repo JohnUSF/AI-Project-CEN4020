@@ -80,6 +80,14 @@ def restore_backup(backup, destination, *, confirmed=False):
     if backup == destination:
         raise ValueError("Backup and destination cannot be the same path")
     verify_backup(backup)
+    # A stopped SQLite process may leave WAL/SHM sidecars behind. Never mix
+    # an old WAL with the restored database or silently delete recovery data.
+    # An operator must checkpoint/resolve these files while the app is offline.
+    if any(Path(f"{destination}{suffix}").exists() for suffix in ("-wal", "-shm")):
+        raise RuntimeError(
+            "Restore blocked: destination has SQLite WAL/SHM sidecars. "
+            "Stop all database users and resolve those files safely before restoring."
+        )
     destination.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(
         prefix=".eventhub_restore_", suffix=".sqlite3", dir=destination.parent

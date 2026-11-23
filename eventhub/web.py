@@ -21,6 +21,7 @@ from flask import (
     session,
     url_for,
 )
+from flask_babel import Babel
 from werkzeug.exceptions import HTTPException
 
 from . import admin, audit, catalog, db, i18n, identity, monitor, purchase
@@ -90,6 +91,18 @@ def create_app(test_config=None):
         i18n.validate_language_setting(app.config["DEFAULT_LANGUAGE"])
         if app.config["DEFAULT_LANGUAGE"]
         else i18n.default_language_from_setup(app.config["SETUP_PATH"])
+    )
+    # Part 8: Flask-Babel owns locale selection and the gettext message catalogs.
+    # Reader cookie -> configured default; browser headers do not override the operator.
+    app.config["BABEL_DEFAULT_LOCALE"] = i18n.LANGUAGE_LOCALES[
+        app.config["DEFAULT_LANGUAGE"]
+    ]
+    app.config["BABEL_TRANSLATION_DIRECTORIES"] = str(ROOT / "translations")
+    Babel(
+        app,
+        locale_selector=lambda: i18n.LANGUAGE_LOCALES[
+            g.get("language", app.config["DEFAULT_LANGUAGE"])
+        ],
     )
     db.initialize(app.config["DATABASE"], app.config["SETUP_PATH"])
     app.extensions["purchase_limiter"] = RateLimiter(

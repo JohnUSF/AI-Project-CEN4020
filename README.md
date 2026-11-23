@@ -1,3 +1,5 @@
+# **Part 8 now:** see `PART8_README.md` and `PART8_MAC_STEPS.md`. This is a pre-verification candidate until the new Mac tests, pinned review and GitHub CI pass.
+
 # EventHub (CEN 4020, Team 5) — Part 7 Configuration Management (builds on Part 6 Maintenance)
 
 This is a Python/Flask/SQLite **classroom prototype** with simulated ticket purchases. It extends John's Part 5 implementation; the Part 5 baseline report, test dashboard and original README remain available under `report/` and `docs/part5-readme-baseline.md`.

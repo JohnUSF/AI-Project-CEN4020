@@ -29,7 +29,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
 
                 audit = component "Audit Log" "Records every purchase attempt from inside the purchase path, so a route cannot skip it. Also records rate changes and abandoned checkouts." "Python"
 
-                localization = component "Localization & Formatting" "Reads language dictionaries and formats display-only dates, money, page titles, labels and error messages; never alters integer charges or exchange-rate calculations. English and Spanish, with the default language set in application settings (Part 7)." "Python / Babel / JSON"
+                localization = component "Localization & Formatting" "Loads version-controlled Flask-Babel gettext message catalogs for English and Spanish; formats display-only dates and currencies without altering integer charges or exchange rates. Operator default and reader choice are separate." "Python / Flask-Babel / gettext"
 
                 monitoring = component "Order Anomaly Monitor" "Scheduled maintenance scan compares stored charged totals against expected amounts calculated using purchase-time rates; queues administrator alerts and optional SMTP notifications." "Python / SQLite"
 
@@ -96,7 +96,7 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
         purchase -> db "Orders" "SQL"
         audit -> db "Audit records" "SQL"
         monitoring -> db "Reads orders and stores alerts" "SQL"
-        localization -> config "Reads English and Spanish language catalogs and the default-language setting" "File read"
+        localization -> config "Reads versioned .po/.mo message catalogs and the operator default-language setting" "File read"
 
         catalog -> config "Loads event setup data" "File read"
         pricing -> config "Reads supported currencies; seeds first rates" "File read"
@@ -139,6 +139,12 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
 
         component app "Part6Components" "Call 6 maintenance view: isolates presentation, anomaly monitoring and backup/recovery from the payment path." {
             title "Call 6: Maintainable Components, Localization and Monitoring"
+            include *
+            autolayout tb 300 220
+        }
+
+        component app "Part8Components" "Call 7/Part 8: versioned Flask-Babel catalogs, language preference and locale-specific display only." {
+            title "Part 8: Flask-Babel UI, Locale Selection and Translation Review"
             include *
             autolayout tb 300 220
         }
