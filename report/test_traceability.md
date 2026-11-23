@@ -6,19 +6,19 @@
 | admin-004 | 2 | covered |
 | admin-005 | 3 | covered |
 | admin-006 | 3 | covered |
-| admin-007 | 6 | covered |
+| admin-007 | 7 | covered |
 | admin-008 | 3 | covered |
 | admin-009 | 3 | covered |
 | audit-001 | 4 | covered |
 | audit-002 | 1 | covered |
 | audit-003 | 0 | superseded |
-| audit-004 | 2 | covered |
+| audit-004 | 3 | covered |
 | audit-005 | 1 | covered |
 | audit-006 | 0 | exempt: retention policy undecided (Q16); the app deletes nothing and there is no behaviour to assert |
 | audit-007 | 3 | covered |
 | audit-008 | 9 | covered |
 | audit-009 | 1 | covered |
-| audit-010 | 3 | covered |
+| audit-010 | 4 | covered |
 | audit-011 | 2 | covered |
 | catalog-001 | 4 | covered |
 | catalog-002 | 3 | covered |
@@ -26,13 +26,13 @@
 | catalog-004 | 2 | covered |
 | catalog-005 | 2 | covered |
 | catalog-006 | 1 | covered |
-| catalog-007 | 3 | covered |
+| catalog-007 | 4 | covered |
 | catalog-008 | 2 | covered |
 | identity-001 | 6 | covered |
 | identity-002 | 1 | covered |
 | identity-003 | 0 | superseded |
 | identity-004 | 0 | superseded |
-| identity-005 | 2 | covered |
+| identity-005 | 3 | covered |
 | identity-006 | 2 | covered |
 | identity-007 | 5 | covered |
 | identity-008 | 3 | covered |
@@ -51,8 +51,20 @@
 | inventory-001 | 5 | covered |
 | inventory-002 | 3 | covered |
 | inventory-003 | 5 | covered |
-| inventory-004 | 8 | covered |
+| inventory-004 | 9 | covered |
 | inventory-005 | 1 | covered |
+| localization-001 | 3 | covered |
+| localization-002 | 4 | covered |
+| localization-003 | 2 | covered |
+| localization-004 | 2 | covered |
+| localization-005 | 2 | covered |
+| localization-006 | 2 | covered |
+| localization-007 | 5 | covered |
+| localization-008 | 2 | covered |
+| localization-009 | 2 | covered |
+| localization-010 | 2 | covered |
+| localization-011 | 2 | covered |
+| localization-012 | 2 | covered |
 | pricing-001 | 5 | covered |
 | pricing-002 | 0 | superseded |
 | pricing-003 | 5 | covered |
@@ -60,7 +72,7 @@
 | pricing-005 | 0 | superseded |
 | pricing-006 | 5 | covered |
 | pricing-007 | 5 | covered |
-| pricing-008 | 6 | covered |
+| pricing-008 | 7 | covered |
 | pricing-009 | 1 | covered |
 | pricing-010 | 4 | covered |
 | pricing-011 | 10 | covered |
@@ -79,7 +91,7 @@
 | purchase-004 | 5 | covered |
 | purchase-005 | 4 | covered |
 | purchase-006 | 4 | covered |
-| purchase-007 | 3 | covered |
+| purchase-007 | 4 | covered |
 | purchase-008 | 2 | covered |
 | purchase-009 | 0 | exempt: student-organization exception: verification process undefined (Q6), no behaviour exists |
 | purchase-010 | 2 | covered |
@@ -106,7 +118,7 @@
 | purchase-031 | 2 | covered |
 | purchase-032 | 10 | covered |
 | system-001 | 2 | covered |
-| system-002 | 12 | covered |
+| system-002 | 13 | covered |
 | system-003 | 2 | covered |
 | system-004 | 1 | covered |
 | system-005 | 2 | covered |
@@ -117,7 +129,7 @@
 | system-010 | 4 | covered |
 | system-011 | 5 | covered |
 | system-012 | 1 | covered |
-| system-013 | 1 | covered |
+| system-013 | 2 | covered |
 | system-014 | 4 | covered |
 | system-015 | 2 | covered |
 | system-016 | 11 | covered |

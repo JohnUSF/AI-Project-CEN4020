@@ -143,6 +143,12 @@ workspace "EventHub Ticketing" "Updated C4 model of EventHub after Call 6: one m
             autolayout tb 300 220
         }
 
+        component app "Part8Components" "Call 7/Part 8: versioned Flask-Babel catalogs, language preference and locale-specific display only." {
+            title "Part 8: Flask-Babel UI, Locale Selection and Translation Review"
+            include *
+            autolayout tb 300 220
+        }
+
         styles {
             element "Person" {
                 shape person

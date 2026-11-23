@@ -1,22 +1,37 @@
-"""Static Part 5/Part 8 check: each localization scenario names a requirement."""
+"""Eligibility audit: every feature folder has tagged Gherkin beside requirements.
+
+Requirement-to-test coverage is separately enforced by the course's
+grading/check_test_traceability.py. These scenarios are executable in pytest-bdd.
+"""
 
 from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-requirements_text = (ROOT / "features/localization/requirements.md").read_text()
-reqs = set(re.findall(r"\*\*(localization-\d{3})\*\*", requirements_text))
-feature = ROOT / "features/localization/scenarios/spanish_interface.feature"
-scenario_text = feature.read_text()
-tags = set(re.findall(r"@localization-\d{3}", scenario_text))
-missing = reqs - {tag[1:] for tag in tags}
-scenario_count = len(re.findall(r"^\s*Scenario:", scenario_text, flags=re.M))
-assert scenario_count >= 5, "Missing tagged Gherkin examples"
-assert not missing, f"Missing scenario requirement tags: {sorted(missing)}"
-assert (ROOT / "tests/test_part8_scenarios.py").is_file(), (
-    "Missing executable scenario steps"
-)
+feature_folders = sorted((ROOT / "features").glob("*/requirements.md"))
+total = 0
+for requirement_file in feature_folders:
+    folder = requirement_file.parent
+    requirement_ids = set(
+        re.findall(r"\*\*([a-z]+-\d{3})\*\*", requirement_file.read_text())
+    )
+    scenarios = list((folder / "scenarios").glob("*.feature"))
+    assert scenarios, f"No tagged scenario beside {folder.name}/requirements.md"
+    tags = set()
+    for feature in scenarios:
+        content = feature.read_text(encoding="utf-8")
+        assert "Scenario:" in content, f"No Gherkin Scenario in {feature}"
+        tags.update(re.findall(r"@([a-z]+-\d{3})", content))
+        total += content.count("  Scenario:")
+    assert tags & requirement_ids, f"No valid requirement tags in {folder}"
+    if folder.name == "localization":
+        assert requirement_ids <= tags, (
+            f"Part 8 requirements without scenarios: {sorted(requirement_ids - tags)}"
+        )
+
+assert (ROOT / "tests/test_part8_scenarios.py").is_file()
+assert (ROOT / "tests/test_part8_legacy_scenarios.py").is_file()
 print(
-    f"Part 8 scenario eligibility: {len(reqs)} requirements, "
-    f"{scenario_count} tagged scenarios, no gaps"
+    f"Tagged Gherkin eligibility: {len(feature_folders)} feature folders, "
+    f"{total} executable scenarios, localization has full requirement coverage"
 )

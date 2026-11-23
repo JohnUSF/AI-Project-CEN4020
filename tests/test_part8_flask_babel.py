@@ -134,3 +134,52 @@ def test_translations_do_not_modify_saved_prices_or_requirements():
 def test_unsupported_operator_language_is_rejected_before_requests(app_factory):
     with pytest.raises(ValueError, match="Unsupported default language"):
         app_factory(DEFAULT_LANGUAGE="unsupported")
+
+
+@pytest.mark.part8
+@pytest.mark.req("localization-009")
+def test_translation_provenance_covers_every_message_key():
+    source = json.loads(
+        (ROOT / "docs/part8-translation-provenance.json").read_text(encoding="utf-8")
+    )
+    assert set(source["entries"]) == set(i18n.catalog("en"))
+    for entry in source["entries"].values():
+        for language in ("en", "es"):
+            assert entry[language]["source"]
+            assert entry[language]["review_status"]
+
+
+@pytest.mark.part8
+@pytest.mark.req("localization-010")
+def test_language_cookie_has_csrf_httponly_and_samesite(app_factory):
+    app, _ = app_factory(DEFAULT_LANGUAGE="en")
+    client = app.test_client()
+    client.get("/")
+    with client.session_transaction() as saved:
+        token = saved["_csrf"]
+    assert client.post("/language", data={"language": "es"}).status_code == 400
+    response = client.post("/language", data={"language": "es", "csrf_token": token})
+    assert response.status_code in (302, 303)
+    cookie = response.headers["Set-Cookie"]
+    assert "eventhub_lang=es" in cookie
+    assert "HttpOnly" in cookie and "SameSite=Lax" in cookie
+    assert client.get("/login").headers["Content-Language"] == "es"
+
+
+@pytest.mark.part8
+@pytest.mark.req("localization-011", "localization-012")
+def test_translation_placeholders_and_versioned_release_validation(tmp_path):
+    import shutil
+    from scripts.validate_translation_catalogs import validate_catalogs
+
+    assert validate_catalogs(ROOT) == []
+    root = tmp_path / "draft"
+    for dirname in ("locales", "translations", "docs"):
+        shutil.copytree(ROOT / dirname, root / dirname)
+    edited_path = root / "locales" / "es.json"
+    translated = json.loads(edited_path.read_text(encoding="utf-8"))
+    key = "msg.rate_limited"
+    assert "{seconds}" in i18n.catalog("en")[key]
+    translated[key] = translated[key].replace("{seconds}", "{different_placeholder}")
+    edited_path.write_text(json.dumps(translated, ensure_ascii=False), encoding="utf-8")
+    assert any("Placeholders differ" in err for err in validate_catalogs(root))

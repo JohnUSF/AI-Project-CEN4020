@@ -1,6 +1,6 @@
 # Call 7 / Part 8 — requirements, model, code, and test decisions
 
-This note is based on Discussion 7 in the course's five-page Part 8 PDF, not assumptions from the earlier Part 7 assignment. It records the *team's proposed implementation decisions* for sign-off; where customer answers are absent, that is stated explicitly.
+This note is based on Discussion 7 in the course's five-page Part 8 PDF, not assumptions from the earlier Part 7 assignment. It records the team's implementation choices and reviewed decisions; where customer answers are absent, that is stated explicitly.
 
 | Call 7 decision or question | Requirement | Design | Code | Test |
 |---|---|---|---|---|
@@ -18,3 +18,13 @@ This note is based on Discussion 7 in the course's five-page Part 8 PDF, not ass
 **Scope and open requirements:** Call 7 does not name the exact geographic locale or approved browser-versus-operator precedence. We propose English (US) and Spanish (Spain), with reader cookie first and operator default second. Darnell/Marcus must approve the regional preference/translation source and decide whether to store language on accounts. Region and language are different properties. Customer data (event titles/venues) remains English; translating it would be a separate content-management feature. All payments in EventHub are simulated.
 
 **Release boundary:** Part 8 documentation calls the future product release 1.5 for localization only. No live release, rate update, or production approval is asserted here. Before a release, verify code review by another person, tests, spec and all automatic checks as Thuy required.
+
+## Additional written feature decisions after the independent review
+
+- **Languages** (`localization-001`): exactly English (`en_US`) and Spanish (`es_ES`) in the classroom release candidate; no automatic browser-language detection.
+- **Pages** (`localization-002`): home, search/event detail, registration, login, checkout, order/receipt, order history, administration, and error pages. Event titles/venues entered as database content are not translated.
+- **Translation source** (`localization-009`): each key is mapped in `docs/part8-translation-provenance.json` to existing English team-authored text or AI-assisted Spanish draft text. Team tested, not certified by Darnell or a native speaker.
+- **Choice and persistence** (`localization-003`, `-004`, `-010`): explicit language form choice in an HttpOnly/SameSite=Lax cookie, verified through CSRF on POST; otherwise operator config wins, regardless of Accept-Language header.
+- **Spreadsheet irregularity** (`localization-011`, `-012`): external spreadsheet drafts are not copied straight into a release. We require review and version control, enforce key/placeholder parity, and check that compiled gettext entries agree. **Canvas discussion/TA response has not been supplied**; our question and provisional ADR are in `docs/decisions/ADR-009-translation-sources.md`.
+- **Regional currency/date** (`localization-005`): Spanish uses Babel locale; English ISO date and legacy `JPY` code notation remain a documented compatibility exception pending the customer's locale policy. No stored amount/time is modified.
+- **Release**: 1.5 is the proposed language-only release number, **not a deployed or tagged version**. The Part 8 PR also contains independently committed maintenance/security review fixes; this is a classroom integration PR, not evidence that a production release mixed them.

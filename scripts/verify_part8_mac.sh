@@ -14,6 +14,7 @@ python -m ruff format --check eventhub tests tests_system scripts
 python grading/check_part3.py .
 python grading/check_test_traceability.py .
 python scripts/check_part8_scenarios.py
+python scripts/validate_translation_catalogs.py
 python -m pytest tests tests_system -q -rfE
 python run_all_tests.py
 printf '\nMac verification complete. Check report/last_run.json and PR workflows.\n'

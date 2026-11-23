@@ -28,3 +28,21 @@ Feature: Spanish interface through Flask-Babel
     Given the operator configured an unsupported language
     When the application starts
     Then startup is rejected with a configuration error
+
+  @localization-009
+  Scenario: Each translated UI message has a documented source
+    Given the team maintains a version-controlled translation provenance manifest
+    When the manifest is checked against both locale catalogs
+    Then each key has a source and a review status in both languages
+
+  @localization-010
+  Scenario: A language choice uses a protected cookie
+    Given the operator has configured Spanish as the default language
+    When a reader saves English through the language form
+    Then the response sets a protected language cookie
+
+  @localization-011 @localization-012
+  Scenario: A translation draft with a changed placeholder is rejected
+    Given the team has an external Spanish translation draft
+    When a variable name is changed in that draft
+    Then the release catalog validation rejects the change

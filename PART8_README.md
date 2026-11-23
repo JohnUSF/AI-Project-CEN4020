@@ -1,6 +1,6 @@
 # EventHub — Part 8: Software Quality (Team 5)
 
-**Starting point:** the team's merged Part 7 `main` snapshot. **Goal:** release 1.5 introduces Flask-Babel internationalization and a fixed-version code-review skill assessment of the Part 5→Part 8 changes. This classroom prototype does not process real payments.
+**Starting point:** the team's merged Part 7 `main` snapshot. **Goal:** planned release 1.5 introduces Flask-Babel internationalization and a fixed-version code-review skill assessment of the Part 5→Part 8 changes. This classroom prototype does not process real payments.
 
 ## Start here (Mac)
 
@@ -16,7 +16,7 @@ Read `PART8_MAC_STEPS.md`, then run `bash scripts/verify_part8_mac.sh`. You need
 - `.github/workflows/quality.yml`, `.github/workflows/check_part5.yml` — continuous existing quality checks plus named Part 5 eligibility workflow.
 - `docs/part8-discussion7-decisions.md` — discussion/requirements/design/code/test trace and open customer decisions.
 - `docs/part8-genai-process.md` — AI assistance, corrections, and review of its mistakes.
-- `docs/part8-review-record.md` — single-pass five-axis review using the exact pinned skill text, with findings and provisional decisions that the human team must approve.
+- `docs/part8-review-record.md` — single-pass five-axis review using the exact pinned skill text, with four findings and recorded team accept/reject decisions.
 - `scripts/install_part8_review_skill_mac.sh` — installs **code-review-and-quality** from `addyosmani/agent-skills` at exact SHA `301b02b12bff98e4688e6984af6556802322bbde` into `.agents/skills` and `.claude/skills`. Run on a Mac that has GitHub access; do not put credentials into agent config.
 
 ## Scope choices
@@ -27,14 +27,23 @@ Read `PART8_MAC_STEPS.md`, then run `bash scripts/verify_part8_mac.sh`. You need
 - Existing English receipts still show legacy `JPY 4,500` instead of a currency-native yen sign; fixing this requires a separately reviewed compatibility/test update. The existing yen zero-decimal and all previous behaviors must remain green.
 - Customer event descriptions and venues are data, not UI catalogs. Operators' logs are not translated.
 
-## Evidence and verification policy
+## Verified Mac / GitHub results (2026-11-19)
 
-`report/last_run.json` and its dashboard are the **Part 7 baseline**, recording 182 unit/integration and 140 Selenium tests (322); these are not proof that Part 8 passed. This draft has been checked with compileall, the Part 3 EARS/C4 gate, requirement traceability, compiled catalog consistency, and the scenario tag check **inside the authoring environment**. The full Flask/Selenium suite cannot be run there because the dependencies cannot be downloaded. Do not report Part 8 test passes until `bash scripts/verify_part8_mac.sh` succeeds locally and GitHub Actions is green.
+After the pinned AI code review and three required follow-up fixes, `bash scripts/verify_part8_mac.sh` completed successfully on the Gold member's Mac: 199 unit/integration tests plus 140 Selenium/system tests, totaling **339 passed**, with Ruff lint/format, Part 3 EARS/C4 eligibility and traceability also green. The 8 newly registered localization markers ran without the previous warnings. Real screenshots are `report/part8_mac_339_passed.png` and `report/part8_ci_successful_rerun.png`. The older generated `report/last_run.json` may describe an earlier baseline; refer to `report/PART8_FINAL_VERIFICATION.md` for the final observed run instead of confusing historical artifacts with Part 8 evidence.
 
-## What must happen before final submission
+GitHub PR #5 (`part8-jaideep-gold` at `dbebb63`) has green PR quality/system tests and Part 5 eligibility. The first push system run failed a 500 ms **placeholder** p95 latency budget (observed 639.8 ms); one rerun passed, so the source of latency variation and the customer's actual performance threshold are still open. This is not evidence of a functional checkout failure.
 
-1. Run the Mac verification script; fix any failures, and save `report/last_run.json` and the dashboard from **that** run.
-2. Install the pinned skill with the provided script and have an AI coding agent run it in **read-only review mode** on the diff from the actual Part 5 submission commit `cc73d4f5b85bd269e122438c7d8e450e70f0b279` to the **new Part 8 commit**. The code reviewer may provide findings, not modify the repository itself.
-3. You and John decide accept/reject on **each** finding and initial `docs/part8-team-signoff.md`. Apply accepted changes in a separate normal coding step and rerun all tests.
-4. Open a PR from `part8-jaideep-gold` to `main`; confirm both `quality.yml` and `check_part5.yml` pass on the exact commit. Get John to review and merge **before the deadline**. Part 5 eligibility is a zero-grade gate.
-5. Generate the finished PDF report *after* the actual Mac and CI results are available; replace the verification-pending text rather than pretending they passed.
+## Updated Call 7 additions and scope clarification
+
+- Older feature folders now have tagged and executable `.feature` scenarios beside their requirements (the earlier ZIP only had the localization scenario); see `tests/test_part8_legacy_scenarios.py`.
+- Languages (`en`, `es`), covered pages, and translation source/provenance are explicitly described under `features/localization/requirements.md`; source metadata is recorded per key in `docs/part8-translation-provenance.json`.
+- Language persistence has a tested CSRF-protected, HttpOnly, SameSite=Lax cookie; key/placeholder validation for externally edited drafts is in `scripts/validate_translation_catalogs.py` and candidate version policy is in `config/release.json`. The external spreadsheet is *not* the release source of truth; changes must go through version-controlled gettext catalogs.
+- The current English date/JPY presentation is a **known compatibility exception** pending the customer decision; `es_ES` uses Babel presentation. Neither path changes stored amounts or timestamps.
+- Version 1.5 is a **proposed language-only release**; no live version tag or production deployment is asserted. PR #5 includes *additional* follow-up backup and SMTP corrections in a separate commit, so a true language-only release would need those changes split during release planning. This classroom deliverable reports both change sets transparently.
+- The pinned review produced three Required findings accepted by Jai and John plus one Optional yen-format change rejected for this submission. Review reason summaries and Kenji's conditions are in `docs/part8-review-record.md`.
+
+## Before Canvas submission
+
+1. Apply this final candidate's added requirements, scenarios, diagram and documentation to `part8-jaideep-gold` using the supplied patch. Run the **entire expanded** Mac unit + Selenium suite, not only the 339-test previous baseline, and record the actual new number. Do not assume a particular passing total.
+2. Push the candidate, confirm *all* GitHub Actions checks including `check_part5` pass, and merge reviewed PR #5 into `main` before the deadline. GitHub's default-branch source and test results, not a detached review ZIP, determine eligibility.
+3. Download the *merged-main* source ZIP and include the updated Part 8 report. This packaged candidate cannot itself prove the merge; retain the final GitHub commit/CI link.

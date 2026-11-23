@@ -1,38 +1,49 @@
-# Part 8 — code-review-and-quality review record (AI findings; human decisions required)
+# Part 8 - pinned AI review and team decision record (final decisions)
 
-**Agent:** ChatGPT, GPT-6. **Skill source:** `https://github.com/addyosmani/agent-skills`, `skills/code-review-and-quality/SKILL.md`, **pinned at exact commit** `301b02b12bff98e4688e6984af6556802322bbde` (GitHub blob SHA `15ea44c93c61dcec705720342c1fd78755702f85`). Reviewed the pinned instructions through read-only GitHub access. **Review date:** 2026-11-19. The source text specifies five axes: correctness, readability, architecture, security, performance.
+**Agent:** GitHub Copilot Fusion in VS Code.  **Skill:** `code-review-and-quality` from `addyosmani/agent-skills`, commit `301b02b12bff98e4688e6984af6556802322bbde`.  **Review range:** Part 5 baseline `cc73d4f5b85bd269e122438c7d8e450e70f0b279` to initial Part 8 `4f037f342a35148712603242e040fa3b407cb82a` (the release 1.4 corrections plus the Spanish/Flask-Babel interface).  **Implementation fixes:** `dbebb636a200b6067bc2ef228f6cb3cdbd09930a`.
 
-**Review range:** from the actual Part 5 report commit `cc73d4f5b85bd269e122438c7d8e450e70f0b279` to the **Part 8 candidate working tree** built on the merged Part 7 PR #4 commit `f97fb2506c001392157201aa928b8e8c0c64841d`. The range includes both Call 6's display fix/corrective items and Call 7's localization work. The compared Part 5 source package and GitHub comparison were inspected; the Part 8 working tree has not yet been committed to GitHub. **After the candidate is committed, rerun the pinned review once against its exact final SHA on your Mac** and reconcile any new findings.
+The agent performed one **read-only** review on November 19, 2026. As confirmed by Jai, John approved the four team decisions below. The separate first-person statements are **short decision summaries for the report, not verbatim quotations or signed GitHub review comments**. The pending *customer* choices are not represented as John approving production specifications.
 
-**Read-only condition:** This was an advisory code-review pass of already prepared changes. No credentials were supplied to a review agent and no reviewer-side auto-fixes were enabled. Separately, the candidate implementation was authored at the Gold member's request. The **human team must explicitly approve/reject each finding**, implement accepted changes through the normal developer workflow, and rerun the tests. The table below contains **recommendations, not invented human sign-offs**.
+## One row per skill finding (Call 7 format)
 
-| Check | Severity assigned in pinned-skill-guided review | File and line (candidate) | Proposed decision | Reason / what changed |
+| Check | Severity | File and line | Decision | Reason |
 |---|---|---|---|---|
-| Correctness | Required | `eventhub/web.py:102` | Accept (implemented) | Part 7 did not actually configure Flask-Babel; Part 8 now installs the Babel locale selector at the request boundary. |
-| Correctness | Required | `eventhub/i18n.py:91` | Accept (implemented) | Missing Spanish gettext entries must fall back to English rather than another copy of Spanish from a JSON file; regression test added. |
-| Architecture | Optional | `eventhub/i18n.py:79` | Reject for Part 8 (documented) | Existing JSON dictionaries are retained for older unit tests while gettext PO/MO is canonical at runtime. Delete the compatibility layer only in a separately tested migration. |
-| Correctness | Critical for eligibility | `.github/workflows/check_part5.yml:3` | Accept (implemented) | The previous branch had `quality.yml` but not the explicitly required named workflow; add a real runnable Part 5 gate. |
-| Correctness | Required | `features/localization/requirements.md:1` | Accept (implemented) | New Call 7 requirements must be EARS-valid, traceable to tests, and have tagged adjacent feature scenarios; covered with pytest-bdd tests and a static scenario check. |
-| Security | FYI | `eventhub/web.py:223` | Reject as a vulnerability claim | The language cookie only stores a whitelisted `en` or `es` value and the POST is CSRF-protected; it does not grant roles or bypass authentication. |
-| Performance | Optional | `eventhub/i18n.py:68` | Reject as current blocker | Catalogs and non-request gettext loaders use bounded `lru_cache`, avoiding repeated filesystem loads for every rendered string. |
-| Correctness | Required (pre-existing issue) | `eventhub/i18n.py:138` | Reject from this localization-only release; track open | Legacy English yen is displayed `JPY 4,500`, not `¥4,500`. Making it native would change exact text asserted by earlier regression tests and needs an explicitly approved compatibility change. Spanish yen still has no decimal places. |
-| Readability | Optional | `eventhub/web.py:59` | Reject from this release; track debt | `create_app` is long, but splitting unrelated routes during a localization-only release makes regression review less reliable; revisit separately. |
-| Architecture | FYI | `workspace.dsl:32` | Accept (implemented) | The C4 localization component should name the actual Flask-Babel/gettext boundary instead of only Python Babel/JSON. |
-| Security | FYI | `requirements.txt:1` | Accept (sample pins) | The assignment explicitly lists six exact package versions, including Flask-Login and Flask-SQLAlchemy, even though EventHub uses its own identity/SQLite modules. Dependencies must be reviewed before a production deployment. |
-| Correctness | Required | `tests/test_part8_scenarios.py:40` | Accept (implemented) | A test of a wholly nonexistent key cannot prove fallback; the test now simulates a missing Spanish translation for an English key. |
+| correctness | Required | `eventhub/backups.py:96` | **accepted** | Jai: This can affect a restored database, so I kept the fail-closed check and regression tests. John: The restore needs to be safe before we submit, and the two sidecar tests make this easier to check. |
+| security | Required | `scripts/check_order_anomalies.py:59-64` | **accepted** | Jai: We should not let the notifier send credentials without encryption; I kept the STARTTLS guard. John: I agree with rejecting insecure SMTP settings instead of silently sending a login. |
+| correctness | Required | `templates/checkout.html:2; login.html:2; register.html:2; order.html:3,10` | **accepted** | Jai: These strings should go through the same catalog as the rest of the interface, without changing old English wording. John: The catalog fix is small and tested, and it helps us avoid missing translations later. |
+| correctness | Optional | `eventhub/i18n.py:144` | **rejected** | Jai: I want to keep the older English display test stable until the customer confirms the format change. John: I agree this should be a separate reviewed change because it alters the established receipt display contract. |
 
-### Required three lists from Call 7
+### Corrections and regression evidence
 
-**A. Issues the review caught that we had missed:** missing named `check_part5.yml` eligibility workflow; custom translation layer did not use Flask-Babel; missing `.mo` fallback to English; absent tagged localized scenarios; old C4 model still described JSON/Babel only. All have been addressed in the draft.
+| Finding | Actual correction | Regression evidence |
+|---|---|---|
+| SQLite sidecars | Offline restore refuses destination WAL/SHM leftovers before replacement | `tests/test_review_followups.py`, two suffix cases |
+| SMTP | Reject authenticated send without STARTTLS; verify TLS settings before login | `tests/test_review_followups.py`, one negative case |
+| Catalog bypass | Replace seven hard-coded English strings with catalog lookups, preserving wording | `tests/test_review_followups.py`, one catalog/template case |
+| Yen symbol | No source change; explicit compatibility exception until Darnell/Marcus approve the regional display requirement | Existing pricing/yen regression tests; documented open item |
 
-**B. Findings rejected after checking code:** the language cookie is not an authentication/security escalation; the cached catalog does not reload files for each string; the duplicate JSON source is temporary compatibility, not evidence that checkout amounts are recalculated; giant `create_app()` was pre-existing and not changed as part of this focused release.
+### Five review axes, including no-finding axes
 
-**C. Issues the skill/review did not resolve, but we know remain:** native-speaker approval and final Spanish regional variant; geographical region distinct from language, and timezone/format preferences; English yen currency-native symbol compatibility; real ownership of operational backup/alerts from Call 6; whether all GitHub checks pass on the **actual submitted** commit at the deadline. These are not quietly described as complete.
+- **Correctness:** restore safety, catalog consistency and the optional English yen compatibility issue were recorded; the first two were corrected.
+- **Readability:** inspected changed code and templates; **no distinct new readability finding** returned by the pinned pass.
+- **Architecture:** inspected the Flask-Babel-to-pricing boundary; **no distinct new architecture finding** returned by the pinned pass.
+- **Security:** insecure SMTP credential use identified and corrected.
+- **Performance:** no independent performance finding in the pinned pass. A *later* CI measurement exceeded a **customer-unapproved** 500 ms p95 placeholder once and passed on one rerun; this is a known stability risk, not a performance guarantee.
 
-### Human decision checklist (complete with John)
+The four findings did **not** directly change the release 1.4 display fix; the yen notation was the display-related exception carried forward from previous work. The language feature and the three maintenance/security corrections are separately identified in the PR/release documentation.
 
-- [ ] Jaideep/Jai reviewed every row, corrected any wrong assertion and approved the accept/reject recommendation.
-- [ ] John performed the independent human code review and approved/rejected every row.
-- [ ] Pinned skill installed in your Mac coding agent at exact SHA and the final PR commit reviewed in **read-only mode**.
-- [ ] All accepted fixes applied; tests rerun on final files; the full `quality.yml` and `check_part5.yml` workflows passed.
-- [ ] PR merged to `main` before the deadline. Paste links/SHAs into `docs/part8-team-signoff.md`.
+### Three Call 7 review lists
+
+1. **Problems the review caught that our team had not addressed:** stale SQLite sidecar restore, authenticated SMTP without TLS, and English strings bypassing gettext. All three were corrected and given regression coverage.
+2. **False positives:** no confirmed false positive among the four findings in the actual pinned review. Earlier candidate warnings about the CSRF-protected language cookie and translation JSON changing purchase totals were checked and not treated as proven defects. We do **not** fabricate a false-positive count.
+3. **Problems or gaps the review did not solve:** cookie/regional customer policy and native Spanish translation validation; the independent translation-draft placeholder/import hazard; historic feature folders lacking local Gherkin; a repeatable approved p95 budget; owner/recipient of operational alerts. We addressed the Gherkin and draft-validation documentation/testing gaps after this review. Other customer questions remain open.
+
+### Kenji's three safeguards (explicitly applied)
+
+1. **Read-only agent:** Copilot inspected code and Git history, but a person selected and applied every source change.
+2. **No secrets in agent config:** credentials were not added to the installed skill or agent settings; SMTP test uses synthetic values.
+3. **Pinned and identified skill:** the reviewer was Copilot Fusion and the skill commit was fixed to `301b02b12bff98e4688e6984af6556802322bbde`, recorded alongside these findings.
+
+**Verification:** Jai's Mac full suite on the reviewed fix commit passed **199 unit/integration + 140 Selenium/system = 339 tests**. GitHub PR quality, eligibility, and system checks passed; the initial push p95 placeholder failure passed on one rerun. The follow-up documentation and scenario additions in this final candidate still need a fresh complete run and a green default-branch check before Canvas submission. See `report/PART8_FINAL_VERIFICATION.md`.
+
+**Team approval provenance:** Jai reports that he and John agreed to all four decisions. GitHub PR #5 currently remains open according to the last direct status check; this report does not invent a merge SHA or a signed GitHub approval.

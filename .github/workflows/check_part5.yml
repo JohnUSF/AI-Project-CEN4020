@@ -16,5 +16,7 @@ jobs:
       - run: python -m ruff format --check eventhub tests tests_system scripts
       - run: python grading/check_part3.py .
       - run: python grading/check_test_traceability.py .
+      - run: python scripts/check_part8_scenarios.py
+      - run: python scripts/validate_translation_catalogs.py
       - run: python -m pytest tests -q
       - run: python -m pytest tests_system -q -rfE

@@ -1,35 +1,13 @@
-# Pinned AI review follow-up — proposed corrections (human acceptance pending)
+# Part 8 - reviewed corrections and disposition
 
-**Review scope:** Part 5 `cc73d4f5b85bd269e122438c7d8e450e70f0b279` → Part 8 `4f037f3`.
-**Reviewer:** Copilot using the installed `code-review-and-quality` skill pinned at
-`301b02b12bff98e4688e6984af6556802322bbde`. This follow-up records a
-**proposed developer patch**, not a completed human review.
+Original read-only pinned review: Part 5 `cc73d4f5` -> Part 8 `4f037f3`; skill SHA `301b02b12bff98e4688e6984af6556802322bbde` in Copilot Fusion. Corrections: developer commit `dbebb63`. As reported by Jai, both teammates approved the following decisions; the sentences below summarize their reasoning rather than reproducing chat quotations.
 
-| Finding | Proposed action in this patch | Jai decision and reason | John decision and reason |
+| Finding | Jai decision | John decision | Implementation |
 |---|---|---|---|
-| Required: stale SQLite WAL/SHM on offline restore | Refuse restore without deleting/mixing sidecars; regression tests for each suffix | Pending | Pending |
-| Required: SMTP authentication without transport encryption | Reject authenticated sends without STARTTLS, use verifying SSL context, check missing password; regression test | Pending | Pending |
-| Required: hardcoded English UI messages | Route seven prose strings through gettext in four templates, updating the English PO/MO and JSON catalogs with exact legacy wording; regression test | Pending | Pending |
-| Optional: English yen symbol | Deferred; compatibility/product approval needed before modifying amount display | Pending | Pending |
+| SQLite restore could collide with stale WAL/SHM files | **accepted** - This can affect a restored database, so I kept the fail-closed check and regression tests. | **accepted** - The restore needs to be safe before we submit, and the two sidecar tests make this easier to check. | Offline WAL/SHM rejection and two regression cases |
+| SMTP could authenticate when STARTTLS was off | **accepted** - We should not let the notifier send credentials without encryption; I kept the STARTTLS guard. | **accepted** - I agree with rejecting insecure SMTP settings instead of silently sending a login. | Require STARTTLS before SMTP login and regression case |
+| Seven English strings bypassed the translation catalogs | **accepted** - These strings should go through the same catalog as the rest of the interface, without changing old English wording. | **accepted** - The catalog fix is small and tested, and it helps us avoid missing translations later. | Seven English template strings moved into gettext and regression case |
+| English yen display uses JPY 4,500 instead of the native yen symbol | **rejected** - I want to keep the older English display test stable until the customer confirms the format change. | **rejected** - I agree this should be a separate reviewed change because it alters the established receipt display contract. | No change; preserved documented English compatibility until customer requirement approved |
 
-## Three lists for Discussion #7 (verify with the team)
 
-1. **Candidate missed problems identified by the pinned review:** WAL/SHM guard,
-   SMTP TLS before credentials, catalog bypass for English UI. Whether these were
-   unknown to the team must be confirmed by Jai and John.
-2. **False positives:** no *new* false positives were proven in the review output;
-   the review described older dismissed concerns (language-cookie authorization,
-   JSON catalog pricing effects). The team must confirm its final classification.
-3. **Known issues outside or unresolved by the review:** English yen display
-   contract, native-speaker localization approval, named backup/alert ownership,
-   production readiness and final CI status. Do not call them implemented.
-
-## To finish
-
-- [ ] Jai reviews and makes an accept/reject decision with reason for each finding.
-- [ ] John independently reviews the findings and confirms the decisions.
-- [ ] Accepted fixes are applied on a Part 8 feature branch (not `main`).
-- [ ] Run `python run_all_tests.py` and `bash scripts/verify_part8_mac.sh` on final files.
-- [ ] Check GitHub quality and Part 5 eligibility workflows on exact final SHA.
-- [ ] Update Part 8 PDF report with 335 previous tests vs **actual final run** results.
-- [ ] Get PR reviewed and merged only after gates pass.
+See `docs/part8-review-record.md` for the official five-check/required-severity format, the complete three lists, and Kenji's safeguards. This review approved only the proposed technical decisions, not a production release or customer locale policy.
